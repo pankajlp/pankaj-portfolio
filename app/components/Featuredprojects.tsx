@@ -26,12 +26,20 @@ const projects = [
         },
 
   {
-    title: "Freight Rate Prediction ML",
-    description:
-      "Built machine learning models for predicting freight costs using logistics lane, carrier, and shipment intelligence data.",
-    icon: BrainCircuit,
-    stack: ["Python", "Pandas", "Scikit-learn"],
-  },
+  title: "RFQ Intelligence Platform",
+  description:
+    "AI-powered procurement intelligence system for RFQ processing, tender analytics, bid optimization, and operational automation across logistics workflows.",
+
+  icon: BrainCircuit,
+
+  link: "/projects/rfq-intelligence",
+
+  stack: [
+    "Python",
+    "LLMs",
+    "Automation",
+  ],
+},
 
   {
     title: "Freight Intelligence Platform",

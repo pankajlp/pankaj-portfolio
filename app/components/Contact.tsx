@@ -45,7 +45,7 @@ export default function Contact() {
           
           {/* Email */}
           <motion.a
-            href="mailto:hello@nordneuron.com"
+            href="mailto:contact@nordneuron.com"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -63,7 +63,7 @@ export default function Contact() {
             </h3>
 
             <p className="mt-3 text-white/60">
-              hello@nordneuron.com
+              contact@nordneuron.com
             </p>
           </motion.a>
 

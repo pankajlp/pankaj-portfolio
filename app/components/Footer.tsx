@@ -111,7 +111,7 @@ export default function Footer() {
                 </a>
 
                 <a
-                  href="mailto:hello@nordneuron.com"
+                  href="mailto:contact@nordneuron.com"
                   className="group flex items-center gap-2 hover:text-cyan-400 transition-colors duration-300"
                 >
                   <Mail size={16} />
