@@ -13,8 +13,8 @@ const grotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  title: "NordNeuron",
-  description: "AI · Analytics · Enterprise Intelligence",
+  title: "NordNeuron — AI & Enterprise Intelligence",
+  description:  "NordNeuron builds intelligent analytics, automation, and AI systems for enterprise operations.",
   icons: {
     icon: "/nordneuron-favicon.svg",
   },

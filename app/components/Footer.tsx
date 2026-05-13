@@ -22,12 +22,11 @@ export default function Footer() {
           
           {/* Brand */}
           <div className="max-w-md">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_12px_#22d3ee]" />
-
-              <h2 className="text-2xl font-semibold tracking-[0.18em] uppercase text-white">
-                NordNeuron
-              </h2>
+            <div className="flex items-center gap-3 mb-6">
+                <img
+                    src="/nordneuron-navbar.svg"
+                    alt="NordNeuron"
+                    className="h-10 w-auto" />
             </div>
 
             <p className="text-white/60 leading-relaxed">
