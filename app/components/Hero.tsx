@@ -39,7 +39,7 @@ export default function Hero() {
           <img
             src="/nordneuron-wordmark-light.svg"
             alt="NordNeuron"
-            className="w-[420px] max-w-full mb-8"
+            className="h-24 w-auto mb-10"
             />
 
           {/* Description */}
@@ -72,67 +72,88 @@ export default function Hero() {
         </motion.div>
 
         {/* RIGHT SIDE CARDS */}
+        {/* RIGHT SIDE CARDS */}
         <motion.div
-          initial={{ opacity: 0, x: 60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9 }}
-          className="relative"
+        initial={{ opacity: 0, x: 60 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.9 }}
+        className="relative"
         >
-          <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             
             {/* Card 1 */}
-            <div className="p-6 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl">
-              <BrainCircuit className="text-cyan-400 mb-4" size={32} />
-              
-              <h3 className="text-xl font-semibold text-white mb-2">
-                AI Workflows
-              </h3>
+            <div className="group p-7 min-h-[260px] rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300">
+            
+            <BrainCircuit
+                className="text-cyan-400 mb-6"
+                size={34}
+            />
 
-              <p className="text-sm text-white/60 leading-relaxed">
-                Intelligent enterprise automation powered by LLMs and agent systems.
-              </p>
+            <h3 className="text-2xl font-semibold text-white mb-5">
+                AI Workflows
+            </h3>
+
+            <p className="text-white/60 leading-relaxed">
+                Intelligent enterprise automation powered by
+                LLMs, agents, and decision-aware systems.
+            </p>
             </div>
 
             {/* Card 2 */}
-            <div className="p-6 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl mt-10">
-              <Database className="text-cyan-400 mb-4" size={32} />
-              
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Data Platforms
-              </h3>
+            <div className="group p-7 min-h-[260px] rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300">
+            
+            <Database
+                className="text-cyan-400 mb-6"
+                size={34}
+            />
 
-              <p className="text-sm text-white/60 leading-relaxed">
-                Scalable analytics infrastructure with SQL, Python, and cloud systems.
-              </p>
+            <h3 className="text-2xl font-semibold text-white mb-5">
+                Data Platforms
+            </h3>
+
+            <p className="text-white/60 leading-relaxed">
+                Scalable analytics infrastructure using SQL,
+                Python, cloud systems, and modern pipelines.
+            </p>
             </div>
 
             {/* Card 3 */}
-            <div className="p-6 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl -mt-10">
-              <BarChart3 className="text-cyan-400 mb-4" size={32} />
-              
-              <h3 className="text-xl font-semibold text-white mb-2">
-                BI Systems
-              </h3>
+            <div className="group p-7 min-h-[260px] rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300">
+            
+            <BarChart3
+                className="text-cyan-400 mb-6"
+                size={34}
+            />
 
-              <p className="text-sm text-white/60 leading-relaxed">
-                Executive dashboards and operational intelligence with Power BI.
-              </p>
+            <h3 className="text-2xl font-semibold text-white mb-5">
+                BI Systems
+            </h3>
+
+            <p className="text-white/60 leading-relaxed">
+                Executive dashboards and operational
+                intelligence systems built with Power BI.
+            </p>
             </div>
 
             {/* Card 4 */}
-            <div className="p-6 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl">
-              <Workflow className="text-cyan-400 mb-4" size={32} />
-              
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Automation
-              </h3>
+            <div className="group p-7 min-h-[260px] rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300">
+            
+            <Workflow
+                className="text-cyan-400 mb-6"
+                size={34}
+            />
 
-              <p className="text-sm text-white/60 leading-relaxed">
-                Process optimization through smart integrations and workflow orchestration.
-              </p>
+            <h3 className="text-2xl font-semibold text-white mb-5">
+                Automation
+            </h3>
+
+            <p className="text-white/60 leading-relaxed">
+                Intelligent workflow orchestration and process
+                optimization across enterprise operations.
+            </p>
             </div>
 
-          </div>
+        </div>
         </motion.div>
       </div>
     </section>
