@@ -12,9 +12,12 @@ const grotesk = Space_Grotesk({
   variable: "--font-grotesk",
 });
 
-export const metadata: Metadata = {
-  title: "Pankaj Kumar",
-  description: "AI & Data Portfolio",
+export const metadata = {
+  title: "NordNeuron",
+  description: "AI · Analytics · Enterprise Intelligence",
+  icons: {
+    icon: "/nordneuron-favicon.svg",
+  },
 };
 
 export default function RootLayout({

@@ -16,9 +16,11 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_12px_#22d3ee]" />
           
-          <h1 className="text-lg md:text-xl font-semibold tracking-[0.2em] text-white uppercase">
-            NordNeuron
-          </h1>
+        <img
+            src="/nordneuron-navbar.svg"
+            alt="NordNeuron"
+            className="h-8 w-auto"
+            />
         </div>
 
         {/* Navigation */}

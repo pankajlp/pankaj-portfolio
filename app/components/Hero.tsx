@@ -36,13 +36,11 @@ export default function Hero() {
           </div>
 
           {/* Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight text-white">
-            Building
-            <span className="block text-cyan-400">
-              Intelligent
-            </span>
-            Data Systems
-          </h1>
+          <img
+            src="/nordneuron-wordmark-light.svg"
+            alt="NordNeuron"
+            className="w-[420px] max-w-full mb-8"
+            />
 
           {/* Description */}
           <p className="mt-8 text-lg text-white/70 leading-relaxed max-w-xl">

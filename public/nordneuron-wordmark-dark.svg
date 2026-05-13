@@ -1,0 +1,46 @@
+<svg width="320" height="80" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>NordNeuron — Wordmark Dark</title>
+  <desc>NordNeuron logo wordmark on dark background</desc>
+
+  <rect width="320" height="80" rx="10" fill="#080e14"/>
+
+  <defs>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Hex outline -->
+  <polygon points="40,14 62,26 62,50 40,62 18,50 18,26"
+           fill="none" stroke="#1a3040" stroke-width="1.2"/>
+
+  <!-- Neural edges -->
+  <line x1="40" y1="20" x2="40" y2="38" stroke="#00c8f0" stroke-width="1" opacity="0.5"/>
+  <line x1="40" y1="38" x2="56" y2="47" stroke="#00c8f0" stroke-width="1" opacity="0.5"/>
+  <line x1="40" y1="38" x2="24" y2="47" stroke="#00c8f0" stroke-width="1" opacity="0.5"/>
+  <line x1="56" y1="29" x2="40" y2="38" stroke="#00c8f0" stroke-width="1" opacity="0.5"/>
+  <line x1="24" y1="29" x2="40" y2="38" stroke="#00c8f0" stroke-width="1" opacity="0.5"/>
+
+  <!-- Outer nodes -->
+  <circle cx="40" cy="20" r="3.2" fill="#080e14" stroke="#00c8f0" stroke-width="1.2"/>
+  <circle cx="56" cy="29" r="3.2" fill="#080e14" stroke="#00c8f0" stroke-width="1.2"/>
+  <circle cx="56" cy="47" r="3.2" fill="#080e14" stroke="#00c8f0" stroke-width="1.2"/>
+  <circle cx="40" cy="56" r="3.2" fill="#080e14" stroke="#00c8f0" stroke-width="1.2"/>
+  <circle cx="24" cy="47" r="3.2" fill="#080e14" stroke="#00c8f0" stroke-width="1.2"/>
+  <circle cx="24" cy="29" r="3.2" fill="#080e14" stroke="#00c8f0" stroke-width="1.2"/>
+
+  <!-- Center node -->
+  <circle cx="40" cy="38" r="6" fill="#00c8f0" filter="url(#glow)"/>
+  <circle cx="40" cy="38" r="3" fill="#080e14"/>
+
+  <!-- Wordmark -->
+  <text x="76" y="46"
+        font-family="'Syne', 'Segoe UI', sans-serif"
+        font-size="26" font-weight="800"
+        fill="#e8edf2" letter-spacing="-0.01em">Nord</text>
+  <text x="148" y="46"
+        font-family="'Syne', 'Segoe UI', sans-serif"
+        font-size="26" font-weight="700"
+        fill="#00c8f0" letter-spacing="-0.01em">Neuron</text>
+</svg>
