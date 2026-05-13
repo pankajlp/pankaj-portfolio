@@ -82,7 +82,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             
             {/* Card 1 */}
-            <div className="group p-7 min-h-[260px] rounded-3xl border border-white/10 bg-white/80 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300">
+            <div className="group p-7 min-h-[260px] rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300">
             
             <BrainCircuit
                 className="text-cyan-400 mb-6"
@@ -100,7 +100,8 @@ export default function Hero() {
             </div>
 
             {/* Card 2 */}
-            <div className="group p-7 min-h-[260px] rounded-3xl border border-white/10 bg-white/80 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300">
+            <div className="group p-7 min-h-[260px] rounded-3xl border border-white/10 bg-white/[0.03
+            ] backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300">
             
             <Database
                 className="text-cyan-400 mb-6"
@@ -118,7 +119,8 @@ export default function Hero() {
             </div>
 
             {/* Card 3 */}
-            <div className="group p-7 min-h-[260px] rounded-3xl border border-white/10 bg-white/80 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300">
+            <div className="group p-7 min-h-[260px] rounded-3xl border border-white/10 bg-white/[0.03
+            ] backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300">
             
             <BarChart3
                 className="text-cyan-400 mb-6"
@@ -136,7 +138,7 @@ export default function Hero() {
             </div>
 
             {/* Card 4 */}
-            <div className="group p-7 min-h-[260px] rounded-3xl border border-white/10 bg-white/80 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300">
+            <div className="group p-7 min-h-[260px] rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300">
             
             <Workflow
                 className="text-cyan-400 mb-6"
