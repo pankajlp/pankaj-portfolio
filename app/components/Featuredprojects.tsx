@@ -9,13 +9,21 @@ import {
 } from "lucide-react";
 
 const projects = [
-  {
-    title: "Gate Pass Automation",
-    description:
-      "Digitized warehouse vehicle movement using Power Apps, SharePoint, and workflow automation for real-time operational visibility.",
-    icon: Workflow,
-    stack: ["Power Apps", "Power Automate", "SharePoint"],
-  },
+        {
+        title: "Gate Operations Platform",
+        description:
+            "Enterprise access control and logistics workflow platform for real-time vehicle tracking, dock visibility, operational automation, and AI-assisted warehouse monitoring.",
+            
+        icon: Workflow,
+
+        link: "/projects/gate-operations",
+
+        stack: [
+            "Power Apps",
+            "Power Automate",
+            "SharePoint",
+        ],
+        },
 
   {
     title: "Freight Rate Prediction ML",
@@ -26,10 +34,11 @@ const projects = [
   },
 
   {
-    title: "RFQ Intelligence Dashboard",
+    title: "Freight Intelligence Platform",
     description:
-      "Designed advanced Power BI dashboards for tender analytics, bidding insights, profitability tracking, and customer analysis.",
+      "Enterprise analytics platform for monitoring freight profitability, RFQ trends, operational intelligence, and AI-driven logistics insights.",
     icon: BarChart3,
+    link: "/projects/freight-intelligence",
     stack: ["Power BI", "DAX", "SQL"],
   },
 ];
@@ -76,7 +85,7 @@ export default function FeaturedProjects() {
           {projects.map((project, index) => {
             const Icon = project.icon;
 
-            return (
+            const Card = (
               <motion.div
                 key={project.title}
                 initial={{ opacity: 0, y: 40 }}
@@ -89,7 +98,7 @@ export default function FeaturedProjects() {
                 whileHover={{
                   y: -8,
                 }}
-                className="group relative rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl overflow-hidden"
+                className="group relative rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl overflow-hidden hover:border-cyan-400/20 transition-all duration-300"
               >
                 {/* Hover Glow */}
                 <div className="absolute inset-0 bg-cyan-400/[0.02] opacity-0 group-hover:opacity-100 transition-all duration-500" />
@@ -118,6 +127,13 @@ export default function FeaturedProjects() {
                     {project.description}
                   </p>
 
+                  {/* CTA */}
+                  {project.link && (
+                    <p className="mt-6 text-cyan-300 text-sm">
+                      View Platform →
+                    </p>
+                  )}
+
                   {/* Stack */}
                   <div className="mt-8 flex flex-wrap gap-3">
                     {project.stack.map((tech) => (
@@ -134,6 +150,24 @@ export default function FeaturedProjects() {
                   <div className="mt-10 h-px w-full bg-gradient-to-r from-cyan-400/40 to-transparent" />
                 </div>
               </motion.div>
+            );
+
+            if (project.link) {
+              return (
+                <a
+                  key={project.title}
+                  href={project.link}
+                  className="block"
+                >
+                  {Card}
+                </a>
+              );
+            }
+
+            return (
+              <div key={project.title}>
+                {Card}
+              </div>
             );
           })}
         </div>
