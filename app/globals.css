@@ -17,27 +17,32 @@ html {
 /* ─── Design Tokens ─────────────────────────────────────────── */
 :root {
   /* Palette */
-  --color-bg:          #f7f6f3;
-  --color-surface:     #ffffff;
-  --color-surface-2:   #f0ede8;
-  --color-border:      #e2ddd6;
-  --color-border-strong: #c9c3b9;
+  --color-bg:            #050505;
+  --color-surface:       #0a0f0f;
+  --color-surface-2:     #0f1a1a;
+  --color-surface-3:     #162020;
+  --color-border:        rgba(0, 207, 255, 0.08);
+  --color-border-strong: rgba(0, 207, 255, 0.18);
 
-  --color-text:        #1a1916;
-  --color-text-2:      #6b6560;
-  --color-text-3:      #a09990;
+  --color-text:          #f0f4f4;
+  --color-text-2:        #8fa8a8;
+  --color-text-3:        #4d6a6a;
 
-  --color-accent:      #c8a96e;
-  --color-accent-dark: #a8873e;
-  --color-accent-glow: rgba(200, 169, 110, 0.18);
+  --color-accent:        #00cfff;
+  --color-accent-dim:    rgba(0, 207, 255, 0.12);
+  --color-accent-glow:   rgba(0, 207, 255, 0.25);
+  --color-accent-dark:   #008faf;
+
+  --color-gold:          #c8a644;
+  --color-gold-dim:      rgba(200, 166, 68, 0.12);
 
   /* Fonts */
-  --font-display:      var(--font-grotesk), "Helvetica Neue", sans-serif;
-  --font-body:         var(--font-inter), Georgia, serif;
+  --font-display: var(--font-grotesk), "Helvetica Neue", sans-serif;
+  --font-body:    var(--font-inter), system-ui, sans-serif;
 
   /* Motion */
-  --ease-out-expo:     cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out-soft:  cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-soft: cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Radii */
   --radius-sm:   6px;
@@ -46,11 +51,11 @@ html {
   --radius-pill: 999px;
 
   /* Shadows */
-  --shadow-xs:  0 1px 2px rgba(26, 25, 22, 0.05);
-  --shadow-sm:  0 2px 8px rgba(26, 25, 22, 0.07), 0 1px 2px rgba(26, 25, 22, 0.04);
-  --shadow-md:  0 8px 24px rgba(26, 25, 22, 0.08), 0 2px 6px rgba(26, 25, 22, 0.04);
-  --shadow-lg:  0 20px 48px rgba(26, 25, 22, 0.10), 0 4px 12px rgba(26, 25, 22, 0.05);
-  --shadow-accent: 0 4px 20px rgba(200, 169, 110, 0.22);
+  --shadow-sm:     0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md:     0 8px 24px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg:     0 20px 48px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-accent: 0 0 24px rgba(0, 207, 255, 0.15), 0 0 48px rgba(0, 207, 255, 0.06);
+  --shadow-glow:   0 0 80px rgba(0, 207, 255, 0.08);
 }
 
 /* ─── Body ───────────────────────────────────────────────────── */
@@ -58,8 +63,8 @@ body {
   overflow-x: hidden;
   background-color: var(--color-bg);
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(200, 169, 110, 0.07) 0%, transparent 70%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.022'/%3E%3C/svg%3E");
+    radial-gradient(ellipse 60% 40% at 70% 0%, rgba(0, 207, 255, 0.04) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 30% at 20% 80%, rgba(0, 143, 175, 0.03) 0%, transparent 60%);
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: 16px;
@@ -83,7 +88,7 @@ h2 { font-size: clamp(1.8rem, 4vw, 3rem);   letter-spacing: -0.04em;  }
 h3 { font-size: clamp(1.3rem, 2.5vw, 2rem); }
 h4 { font-size: 1.25rem; }
 h5 { font-size: 1.05rem; }
-h6 { font-size: 0.9rem;  letter-spacing: 0.04em; text-transform: uppercase; }
+h6 { font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent); }
 
 p {
   color: var(--color-text-2);
@@ -91,15 +96,15 @@ p {
 }
 
 a {
-  color: var(--color-accent-dark);
+  color: var(--color-accent);
   text-decoration: none;
   transition: color 0.2s var(--ease-in-out-soft),
               opacity 0.2s var(--ease-in-out-soft);
 }
 
 a:hover {
-  color: var(--color-accent);
-  opacity: 0.85;
+  color: #fff;
+  opacity: 0.9;
 }
 
 strong, b {
@@ -110,7 +115,7 @@ strong, b {
 /* ─── Selection ──────────────────────────────────────────────── */
 ::selection {
   background: var(--color-accent);
-  color: #fff;
+  color: #050505;
 }
 
 /* ─── Focus ──────────────────────────────────────────────────── */
@@ -122,21 +127,20 @@ strong, b {
 
 /* ─── Scrollbar ──────────────────────────────────────────────── */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-surface-2);
+  background: var(--color-surface);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border-strong);
+  background: var(--color-surface-3);
   border-radius: var(--radius-pill);
-  border: 2px solid var(--color-surface-2);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-3);
+  background: var(--color-accent-dark);
 }
 
 /* ─── Divider ────────────────────────────────────────────────── */
