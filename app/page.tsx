@@ -5,6 +5,7 @@ import TechStack from "./components/Techstack";
 import FeaturedProjects from "./components/Featuredprojects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import AIAssistant from "./components/AIAssistant";
 import SupplyChainEcosystem from "./components/SupplyChainEcosystem";
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <TechStack />
       <Contact />
       <Footer />
+      <AIAssistant />
     </main>
   );
 }
