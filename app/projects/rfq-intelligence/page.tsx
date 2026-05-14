@@ -1,289 +1,611 @@
-export default function RFQIntelligenceConsole() {
-  const topCustomers = [
-    ["Mita", "$1.58M"],
-    ["Feedbug", "$1.32M"],
-    ["Photobug", "$1.22M"],
-    ["Podcat", "$1.05M"],
-    ["Voolia", "$1.05M"],
-    ["Zoomlounge", "$0.89M"],
-    ["Jetpulse", "$0.88M"],
-    ["Bubbletube", "$0.87M"],
-    ["Feedfish", "$0.87M"],
-    ["Kazio", "$0.86M"],
-  ];
-
-  const tableRows = [
-    ["Antwerp", "Dubai", "8.00", "Carrier Optimization"],
-    ["Antwerp", "Dubai", "13.00", "Risk Alert"],
-    ["Antwerp", "Hamburg", "14.00", "Carrier Optimization"],
-    ["Antwerp", "Hamburg", "30.00", "High Margin"],
-    ["Antwerp", "Hamburg", "14.50", "Review Pricing"],
-    ["Antwerp", "Hamburg", "22.00", "Risk Alert"],
-    ["Antwerp", "Los Angeles", "7.50", "Carrier Optimization"],
-    ["Antwerp", "Los Angeles", "31.00", "High Margin"],
-  ];
-
+const kpis = [
+  {
+    title: "RFQs Processed",
+    value: "2,184",
+    change: "+28%",
+  },
+  {
+    title: "Tender Win Rate",
+    value: "64%",
+    change: "+9%",
+  },
+  {
+    title: "AI Recommendations",
+    value: "1.4K",
+    change: "+31%",
+  },
+  {
+    title: "Processing Time Saved",
+    value: "312 hrs",
+    change: "-42%",
+  },
+];
+const rfqs = [
+  {
+    customer: "Unilever",
+    lane: "Shanghai → Rotterdam",
+    value: "$420K",
+    status: "AI Recommended",
+    confidence: "96%",
+  },
+  {
+    customer: "Nestlé",
+    lane: "Singapore → Hamburg",
+    value: "$310K",
+    status: "Under Review",
+    confidence: "82%",
+  },
+  {
+    customer: "Amazon",
+    lane: "Nhava Sheva → Los Angeles",
+    value: "$880K",
+    status: "High Margin",
+    confidence: "94%",
+  },
+  {
+    customer: "IKEA",
+    lane: "Busan → Antwerp",
+    value: "$270K",
+    status: "Risk Alert",
+    confidence: "71%",
+  },
+];
+const recommendations = [
+  {
+    title: "High Profitability Opportunity",
+    description:
+      "AI identified strong margin potential for APAC → EU refrigerated cargo lanes based on historical conversion and carrier trends.",
+  },
+  {
+    title: "Risk Detection Alert",
+    description:
+      "Procurement risk increased for selected US-bound lanes due to volatile carrier pricing and reduced vessel availability.",
+  },
+  {
+    title: "Tender Optimization Insight",
+    description:
+      "AI recommends consolidating low-volume RFQs to improve pricing leverage and increase operational efficiency.",
+  },
+];
+export default function RFQIntelligencePage() {
   return (
-    <div className="min-h-screen bg-black p-6 text-white font-sans">
-      <div className="max-w-7xl mx-auto rounded-3xl border border-cyan-500/20 bg-[#030b1d] shadow-2xl overflow-hidden">
+    <main className="min-h-screen bg-black text-white">
+      
+      {/* Navbar */}
+      <div className="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
+        
+        <div className="max-w-7xl mx-auto px-8 h-[88px] flex items-center justify-between">
+          
+          <div className="flex items-center gap-4">
+            
+            <a
+              href="/"
+              className="text-white/60 hover:text-cyan-300 transition-colors"
+            >
+              ← Back
+            </a>
 
-        {/* Header */}
-        <div className="flex items-center gap-6 border-b border-cyan-500/10 px-8 py-5 bg-black/50">
-          <div className="w-16 h-16 rounded-2xl border border-cyan-500/20 bg-[#06152f] flex items-center justify-center">
-            <img
-              src="/nordneuron-icon-dark.svg"
-              alt="NordNeuron"
-              className="w-10 h-10"
-            />
+            <div className="w-px h-5 bg-white/10" />
+
+            <div>
+              <h1 className="text-white font-medium">
+                RFQ Intelligence Platform
+              </h1>
+
+              <p className="text-xs text-white/40">
+                AI Procurement Operations
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm">
+            
+            <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+
+            AI Engine Active
+          </div>
+        </div>
+      </div>
+
+      {/* Hero */}
+      <div className="relative max-w-7xl mx-auto px-8 py-16">
+        
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-cyan-500/10 blur-[180px] rounded-full pointer-events-none" />
+
+        <div className="relative z-10">
+          
+          <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm mb-8">
+            AI Procurement Intelligence
+          </div>
+
+          <h1 className="text-6xl font-bold leading-tight max-w-4xl">
+            RFQ Intelligence
+            <span className="block text-cyan-400">
+              Automation Platform
+            </span>
+          </h1>
+
+          <p className="mt-8 text-xl text-white/60 leading-relaxed max-w-3xl">
+            AI-powered procurement intelligence system designed
+            for RFQ processing, tender analytics, operational automation,
+            and intelligent bid decision support across logistics operations.
+          </p>
+        </div>
+      </div>
+      {/* KPI Dashboard */}
+<div className="max-w-7xl mx-auto px-8 pb-10">
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+    {kpis.map((item) => (
+      <div
+        key={item.title}
+        className="p-7 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl"
+      >
+        
+        <p className="text-sm text-white/50">
+          {item.title}
+        </p>
+
+        <h3 className="mt-5 text-4xl font-bold text-white">
+          {item.value}
+        </h3>
+
+        <div className="mt-5 inline-flex items-center px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+          {item.change}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+{/* AI Tender Analysis */}
+<div className="max-w-7xl mx-auto px-8 pb-16">
+  
+  <div className="p-8 rounded-3xl border border-white/10 bg-white/[0.03]">
+    
+    {/* Header */}
+    <div className="flex items-center justify-between mb-10">
+      
+      <div>
+        <h2 className="text-3xl font-semibold text-white">
+          AI Tender Intelligence
+        </h2>
+
+        <p className="mt-2 text-white/50">
+          AI-assisted RFQ analysis, profitability scoring, and procurement recommendations.
+        </p>
+      </div>
+
+      <div className="flex items-center gap-3 px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm">
+        
+        <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+
+        AI Analysis Live
+      </div>
+    </div>
+
+    {/* Table */}
+    <div className="overflow-x-auto">
+      
+      <table className="w-full">
+        
+        <thead>
+          <tr className="border-b border-white/10 text-left text-sm text-white/40">
+            
+            <th className="pb-5 font-medium">
+              Customer
+            </th>
+
+            <th className="pb-5 font-medium">
+              Trade Lane
+            </th>
+
+            <th className="pb-5 font-medium">
+              RFQ Value
+            </th>
+
+            <th className="pb-5 font-medium">
+              AI Recommendation
+            </th>
+
+            <th className="pb-5 font-medium">
+              Confidence
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {rfqs.map((item, index) => (
+            <tr
+              key={index}
+              className="border-b border-white/5 hover:bg-white/[0.02] transition-colors"
+            >
+              
+              <td className="py-6 text-white font-medium">
+                {item.customer}
+              </td>
+
+              <td className="py-6 text-white/70">
+                {item.lane}
+              </td>
+
+              <td className="py-6 text-cyan-300">
+                {item.value}
+              </td>
+
+              <td className="py-6">
+                <span
+                  className={`px-3 py-1 rounded-full text-sm border ${
+                    item.status === "Risk Alert"
+                      ? "bg-red-500/10 border-red-500/20 text-red-300"
+                      : item.status === "Under Review"
+                      ? "bg-yellow-500/10 border-yellow-500/20 text-yellow-300"
+                      : "bg-cyan-400/10 border-cyan-400/20 text-cyan-300"
+                  }`}
+                >
+                  {item.status}
+                </span>
+              </td>
+
+              <td className="py-6 text-white/50">
+                {item.confidence}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{/* AI Recommendation Engine */}
+<div className="max-w-7xl mx-auto px-8 pb-24">
+  
+  <div className="flex items-center justify-between mb-10">
+    
+    <div>
+      <h2 className="text-3xl font-semibold text-white">
+        AI Recommendation Engine
+      </h2>
+
+      <p className="mt-2 text-white/50">
+        AI-generated procurement insights and tender optimization recommendations.
+      </p>
+    </div>
+
+    <div className="px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm">
+      Predictive Intelligence Active
+    </div>
+  </div>
+
+  <div className="grid lg:grid-cols-3 gap-6">
+    {recommendations.map((item, index) => (
+      <div
+        key={index}
+        className="p-7 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl"
+      >
+        
+        {/* Top */}
+        <div className="flex items-center justify-between">
+          
+          <div className="w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_12px_#22d3ee]" />
+
+          <div className="text-xs text-cyan-300 tracking-[0.2em]">
+            AI
+          </div>
+        </div>
+
+        {/* Content */}
+        <h3 className="mt-8 text-2xl font-semibold text-white leading-snug">
+          {item.title}
+        </h3>
+
+        <p className="mt-5 text-white/60 leading-relaxed">
+          {item.description}
+        </p>
+
+        {/* Footer */}
+        <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+          
+          <span className="text-sm text-white/40">
+            Recommendation Confidence
+          </span>
+
+          <span className="text-cyan-300 font-medium">
+            95%
+          </span>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+{/* AI Architecture */}
+<div className="max-w-7xl mx-auto px-8 pb-24">
+  
+  <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10">
+    
+    {/* LEFT */}
+    <div className="p-10 rounded-3xl border border-white/10 bg-white/[0.03]">
+      
+      <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm mb-8">
+        AI System Architecture
+      </div>
+
+      <h2 className="text-4xl font-bold text-white leading-tight">
+        AI-assisted procurement intelligence
+        powered by local inference and
+        structured analytics workflows.
+      </h2>
+
+      <p className="mt-8 text-white/60 text-lg leading-relaxed">
+        The platform combines RFQ ingestion, AI parsing,
+        structured querying, and operational analytics
+        into a unified procurement intelligence system
+        designed for enterprise tender workflows.
+      </p>
+
+      {/* Flow */}
+      <div className="mt-12 space-y-6">
+        
+        <div className="flex items-start gap-5">
+          
+          <div className="w-10 h-10 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 text-sm">
+            01
           </div>
 
           <div>
-            <h1 className="text-5xl font-bold tracking-tight">
-              RFQ Intelligence Platform
-            </h1>
+            <h3 className="text-xl text-white font-medium">
+              RFQ Document Ingestion
+            </h3>
 
-            <p className="mt-2 text-cyan-300/70 text-lg">
-              AI Procurement & Tender Intelligence Console
+            <p className="mt-2 text-white/60 leading-relaxed">
+              Procurement documents and tender files processed through structured extraction workflows.
             </p>
           </div>
         </div>
 
-        {/* Filters */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
-
-          {[
-            {
-              title: "Carrier",
-              items: ["Select all", "CGM", "CMA"],
-            },
-            {
-              title: "Shipment_Mode",
-              items: ["Select all", "Air", "FCL", "LCL", "Rail"],
-            },
-            {
-              title: "Risk_Level",
-              items: ["Select all", "High", "Low", "Medium"],
-            },
-            {
-              title: "Submission_Date",
-              items: ["Last", "4", "Months"],
-            },
-          ].map((filter) => (
-            <div
-              key={filter.title}
-              className="rounded-2xl border border-cyan-500/20 bg-[#06152f] p-4"
-            >
-              <div className="text-sm text-white/70 mb-3">
-                {filter.title}
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                {filter.items.map((item) => (
-                  <div
-                    key={item}
-                    className="px-4 py-2 rounded-lg border border-white/10 bg-black/30 text-sm text-white/90"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* KPI Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-6">
-
-          {[
-            {
-              title: "Total RFQ Value",
-              value: "$77M",
-              color: "text-cyan-400",
-            },
-            {
-              title: "Avg Margin %",
-              value: "20.87",
-              color: "text-violet-400",
-            },
-            {
-              title: "RFQs Processed",
-              value: "307",
-              color: "text-emerald-400",
-            },
-            {
-              title: "Avg AI Confidence",
-              value: "84.02",
-              color: "text-orange-400",
-            },
-          ].map((card) => (
-            <div
-              key={card.title}
-              className="rounded-2xl border border-cyan-500/20 bg-black p-8 text-center shadow-[0_0_40px_rgba(34,211,238,0.05)]"
-            >
-              <div className="text-white/80 text-2xl">
-                {card.title}
-              </div>
-
-              <div className={`mt-6 text-6xl font-bold ${card.color}`}>
-                {card.value}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Main Grid */}
-        <div className="grid lg:grid-cols-[1.2fr_0.9fr_0.9fr] gap-4 p-6">
-
-          {/* Top Customers */}
-          <div className="rounded-2xl border border-cyan-500/20 bg-[#06152f] p-6">
-            <h2 className="text-3xl font-semibold mb-8">
-              Top Customers by RFQ Value
-            </h2>
-
-            <div className="space-y-4">
-              {topCustomers.map(([name, value], index) => (
-                <div key={name}>
-                  <div className="flex items-center justify-between text-sm mb-2">
-                    <span className="text-white/80">{name}</span>
-                    <span className="text-cyan-300">{value}</span>
-                  </div>
-
-                  <div className="h-5 rounded-full bg-black/40 overflow-hidden">
-                    <div
-                      className="h-full rounded-full bg-cyan-400"
-                      style={{ width: `${100 - index * 4}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
+        <div className="flex items-start gap-5">
+          
+          <div className="w-10 h-10 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 text-sm">
+            02
           </div>
 
-          {/* Donut */}
-          <div className="rounded-2xl border border-cyan-500/20 bg-[#06152f] p-6 flex flex-col items-center justify-center">
-            <h2 className="text-3xl font-semibold mb-8 text-center">
-              RFQ Status Distribution
-            </h2>
+          <div>
+            <h3 className="text-xl text-white font-medium">
+              AI Parsing & Classification
+            </h3>
 
-            <div className="relative w-72 h-72 rounded-full bg-[conic-gradient(#38bdf8_0deg_100deg,#34d399_100deg_190deg,#818cf8_190deg_280deg,#fb923c_280deg_360deg)] flex items-center justify-center">
-              <div className="w-36 h-36 rounded-full bg-[#06152f]" />
-            </div>
-
-            <div className="flex gap-4 mt-8 text-sm flex-wrap justify-center">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-sky-400" /> Lost
-              </div>
-
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-emerald-400" /> Pending
-              </div>
-
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-violet-400" /> Won
-              </div>
-
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-orange-400" /> Under Review
-              </div>
-            </div>
-          </div>
-
-          {/* Insights */}
-          <div className="rounded-2xl border border-cyan-500/20 bg-[#06152f] p-6">
-            <h2 className="text-3xl font-semibold mb-8">
-              Insights
-            </h2>
-
-            <div className="space-y-8 text-lg leading-relaxed text-white/80">
-              <p>
-                At <span className="text-cyan-300">$1,576,790</span>, Mita had the highest RFQ Value and was 82.30% higher than Kazio.
-              </p>
-
-              <p>
-                AI detected increasing profitability across APAC → EU refrigerated lanes.
-              </p>
-
-              <p>
-                Procurement workflows flagged multiple high-risk pricing scenarios requiring review.
-              </p>
-            </div>
+            <p className="mt-2 text-white/60 leading-relaxed">
+              LLM workflows extract shipment structures, lanes, pricing signals, and operational entities.
+            </p>
           </div>
         </div>
 
-        {/* Bottom Grid */}
-        <div className="grid lg:grid-cols-[1.2fr_1fr] gap-4 px-6 pb-6">
-
-          {/* Trend */}
-          <div className="rounded-2xl border border-cyan-500/20 bg-[#06152f] p-6">
-            <h2 className="text-3xl font-semibold mb-8">
-              Tender Volume Trend
-            </h2>
-
-            <div className="relative h-72 flex items-end justify-between px-4">
-
-              {[45, 60, 95, 72, 30].map((height, i) => (
-                <div
-                  key={i}
-                  className="flex flex-col items-center gap-3"
-                >
-                  <div
-                    className="w-16 rounded-t-2xl bg-cyan-400/80"
-                    style={{ height: `${height * 2}px` }}
-                  />
-
-                  <div className="text-sm text-white/50">
-                    {[
-                      "January",
-                      "February",
-                      "March",
-                      "April",
-                      "May",
-                    ][i]}
-                  </div>
-                </div>
-              ))}
-            </div>
+        <div className="flex items-start gap-5">
+          
+          <div className="w-10 h-10 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 text-sm">
+            03
           </div>
 
-          {/* Table */}
-          <div className="rounded-2xl border border-cyan-500/20 bg-[#06152f] p-6 overflow-hidden">
-            <h2 className="text-3xl font-semibold mb-8">
-              Trade Lane Intelligence
-            </h2>
+          <div>
+            <h3 className="text-xl text-white font-medium">
+              Text-to-SQL Intelligence Layer
+            </h3>
 
-            <div className="overflow-auto rounded-xl border border-white/10">
-              <table className="w-full text-left">
-                <thead className="bg-black/40 text-cyan-300 text-sm uppercase tracking-wide">
-                  <tr>
-                    <th className="px-4 py-4">POL</th>
-                    <th className="px-4 py-4">POD</th>
-                    <th className="px-4 py-4">Avg Margin</th>
-                    <th className="px-4 py-4">AI Recommendation</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {tableRows.map((row, index) => (
-                    <tr
-                      key={index}
-                      className="border-t border-white/5 hover:bg-white/[0.03]"
-                    >
-                      {row.map((cell, i) => (
-                        <td
-                          key={i}
-                          className="px-4 py-4 text-white/80 whitespace-nowrap"
-                        >
-                          {cell}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            <p className="mt-2 text-white/60 leading-relaxed">
+              AI-generated SQL workflows enable procurement analytics and operational querying across structured datasets.
+            </p>
           </div>
         </div>
+
+        <div className="flex items-start gap-5">
+          
+          <div className="w-10 h-10 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 text-sm">
+            04
+          </div>
+
+          <div>
+            <h3 className="text-xl text-white font-medium">
+              Procurement Intelligence
+            </h3>
+
+            <p className="mt-2 text-white/60 leading-relaxed">
+              AI systems surface profitability signals, operational risks, and tender optimization recommendations.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
+
+    {/* RIGHT */}
+    <div className="p-10 rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-400/10 to-transparent">
+      
+      <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm mb-8">
+        Technical Stack
+      </div>
+
+      <div className="space-y-5">
+        
+        {[
+          "DuckDB",
+          "llama.cpp",
+          "Local LLM Inference",
+          "Python",
+          "Text-to-SQL",
+          "Prompt Engineering",
+          "Procurement Analytics",
+          "Operational Intelligence",
+        ].map((tech) => (
+          <div
+            key={tech}
+            className="flex items-center justify-between p-5 rounded-2xl border border-white/10 bg-black/30"
+          >
+            <span className="text-white">
+              {tech}
+            </span>
+
+            <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_#22d3ee]" />
+          </div>
+        ))}
+      </div>
+
+      {/* Footer */}
+      <div className="mt-10 pt-8 border-t border-white/10">
+        
+        <p className="text-white/60 leading-relaxed">
+          Designed as a scalable enterprise AI workflow
+          for procurement operations, tender intelligence,
+          and logistics decision support systems.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{/* AI Workflow Pipeline */}
+<div className="max-w-7xl mx-auto px-8 pb-28">
+  
+  <div className="text-center max-w-4xl mx-auto">
+    
+    <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm mb-8">
+      AI Workflow Orchestration
+    </div>
+
+    <h2 className="text-5xl font-bold text-white leading-tight">
+      Intelligent procurement workflows
+      powered by AI-driven data pipelines.
+    </h2>
+
+    <p className="mt-8 text-xl text-white/60 leading-relaxed">
+      RFQ documents flow through structured extraction,
+      AI classification, query orchestration, and
+      operational intelligence layers designed for
+      enterprise procurement teams.
+    </p>
+  </div>
+
+  {/* Pipeline */}
+  <div className="relative mt-24">
+    
+    {/* Connection Line */}
+    <div className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
+
+    <div className="grid lg:grid-cols-4 gap-8 relative z-10">
+      
+      {[
+        {
+          step: "01",
+          title: "RFQ Upload",
+          desc: "Procurement documents and tender files ingested into AI workflow pipelines.",
+        },
+        {
+          step: "02",
+          title: "AI Extraction",
+          desc: "LLM systems identify shipment entities, pricing structures, and operational metadata.",
+        },
+        {
+          step: "03",
+          title: "SQL Intelligence",
+          desc: "Text-to-SQL workflows generate structured procurement analytics queries.",
+        },
+        {
+          step: "04",
+          title: "Decision Support",
+          desc: "AI recommendations surface profitability insights and operational risks.",
+        },
+      ].map((item) => (
+        <div
+          key={item.step}
+          className="group relative p-8 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:border-cyan-400/20 transition-all duration-500"
+        >
+          
+          {/* Hover Glow */}
+          <div className="absolute inset-0 bg-cyan-400/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+
+          {/* Step */}
+          <div className="relative z-10 flex items-center justify-between">
+            
+            <div className="w-12 h-12 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 font-medium">
+              {item.step}
+            </div>
+
+            <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_12px_#22d3ee]" />
+          </div>
+
+          {/* Title */}
+          <h3 className="relative z-10 mt-10 text-2xl font-semibold text-white">
+            {item.title}
+          </h3>
+
+          {/* Description */}
+          <p className="relative z-10 mt-5 text-white/60 leading-relaxed">
+            {item.desc}
+          </p>
+
+          {/* Bottom Accent */}
+          <div className="relative z-10 mt-10 h-px w-full bg-gradient-to-r from-cyan-400/40 to-transparent" />
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+{/* Live Dashboard */}
+<div className="max-w-7xl mx-auto px-8 pb-28">
+  
+  <div className="mb-10">
+    
+    <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm mb-6">
+      Live Enterprise Dashboard
+    </div>
+
+    <h2 className="text-5xl font-bold text-white leading-tight">
+      Real-time procurement intelligence
+      powered by Power BI Service.
+    </h2>
+
+    <p className="mt-6 text-xl text-white/60 leading-relaxed max-w-4xl">
+      Interactive analytics platform for RFQ intelligence,
+      tender visibility, operational monitoring,
+      and AI-assisted procurement workflows.
+    </p>
+  </div>
+
+  {/* Embed Shell */}
+  <div className="relative rounded-[32px] border border-cyan-400/10 bg-white/[0.03] p-4 backdrop-blur-xl overflow-hidden shadow-[0_0_80px_rgba(34,211,238,0.08)]">
+    
+    {/* Glow */}
+    <div className="absolute inset-0 bg-cyan-400/[0.02] pointer-events-none" />
+
+    {/* Top Bar */}
+    <div className="relative z-10 flex items-center justify-between px-4 py-4 border-b border-white/10">
+      
+      <div className="flex items-center gap-3">
+        
+        <div className="w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_12px_#22d3ee]" />
+
+        <span className="text-white/80">
+          RFQ Intelligence Console
+        </span>
+      </div>
+
+      <div className="text-sm text-cyan-300">
+        Live Analytics
+      </div>
+    </div>
+
+    {/* Dashboard */}
+    <div className="relative z-10 mt-4 rounded-2xl overflow-hidden">
+      
+      <iframe
+        title="RFQ Intelligence Dashboard"
+        width="100%"
+        height="900"
+        src="https://app.powerbi.com/view?r=eyJrIjoiZmNiOTJkNmQtYzgxNy00YWQ2LWJmNzUtN2I1NGUwNTY0ZDdiIiwidCI6ImM5OWExOWQ1LWFlMjAtNDg3Ni05M2JiLWU4ZTI1MTgwYmRmMyJ9"
+        frameBorder="0"
+        allowFullScreen={true}
+        className="rounded-2xl bg-black"
+      />
+    </div>
+  </div>
+</div>
+    </main>
   );
 }
