@@ -9,45 +9,57 @@ import {
 } from "lucide-react";
 
 const projects = [
-        {
-        title: "Gate Operations Platform",
-        description:
-            "Enterprise access control and logistics workflow platform for real-time vehicle tracking, dock visibility, operational automation, and AI-assisted warehouse monitoring.",
-            
-        icon: Workflow,
-
-        link: "/projects/gate-operations",
-
-        stack: [
-            "Power Apps",
-            "Power Automate",
-            "SharePoint",
-        ],
-        },
-
-  {
-  title: "RFQ Intelligence Platform",
-  description:
-    "AI-powered procurement intelligence system for RFQ processing, tender analytics, bid optimization, and operational automation across logistics workflows.",
-
-  icon: BrainCircuit,
-
-  link: "/projects/rfq-intelligence",
-
-  stack: [
-    "Python",
-    "LLMs",
-    "Automation",
-  ],
-},
-
   {
     title: "Freight Intelligence Platform",
+
+    category: "Strategic Analytics Platform",
+
     description:
       "Enterprise analytics platform for monitoring freight profitability, RFQ trends, operational intelligence, and AI-driven logistics insights.",
+
     icon: BarChart3,
+
     link: "/projects/freight-intelligence",
+
     stack: ["Power BI", "DAX", "SQL"],
+  },
+
+  {
+    title: "Gate Operations Platform",
+
+    category: "Operational Control System",
+
+    description:
+      "Enterprise access control and logistics workflow platform for real-time vehicle tracking, dock visibility, operational automation, and AI-assisted warehouse monitoring.",
+
+    icon: Workflow,
+
+    link: "/projects/gate-operations",
+
+    stack: [
+      "Power Apps",
+      "Power Automate",
+      "SharePoint",
+    ],
+  },
+
+  {
+    title: "RFQ Intelligence Platform",
+
+    category: "AI Procurement Engine",
+
+    description:
+      "AI-powered procurement intelligence system for RFQ processing, tender analytics, bid optimization, and operational automation across logistics workflows.",
+
+    icon: BrainCircuit,
+
+    link: "/projects/rfq-intelligence",
+
+    stack: [
+      "Python",
+      "LLMs",
+      "Automation",
+    ],
   },
 ];
 
@@ -117,7 +129,10 @@ export default function FeaturedProjects() {
                   <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-cyan-400/10 border border-cyan-400/20 mb-8">
                     <Icon className="text-cyan-400" size={28} />
                   </div>
-
+                    {/* Category */}
+                    <div className="inline-flex px-4 py-2 rounded-full border border-white/10 bg-black/30 text-xs text-white/50">
+                    {project.category}
+                    </div>
                   {/* Title */}
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="text-2xl font-semibold text-white leading-snug">

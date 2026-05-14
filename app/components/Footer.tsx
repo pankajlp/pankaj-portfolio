@@ -85,7 +85,7 @@ export default function Footer() {
               <div className="flex flex-col gap-3 text-white/60">
                 
                 <a
-                  href="https://github.com/"
+                  href="https://github.com/pankajlp"
                   target="_blank"
                   className="group flex items-center gap-2 hover:text-cyan-400 transition-colors duration-300"
                 >
@@ -98,7 +98,7 @@ export default function Footer() {
                 </a>
 
                 <a
-                  href="https://linkedin.com/"
+                  href="https://linkedin.com/in/pankajlp"
                   target="_blank"
                   className="group flex items-center gap-2 hover:text-cyan-400 transition-colors duration-300"
                 >

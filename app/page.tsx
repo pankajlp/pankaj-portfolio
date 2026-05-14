@@ -5,15 +5,17 @@ import TechStack from "./components/Techstack";
 import FeaturedProjects from "./components/Featuredprojects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-
+import SupplyChainEcosystem from "./components/SupplyChainEcosystem";
 export default function Home() {
   return (
     <main className="bg-black text-white overflow-hidden">
       <Navbar />
       <Hero />
       <About />
-      <TechStack />
+      <SupplyChainEcosystem />
+      
       <FeaturedProjects />
+      <TechStack />
       <Contact />
       <Footer />
     </main>

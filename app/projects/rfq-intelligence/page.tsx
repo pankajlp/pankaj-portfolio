@@ -317,6 +317,236 @@ export default function RFQIntelligencePage() {
     ))}
   </div>
 </div>
+{/* AI Architecture */}
+<div className="max-w-7xl mx-auto px-8 pb-24">
+  
+  <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10">
+    
+    {/* LEFT */}
+    <div className="p-10 rounded-3xl border border-white/10 bg-white/[0.03]">
+      
+      <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm mb-8">
+        AI System Architecture
+      </div>
+
+      <h2 className="text-4xl font-bold text-white leading-tight">
+        AI-assisted procurement intelligence
+        powered by local inference and
+        structured analytics workflows.
+      </h2>
+
+      <p className="mt-8 text-white/60 text-lg leading-relaxed">
+        The platform combines RFQ ingestion, AI parsing,
+        structured querying, and operational analytics
+        into a unified procurement intelligence system
+        designed for enterprise tender workflows.
+      </p>
+
+      {/* Flow */}
+      <div className="mt-12 space-y-6">
+        
+        <div className="flex items-start gap-5">
+          
+          <div className="w-10 h-10 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 text-sm">
+            01
+          </div>
+
+          <div>
+            <h3 className="text-xl text-white font-medium">
+              RFQ Document Ingestion
+            </h3>
+
+            <p className="mt-2 text-white/60 leading-relaxed">
+              Procurement documents and tender files processed through structured extraction workflows.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-5">
+          
+          <div className="w-10 h-10 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 text-sm">
+            02
+          </div>
+
+          <div>
+            <h3 className="text-xl text-white font-medium">
+              AI Parsing & Classification
+            </h3>
+
+            <p className="mt-2 text-white/60 leading-relaxed">
+              LLM workflows extract shipment structures, lanes, pricing signals, and operational entities.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-5">
+          
+          <div className="w-10 h-10 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 text-sm">
+            03
+          </div>
+
+          <div>
+            <h3 className="text-xl text-white font-medium">
+              Text-to-SQL Intelligence Layer
+            </h3>
+
+            <p className="mt-2 text-white/60 leading-relaxed">
+              AI-generated SQL workflows enable procurement analytics and operational querying across structured datasets.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-5">
+          
+          <div className="w-10 h-10 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 text-sm">
+            04
+          </div>
+
+          <div>
+            <h3 className="text-xl text-white font-medium">
+              Procurement Intelligence
+            </h3>
+
+            <p className="mt-2 text-white/60 leading-relaxed">
+              AI systems surface profitability signals, operational risks, and tender optimization recommendations.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    {/* RIGHT */}
+    <div className="p-10 rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-400/10 to-transparent">
+      
+      <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm mb-8">
+        Technical Stack
+      </div>
+
+      <div className="space-y-5">
+        
+        {[
+          "DuckDB",
+          "llama.cpp",
+          "Local LLM Inference",
+          "Python",
+          "Text-to-SQL",
+          "Prompt Engineering",
+          "Procurement Analytics",
+          "Operational Intelligence",
+        ].map((tech) => (
+          <div
+            key={tech}
+            className="flex items-center justify-between p-5 rounded-2xl border border-white/10 bg-black/30"
+          >
+            <span className="text-white">
+              {tech}
+            </span>
+
+            <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_#22d3ee]" />
+          </div>
+        ))}
+      </div>
+
+      {/* Footer */}
+      <div className="mt-10 pt-8 border-t border-white/10">
+        
+        <p className="text-white/60 leading-relaxed">
+          Designed as a scalable enterprise AI workflow
+          for procurement operations, tender intelligence,
+          and logistics decision support systems.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{/* AI Workflow Pipeline */}
+<div className="max-w-7xl mx-auto px-8 pb-28">
+  
+  <div className="text-center max-w-4xl mx-auto">
+    
+    <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm mb-8">
+      AI Workflow Orchestration
+    </div>
+
+    <h2 className="text-5xl font-bold text-white leading-tight">
+      Intelligent procurement workflows
+      powered by AI-driven data pipelines.
+    </h2>
+
+    <p className="mt-8 text-xl text-white/60 leading-relaxed">
+      RFQ documents flow through structured extraction,
+      AI classification, query orchestration, and
+      operational intelligence layers designed for
+      enterprise procurement teams.
+    </p>
+  </div>
+
+  {/* Pipeline */}
+  <div className="relative mt-24">
+    
+    {/* Connection Line */}
+    <div className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
+
+    <div className="grid lg:grid-cols-4 gap-8 relative z-10">
+      
+      {[
+        {
+          step: "01",
+          title: "RFQ Upload",
+          desc: "Procurement documents and tender files ingested into AI workflow pipelines.",
+        },
+        {
+          step: "02",
+          title: "AI Extraction",
+          desc: "LLM systems identify shipment entities, pricing structures, and operational metadata.",
+        },
+        {
+          step: "03",
+          title: "SQL Intelligence",
+          desc: "Text-to-SQL workflows generate structured procurement analytics queries.",
+        },
+        {
+          step: "04",
+          title: "Decision Support",
+          desc: "AI recommendations surface profitability insights and operational risks.",
+        },
+      ].map((item) => (
+        <div
+          key={item.step}
+          className="group relative p-8 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:border-cyan-400/20 transition-all duration-500"
+        >
+          
+          {/* Hover Glow */}
+          <div className="absolute inset-0 bg-cyan-400/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+
+          {/* Step */}
+          <div className="relative z-10 flex items-center justify-between">
+            
+            <div className="w-12 h-12 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 font-medium">
+              {item.step}
+            </div>
+
+            <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_12px_#22d3ee]" />
+          </div>
+
+          {/* Title */}
+          <h3 className="relative z-10 mt-10 text-2xl font-semibold text-white">
+            {item.title}
+          </h3>
+
+          {/* Description */}
+          <p className="relative z-10 mt-5 text-white/60 leading-relaxed">
+            {item.desc}
+          </p>
+
+          {/* Bottom Accent */}
+          <div className="relative z-10 mt-10 h-px w-full bg-gradient-to-r from-cyan-400/40 to-transparent" />
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
     </main>
   );
 }

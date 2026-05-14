@@ -69,8 +69,8 @@ export default function Contact() {
 
           {/* LinkedIn */}
           <motion.a
-            href="https://linkedin.com/"
-            target=""
+            href="https://linkedin.com/in/pankajlp"
+            target="_blank"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -94,7 +94,7 @@ export default function Contact() {
 
           {/* GitHub */}
           <motion.a
-            href="https://github.com/"
+            href="https://github.com/pankajlp"
             target="_blank"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
