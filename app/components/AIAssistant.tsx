@@ -2,6 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 
+type Message = {
+  role: "user" | "assistant";
+  content: string;
+};
+
 export default function AIAssistant() {
 
   const [open, setOpen] = useState(false);
@@ -10,12 +15,7 @@ export default function AIAssistant() {
 
   const [message, setMessage] = useState("");
 
-  const [messages, setMessages] = useState<
-    {
-      role: string;
-      content:string
-       }[]>([]);
-  
+  const [messages, setMessages] = useState<Message[]>([]);
 
   const [loading, setLoading] = useState(false);
 
@@ -27,15 +27,18 @@ export default function AIAssistant() {
     });
   }, [messages, loading]);
 
-  async function sendMessage() {
+  async function sendMessage(customMessage?: string) {
 
-    if (!message.trim()) return;
+    const finalMessage =
+      typeof customMessage === "string"
+        ? customMessage
+        : message;
 
-    const currentMessage = message;
+    if (!finalMessage.trim()) return;
 
-    const userMessage = {
+    const userMessage: Message = {
       role: "user",
-      content: currentMessage,
+      content: finalMessage,
     };
 
     setMessages((prev) => [...prev, userMessage]);
@@ -52,32 +55,38 @@ export default function AIAssistant() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          message: currentMessage,
+          message: finalMessage,
         }),
       });
 
       const data = await res.json();
 
+      await new Promise((resolve) =>
+        setTimeout(resolve, 700)
+      );
+
+      const assistantMessage: Message = {
+        role: "assistant",
+        content: data.response,
+      };
+
       setMessages((prev) => [
         ...prev,
-        {
-          role: "assistant",
-          content: data.response,
-        },
+        assistantMessage,
       ]);
 
     } catch (error) {
+
+      console.error(error);
 
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
           content:
-            "Something went wrong while connecting to NordNeuron AI.",
+            "NordNeuron AI is currently experiencing high traffic. Please try again in a moment.",
         },
       ]);
-
-      console.error(error);
 
     } finally {
 
@@ -123,7 +132,7 @@ export default function AIAssistant() {
       {open && (
         <div className="fixed bottom-24 right-6 z-[100] w-[420px] max-w-[calc(100vw-24px)] h-[80vh] max-h-[720px] rounded-[32px] border border-cyan-400/20 bg-[#050816]/95 backdrop-blur-2xl shadow-[0_0_80px_rgba(34,211,238,0.12)] overflow-hidden flex flex-col">
 
-          {/* Top */}
+          {/* Header */}
           <div className="px-6 py-5 border-b border-white/10 bg-black/30 shrink-0">
             
             <div className="flex items-center justify-between">
@@ -147,27 +156,28 @@ export default function AIAssistant() {
             </div>
           </div>
 
-          {/* Messages */}
           {/* Suggested Prompts */}
-        {messages.length === 0 && (
-        <div className="px-4 pt-4 flex flex-wrap gap-3">
-            
-            {[
-            "Explain the RFQ Intelligence Platform",
-            "What technologies power NordNeuron?",
-            "How does the AI workflow work?",
-            "Explain the Gate Operations system",
-            ].map((prompt) => (
-            <button
-                key={prompt}
-                onClick={() => setMessage(prompt)}
-                className="text-left px-4 py-3 rounded-2xl border border-white/10 bg-white/[0.03] text-white/70 text-sm hover:border-cyan-400/30 hover:text-white transition-all duration-300"
-            >
-                {prompt}
-            </button>
-            ))}
-        </div>
-        )}
+          {messages.length === 0 && (
+            <div className="px-4 pt-4 flex flex-wrap gap-3 shrink-0">
+              
+              {[
+                "Explain the RFQ Intelligence Platform",
+                "What technologies power NordNeuron?",
+                "How does the AI workflow work?",
+                "Explain the Gate Operations system",
+              ].map((prompt) => (
+                <button
+                  key={prompt}
+                  onClick={() => sendMessage(prompt)}
+                  className="text-left px-4 py-2.5 rounded-2xl border border-white/10 bg-white/[0.03] text-white/70 text-[13px] hover:border-cyan-400/30 hover:text-white transition-all duration-300"
+                >
+                  {prompt}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* Messages */}
           <div className="flex-1 overflow-y-auto px-5 py-5 space-y-4">
 
             {messages.map((msg, index) => (
@@ -210,7 +220,7 @@ export default function AIAssistant() {
               />
 
               <button
-                onClick={sendMessage}
+                onClick={() => sendMessage()}
                 disabled={loading}
                 className="px-6 rounded-2xl bg-cyan-400 text-black font-medium hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:hover:scale-100"
               >
