@@ -44,7 +44,12 @@ export default function Navbar() {
           >
             Work
           </a>
-
+            <a
+  href="/insights"
+  className="hover:text-cyan-400 transition-colors duration-300"
+>
+  Insights
+</a>
           <a
             href="#stack"
             className="text-sm text-white/65 hover:text-cyan-300 transition-colors duration-300"

@@ -143,7 +143,7 @@ export default function AIAssistant() {
                 </h2>
 
                 <p className="text-cyan-300 text-sm mt-1">
-                  Enterprise Intelligence Copilot
+                  Enterprise Intelligence Assistant
                 </p>
               </div>
 
