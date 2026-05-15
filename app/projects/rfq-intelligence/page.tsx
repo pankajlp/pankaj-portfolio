@@ -460,6 +460,31 @@ export default function RFQIntelligencePage() {
     </div>
   </div>
 </div>
+<div className="mt-16 rounded-3xl border border-cyan-400/20 bg-cyan-400/[0.04] p-8">
+
+  <p className="text-cyan-300 text-sm uppercase tracking-[0.2em] mb-4">
+    Open Source Architecture
+  </p>
+
+  <h3 className="text-3xl font-semibold text-white">
+    AI Procurement Intelligence Systems
+  </h3>
+
+  <p className="mt-5 text-white/65 leading-relaxed max-w-2xl">
+    A public demonstration of the AI-native procurement
+    intelligence architecture behind the RFQ Intelligence system —
+    combining DuckDB, local LLM workflows,
+    schema-aware prompting, and text-to-SQL orchestration.
+  </p>
+
+  <a
+    href="https://github.com/pankajlp/ai-procurement-intelligence"
+    target="_blank"
+    className="inline-flex items-center gap-3 mt-8 px-6 py-4 rounded-2xl bg-cyan-400 text-black font-medium hover:scale-[1.02] transition-all duration-300"
+  >
+    View GitHub Repository →
+  </a>
+</div>
 {/* AI Workflow Pipeline */}
 <div className="max-w-7xl mx-auto px-8 pb-28">
   
