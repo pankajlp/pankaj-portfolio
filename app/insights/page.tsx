@@ -53,6 +53,29 @@ export default function InsightsPage() {
               May 2026 · 6 min read
             </div>
           </Link>
+          <Link
+            href="/insights/building-ai-procurement-intelligence-systems"
+            className="block rounded-3xl border border-black/10 bg-white p-10 hover:border-[#1a4fd6]/30 transition-all duration-300"
+          >
+            <div className="text-sm text-[#1a4fd6] mb-4">
+              Enterprise AI
+            </div>
+
+            <h2 className="text-4xl font-serif leading-tight">
+              Building AI Procurement Intelligence Systems
+            </h2>
+
+            <p className="mt-5 text-[#5a5a54] text-lg leading-relaxed max-w-3xl">
+      Procurement workflows are fragmented by design.
+      RFQs arrive as spreadsheets, PDFs, emails,
+      pricing tables, carrier notes, and operational updates —
+      usually spread across disconnected systems.
+            </p>
+
+            <div className="mt-6 text-sm text-[#9a9a92]">
+              May 2026 · 6 min read
+            </div>
+          </Link>
 
         </div>
       </div>

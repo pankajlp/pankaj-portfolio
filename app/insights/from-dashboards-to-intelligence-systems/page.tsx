@@ -1,5 +1,37 @@
+"use client";
+import { useEffect, useState } from "react";
 
 export default function ArticlePage() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+useEffect(() => {
+
+  const updateScrollProgress = () => {
+
+    const scrollTop = window.scrollY;
+
+    const docHeight =
+      document.documentElement.scrollHeight -
+      window.innerHeight;
+
+    const progress =
+      (scrollTop / docHeight) * 100;
+
+    setScrollProgress(progress);
+  };
+
+  window.addEventListener(
+    "scroll",
+    updateScrollProgress
+  );
+
+  return () =>
+    window.removeEventListener(
+      "scroll",
+      updateScrollProgress
+    );
+
+}, []);
   return (
     <main className="min-h-screen bg-[#fafaf8] text-[#1a1a18]">
       {/* Header */}
@@ -11,6 +43,15 @@ export default function ArticlePage() {
   href="/insights"
   className="inline-flex items-center gap-2 text-white/40 hover:text-cyan-300 transition-colors duration-300 mb-10"
 >
+  <div className="fixed top-0 left-0 w-full h-[3px] bg-white/5 z-[200]">
+
+  <div
+    className="h-full bg-cyan-400 transition-all duration-150"
+    style={{
+      width: `${scrollProgress}%`,
+    }}
+  />
+</div>
   ← Back to Insights
 </a>
         <span className="text-[12px] font-medium text-[#1a4fd6] bg-[#eef2fd] px-3 py-1 rounded-full uppercase tracking-[0.08em]">
