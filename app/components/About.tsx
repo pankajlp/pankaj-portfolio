@@ -104,7 +104,12 @@ export default function About() {
               </div>
             </div>
           </div>
-
+            <a
+  href="/about"
+  className="inline-flex items-center gap-3 mt-10 px-6 py-4 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 hover:bg-cyan-400 hover:text-black transition-all duration-300"
+>
+  Read Full Story →
+</a>
           {/* Tags */}
           <div className="mt-10 flex flex-wrap gap-3">
             {tags.map((tag) => (

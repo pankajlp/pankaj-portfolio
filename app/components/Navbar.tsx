@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-10">
           
           <a
-            href="/about"
+            href="#about"
             className="text-sm text-white/65 hover:text-cyan-300 transition-colors duration-300"
           >
             About
