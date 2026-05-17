@@ -106,7 +106,12 @@ export default function RFQIntelligencePage() {
           </div>
         </div>
       </div>
-
+        <a
+  href="/case-studies/rfq-delta-intelligence"
+  className="inline-flex items-center gap-3 mt-8 text-cyan-300 hover:text-cyan-200 transition-colors duration-300"
+>
+  Read Technical Case Study →
+</a>
       {/* Hero */}
       <div className="relative max-w-7xl mx-auto px-8 py-16">
         
