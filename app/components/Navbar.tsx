@@ -27,12 +27,12 @@ export default function Navbar() {
             className="h-9 w-auto"
           />
         </a>
-
+  
         {/* Navigation */}
         <div className="hidden md:flex items-center gap-10">
           
           <a
-            href="#about"
+            href="/about"
             className="text-sm text-white/65 hover:text-cyan-300 transition-colors duration-300"
           >
             About

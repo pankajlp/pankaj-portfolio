@@ -20,12 +20,12 @@ export default function InsightsPage() {
             Insights
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-serif leading-tight tracking-tight">
+          <h1 className="text-3xl md:text-4xl font-serif leading-tight tracking-tight">
             Operational intelligence,
             AI systems, and enterprise architecture.
           </h1>
 
-          <p className="mt-6 text-lg text-[#5a5a54] leading-relaxed max-w-3xl">
+          <p className="mt-6 text-lg text-[#5a5a54] leading-relaxed max-w-2xl">
             Notes and essays exploring AI-native operations,
             logistics intelligence, analytics engineering,
             and the future of enterprise systems.
@@ -40,7 +40,7 @@ export default function InsightsPage() {
             href="/insights/from-dashboards-to-intelligence-systems"
             className="group block overflow-hidden rounded-3xl border border-black/10 bg-white hover:border-[#1a4fd6]/30 hover:shadow-xl transition-all duration-300"
           >
-            <div className="relative w-full h-[260px] overflow-hidden">
+           <div className="relative w-full h-[260px] overflow-hidden">
               <Image
                 src="/dashboard_to_ai.png"
                 alt="From Dashboards to Intelligence Systems"
