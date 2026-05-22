@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
@@ -30,21 +29,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${grotesk.variable}`}>
 
-        {children}
+      <head>
 
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-MF276Y5NRC"
-          strategy="afterInteractive"
-        />
+        {/* Google Adsense */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1339913868506845"
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-MF276Y5NRC"
+          strategy="afterInteractive"
+        />
+
+        {/* Analytics Config */}
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -59,8 +61,12 @@ export default function RootLayout({
           `}
         </Script>
 
+      </head>
+
+      <body className={`${inter.variable} ${grotesk.variable}`}>
+        {children}
       </body>
+
     </html>
   );
 }
-
