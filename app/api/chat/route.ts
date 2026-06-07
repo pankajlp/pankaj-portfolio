@@ -14,11 +14,12 @@ export async function POST(req: NextRequest) {
 
     const userMessage = body.message;
 
-    const prompt = `
+    const response = await ai.models.generateContent({
+      model: "gemini-2.5-flash",
+      contents: userMessage,
+      config: {
+        systemInstruction: `
 ${knowledgeBase}
-
-User Question:
-${userMessage}
 
 Answer as NordNeuron AI.
 
@@ -28,11 +29,8 @@ Guidelines:
 - Sound enterprise-focused
 - Explain systems clearly
 - Avoid hallucinating fake clients
-`;
-
-    const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
-      contents: prompt,
+`,
+      },
     });
 
     return NextResponse.json({

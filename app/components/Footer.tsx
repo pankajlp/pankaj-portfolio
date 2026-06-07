@@ -47,28 +47,28 @@ export default function Footer() {
 
               <div className="flex flex-col gap-3 text-white/60">
                 <a
-                  href="#about"
+                  href="/#about"
                   className="hover:text-cyan-400 transition-colors duration-300"
                 >
                   About
                 </a>
 
                 <a
-                  href="#work"
+                  href="/#work"
                   className="hover:text-cyan-400 transition-colors duration-300"
                 >
                   Work
                 </a>
 
                 <a
-                  href="#stack"
+                  href="/#stack"
                   className="hover:text-cyan-400 transition-colors duration-300"
                 >
                   Stack
                 </a>
 
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="hover:text-cyan-400 transition-colors duration-300"
                 >
                   Contact

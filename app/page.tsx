@@ -12,10 +12,9 @@ export default function Home() {
     <main className="bg-black text-white overflow-hidden">
       <Navbar />
       <Hero />
-      <About />
       <SupplyChainEcosystem />
-      
       <FeaturedProjects />
+      <About />
       <TechStack />
       <Contact />
       <Footer />

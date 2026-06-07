@@ -32,14 +32,16 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-10">
           
           <a
-            href="#about"
+            href="/#about"
             className="text-sm text-white/65 hover:text-cyan-300 transition-colors duration-300"
           >
             About
           </a>
-
+          <a href="/labs">
+  Labs
+</a>
           <a
-            href="#work"
+            href="/#work"
             className="text-sm text-white/65 hover:text-cyan-300 transition-colors duration-300"
           >
             Work
@@ -51,14 +53,14 @@ export default function Navbar() {
   Insights
 </a>
           <a
-            href="#stack"
+            href="/#stack"
             className="text-sm text-white/65 hover:text-cyan-300 transition-colors duration-300"
           >
             Stack
           </a>
 
           <a
-            href="#contact"
+            href="/contact"
             className="text-sm text-white/65 hover:text-cyan-300 transition-colors duration-300"
           >
             Contact
@@ -67,7 +69,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <a
-          href="#work"
+          href="/#work"
           className="hidden md:flex items-center px-6 py-3 rounded-full border border-cyan-400/20 bg-cyan-400/5 text-cyan-300 text-sm hover:bg-cyan-400/10 hover:border-cyan-400/40 transition-all duration-300"
         >
           Explore Work

@@ -33,11 +33,10 @@ export default function RootLayout({
       <head>
 
         {/* Google Adsense */}
-        <Script
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1339913868506845"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
 
         {/* Google Analytics */}

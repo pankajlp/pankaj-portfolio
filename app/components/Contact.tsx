@@ -38,6 +38,15 @@ export default function Contact() {
             automation systems, or enterprise intelligence?
             Let’s connect.
           </p>
+
+          <div className="mt-8">
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-cyan-400 text-black font-semibold hover:scale-105 transition-all duration-300"
+            >
+              Open Inquiry Form →
+            </a>
+          </div>
         </motion.div>
 
         {/* Contact Cards */}

@@ -27,3 +27,30 @@ a {
 button {
   font: inherit;
 }
+
+/* ── WAVY SVG ANIMATIONS ────────────────────────── */
+@keyframes waveShift1 {
+  0%   { d: path("M0,120 C160,80 320,160 480,110 C600,72 720,130 900,85 L900,340 L0,340 Z"); }
+  50%  { d: path("M0,100 C140,140 300,70  480,125 C640,175 760,90  900,115 L900,340 L0,340 Z"); }
+  100% { d: path("M0,120 C160,80 320,160 480,110 C600,72 720,130 900,85 L900,340 L0,340 Z"); }
+}
+@keyframes waveShift2 {
+  0%   { d: path("M0,150 C180,115 360,175 540,135 C680,105 800,150 900,130 L900,340 L0,340 Z"); }
+  50%  { d: path("M0,140 C160,170 340,105 520,148 C680,185 800,120 900,155 L900,340 L0,340 Z"); }
+  100% { d: path("M0,150 C180,115 360,175 540,135 C680,105 800,150 900,130 L900,340 L0,340 Z"); }
+}
+@keyframes waveShift3 {
+  0%   { d: path("M0,175 C200,148 380,195 560,162 C700,138 820,170 900,158 L900,340 L0,340 Z"); }
+  50%  { d: path("M0,165 C180,190 360,148 540,175 C700,198 820,152 900,178 L900,340 L0,340 Z"); }
+  100% { d: path("M0,175 C200,148 380,195 560,162 C700,138 820,170 900,158 L900,340 L0,340 Z"); }
+}
+@keyframes waveShift4 {
+  0%   { d: path("M0,195 C220,175 400,208 580,188 C720,172 840,196 900,188 L900,340 L0,340 Z"); }
+  50%  { d: path("M0,188 C200,205 380,172 560,195 C720,215 840,180 900,200 L900,340 L0,340 Z"); }
+  100% { d: path("M0,195 C220,175 400,208 580,188 C720,172 840,196 900,188 L900,340 L0,340 Z"); }
+}
+
+.animate-wave-1 { animation: waveShift1 9s ease-in-out infinite; }
+.animate-wave-2 { animation: waveShift2 11s ease-in-out infinite; }
+.animate-wave-3 { animation: waveShift3 13s ease-in-out infinite; }
+.animate-wave-4 { animation: waveShift4 7s  ease-in-out infinite; }
