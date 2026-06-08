@@ -36,6 +36,14 @@ export default function LabsPage() {
       liveUrl: "https://convert.nordneuron.com",
       githubUrl: "https://github.com/pankajlp/nexconvert-tool",
     },
+    {
+      title: "Folder Flow",
+      status: "Live",
+      description:
+        "A client-side web application designed to organize local file directories engineered from first principles, utilizing a visual tree-like dashboard for real-time hierarchy previews.",
+      liveUrl: "https://flow.nordneuron.com",
+      githubUrl: "https://github.com/pankajlp/folder-organizer",
+    },
   ];
 
   return (
