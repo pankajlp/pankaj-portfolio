@@ -94,7 +94,7 @@ export default function FeaturedProjects() {
           </h2>
 
           <p className="mt-6 text-lg text-white/60 leading-relaxed max-w-2xl">
-            Selected work focused on analytics engineering,
+            Selected work focused on web development, analytics engineering,
             intelligent automation, logistics systems,
             and enterprise AI workflows.
           </p>
