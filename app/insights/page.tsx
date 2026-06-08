@@ -2,239 +2,145 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function InsightsPage() {
+  const articles = [
+    {
+      href: "/insights/why-rag-fails-in-production",
+      title: "Why RAG Fails in Production — and What to Do About It",
+      category: "Enterprise AI",
+      description: "Retrieval-augmented generation works remarkably well in demos. Operational environments are a different problem entirely. Real enterprise data is messy by nature.",
+      image: "/rag_fails_cover.png",
+      meta: "June 2026 · 7 min read"
+    },
+    {
+      href: "/insights/fine-tuning-vs-prompting-the-real-tradeoff",
+      title: "Fine-tuning vs. Prompting — The Real Tradeoff",
+      category: "LLM Engineering",
+      description: "The debate between fine-tuning and prompt engineering isn't just technical — it's an operational decision. Here is a guide on where the trade-off actually lies.",
+      image: "/finetuning_vs_prompting_cover.png",
+      meta: "June 2026 · 6 min read"
+    },
+    {
+      href: "/insights/text-to-sql-for-operational-analytics",
+      title: "Text-to-SQL for Operational Analytics — Beyond the Toy Examples",
+      category: "Analytics Engineering",
+      description: "Making natural language querying work against real freight and procurement data requires hybrid search, metadata filters, self-correction loops, and context budgeting.",
+      image: "/text_to_sql_cover.png",
+      meta: "June 2026 · 7 min read"
+    },
+    {
+      href: "/insights/llmops-what-enterprise-teams-miss",
+      title: "LLMOps — What Enterprise Teams Miss When Moving to Production",
+      category: "LLMOps",
+      description: "Deploying a prototype is straightforward. Operating one in production requires observability, prompt versioning, structured evaluation frameworks, and context window discipline.",
+      image: "/llmops_cover.png",
+      meta: "June 2026 · 6 min read"
+    },
+    {
+      href: "/insights/from-dashboards-to-intelligence-systems",
+      title: "From Dashboards to Intelligence Systems",
+      category: "Enterprise AI",
+      description: "Why visualizing data is no longer enough — and what comes after the dashboard era.",
+      image: "/dashboard_to_ai.png",
+      meta: "May 2026 · 6 min read"
+    },
+    {
+      href: "/insights/building-ai-procurement-intelligence-systems",
+      title: "Building AI Procurement Intelligence Systems",
+      category: "Enterprise AI",
+      description: "Procurement workflows are fragmented by design. RFQs arrive as spreadsheets, PDFs, emails, pricing tables, carrier notes, and operational updates — usually spread across disconnected systems.",
+      image: "/procurement.png",
+      meta: "May 2026 · 6 min read"
+    }
+  ];
+
   return (
-    <main className="min-h-screen bg-[#fafaf8] text-[#1a1a18] px-6 py-10">
+    <main className="min-h-screen bg-[#fafaf8] text-[#1a1a18] font-sans selection:bg-cyan-150">
       
-      {/* Back Button */}
-      <div className="max-w-6xl mx-auto">
-        <a
-          href="/"
-          className="inline-flex items-center gap-2 text-[#6b7280] hover:text-[#1a4fd6] transition-colors duration-300 mb-12 text-sm"
-        >
-          ← Back
-        </a>
+      {/* Clean Navigation Bar */}
+      <nav className="sticky top-0 z-50 bg-[#fafaf8]/85 backdrop-blur-md border-b border-black/5 px-6 py-5">
+        <div className="max-w-4xl mx-auto flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-3 shrink-0">
+            {/* Accent Dot */}
+            <div className="w-2.5 h-2.5 rounded-full bg-cyan-500 shadow-[0_0_8px_#06b6d4]" />
+            <span className="text-[17px] font-bold tracking-tight font-serif text-black">
+              NordNeuron
+            </span>
+          </Link>
+          <Link
+            href="/"
+            className="text-sm font-medium text-[#6b7280] hover:text-[#1a4fd6] transition-colors duration-300 flex items-center gap-1.5"
+          >
+            <span>←</span> Back to Home
+          </Link>
+        </div>
+      </nav>
 
-        {/* Hero Section */}
-        <div className="mb-16 max-w-4xl">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#eef2fd] text-[#1a4fd6] text-sm mb-6">
+      {/* Main Content */}
+      <div className="max-w-4xl mx-auto px-6 pt-16 pb-24">
+        
+        {/* Page Header */}
+        <div className="mb-16 border-b border-black/5 pb-10">
+          <h1 className="text-4xl md:text-5xl font-bold font-serif tracking-tight text-[#242424]">
             Insights
-          </div>
-
-          <h1 className="text-3xl md:text-4xl font-serif leading-tight tracking-tight">
-            Operational intelligence,
-            AI systems, and enterprise architecture.
           </h1>
-
-          <p className="mt-6 text-lg text-[#5a5a54] leading-relaxed max-w-2xl">
-            Notes and essays exploring AI-native operations,
-            logistics intelligence, analytics engineering,
-            and the future of enterprise systems.
+          <p className="mt-4 text-base md:text-lg text-[#5a5a54] leading-relaxed max-w-2xl">
+            Field notes, essays, and analysis exploring AI-native systems,
+            logistics intelligence, and modern enterprise architecture.
           </p>
         </div>
 
-        {/* Articles Grid */}
-        <div className="grid grid-cols-1 gap-10">
+        {/* Medium-style Articles Feed */}
+        <div className="divide-y divide-black/5">
+          {articles.map((article) => (
+            <Link
+              key={article.href}
+              href={article.href}
+              className="group block py-10 first:pt-0 last:pb-0"
+            >
+              <div className="flex flex-col-reverse md:flex-row md:items-start justify-between gap-6 md:gap-10">
+                
+                {/* Left Side: Content */}
+                <div className="flex-1 space-y-2.5">
+                  
+                  {/* Category and Date */}
+                  <div className="flex items-center gap-2 text-[13px] text-[#757575]">
+                    <span className="font-semibold text-black/80">{article.category}</span>
+                    <span>·</span>
+                    <span>{article.meta.split(" · ")[0]}</span>
+                  </div>
 
-          {/* New Article 1: Why RAG Fails */}
-          <Link
-            href="/insights/why-rag-fails-in-production"
-            className="group block overflow-hidden rounded-3xl border border-black/10 bg-white hover:border-[#1a4fd6]/30 hover:shadow-xl transition-all duration-300"
-          >
-            <div className="relative w-full h-[260px] overflow-hidden">
-              <Image
-                src="/rag_fails_cover.png"
-                alt="Why RAG Fails in Production — and What to Do About It"
-                fill
-                priority
-                className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
-              />
-            </div>
+                  {/* Title */}
+                  <h2 className="text-xl md:text-2xl font-bold font-serif text-[#242424] group-hover:text-[#1a4fd6] transition-colors duration-300 leading-snug">
+                    {article.title}
+                  </h2>
 
-            <div className="p-8 md:p-10">
-              <div className="text-sm text-[#1a4fd6] mb-4 font-medium uppercase tracking-wider">
-                Enterprise AI
+                  {/* Subtitle / Description */}
+                  <p className="text-[#5a5a54] text-sm md:text-base leading-relaxed line-clamp-2">
+                    {article.description}
+                  </p>
+
+                  {/* Read Time */}
+                  <div className="pt-1 text-[13px] text-[#757575]">
+                    {article.meta.split(" · ")[1]}
+                  </div>
+
+                </div>
+
+                {/* Right Side: Small Square Thumbnail */}
+                <div className="relative w-full md:w-36 h-40 md:h-28 shrink-0 overflow-hidden rounded-lg bg-[#f0f0f0] border border-black/5">
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    className="object-cover group-hover:scale-102 transition-transform duration-500"
+                  />
+                </div>
+
               </div>
-
-              <h2 className="text-3xl md:text-4xl font-serif leading-tight tracking-tight">
-                Why RAG Fails in Production — and What to Do About It
-              </h2>
-
-              <p className="mt-5 text-[#5a5a54] text-base md:text-lg leading-relaxed max-w-3xl">
-                Retrieval-augmented generation works remarkably well in demos. Operational environments are a different problem entirely. Real enterprise data is messy by nature.
-              </p>
-
-              <div className="mt-6 text-sm text-[#9a9a92]">
-                June 2026 · 7 min read
-              </div>
-            </div>
-          </Link>
-
-          {/* New Article 2: Fine-tuning vs Prompting */}
-          <Link
-            href="/insights/fine-tuning-vs-prompting-the-real-tradeoff"
-            className="group block overflow-hidden rounded-3xl border border-black/10 bg-white hover:border-[#1a4fd6]/30 hover:shadow-xl transition-all duration-300"
-          >
-            <div className="relative w-full h-[260px] overflow-hidden">
-              <Image
-                src="/finetuning_vs_prompting_cover.png"
-                alt="Fine-tuning vs. Prompting — The Real Tradeoff"
-                fill
-                className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
-              />
-            </div>
-
-            <div className="p-8 md:p-10">
-              <div className="text-sm text-[#1a4fd6] mb-4 font-medium uppercase tracking-wider">
-                LLM Engineering
-              </div>
-
-              <h2 className="text-3xl md:text-4xl font-serif leading-tight tracking-tight">
-                Fine-tuning vs. Prompting — The Real Tradeoff
-              </h2>
-
-              <p className="mt-5 text-[#5a5a54] text-base md:text-lg leading-relaxed max-w-3xl">
-                The debate between fine-tuning and prompt engineering isn't just technical — it's an operational decision. Here is a guide on where the trade-off actually lies.
-              </p>
-
-              <div className="mt-6 text-sm text-[#9a9a92]">
-                June 2026 · 6 min read
-              </div>
-            </div>
-          </Link>
-
-          {/* New Article 3: Text-to-SQL */}
-          <Link
-            href="/insights/text-to-sql-for-operational-analytics"
-            className="group block overflow-hidden rounded-3xl border border-black/10 bg-white hover:border-[#1a4fd6]/30 hover:shadow-xl transition-all duration-300"
-          >
-            <div className="relative w-full h-[260px] overflow-hidden">
-              <Image
-                src="/text_to_sql_cover.png"
-                alt="Text-to-SQL for Operational Analytics — Beyond the Toy Examples"
-                fill
-                className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
-              />
-            </div>
-
-            <div className="p-8 md:p-10">
-              <div className="text-sm text-[#1a4fd6] mb-4 font-medium uppercase tracking-wider">
-                Analytics Engineering
-              </div>
-
-              <h2 className="text-3xl md:text-4xl font-serif leading-tight tracking-tight">
-                Text-to-SQL for Operational Analytics — Beyond the Toy Examples
-              </h2>
-
-              <p className="mt-5 text-[#5a5a54] text-base md:text-lg leading-relaxed max-w-3xl">
-                Making natural language querying work against real freight and procurement data requires hybrid search, metadata filters, self-correction loops, and context budgeting.
-              </p>
-
-              <div className="mt-6 text-sm text-[#9a9a92]">
-                June 2026 · 7 min read
-              </div>
-            </div>
-          </Link>
-
-          {/* New Article 4: LLMOps */}
-          <Link
-            href="/insights/llmops-what-enterprise-teams-miss"
-            className="group block overflow-hidden rounded-3xl border border-black/10 bg-white hover:border-[#1a4fd6]/30 hover:shadow-xl transition-all duration-300"
-          >
-            <div className="relative w-full h-[260px] overflow-hidden">
-              <Image
-                src="/llmops_cover.png"
-                alt="LLMOps — What Enterprise Teams Miss When Moving to Production"
-                fill
-                className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
-              />
-            </div>
-
-            <div className="p-8 md:p-10">
-              <div className="text-sm text-[#1a4fd6] mb-4 font-medium uppercase tracking-wider">
-                LLMOps
-              </div>
-
-              <h2 className="text-3xl md:text-4xl font-serif leading-tight tracking-tight">
-                LLMOps — What Enterprise Teams Miss When Moving to Production
-              </h2>
-
-              <p className="mt-5 text-[#5a5a54] text-base md:text-lg leading-relaxed max-w-3xl">
-                Deploying a prototype is straightforward. Operating one in production requires observability, prompt versioning, structured evaluation frameworks, and context window discipline.
-              </p>
-
-              <div className="mt-6 text-sm text-[#9a9a92]">
-                June 2026 · 6 min read
-              </div>
-            </div>
-          </Link>
-
-          {/* Existing Article 1 */}
-          <Link
-            href="/insights/from-dashboards-to-intelligence-systems"
-            className="group block overflow-hidden rounded-3xl border border-black/10 bg-white hover:border-[#1a4fd6]/30 hover:shadow-xl transition-all duration-300"
-          >
-            <div className="relative w-full h-[260px] overflow-hidden">
-              <Image
-                src="/dashboard_to_ai.png"
-                alt="From Dashboards to Intelligence Systems"
-                fill
-                className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
-              />
-            </div>
-
-            <div className="p-8 md:p-10">
-              <div className="text-sm text-[#1a4fd6] mb-4 font-medium uppercase tracking-wider">
-                Enterprise AI
-              </div>
-
-              <h2 className="text-3xl md:text-4xl font-serif leading-tight tracking-tight">
-                From Dashboards to Intelligence Systems
-              </h2>
-
-              <p className="mt-5 text-[#5a5a54] text-base md:text-lg leading-relaxed max-w-3xl">
-                Why visualizing data is no longer enough — and what comes after the dashboard era.
-              </p>
-
-              <div className="mt-6 text-sm text-[#9a9a92]">
-                May 2026 · 6 min read
-              </div>
-            </div>
-          </Link>
-
-          {/* Existing Article 2 */}
-          <Link
-            href="/insights/building-ai-procurement-intelligence-systems"
-            className="group block overflow-hidden rounded-3xl border border-black/10 bg-white hover:border-[#1a4fd6]/30 hover:shadow-xl transition-all duration-300"
-          >
-            <div className="relative w-full h-[260px] overflow-hidden">
-              <Image
-                src="/procurement.png"
-                alt="Building AI Procurement Intelligence Systems"
-                fill
-                className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
-              />
-            </div>
-
-            <div className="p-8 md:p-10">
-              <div className="text-sm text-[#1a4fd6] mb-4 font-medium uppercase tracking-wider">
-                Enterprise AI
-              </div>
-
-              <h2 className="text-3xl md:text-4xl font-serif leading-tight tracking-tight">
-                Building AI Procurement Intelligence Systems
-              </h2>
-
-              <p className="mt-5 text-[#5a5a54] text-base md:text-lg leading-relaxed max-w-3xl">
-                Procurement workflows are fragmented by design. RFQs arrive as spreadsheets, PDFs, emails, pricing tables, carrier notes, and operational updates — usually spread across disconnected systems.
-              </p>
-
-              <div className="mt-6 text-sm text-[#9a9a92]">
-                May 2026 · 6 min read
-              </div>
-            </div>
-          </Link>
-
+            </Link>
+          ))}
         </div>
+
       </div>
     </main>
   );
