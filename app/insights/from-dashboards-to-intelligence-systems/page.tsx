@@ -34,30 +34,32 @@ useEffect(() => {
 }, []);
   return (
     <main className="min-h-screen bg-[#fafaf8] text-[#1a1a18]">
-      {/* Header */}
-      <header className="border-b border-black/10 px-8 py-5 flex items-center justify-between">
-        <span className="text-[18px] tracking-tight font-serif">
-          Pankaj Kumar
-        </span>
-        <a
-  href="/insights"
-  className="inline-flex items-center gap-2 text-white/40 hover:text-cyan-300 transition-colors duration-300 mb-10"
->
-  <div className="fixed top-0 left-0 w-full h-[3px] bg-white/5 z-[200]">
+      {/* Scroll Progress Bar */}
+      <div className="fixed top-0 left-0 w-full h-[3px] bg-black/5 z-[200]">
+        <div
+          className="h-full bg-cyan-400 transition-all duration-150"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
 
-  <div
-    className="h-full bg-cyan-400 transition-all duration-150"
-    style={{
-      width: `${scrollProgress}%`,
-    }}
-  />
-</div>
-  ← Back to Insights
-</a>
-        <span className="text-[12px] font-medium text-[#1a4fd6] bg-[#eef2fd] px-3 py-1 rounded-full uppercase tracking-[0.08em]">
-          Enterprise AI
-        </span>
-      </header>
+      {/* Clean Navigation Bar */}
+      <nav className="sticky top-0 z-50 bg-[#fafaf8]/85 backdrop-blur-md border-b border-black/5 px-6 py-5">
+        <div className="max-w-4xl mx-auto flex items-center justify-between">
+          <a href="/" className="flex items-center gap-3 shrink-0">
+            {/* Accent Dot */}
+            <div className="w-2.5 h-2.5 rounded-full bg-cyan-500 shadow-[0_0_8px_#06b6d4]" />
+            <span className="text-[17px] font-bold tracking-tight font-serif text-black">
+              NordNeuron
+            </span>
+          </a>
+          <a
+            href="/insights"
+            className="text-sm font-medium text-[#6b7280] hover:text-[#1a4fd6] transition-colors duration-300 flex items-center gap-1.5"
+          >
+            <span>←</span> Back to Insights
+          </a>
+        </div>
+      </nav>
 
       {/* Article */}
       <article className="max-w-3xl mx-auto px-6 py-20">
