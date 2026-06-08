@@ -208,6 +208,18 @@ export default function AboutPage() {
               to build systems that participate in operations,
               not just visualize them.
             </p>
+
+            <div className="mt-16">
+              <a
+                href="/#work"
+                className="group inline-flex items-center gap-2 text-cyan-300 hover:text-cyan-400 transition-colors duration-300 text-xl font-medium"
+              >
+                <span className="group-hover:translate-x-1 transition-transform duration-300">
+                  →
+                </span>{" "}
+                Explore the work
+              </a>
+            </div>
           </div>
         </section>
       </div>
