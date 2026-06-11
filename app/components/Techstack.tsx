@@ -2,46 +2,41 @@
 
 import { motion } from "framer-motion";
 
-const stack = [
+const domains = [
   {
-    title: "Power BI",
+    number: "01",
+    title: "AI Agents & LLM Systems",
     description:
-      "Executive dashboards and operational intelligence systems.",
+      "Autonomous agents, RAG pipelines, and LLM orchestration that turn language models into reliable operational tools.",
+    tools: ["AI Agents", "RAG", "LangChain", "OpenAI / Claude", "Prompt Engineering"],
   },
   {
-    title: "SQL",
-    description:
-      "Data modeling, transformation, and analytics engineering.",
-  },
-  {
-    title: "Python",
-    description:
-      "Automation, ML pipelines, and enterprise tooling.",
-  },
-  {
-    title: "AI Workflows",
-    description:
-      "LLM orchestration, intelligent agents, and AI systems.",
-  },
-  {
+    number: "02",
     title: "Machine Learning",
     description:
-      "Predictive analytics for logistics and operations.",
+      "Predictive models for demand, pricing, and logistics — built, deployed, and monitored in production.",
+    tools: ["Python", "Scikit-learn", "Forecasting", "MLOps"],
   },
   {
-    title: "Power Apps",
+    number: "03",
+    title: "Data & Analytics Engineering",
     description:
-      "Internal enterprise applications and process digitization.",
+      "Scalable pipelines, semantic models, and executive-grade analytics that operations teams actually use.",
+    tools: ["SQL", "Power BI", "Data Pipelines", "Semantic Models"],
   },
   {
-    title: "Automation",
+    number: "04",
+    title: "Automation & Integration",
     description:
-      "Workflow optimization using Power Automate & APIs.",
+      "Workflow automation across approvals, reporting, and operations — connecting systems through APIs.",
+    tools: ["Power Automate", "Power Apps", "REST APIs", "Workflow Design"],
   },
   {
-    title: "Data Engineering",
+    number: "05",
+    title: "Web Engineering",
     description:
-      "Building scalable analytics infrastructure.",
+      "Modern, performant web platforms and interfaces for data products and intelligent applications.",
+    tools: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
 ];
 
@@ -49,74 +44,73 @@ export default function TechStack() {
   return (
     <section
       id="stack"
-      className="relative py-32 px-6 md:px-10 bg-black overflow-hidden"
+      className="relative py-32 px-6 md:px-10 bg-[#f5f4f0] overflow-hidden border-t border-stone-200"
     >
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-cyan-500/10 blur-[180px] rounded-full" />
-
       <div className="relative z-10 max-w-7xl mx-auto">
-        
+
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="max-w-3xl"
+          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16"
         >
-          <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm mb-6">
-            Technology Stack
+          <div>
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-px bg-stone-400" />
+              <span className="text-stone-500 font-syne text-[10px] uppercase tracking-[0.3em]">
+                Capabilities
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold font-syne uppercase tracking-tight text-stone-900 leading-[1.02]">
+              What We Build<br />
+              <span className="text-stone-400">With</span>
+            </h2>
           </div>
-
-          <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-            Systems, Analytics
-            <span className="block text-cyan-400">
-              & AI Infrastructure
-            </span>
-          </h2>
-
-          <p className="mt-6 text-lg text-white/60 leading-relaxed max-w-2xl">
-            A focused toolkit for building intelligent enterprise
-            platforms, automation systems, analytics workflows,
-            and modern AI-driven operations.
+          <p className="text-base text-stone-500 leading-relaxed max-w-sm font-light">
+            Five focused domains — from autonomous AI agents to the
+            data infrastructure underneath them.
           </p>
         </motion.div>
 
-        {/* Cards */}
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {stack.map((item, index) => (
+        {/* Domain rows */}
+        <div>
+          {domains.map((item, index) => (
             <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 30 }}
+              key={item.number}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.08,
-              }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
               viewport={{ once: true }}
-              whileHover={{
-                y: -6,
-              }}
-              className="group relative p-6 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl overflow-hidden hover:border-cyan-400/30 transition-all duration-300"
+              className="group border-t border-stone-200 py-10 grid md:grid-cols-[60px_1fr_1fr] gap-6 md:gap-10 hover:bg-white/50 transition-colors duration-300 md:px-4 md:-mx-4 rounded-lg"
             >
-              {/* Hover Glow */}
-              <div className="absolute inset-0 bg-cyan-400/[0.03] opacity-0 group-hover:opacity-100 transition-all duration-300" />
+              {/* Number */}
+              <div className="text-sm text-stone-400 group-hover:text-stone-900 font-syne font-bold tracking-[0.2em] pt-1.5 transition-colors duration-300">
+                {item.number}
+              </div>
 
-              {/* Dot */}
-              <div className="relative z-10 w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_14px_#22d3ee] mb-6" />
+              {/* Title + description */}
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold font-syne uppercase tracking-tight text-stone-900 leading-tight">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm md:text-base text-stone-500 leading-relaxed font-light max-w-md">
+                  {item.description}
+                </p>
+              </div>
 
-              {/* Title */}
-              <h3 className="relative z-10 text-xl font-semibold text-white">
-                {item.title}
-              </h3>
-
-              {/* Description */}
-              <p className="relative z-10 mt-4 text-sm text-white/60 leading-relaxed">
-                {item.description}
-              </p>
-
-              {/* Bottom Accent */}
-              <div className="relative z-10 mt-8 h-px w-full bg-gradient-to-r from-cyan-400/50 to-transparent" />
+              {/* Tool chips */}
+              <div className="flex flex-wrap content-start gap-2.5 md:justify-end">
+                {item.tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="h-fit px-4 py-2 rounded-full border border-stone-300 text-[11px] font-syne uppercase tracking-widest text-stone-600 group-hover:border-stone-400 transition-colors duration-300"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>

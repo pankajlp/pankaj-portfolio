@@ -1,21 +1,26 @@
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import TransitionLink from "../components/TransitionLink";
+
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-black text-white overflow-hidden">
+    <main className="min-h-screen bg-[#f5f4f0] text-[#1c1917] overflow-hidden">
+      <Navbar />
 
       {/* Glow */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-cyan-500/10 blur-[180px] rounded-full pointer-events-none" />
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-stone-900/10 blur-[180px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-28">
 
         {/* Tag */}
-        <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm mb-8">
+        <div className="inline-flex items-center px-4 py-2 rounded-full border border-stone-200/20 bg-stone-900 text-white/10 text-stone-500 text-sm mb-8">
           About NordNeuron
         </div>
 
         {/* Hero */}
         <h1 className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight max-w-5xl">
           Building AI-native
-          <span className="block text-cyan-400">
+          <span className="block text-stone-950">
             operational intelligence systems
           </span>
           for logistics and enterprise workflows.
@@ -24,17 +29,17 @@ export default function AboutPage() {
         {/* Intro */}
         <div className="mt-12 grid lg:grid-cols-[1.2fr_0.8fr] gap-16">
 
-          <div className="space-y-8 text-xl leading-[1.9] text-white/70">
+          <div className="space-y-8 text-xl leading-[1.9] text-stone-700">
 
             <p>
-              I’m Pankaj Kumar — a data and AI systems engineer
+              NordNeuron is led by Pankaj Kumar — a data and AI systems engineer
               focused on operational intelligence,
               enterprise analytics,
               and AI-native workflow design.
             </p>
 
             <p>
-              My background combines logistics operations,
+              Our background combines logistics operations,
               procurement workflows,
               analytics engineering,
               and enterprise reporting systems —
@@ -46,7 +51,7 @@ export default function AboutPage() {
 
             <p>
               Over the last several years,
-              I’ve worked across supply chain environments
+              we’ve worked across supply chain environments
               where operational decisions depend on fragmented data:
               spreadsheets,
               dashboards,
@@ -56,47 +61,47 @@ export default function AboutPage() {
             </p>
 
             <p>
-              That experience gradually shifted my focus
+              That experience gradually shifted our focus
               from building dashboards
               toward designing systems that can reason across operational context itself.
             </p>
           </div>
 
           {/* Side Card */}
-          <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 h-fit backdrop-blur-xl">
+          <div className="rounded-3xl border border-stone-200 bg-white/60 p-8 h-fit backdrop-blur-xl shadow-sm">
 
-            <div className="text-sm uppercase tracking-[0.2em] text-cyan-300 mb-6">
+            <div className="text-sm uppercase tracking-[0.2em] text-stone-500 mb-6">
               Background
             </div>
 
             <div className="space-y-6">
 
               <div>
-                <div className="text-white font-medium">
+                <div className="text-stone-900 font-medium">
                   MSc Data Science
                 </div>
 
-                <div className="text-white/50 mt-1">
+                <div className="text-stone-400 mt-1">
                   Liverpool John Moores University
                 </div>
               </div>
 
               <div>
-                <div className="text-white font-medium">
+                <div className="text-stone-900 font-medium">
                   Enterprise Logistics & Analytics
                 </div>
 
-                <div className="text-white/50 mt-1">
+                <div className="text-stone-400 mt-1">
                   Freight • Warehousing • Procurement
                 </div>
               </div>
 
               <div>
-                <div className="text-white font-medium">
+                <div className="text-stone-900 font-medium">
                   Core Focus
                 </div>
 
-                <div className="text-white/50 mt-1">
+                <div className="text-stone-400 mt-1">
                   AI Systems • Operational Intelligence • Analytics Engineering
                 </div>
               </div>
@@ -110,18 +115,18 @@ export default function AboutPage() {
 
           <div className="max-w-4xl">
 
-            <div className="text-sm uppercase tracking-[0.2em] text-cyan-300 mb-6">
+            <div className="text-sm uppercase tracking-[0.2em] text-stone-500 mb-6">
               Philosophy
             </div>
 
             <h2 className="text-4xl md:text-6xl font-bold leading-tight">
               From dashboards
-              <span className="block text-cyan-400">
+              <span className="block text-stone-950">
                 to intelligence systems.
               </span>
             </h2>
 
-            <div className="mt-10 space-y-8 text-xl leading-[1.9] text-white/70">
+            <div className="mt-10 space-y-8 text-xl leading-[1.9] text-stone-700">
 
               <p>
                 Traditional analytics systems are excellent at visualization,
@@ -149,11 +154,11 @@ export default function AboutPage() {
         {/* Timeline */}
         <section className="mt-32">
 
-          <div className="text-sm uppercase tracking-[0.2em] text-cyan-300 mb-10">
+          <div className="text-sm uppercase tracking-[0.2em] text-stone-500 mb-10">
             Journey
           </div>
 
-          <div className="space-y-10 border-l border-white/10 pl-10">
+          <div className="space-y-10 border-l border-stone-200 pl-10">
 
             {[
               {
@@ -175,13 +180,13 @@ export default function AboutPage() {
             ].map((item) => (
               <div key={item.year} className="relative">
 
-                <div className="absolute -left-[46px] top-2 w-4 h-4 rounded-full bg-cyan-400 shadow-[0_0_12px_#22d3ee]" />
+                <div className="absolute -left-[46px] top-2 w-4 h-4 rounded-full bg-stone-900 text-white shadow-[0_0_12px_#1c1917]" />
 
-                <h3 className="text-2xl font-semibold text-white">
+                <h3 className="text-2xl font-semibold text-stone-900">
                   {item.year}
                 </h3>
 
-                <p className="mt-3 text-white/60 text-lg leading-relaxed max-w-3xl">
+                <p className="mt-3 text-stone-500 text-lg leading-relaxed max-w-3xl">
                   {item.desc}
                 </p>
               </div>
@@ -190,17 +195,17 @@ export default function AboutPage() {
         </section>
 
         {/* Closing */}
-        <section className="mt-32 border-t border-white/10 pt-16">
+        <section className="mt-32 border-t border-stone-200 pt-16">
 
           <div className="max-w-4xl">
 
-            <p className="text-3xl md:text-4xl leading-relaxed text-white/90">
+            <p className="text-3xl md:text-4xl leading-relaxed text-stone-900">
               NordNeuron is an exploration of what happens
               when operational systems evolve beyond reporting —
               toward contextual intelligence.
             </p>
 
-            <p className="mt-10 text-xl text-white/60 leading-relaxed">
+            <p className="mt-10 text-xl text-stone-500 leading-relaxed">
               Combining enterprise analytics,
               AI workflows,
               operational reasoning,
@@ -210,19 +215,20 @@ export default function AboutPage() {
             </p>
 
             <div className="mt-16">
-              <a
+              <TransitionLink
                 href="/#work"
-                className="group inline-flex items-center gap-2 text-cyan-300 hover:text-cyan-400 transition-colors duration-300 text-xl font-medium"
+                className="group inline-flex items-center gap-2 text-stone-500 hover:text-stone-950 transition-colors duration-300 text-xl font-medium"
               >
                 <span className="group-hover:translate-x-1 transition-transform duration-300">
                   →
                 </span>{" "}
                 Explore the work
-              </a>
+              </TransitionLink>
             </div>
           </div>
         </section>
       </div>
+      <Footer />
     </main>
   );
 }

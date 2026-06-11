@@ -1,13 +1,58 @@
 "use client";
 
 import { useState } from "react";
-import { Mail } from "lucide-react";
+import { Mail, ArrowUpRight } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import TransitionLink from "../components/TransitionLink";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
+const budgetOptions = ["Under $20K", "$20K - $50K", "$50K - $100K", "$100K+"];
+
+const challengeOptions = [
+  "Reporting & Dashboarding",
+  "Workflow Automation",
+  "AI Use Cases",
+  "Operational Visibility",
+  "Other",
+];
+
+const nextSteps = [
+  {
+    number: "01",
+    title: "We review your inquiry",
+    description: "You'll hear back within 24–48 hours.",
+  },
+  {
+    number: "02",
+    title: "Intro call",
+    description: "A short conversation to understand your operations and goals.",
+  },
+  {
+    number: "03",
+    title: "Proposal & roadmap",
+    description: "A clear scope, timeline, and plan — no obligation.",
+  },
+];
+
+const inputClass =
+  "w-full rounded-2xl bg-white border border-stone-200 px-5 py-4 text-stone-900 outline-none focus:border-stone-500 transition-all duration-300 font-light placeholder:text-stone-400";
+
+function FieldLabel({ children, optional }: { children: React.ReactNode; optional?: boolean }) {
+  return (
+    <label className="block mb-2 text-[11px] font-syne uppercase tracking-widest text-stone-500">
+      {children}
+      {optional && <span className="ml-2 text-stone-400 normal-case tracking-normal">(optional)</span>}
+    </label>
+  );
+}
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [selectedBudget, setSelectedBudget] = useState("");
+  const [selectedChallenge, setSelectedChallenge] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -21,16 +66,15 @@ export default function ContactPage() {
       email: formData.get("email"),
       website: formData.get("website"),
       industry: formData.get("industry"),
-      challenge: formData.get("challenge"),
+      challenge: selectedChallenge,
+      budget: selectedBudget,
       message: formData.get("message"),
     };
 
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
@@ -50,218 +94,258 @@ export default function ContactPage() {
 
   if (submitted) {
     return (
-      <main className="min-h-screen bg-black text-white flex items-center justify-center px-6">
+      <main className="min-h-screen bg-[#f5f4f0] text-[#1c1917] flex items-center justify-center px-6">
         <div className="max-w-2xl text-center">
-          <div className="text-cyan-400 text-sm uppercase tracking-[0.2em]">
+          <div className="text-stone-900 font-syne text-[10px] uppercase tracking-widest">
             NordNeuron
           </div>
 
-          <h1 className="text-5xl font-bold mt-6">
+          <h1 className="text-4xl md:text-6xl font-bold font-syne uppercase tracking-tight text-stone-900 leading-tight mt-6">
             Thanks for reaching out.
           </h1>
 
-          <p className="mt-6 text-white/70 text-xl">
-            I've received your information and will review your use case.
-            If there's a good fit, I'll get back to you shortly.
+          <p className="mt-6 text-stone-500 text-base md:text-lg leading-relaxed font-light">
+            We've received your information and will review your use case.
+            If there's a good fit, we'll get back to you within 24–48 hours.
           </p>
 
-          <a
+          <TransitionLink
             href="/"
-            className="inline-block mt-10 px-8 py-4 rounded-2xl bg-cyan-400 text-black font-semibold"
+            className="group inline-flex items-center gap-2.5 mt-10 px-8 py-4 rounded-full bg-stone-900 text-stone-50 font-syne text-xs uppercase tracking-widest hover:bg-stone-800 hover:text-white transition-all duration-300"
           >
             Back to Home
-          </a>
+            <ArrowUpRight size={16} />
+          </TransitionLink>
         </div>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="max-w-7xl mx-auto px-6 py-24">
+    <main className="min-h-screen bg-[#f5f4f0] text-[#1c1917] overflow-hidden">
+      <Navbar />
 
-        <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm">
-          NordNeuron
-        </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-40 pb-28">
 
-        <h1 className="mt-8 text-5xl md:text-6xl font-bold">
-          Discuss Your
-          <span className="block text-cyan-400">
-            Use Case
-          </span>
-        </h1>
-
-        <div className="mt-16 grid lg:grid-cols-12 gap-16 items-start">
-          
-          {/* Left Column: Direct Info */}
-          <div className="lg:col-span-5 space-y-8">
-            <p className="text-white/60 text-lg leading-relaxed max-w-xl">
-              Whether you're exploring operational analytics,
-              workflow automation, AI initiatives, or reporting modernization,
-              fill out the inquiry form or connect directly through my social channels.
-            </p>
-
-            <div className="space-y-4 max-w-md">
-              {/* Email Card */}
-              <a
-                href="mailto:contact@nordneuron.com"
-                className="group block p-6 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-cyan-400/30 transition-all duration-300"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-cyan-400/10 flex items-center justify-center text-cyan-400 shrink-0">
-                    <Mail size={22} />
-                  </div>
-                  <div>
-                    <h3 className="text-white font-semibold group-hover:text-cyan-300 transition-colors">Email</h3>
-                    <p className="text-white/50 text-sm mt-1">contact@nordneuron.com</p>
-                  </div>
-                </div>
-              </a>
-
-              {/* LinkedIn Card */}
-              <a
-                href="https://linkedin.com/in/pankajlp"
-                target="_blank"
-                className="group block p-6 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-cyan-400/30 transition-all duration-300"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-cyan-400/10 flex items-center justify-center text-cyan-400 shrink-0">
-                    <FaLinkedin size={22} />
-                  </div>
-                  <div>
-                    <h3 className="text-white font-semibold group-hover:text-cyan-300 transition-colors">LinkedIn</h3>
-                    <p className="text-white/50 text-sm mt-1">Connect professionally</p>
-                  </div>
-                </div>
-              </a>
-
-              {/* GitHub Card */}
-              <a
-                href="https://github.com/pankajlp"
-                target="_blank"
-                className="group block p-6 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-cyan-400/30 transition-all duration-300"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-cyan-400/10 flex items-center justify-center text-cyan-400 shrink-0">
-                    <FaGithub size={22} />
-                  </div>
-                  <div>
-                    <h3 className="text-white font-semibold group-hover:text-cyan-300 transition-colors">GitHub</h3>
-                    <p className="text-white/50 text-sm mt-1">Explore code & tools</p>
-                  </div>
-                </div>
-              </a>
-            </div>
+        {/* Header */}
+        <div className="max-w-3xl">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-12 h-px bg-stone-400" />
+            <span className="text-stone-500 font-syne text-[10px] uppercase tracking-[0.3em]">
+              Contact
+            </span>
           </div>
 
+          <h1 className="text-5xl md:text-7xl font-bold font-syne uppercase tracking-tight text-stone-900 leading-[0.95]">
+            Let&apos;s Talk.
+          </h1>
+
+          <p className="mt-6 text-stone-500 text-base md:text-lg leading-relaxed font-light max-w-xl">
+            Tell us a little about your project — operational analytics, workflow
+            automation, AI initiatives, or anything in between. It takes two minutes.
+          </p>
+        </div>
+
+        <div className="mt-16 grid lg:grid-cols-12 gap-14 items-start">
+
+          {/* Left Column: direct contact + what happens next */}
+          <aside className="lg:col-span-4 lg:sticky lg:top-32 space-y-10">
+
+            {/* Direct contact */}
+            <div className="rounded-3xl border border-stone-200 bg-white p-8">
+              <h2 className="text-[11px] font-syne uppercase tracking-widest text-stone-500 mb-5">
+                Prefer email?
+              </h2>
+              <a
+                href="mailto:contact@nordneuron.com"
+                className="group flex items-center gap-3 text-stone-900 font-syne font-bold text-lg tracking-tight hover:text-stone-600 transition-colors duration-300 break-all"
+              >
+                <Mail size={18} className="shrink-0" />
+                contact@nordneuron.com
+              </a>
+
+              <div className="mt-6 pt-6 border-t border-stone-200 flex gap-6">
+                <a
+                  href="https://linkedin.com/in/pankajlp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 text-stone-500 hover:text-stone-900 font-syne text-[11px] uppercase tracking-widest transition-colors duration-300"
+                >
+                  <FaLinkedin size={14} /> LinkedIn
+                </a>
+                <a
+                  href="https://github.com/pankajlp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 text-stone-500 hover:text-stone-900 font-syne text-[11px] uppercase tracking-widest transition-colors duration-300"
+                >
+                  <FaGithub size={14} /> GitHub
+                </a>
+              </div>
+            </div>
+
+            {/* What happens next */}
+            <div>
+              <h2 className="text-[11px] font-syne uppercase tracking-widest text-stone-500 mb-6">
+                What happens next
+              </h2>
+              <div className="space-y-6">
+                {nextSteps.map((step) => (
+                  <div key={step.number} className="flex gap-5">
+                    <span className="text-stone-400 font-syne text-xs font-bold tracking-widest pt-0.5">
+                      {step.number}
+                    </span>
+                    <div>
+                      <h3 className="text-stone-900 font-syne font-bold text-sm uppercase tracking-tight">
+                        {step.title}
+                      </h3>
+                      <p className="mt-1 text-stone-500 text-sm font-light leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </aside>
+
           {/* Right Column: Inquiry Form */}
-          <div className="lg:col-span-7">
-            <form
-              onSubmit={handleSubmit}
-              className="space-y-8"
-            >
-              <div className="grid md:grid-cols-2 gap-6">
+          <div className="lg:col-span-8">
+            <form onSubmit={handleSubmit} className="space-y-12">
 
-                <input
-                  required
-                  name="name"
-                  placeholder="Your Name"
-                  className="w-full rounded-2xl bg-white/[0.04] border border-white/10 px-5 py-4 text-white outline-none focus:border-cyan-400/40"
-                />
+              {/* Step 1: About you */}
+              <fieldset>
+                <legend className="flex items-center gap-4 mb-7">
+                  <span className="text-stone-400 font-syne text-xs font-bold tracking-[0.2em]">01</span>
+                  <span className="text-stone-900 font-syne font-bold uppercase tracking-tight text-lg">About you</span>
+                </legend>
 
-                <input
-                  required
-                  name="company"
-                  placeholder="Company"
-                  className="w-full rounded-2xl bg-white/[0.04] border border-white/10 px-5 py-4 text-white outline-none focus:border-cyan-400/40"
-                />
-
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-
-                <input
-                  required
-                  name="email"
-                  type="email"
-                  placeholder="Work Email"
-                  className="w-full rounded-2xl bg-white/[0.04] border border-white/10 px-5 py-4 text-white outline-none focus:border-cyan-400/40"
-                />
-
-                <input
-                  name="website"
-                  placeholder="Company Website"
-                  className="w-full rounded-2xl bg-white/[0.04] border border-white/10 px-5 py-4 text-white outline-none focus:border-cyan-400/40"
-                />
-
-              </div>
-
-              <select
-                name="industry"
-                className="w-full rounded-2xl bg-white/[0.04] border border-white/10 px-5 py-4 text-white outline-none focus:border-cyan-400/40"
-              >
-                <option value="" className="bg-[#050816] text-white">Industry</option>
-                <option value="Logistics" className="bg-[#050816] text-white">Logistics</option>
-                <option value="Procurement" className="bg-[#050816] text-white">Procurement</option>
-                <option value="Manufacturing" className="bg-[#050816] text-white">Manufacturing</option>
-                <option value="Retail" className="bg-[#050816] text-white">Retail</option>
-                <option value="Technology" className="bg-[#050816] text-white">Technology</option>
-                <option value="Other" className="bg-[#050816] text-white">Other</option>
-              </select>
-
-              <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8">
-                <h3 className="text-xl font-semibold mb-6">
-                  What best describes your challenge?
-                </h3>
-
-                <div className="space-y-4 text-white/80">
-
-                  <label className="block">
-                    <input type="radio" name="challenge" value="Reporting & Dashboarding" className="mr-3" />
-                    Reporting & Dashboarding
-                  </label>
-
-                  <label className="block">
-                    <input type="radio" name="challenge" value="Workflow Automation" className="mr-3" />
-                    Workflow Automation
-                  </label>
-
-                  <label className="block">
-                    <input type="radio" name="challenge" value="AI Use Cases" className="mr-3" />
-                    AI Use Cases
-                  </label>
-
-                  <label className="block">
-                    <input type="radio" name="challenge" value="Operational Visibility" className="mr-3" />
-                    Operational Visibility
-                  </label>
-
-                  <label className="block">
-                    <input type="radio" name="challenge" value="Other" className="mr-3" />
-                    Other
-                  </label>
-
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <FieldLabel>Name</FieldLabel>
+                    <input required name="name" placeholder="Jane Smith" className={inputClass} />
+                  </div>
+                  <div>
+                    <FieldLabel>Company</FieldLabel>
+                    <input required name="company" placeholder="Acme Logistics" className={inputClass} />
+                  </div>
+                  <div>
+                    <FieldLabel>Work Email</FieldLabel>
+                    <input required name="email" type="email" placeholder="jane@acme.com" className={inputClass} />
+                  </div>
+                  <div>
+                    <FieldLabel optional>Company Website</FieldLabel>
+                    <input name="website" placeholder="acme.com" className={inputClass} />
+                  </div>
                 </div>
+
+                <div className="mt-6">
+                  <FieldLabel optional>Industry</FieldLabel>
+                  <select name="industry" className={`${inputClass} appearance-none cursor-pointer`}>
+                    <option value="">Select your industry</option>
+                    <option value="Logistics">Logistics</option>
+                    <option value="Procurement">Procurement</option>
+                    <option value="Manufacturing">Manufacturing</option>
+                    <option value="Retail">Retail</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </fieldset>
+
+              {/* Step 2: Your challenge */}
+              <fieldset>
+                <legend className="flex items-center gap-4 mb-3">
+                  <span className="text-stone-400 font-syne text-xs font-bold tracking-[0.2em]">02</span>
+                  <span className="text-stone-900 font-syne font-bold uppercase tracking-tight text-lg">What do you need help with?</span>
+                </legend>
+                <p className="text-stone-500 text-sm font-light mb-6">Pick the closest match — we&apos;ll figure out the details together.</p>
+
+                <div className="flex flex-wrap gap-3">
+                  {challengeOptions.map((opt) => {
+                    const isSelected = selectedChallenge === opt;
+                    return (
+                      <button
+                        key={opt}
+                        type="button"
+                        onClick={() => setSelectedChallenge(isSelected ? "" : opt)}
+                        className={`py-3 px-5 rounded-full border text-xs font-syne uppercase tracking-wider transition-all duration-300 ${
+                          isSelected
+                            ? "bg-stone-900 text-white border-stone-900"
+                            : "bg-white border-stone-200 text-stone-600 hover:border-stone-500 hover:text-stone-900"
+                        }`}
+                      >
+                        {opt}
+                      </button>
+                    );
+                  })}
+                </div>
+              </fieldset>
+
+              {/* Step 3: Budget */}
+              <fieldset>
+                <legend className="flex items-center gap-4 mb-3">
+                  <span className="text-stone-400 font-syne text-xs font-bold tracking-[0.2em]">03</span>
+                  <span className="text-stone-900 font-syne font-bold uppercase tracking-tight text-lg">Estimated budget</span>
+                </legend>
+                <p className="text-stone-500 text-sm font-light mb-6">Optional — a rough range helps us recommend the right scope.</p>
+
+                <div className="flex flex-wrap gap-3">
+                  {budgetOptions.map((opt) => {
+                    const isSelected = selectedBudget === opt;
+                    return (
+                      <button
+                        key={opt}
+                        type="button"
+                        onClick={() => setSelectedBudget(isSelected ? "" : opt)}
+                        className={`py-3 px-5 rounded-full border text-xs font-syne uppercase tracking-wider transition-all duration-300 ${
+                          isSelected
+                            ? "bg-stone-900 text-white border-stone-900"
+                            : "bg-white border-stone-200 text-stone-600 hover:border-stone-500 hover:text-stone-900"
+                        }`}
+                      >
+                        {opt}
+                      </button>
+                    );
+                  })}
+                </div>
+              </fieldset>
+
+              {/* Step 4: Message */}
+              <fieldset>
+                <legend className="flex items-center gap-4 mb-7">
+                  <span className="text-stone-400 font-syne text-xs font-bold tracking-[0.2em]">04</span>
+                  <span className="text-stone-900 font-syne font-bold uppercase tracking-tight text-lg">Tell us more</span>
+                </legend>
+
+                <textarea
+                  name="message"
+                  rows={6}
+                  placeholder="Tell us about your workflow, challenge, or opportunity..."
+                  className={`${inputClass} rounded-3xl`}
+                />
+              </fieldset>
+
+              {error && <p className="text-red-600 text-sm">{error}</p>}
+
+              <div className="flex flex-col sm:flex-row sm:items-center gap-5 pt-2">
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="group inline-flex items-center justify-center gap-2.5 px-10 py-5 rounded-full bg-stone-900 text-white font-syne text-xs uppercase tracking-widest hover:bg-stone-700 transition-all duration-300 disabled:opacity-50"
+                >
+                  {loading ? "Submitting..." : "Submit Inquiry"}
+                  {!loading && (
+                    <ArrowUpRight
+                      size={16}
+                      className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
+                    />
+                  )}
+                </button>
+                <p className="text-stone-400 text-xs font-light">
+                  No spam, no obligation — we reply to every serious inquiry.
+                </p>
               </div>
-
-              <textarea
-                name="message"
-                rows={8}
-                placeholder="Tell me about your workflow, challenge, or opportunity..."
-                className="w-full rounded-3xl bg-white/[0.04] border border-white/10 px-5 py-5 text-white outline-none focus:border-cyan-400/40"
-              />
-
-              {error && (
-                <p className="text-red-400 text-sm mt-4">{error}</p>
-              )}
-
-              <button
-                type="submit"
-                disabled={loading}
-                className="px-8 py-4 rounded-2xl bg-cyan-400 text-black font-semibold hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:hover:scale-100"
-              >
-                {loading ? "Submitting..." : "Submit Inquiry →"}
-              </button>
 
             </form>
           </div>
@@ -269,6 +353,7 @@ export default function ContactPage() {
         </div>
 
       </div>
+      <Footer />
     </main>
   );
 }

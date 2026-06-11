@@ -35,17 +35,17 @@ export default function TestAIPage() {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Ask something..."
-          className="w-full h-40 rounded-2xl bg-white/10 border border-white/10 p-5 outline-none"
+          className="w-full h-40 rounded-2xl bg-stone-200 border border-stone-200 p-5 outline-none"
         />
 
         <button
           onClick={sendMessage}
-          className="mt-6 px-8 py-4 rounded-2xl bg-cyan-400 text-black font-medium"
+          className="mt-6 px-8 py-4 rounded-2xl bg-stone-900 text-stone-50 hover:bg-stone-800 hover:text-white font-medium transition-all duration-300"
         >
           Send
         </button>
 
-        <div className="mt-10 p-6 rounded-2xl border border-white/10 bg-white/[0.03] whitespace-pre-wrap leading-relaxed">
+        <div className="mt-10 p-6 rounded-2xl border border-stone-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)] whitespace-pre-wrap leading-relaxed">
           {response}
         </div>
       </div>

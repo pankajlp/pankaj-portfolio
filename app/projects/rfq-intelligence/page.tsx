@@ -69,10 +69,10 @@ const recommendations = [
 ];
 export default function RFQIntelligencePage() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[#f5f4f0] text-[#1c1917]">
       
       {/* Navbar */}
-      <div className="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
+      <div className="sticky top-0 z-50 border-b border-stone-200 bg-[#f5f4f0]/80 backdrop-blur-xl">
         
         <div className="max-w-7xl mx-auto px-8 h-[88px] flex items-center justify-between">
           
@@ -80,27 +80,27 @@ export default function RFQIntelligencePage() {
             
             <a
               href="/"
-              className="text-white/60 hover:text-cyan-300 transition-colors"
+              className="text-stone-500 hover:text-stone-900 transition-colors"
             >
               ← Back
             </a>
 
-            <div className="w-px h-5 bg-white/10" />
+            <div className="w-px h-5 bg-stone-200" />
 
             <div>
-              <h1 className="text-white font-medium">
+              <h1 className="text-stone-900 font-medium">
                 RFQ Intelligence Platform
               </h1>
 
-              <p className="text-xs text-white/40">
+              <p className="text-xs text-stone-400">
                 AI Procurement Operations
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm">
+          <div className="flex items-center gap-3 px-4 py-2 rounded-full border border-stone-200 bg-stone-100/50 text-stone-900 text-sm">
             
-            <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            <div className="w-2 h-2 rounded-full bg-stone-900 text-white hover:bg-black animate-pulse" />
 
             AI Engine Active
           </div>
@@ -108,29 +108,29 @@ export default function RFQIntelligencePage() {
       </div>
         <a
   href="/case-studies/rfq-delta-intelligence"
-  className="inline-flex items-center gap-3 mt-8 text-cyan-300 hover:text-cyan-200 transition-colors duration-300"
+  className="inline-flex items-center gap-3 mt-8 text-stone-900 hover:text-black transition-colors duration-300"
 >
   Read Technical Case Study →
 </a>
       {/* Hero */}
       <div className="relative max-w-7xl mx-auto px-8 py-16">
         
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-cyan-500/10 blur-[180px] rounded-full pointer-events-none" />
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-stone-1000/5 blur-[180px] rounded-full pointer-events-none" />
 
         <div className="relative z-10">
           
-          <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm mb-8">
+          <div className="inline-flex items-center px-4 py-2 rounded-full border border-stone-200 bg-stone-100/50 text-stone-900 text-sm mb-8">
             AI Procurement Intelligence
           </div>
 
           <h1 className="text-6xl font-bold leading-tight max-w-4xl">
             RFQ Intelligence
-            <span className="block text-cyan-400">
+            <span className="block text-stone-900">
               Automation Platform
             </span>
           </h1>
 
-          <p className="mt-8 text-xl text-white/60 leading-relaxed max-w-3xl">
+          <p className="mt-8 text-xl text-stone-500 leading-relaxed max-w-3xl">
             AI-powered procurement intelligence system designed
             for RFQ processing, tender analytics, operational automation,
             and intelligent bid decision support across logistics operations.
@@ -144,18 +144,18 @@ export default function RFQIntelligencePage() {
     {kpis.map((item) => (
       <div
         key={item.title}
-        className="p-7 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl"
+        className="p-7 rounded-3xl border border-stone-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)] backdrop-blur-xl"
       >
         
-        <p className="text-sm text-white/50">
+        <p className="text-sm text-stone-400">
           {item.title}
         </p>
 
-        <h3 className="mt-5 text-4xl font-bold text-white">
+        <h3 className="mt-5 text-4xl font-bold text-stone-900">
           {item.value}
         </h3>
 
-        <div className="mt-5 inline-flex items-center px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 text-sm">
+        <div className="mt-5 inline-flex items-center px-3 py-1 rounded-full bg-stone-100/50 border border-stone-200 text-stone-900 text-sm">
           {item.change}
         </div>
       </div>
@@ -165,24 +165,24 @@ export default function RFQIntelligencePage() {
 {/* AI Tender Analysis */}
 <div className="max-w-7xl mx-auto px-8 pb-16">
   
-  <div className="p-8 rounded-3xl border border-white/10 bg-white/[0.03]">
+  <div className="p-8 rounded-3xl border border-stone-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)]">
     
     {/* Header */}
     <div className="flex items-center justify-between mb-10">
       
       <div>
-        <h2 className="text-3xl font-semibold text-white">
+        <h2 className="text-3xl font-semibold text-stone-900">
           AI Tender Intelligence
         </h2>
 
-        <p className="mt-2 text-white/50">
+        <p className="mt-2 text-stone-400">
           AI-assisted RFQ analysis, profitability scoring, and procurement recommendations.
         </p>
       </div>
 
-      <div className="flex items-center gap-3 px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm">
+      <div className="flex items-center gap-3 px-4 py-2 rounded-full border border-stone-200 bg-stone-100/50 text-stone-900 text-sm">
         
-        <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+        <div className="w-2 h-2 rounded-full bg-stone-900 text-white hover:bg-black animate-pulse" />
 
         AI Analysis Live
       </div>
@@ -194,7 +194,7 @@ export default function RFQIntelligencePage() {
       <table className="w-full">
         
         <thead>
-          <tr className="border-b border-white/10 text-left text-sm text-white/40">
+          <tr className="border-b border-stone-200 text-left text-sm text-stone-400">
             
             <th className="pb-5 font-medium">
               Customer
@@ -222,18 +222,18 @@ export default function RFQIntelligencePage() {
           {rfqs.map((item, index) => (
             <tr
               key={index}
-              className="border-b border-white/5 hover:bg-white/[0.02] transition-colors"
+              className="border-b border-stone-200/50 hover:bg-stone-50/50 transition-colors"
             >
               
-              <td className="py-6 text-white font-medium">
+              <td className="py-6 text-stone-900 font-medium">
                 {item.customer}
               </td>
 
-              <td className="py-6 text-white/70">
+              <td className="py-6 text-stone-700">
                 {item.lane}
               </td>
 
-              <td className="py-6 text-cyan-300">
+              <td className="py-6 text-stone-900">
                 {item.value}
               </td>
 
@@ -241,17 +241,17 @@ export default function RFQIntelligencePage() {
                 <span
                   className={`px-3 py-1 rounded-full text-sm border ${
                     item.status === "Risk Alert"
-                      ? "bg-red-500/10 border-red-500/20 text-red-300"
+                      ? "bg-red-50 border-red-100 text-red-700"
                       : item.status === "Under Review"
-                      ? "bg-yellow-500/10 border-yellow-500/20 text-yellow-300"
-                      : "bg-cyan-400/10 border-cyan-400/20 text-cyan-300"
+                      ? "bg-amber-50 border-amber-100 text-amber-700"
+                      : "bg-stone-100/50 border-stone-200 text-stone-900"
                   }`}
                 >
                   {item.status}
                 </span>
               </td>
 
-              <td className="py-6 text-white/50">
+              <td className="py-6 text-stone-400">
                 {item.confidence}
               </td>
             </tr>
@@ -267,16 +267,16 @@ export default function RFQIntelligencePage() {
   <div className="flex items-center justify-between mb-10">
     
     <div>
-      <h2 className="text-3xl font-semibold text-white">
+      <h2 className="text-3xl font-semibold text-stone-900">
         AI Recommendation Engine
       </h2>
 
-      <p className="mt-2 text-white/50">
+      <p className="mt-2 text-stone-400">
         AI-generated procurement insights and tender optimization recommendations.
       </p>
     </div>
 
-    <div className="px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm">
+    <div className="px-4 py-2 rounded-full border border-stone-200 bg-stone-100/50 text-stone-900 text-sm">
       Predictive Intelligence Active
     </div>
   </div>
@@ -285,36 +285,36 @@ export default function RFQIntelligencePage() {
     {recommendations.map((item, index) => (
       <div
         key={index}
-        className="p-7 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl"
+        className="p-7 rounded-3xl border border-stone-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)] backdrop-blur-xl"
       >
         
         {/* Top */}
         <div className="flex items-center justify-between">
           
-          <div className="w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_12px_#22d3ee]" />
+          <div className="w-3 h-3 rounded-full bg-stone-900 text-white hover:bg-black shadow-[0_0_12px_rgba(120, 113, 108,0.25)]" />
 
-          <div className="text-xs text-cyan-300 tracking-[0.2em]">
+          <div className="text-xs text-stone-900 tracking-[0.2em]">
             AI
           </div>
         </div>
 
         {/* Content */}
-        <h3 className="mt-8 text-2xl font-semibold text-white leading-snug">
+        <h3 className="mt-8 text-2xl font-semibold text-stone-900 leading-snug">
           {item.title}
         </h3>
 
-        <p className="mt-5 text-white/60 leading-relaxed">
+        <p className="mt-5 text-stone-500 leading-relaxed">
           {item.description}
         </p>
 
         {/* Footer */}
-        <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+        <div className="mt-8 pt-6 border-t border-stone-200 flex items-center justify-between">
           
-          <span className="text-sm text-white/40">
+          <span className="text-sm text-stone-400">
             Recommendation Confidence
           </span>
 
-          <span className="text-cyan-300 font-medium">
+          <span className="text-stone-900 font-medium">
             95%
           </span>
         </div>
@@ -328,19 +328,19 @@ export default function RFQIntelligencePage() {
   <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10">
     
     {/* LEFT */}
-    <div className="p-10 rounded-3xl border border-white/10 bg-white/[0.03]">
+    <div className="p-10 rounded-3xl border border-stone-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)]">
       
-      <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm mb-8">
+      <div className="inline-flex items-center px-4 py-2 rounded-full border border-stone-200 bg-stone-100/50 text-stone-900 text-sm mb-8">
         AI System Architecture
       </div>
 
-      <h2 className="text-4xl font-bold text-white leading-tight">
+      <h2 className="text-4xl font-bold text-stone-900 leading-tight">
         AI-assisted procurement intelligence
         powered by local inference and
         structured analytics workflows.
       </h2>
 
-      <p className="mt-8 text-white/60 text-lg leading-relaxed">
+      <p className="mt-8 text-stone-500 text-lg leading-relaxed">
         The platform combines RFQ ingestion, AI parsing,
         structured querying, and operational analytics
         into a unified procurement intelligence system
@@ -352,16 +352,16 @@ export default function RFQIntelligencePage() {
         
         <div className="flex items-start gap-5">
           
-          <div className="w-10 h-10 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 text-sm">
+          <div className="w-10 h-10 rounded-2xl bg-stone-100/50 border border-stone-200 flex items-center justify-center text-stone-900 text-sm">
             01
           </div>
 
           <div>
-            <h3 className="text-xl text-white font-medium">
+            <h3 className="text-xl text-stone-900 font-medium">
               RFQ Document Ingestion
             </h3>
 
-            <p className="mt-2 text-white/60 leading-relaxed">
+            <p className="mt-2 text-stone-500 leading-relaxed">
               Procurement documents and tender files processed through structured extraction workflows.
             </p>
           </div>
@@ -369,16 +369,16 @@ export default function RFQIntelligencePage() {
 
         <div className="flex items-start gap-5">
           
-          <div className="w-10 h-10 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 text-sm">
+          <div className="w-10 h-10 rounded-2xl bg-stone-100/50 border border-stone-200 flex items-center justify-center text-stone-900 text-sm">
             02
           </div>
 
           <div>
-            <h3 className="text-xl text-white font-medium">
+            <h3 className="text-xl text-stone-900 font-medium">
               AI Parsing & Classification
             </h3>
 
-            <p className="mt-2 text-white/60 leading-relaxed">
+            <p className="mt-2 text-stone-500 leading-relaxed">
               LLM workflows extract shipment structures, lanes, pricing signals, and operational entities.
             </p>
           </div>
@@ -386,16 +386,16 @@ export default function RFQIntelligencePage() {
 
         <div className="flex items-start gap-5">
           
-          <div className="w-10 h-10 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 text-sm">
+          <div className="w-10 h-10 rounded-2xl bg-stone-100/50 border border-stone-200 flex items-center justify-center text-stone-900 text-sm">
             03
           </div>
 
           <div>
-            <h3 className="text-xl text-white font-medium">
+            <h3 className="text-xl text-stone-900 font-medium">
               Text-to-SQL Intelligence Layer
             </h3>
 
-            <p className="mt-2 text-white/60 leading-relaxed">
+            <p className="mt-2 text-stone-500 leading-relaxed">
               AI-generated SQL workflows enable procurement analytics and operational querying across structured datasets.
             </p>
           </div>
@@ -403,16 +403,16 @@ export default function RFQIntelligencePage() {
 
         <div className="flex items-start gap-5">
           
-          <div className="w-10 h-10 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 text-sm">
+          <div className="w-10 h-10 rounded-2xl bg-stone-100/50 border border-stone-200 flex items-center justify-center text-stone-900 text-sm">
             04
           </div>
 
           <div>
-            <h3 className="text-xl text-white font-medium">
+            <h3 className="text-xl text-stone-900 font-medium">
               Procurement Intelligence
             </h3>
 
-            <p className="mt-2 text-white/60 leading-relaxed">
+            <p className="mt-2 text-stone-500 leading-relaxed">
               AI systems surface profitability signals, operational risks, and tender optimization recommendations.
             </p>
           </div>
@@ -422,9 +422,9 @@ export default function RFQIntelligencePage() {
     </div>
 
     {/* RIGHT */}
-    <div className="p-10 rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-400/10 to-transparent">
+    <div className="p-10 rounded-3xl border border-stone-200 bg-gradient-to-br from-stone-200/20 to-transparent">
       
-      <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm mb-8">
+      <div className="inline-flex items-center px-4 py-2 rounded-full border border-stone-200 bg-stone-100/50 text-stone-900 text-sm mb-8">
         Technical Stack
       </div>
 
@@ -442,21 +442,21 @@ export default function RFQIntelligencePage() {
         ].map((tech) => (
           <div
             key={tech}
-            className="flex items-center justify-between p-5 rounded-2xl border border-white/10 bg-black/30"
+            className="flex items-center justify-between p-5 rounded-2xl border border-stone-200 bg-stone-50/50 border-stone-200/60"
           >
-            <span className="text-white">
+            <span className="text-stone-900">
               {tech}
             </span>
 
-            <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_#22d3ee]" />
+            <div className="w-2.5 h-2.5 rounded-full bg-stone-900 text-white hover:bg-black shadow-[0_0_10px_rgba(120, 113, 108,0.25)]" />
           </div>
         ))}
       </div>
 
       {/* Footer */}
-      <div className="mt-10 pt-8 border-t border-white/10">
+      <div className="mt-10 pt-8 border-t border-stone-200">
         
-        <p className="text-white/60 leading-relaxed">
+        <p className="text-stone-500 leading-relaxed">
           Designed as a scalable enterprise AI workflow
           for procurement operations, tender intelligence,
           and logistics decision support systems.
@@ -465,17 +465,17 @@ export default function RFQIntelligencePage() {
     </div>
   </div>
 </div>
-<div className="mt-16 rounded-3xl border border-cyan-400/20 bg-cyan-400/[0.04] p-8">
+<div className="mt-16 rounded-3xl border border-stone-200 bg-white border-stone-200 shadow-[0_4px_25px_rgba(15,23,42,0.02)] p-8">
 
-  <p className="text-cyan-300 text-sm uppercase tracking-[0.2em] mb-4">
+  <p className="text-stone-900 text-sm uppercase tracking-[0.2em] mb-4">
     Open Source Architecture
   </p>
 
-  <h3 className="text-3xl font-semibold text-white">
+  <h3 className="text-3xl font-semibold text-stone-900">
     AI Procurement Intelligence Systems
   </h3>
 
-  <p className="mt-5 text-white/65 leading-relaxed max-w-2xl">
+  <p className="mt-5 text-stone-900/65 leading-relaxed max-w-2xl">
     A public demonstration of the AI-native procurement
     intelligence architecture behind the RFQ Intelligence system —
     combining DuckDB, local LLM workflows,
@@ -485,7 +485,7 @@ export default function RFQIntelligencePage() {
   <a
     href="https://github.com/pankajlp/ai-procurement-intelligence"
     target="_blank"
-    className="inline-flex items-center gap-3 mt-8 px-6 py-4 rounded-2xl bg-cyan-400 text-black font-medium hover:scale-[1.02] transition-all duration-300"
+    className="inline-flex items-center gap-3 mt-8 px-6 py-4 rounded-2xl bg-stone-900 text-stone-50 hover:bg-stone-800 hover:text-white font-medium hover:scale-[1.02] transition-all duration-300"
   >
     View GitHub Repository →
   </a>
@@ -495,16 +495,16 @@ export default function RFQIntelligencePage() {
   
   <div className="text-center max-w-4xl mx-auto">
     
-    <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm mb-8">
+    <div className="inline-flex items-center px-4 py-2 rounded-full border border-stone-200 bg-stone-100/50 text-stone-900 text-sm mb-8">
       AI Workflow Orchestration
     </div>
 
-    <h2 className="text-5xl font-bold text-white leading-tight">
+    <h2 className="text-5xl font-bold text-stone-900 leading-tight">
       Intelligent procurement workflows
       powered by AI-driven data pipelines.
     </h2>
 
-    <p className="mt-8 text-xl text-white/60 leading-relaxed">
+    <p className="mt-8 text-xl text-stone-500 leading-relaxed">
       RFQ documents flow through structured extraction,
       AI classification, query orchestration, and
       operational intelligence layers designed for
@@ -516,7 +516,7 @@ export default function RFQIntelligencePage() {
   <div className="relative mt-24">
     
     {/* Connection Line */}
-    <div className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
+    <div className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-stone-400/20 to-transparent" />
 
     <div className="grid lg:grid-cols-4 gap-8 relative z-10">
       
@@ -544,34 +544,34 @@ export default function RFQIntelligencePage() {
       ].map((item) => (
         <div
           key={item.step}
-          className="group relative p-8 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:border-cyan-400/20 transition-all duration-500"
+          className="group relative p-8 rounded-3xl border border-stone-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)] backdrop-blur-xl hover:border-stone-200 transition-all duration-500"
         >
           
           {/* Hover Glow */}
-          <div className="absolute inset-0 bg-cyan-400/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+          <div className="absolute inset-0 bg-stone-1000/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
 
           {/* Step */}
           <div className="relative z-10 flex items-center justify-between">
             
-            <div className="w-12 h-12 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 font-medium">
+            <div className="w-12 h-12 rounded-2xl bg-stone-100/50 border border-stone-200 flex items-center justify-center text-stone-900 font-medium">
               {item.step}
             </div>
 
-            <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_12px_#22d3ee]" />
+            <div className="w-2.5 h-2.5 rounded-full bg-stone-900 text-white hover:bg-black shadow-[0_0_12px_rgba(120, 113, 108,0.25)]" />
           </div>
 
           {/* Title */}
-          <h3 className="relative z-10 mt-10 text-2xl font-semibold text-white">
+          <h3 className="relative z-10 mt-10 text-2xl font-semibold text-stone-900">
             {item.title}
           </h3>
 
           {/* Description */}
-          <p className="relative z-10 mt-5 text-white/60 leading-relaxed">
+          <p className="relative z-10 mt-5 text-stone-500 leading-relaxed">
             {item.desc}
           </p>
 
           {/* Bottom Accent */}
-          <div className="relative z-10 mt-10 h-px w-full bg-gradient-to-r from-cyan-400/40 to-transparent" />
+          <div className="relative z-10 mt-10 h-px w-full bg-gradient-to-r from-stone-400/40 to-transparent" />
         </div>
       ))}
     </div>
@@ -582,16 +582,16 @@ export default function RFQIntelligencePage() {
   
   <div className="mb-10">
     
-    <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 text-sm mb-6">
+    <div className="inline-flex items-center px-4 py-2 rounded-full border border-stone-200 bg-stone-100/50 text-stone-900 text-sm mb-6">
       Live Enterprise Dashboard
     </div>
 
-    <h2 className="text-5xl font-bold text-white leading-tight">
+    <h2 className="text-5xl font-bold text-stone-900 leading-tight">
       Real-time procurement intelligence
       powered by Power BI Service.
     </h2>
 
-    <p className="mt-6 text-xl text-white/60 leading-relaxed max-w-4xl">
+    <p className="mt-6 text-xl text-stone-500 leading-relaxed max-w-4xl">
       Interactive analytics platform for RFQ intelligence,
       tender visibility, operational monitoring,
       and AI-assisted procurement workflows.
@@ -599,24 +599,24 @@ export default function RFQIntelligencePage() {
   </div>
 
   {/* Embed Shell */}
-  <div className="relative rounded-[32px] border border-cyan-400/10 bg-white/[0.03] p-4 backdrop-blur-xl overflow-hidden shadow-[0_0_80px_rgba(34,211,238,0.08)]">
+  <div className="relative rounded-[32px] border border-stone-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)] p-4 backdrop-blur-xl overflow-hidden shadow-[0_10px_50px_rgba(15,23,42,0.03)]">
     
     {/* Glow */}
-    <div className="absolute inset-0 bg-cyan-400/[0.02] pointer-events-none" />
+    <div className="absolute inset-0 bg-stone-1000/5 pointer-events-none" />
 
     {/* Top Bar */}
-    <div className="relative z-10 flex items-center justify-between px-4 py-4 border-b border-white/10">
+    <div className="relative z-10 flex items-center justify-between px-4 py-4 border-b border-stone-200">
       
       <div className="flex items-center gap-3">
         
-        <div className="w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_12px_#22d3ee]" />
+        <div className="w-3 h-3 rounded-full bg-stone-900 text-white hover:bg-black shadow-[0_0_12px_rgba(120, 113, 108,0.25)]" />
 
-        <span className="text-white/80">
+        <span className="text-stone-900/80">
           RFQ Intelligence Console
         </span>
       </div>
 
-      <div className="text-sm text-cyan-300">
+      <div className="text-sm text-stone-900">
         Live Analytics
       </div>
     </div>

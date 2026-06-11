@@ -19,28 +19,28 @@ export default function ArticlePage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#fafaf8] text-[#1a1a18]">
+    <main className="min-h-screen bg-[#f5f4f0] text-[#1c1917]">
       {/* Scroll Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-[3px] bg-black/5 z-[200]">
+      <div className="fixed top-0 left-0 w-full h-[3px] bg-stone-200/50 z-[200]">
         <div
-          className="h-full bg-cyan-400 transition-all duration-150"
+          className="h-full bg-stone-900 text-white transition-all duration-150"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
 
       {/* Clean Navigation Bar */}
-      <nav className="sticky top-0 z-50 bg-[#fafaf8]/85 backdrop-blur-md border-b border-black/5 px-6 py-5">
+      <nav className="sticky top-0 z-50 bg-[#f5f4f0]/85 backdrop-blur-md border-b border-stone-200 px-6 py-5">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <a href="/" className="flex items-center gap-3 shrink-0">
             {/* Accent Dot */}
-            <div className="w-2.5 h-2.5 rounded-full bg-cyan-500 shadow-[0_0_8px_#06b6d4]" />
-            <span className="text-[17px] font-bold tracking-tight font-serif text-black">
+            <div className="w-2.5 h-2.5 rounded-full bg-stone-900 text-white shadow-[0_0_8px_rgba(120, 113, 108,0.3)]" />
+            <span className="text-[17px] font-bold tracking-tight font-serif text-stone-900">
               NordNeuron
             </span>
           </a>
           <a
             href="/insights"
-            className="text-sm font-medium text-[#6b7280] hover:text-[#1a4fd6] transition-colors duration-300 flex items-center gap-1.5"
+            className="text-sm font-medium text-[#6b7280] hover:text-stone-900 transition-colors duration-300 flex items-center gap-1.5"
           >
             <span>←</span> Back to Insights
           </a>
@@ -50,22 +50,22 @@ export default function ArticlePage() {
       {/* Article */}
       <article className="max-w-3xl mx-auto px-6 py-20">
         {/* Tag */}
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#eef2fd] text-[#1a4fd6] text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-stone-100 text-stone-900 border border-stone-200 text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
           Analytics Engineering
         </div>
 
         {/* Title */}
-        <h1 className="text-[42px] md:text-[56px] leading-[1.1] tracking-[-0.03em] font-serif text-[#1a1a18]">
+        <h1 className="text-[42px] md:text-[56px] leading-[1.1] tracking-[-0.03em] font-serif text-[#1c1917]">
           Text-to-SQL for Operational Analytics — Beyond the Toy Examples
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 text-[20px] leading-[1.7] text-[#5a5a54] italic">
+        <p className="mt-6 text-[20px] leading-[1.7] text-stone-500 italic">
           Making natural language querying work against real freight and procurement data requires more than a capable model.
         </p>
 
         {/* Meta */}
-        <div className="mt-8 pb-10 border-b border-black/10 text-[13px] text-[#9a9a92] flex items-center gap-3 flex-wrap">
+        <div className="mt-8 pb-10 border-b border-stone-200 text-[13px] text-stone-400 flex items-center gap-3 flex-wrap">
           <span>Pankaj Kumar</span>
           <span>•</span>
           <span>June 2026</span>
@@ -74,7 +74,7 @@ export default function ArticlePage() {
         </div>
 
         {/* Intro */}
-        <section className="mt-14 space-y-7 text-[18px] leading-[2] text-[#1a1a18]">
+        <section className="mt-14 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
           <p>
             The demo for text-to-SQL always looks the same. A clean schema. A natural language question. A correct SQL query returned instantly. Applause.
           </p>
@@ -90,11 +90,11 @@ export default function ArticlePage() {
 
         {/* Section 1 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1a1a18]">
+          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
             Why schema complexity is the real bottleneck
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1a1a18]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
             <p>
               Most toy text-to-SQL benchmarks use schemas with five to ten tables and obvious column names. Operational databases look nothing like this.
             </p>
@@ -107,7 +107,7 @@ export default function ArticlePage() {
               The model cannot reason correctly over ambiguous schema if the schema is all it receives. Schema understanding requires:
             </p>
 
-            <ul className="space-y-4 list-disc pl-6 text-[18px] leading-[2] text-[#1a1a18]">
+            <ul className="space-y-4 list-disc pl-6 text-[18px] leading-[2] text-[#1c1917]">
               <li>Column aliasing and disambiguation in the prompt context</li>
               <li>Business terminology mapping (what "lane" means in this context, what counts as "active" cargo)</li>
               <li>Relationship documentation beyond foreign keys</li>
@@ -122,11 +122,11 @@ export default function ArticlePage() {
 
         {/* Section 2 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1a1a18]">
+          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
             The self-correction loop
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1a1a18]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
             <p>
               A query generated by a language model cannot be trusted without validation. The architecture pattern that consistently improves reliability is a self-correction loop: generate, execute, inspect, regenerate if needed.
             </p>
@@ -143,11 +143,11 @@ export default function ArticlePage() {
 
         {/* Section 3 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1a1a18]">
+          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
             Date and entity normalization
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1a1a18]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
             <p>
               Operational queries are full of implicit references that require normalization before SQL generation can succeed.
             </p>
@@ -168,11 +168,11 @@ export default function ArticlePage() {
 
         {/* Section 4 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1a1a18]">
+          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
             Token budget and context management
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1a1a18]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
             <p>
               A fully documented operational schema is too large to inject into a model context window in its entirety. Token budgeting requires a retrieval step just for schema context: given the user's question, retrieve the relevant tables and columns rather than the entire schema.
             </p>
@@ -189,11 +189,11 @@ export default function ArticlePage() {
 
         {/* Section 5 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1a1a18]">
+          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
             What "good enough" looks like
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1a1a18]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
             <p>
               Text-to-SQL for operational analytics does not need to be perfect. It needs to be reliable enough that users trust it and specific enough that wrong answers are obvious rather than plausible.
             </p>
@@ -209,16 +209,16 @@ export default function ArticlePage() {
         </section>
 
         {/* Divider */}
-        <div className="h-px bg-black/10 my-16" />
+        <div className="h-px bg-stone-200 my-16" />
 
         {/* Closing */}
-        <div className="border-l-[3px] border-black/10 pl-6 text-[18px] italic leading-[2] text-[#5a5a54]">
+        <div className="border-l-[3px] border-stone-200 pl-6 text-[18px] italic leading-[2] text-stone-500">
           Nordneuron builds AI and operational intelligence systems at NordNeuron, with a focus on LLM architecture, freight analytics, and enterprise automation.
         </div>
       </article>
 
       {/* Footer */}
-      <footer className="border-t border-black/10 px-6 py-10 text-center text-[13px] text-[#9a9a92]">
+      <footer className="border-t border-stone-200 px-6 py-10 text-center text-[13px] text-stone-400">
         © 2026 Pankaj Kumar · Enterprise AI & Logistics Intelligence
       </footer>
     </main>

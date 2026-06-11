@@ -1,21 +1,27 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Marquees from "./components/Marquees";
 import About from "./components/About";
 import TechStack from "./components/Techstack";
+import SupplyChainEcosystem from "./components/SupplyChainEcosystem";
+import Testimonials from "./components/Testimonials";
 import FeaturedProjects from "./components/Featuredprojects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import AIAssistant from "./components/AIAssistant";
-import SupplyChainEcosystem from "./components/SupplyChainEcosystem";
+
 export default function Home() {
   return (
-    <main className="bg-black text-white overflow-hidden">
+    <main className="bg-[#f5f4f0] text-[#1c1917] overflow-hidden">
       <Navbar />
       <Hero />
-      <SupplyChainEcosystem />
-      <FeaturedProjects />
+      <Marquees />
       <About />
+      <SupplyChainEcosystem />
       <TechStack />
+      <Testimonials />
+      {/* Dark sections grouped at the bottom for dramatic contrast */}
+      <FeaturedProjects />
       <Contact />
       <Footer />
       <AIAssistant />

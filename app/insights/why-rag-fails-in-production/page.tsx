@@ -19,28 +19,28 @@ export default function ArticlePage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#fafaf8] text-[#1a1a18]">
+    <main className="min-h-screen bg-[#f5f4f0] text-[#1c1917]">
       {/* Scroll Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-[3px] bg-black/5 z-[200]">
+      <div className="fixed top-0 left-0 w-full h-[3px] bg-stone-200/50 z-[200]">
         <div
-          className="h-full bg-cyan-400 transition-all duration-150"
+          className="h-full bg-stone-900 text-white transition-all duration-150"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
 
       {/* Clean Navigation Bar */}
-      <nav className="sticky top-0 z-50 bg-[#fafaf8]/85 backdrop-blur-md border-b border-black/5 px-6 py-5">
+      <nav className="sticky top-0 z-50 bg-[#f5f4f0]/85 backdrop-blur-md border-b border-stone-200 px-6 py-5">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <a href="/" className="flex items-center gap-3 shrink-0">
             {/* Accent Dot */}
-            <div className="w-2.5 h-2.5 rounded-full bg-cyan-500 shadow-[0_0_8px_#06b6d4]" />
-            <span className="text-[17px] font-bold tracking-tight font-serif text-black">
+            <div className="w-2.5 h-2.5 rounded-full bg-stone-900 text-white shadow-[0_0_8px_rgba(120, 113, 108,0.3)]" />
+            <span className="text-[17px] font-bold tracking-tight font-serif text-stone-900">
               NordNeuron
             </span>
           </a>
           <a
             href="/insights"
-            className="text-sm font-medium text-[#6b7280] hover:text-[#1a4fd6] transition-colors duration-300 flex items-center gap-1.5"
+            className="text-sm font-medium text-[#6b7280] hover:text-stone-900 transition-colors duration-300 flex items-center gap-1.5"
           >
             <span>←</span> Back to Insights
           </a>
@@ -50,22 +50,22 @@ export default function ArticlePage() {
       {/* Article */}
       <article className="max-w-3xl mx-auto px-6 py-20">
         {/* Tag */}
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#eef2fd] text-[#1a4fd6] text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-stone-100 text-stone-900 border border-stone-200 text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
           Enterprise AI
         </div>
 
         {/* Title */}
-        <h1 className="text-[42px] md:text-[56px] leading-[1.1] tracking-[-0.03em] font-serif text-[#1a1a18]">
+        <h1 className="text-[42px] md:text-[56px] leading-[1.1] tracking-[-0.03em] font-serif text-[#1c1917]">
           Why RAG Fails in Production — and What to Do About It
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 text-[20px] leading-[1.7] text-[#5a5a54] italic">
+        <p className="mt-6 text-[20px] leading-[1.7] text-stone-500 italic">
           Retrieval-augmented generation works remarkably well in demos. Operational environments are a different problem entirely.
         </p>
 
         {/* Meta */}
-        <div className="mt-8 pb-10 border-b border-black/10 text-[13px] text-[#9a9a92] flex items-center gap-3 flex-wrap">
+        <div className="mt-8 pb-10 border-b border-stone-200 text-[13px] text-stone-400 flex items-center gap-3 flex-wrap">
           <span>Pankaj Kumar</span>
           <span>•</span>
           <span>June 2026</span>
@@ -74,7 +74,7 @@ export default function ArticlePage() {
         </div>
 
         {/* Intro */}
-        <section className="mt-14 space-y-7 text-[18px] leading-[2] text-[#1a1a18]">
+        <section className="mt-14 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
           <p>
             Every team building an enterprise AI system eventually reaches the same moment. The prototype looks promising. The retrieval works on the test documents. The LLM answers clearly. Then it goes into production — and the cracks appear.
           </p>
@@ -90,11 +90,11 @@ export default function ArticlePage() {
 
         {/* Section 1 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1a1a18]">
+          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
             The demo illusion
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1a1a18]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
             <p>
               RAG demos are almost always run against clean, well-structured documents with predictable query patterns. The retrieval step produces relevant chunks. The model composes a coherent answer. The audience is impressed.
             </p>
@@ -115,11 +115,11 @@ export default function ArticlePage() {
 
         {/* Section 2 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1a1a18]">
+          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
             Where retrieval actually breaks
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1a1a18]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
             <p>
               Most RAG implementations use cosine similarity over dense vector embeddings. This works when the query and the document share semantic overlap. It breaks in several predictable ways:
             </p>
@@ -144,11 +144,11 @@ export default function ArticlePage() {
 
         {/* Section 3 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1a1a18]">
+          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
             The architecture decisions that actually matter
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1a1a18]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
             <p>
               Fixing RAG in production is less about swapping models and more about rethinking the retrieval pipeline.
             </p>
@@ -173,11 +173,11 @@ export default function ArticlePage() {
 
         {/* Section 4 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1a1a18]">
+          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
             The part nobody talks about: evaluation
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1a1a18]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
             <p>
               The most common reason RAG systems stagnate in production is the absence of a systematic evaluation loop.
             </p>
@@ -194,11 +194,11 @@ export default function ArticlePage() {
 
         {/* Section 5 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1a1a18]">
+          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
             What this means in practice
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1a1a18]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
             <p>
               RAG is not a drop-in component. It is a system — one that requires careful calibration across retrieval strategy, chunking design, metadata architecture, prompt construction, and evaluation methodology.
             </p>
@@ -214,16 +214,16 @@ export default function ArticlePage() {
         </section>
 
         {/* Divider */}
-        <div className="h-px bg-black/10 my-16" />
+        <div className="h-px bg-stone-200 my-16" />
 
         {/* Closing */}
-        <div className="border-l-[3px] border-black/10 pl-6 text-[18px] italic leading-[2] text-[#5a5a54]">
+        <div className="border-l-[3px] border-stone-200 pl-6 text-[18px] italic leading-[2] text-stone-500">
           Nordneuron builds AI and operational intelligence systems at NordNeuron, with a focus on LLM architecture, freight analytics, and enterprise automation.
         </div>
       </article>
 
       {/* Footer */}
-      <footer className="border-t border-black/10 px-6 py-10 text-center text-[13px] text-[#9a9a92]">
+      <footer className="border-t border-stone-200 px-6 py-10 text-center text-[13px] text-stone-400">
         © 2026 Pankaj Kumar · Enterprise AI & Logistics Intelligence
       </footer>
     </main>
