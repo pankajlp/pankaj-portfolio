@@ -7,6 +7,7 @@ import Link from "next/link";
 import { getProjects } from "../lib/prismic";
 
 const videoMap: Record<string, string> = {
+  "NordNeuron Logistics AI Suite": "https://assets.mixkit.co/videos/preview/mixkit-blockchain-connection-network-concept-loopable-34283-large.mp4",
   "Freight Intelligence Platform": "https://assets.mixkit.co/videos/preview/mixkit-abstract-laser-lights-background-31732-large.mp4",
   "Gate Operations Platform": "https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-screens-and-numbers-31907-large.mp4",
   "RFQ Intelligence Platform": "https://assets.mixkit.co/videos/preview/mixkit-blockchain-connection-network-concept-loopable-34283-large.mp4",

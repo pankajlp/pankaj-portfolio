@@ -24,6 +24,13 @@ export const client = repoName
 // Mock fallback project data
 const mockProjects = [
   {
+    title: "NordNeuron Logistics AI Suite",
+    category: "Runnable Full-Stack App",
+    description: "A live, runnable logistics intelligence suite: multi-format RFQ extraction (Excel/Word/PDF/CSV) mapped to a 46-column ocean-freight schema, freight rate calculation, 3D container load planning, HS-code lookup, demurrage risk, and ETA prediction — FastAPI + SQLite backend with a self-contained SPA.",
+    link: "/projects/nordneuron-logistics",
+    stack: ["FastAPI", "SQLite", "Three.js", "Docker"],
+  },
+  {
     title: "Freight Intelligence Platform",
     category: "Strategic Analytics Platform",
     description: "Enterprise analytics platform for monitoring freight profitability, RFQ trends, operational intelligence, and AI-driven logistics insights.",
