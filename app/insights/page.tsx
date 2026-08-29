@@ -4,6 +4,14 @@ import Image from "next/image";
 export default function InsightsPage() {
   const articles = [
     {
+      href: "/insights/mcp-in-production-what-it-takes-to-ship-reliable-agents",
+      title: "MCP in Production: What It Actually Takes to Ship Reliable AI Agents",
+      category: "Agentic AI",
+      description: "The Model Context Protocol solved the tool-integration problem. Reliability — scoped access, versioned contracts, idempotent writes, full observability — is still the part teams have to build themselves.",
+      image: "/mcp_production_cover.png",
+      meta: "August 2026 · 7 min read"
+    },
+    {
       href: "/insights/why-rag-fails-in-production",
       title: "Why RAG Fails in Production — and What to Do About It",
       category: "Enterprise AI",
