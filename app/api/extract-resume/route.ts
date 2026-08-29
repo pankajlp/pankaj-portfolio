@@ -103,7 +103,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json(
           {
             error:
-              "Couldn't read that Word file — it may be corrupted, password-protected, or exported from another app. Try “Save as PDF”, or paste the text below.",
+              "This .docx opens in Word but was saved in a format our reader can't unpack (common with files exported from converters or AI tools). Easiest fix: open it and export to PDF, then upload that — or paste the text below.",
           },
           { status: 422 }
         );
