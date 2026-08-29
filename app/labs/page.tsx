@@ -11,6 +11,13 @@ export default function LabsPage() {
       href: "/labs/job-tailor",
     },
     {
+      title: "Work-Visa Fit Report",
+      status: "Live",
+      description:
+        "Paste a resume for a personalised non-EU work-visa guide across 27 countries — each fit-rated with route, salary floor, and path to PR.",
+      href: "/labs/visa-report",
+    },
+    {
       title: "RFQ Intelligence Sandbox",
       status: "Coming Soon",
       description:

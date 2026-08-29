@@ -101,6 +101,13 @@ export default function JobTailorLab() {
           seconds. Nothing is stored.
         </p>
 
+        <a
+          href="/labs/visa-report"
+          className="mt-4 inline-flex items-center text-stone-500 hover:text-stone-900 font-syne text-[10px] uppercase tracking-widest transition-colors"
+        >
+          Looking to move abroad? Try the Work-Visa Fit Report →
+        </a>
+
         {/* ── Input form ─────────────────────────────────────────── */}
         <div className="mt-16 grid md:grid-cols-2 gap-5">
           <input
