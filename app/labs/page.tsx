@@ -4,6 +4,13 @@ import Footer from "../components/Footer";
 export default function LabsPage() {
   const labs = [
     {
+      title: "Job Application Tailor",
+      status: "Live",
+      description:
+        "Paste a resume and job description for an instant ATS match score, a role-tailored resume, and a ready-to-send cover letter.",
+      href: "/labs/job-tailor",
+    },
+    {
       title: "RFQ Intelligence Sandbox",
       status: "Coming Soon",
       description:
