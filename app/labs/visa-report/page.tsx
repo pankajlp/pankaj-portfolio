@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import ResumeUpload from "../../components/ResumeUpload";
 
 type Row = {
   country: string;
@@ -137,6 +138,9 @@ export default function VisaReportLab() {
             value={currentCountry}
             onChange={(e) => setCurrentCountry(e.target.value)}
           />
+          <div className="mt-6">
+            <ResumeUpload onText={setResume} />
+          </div>
           <label className="block mt-6 mb-2 text-stone-500 font-syne text-[10px] uppercase tracking-widest">
             Your resume
           </label>

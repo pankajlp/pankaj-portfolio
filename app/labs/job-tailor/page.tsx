@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import ResumeUpload from "../../components/ResumeUpload";
 
 type TailorResult = {
   atsScore: number;
@@ -122,6 +123,10 @@ export default function JobTailorLab() {
             value={company}
             onChange={(e) => setCompany(e.target.value)}
           />
+        </div>
+
+        <div className="mt-5">
+          <ResumeUpload onText={setResume} />
         </div>
 
         <div className="mt-5 grid md:grid-cols-2 gap-5">
