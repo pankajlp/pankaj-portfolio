@@ -103,7 +103,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json(
           {
             error:
-              "This .docx opens in Word but was saved in a format our reader can't unpack (common with files exported from converters or AI tools). Easiest fix: open it and export to PDF, then upload that — or paste the text below.",
+              "We couldn't unpack this Word file — its internal data is damaged or non-standard (common with .docx exported by converters or AI tools). Re-save it as PDF from Word or Google Docs and upload that, or paste the text below.",
           },
           { status: 422 }
         );
