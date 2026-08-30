@@ -51,9 +51,9 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="relative py-32 px-6 md:px-10 bg-[#f5f4f0] overflow-hidden border-t border-stone-200">
+    <section className="relative py-32 px-6 md:px-10 bg-[#08080b] overflow-hidden border-t border-white/[0.06]">
       {/* Background Glow */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-stone-1000/5 blur-[180px] rounded-full pointer-events-none" />
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#7c6cff]/10 blur-[180px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         
@@ -65,13 +65,13 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="max-w-3xl mb-16"
         >
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-stone-200 bg-white/50 text-stone-900 font-syne text-[10px] uppercase tracking-widest mb-6">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-[#22d3ee]/30 bg-[#22d3ee]/10 text-[#22d3ee] font-mono text-[10px] uppercase tracking-widest mb-6">
             Testimonials
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-bold font-syne uppercase tracking-tight text-stone-900 leading-[1.05]">
+          <h2 className="text-4xl md:text-6xl font-bold font-syne uppercase tracking-tight text-white leading-[1.05]">
             Client Stories<br />
-            <span className="text-stone-900">& Partners</span>
+            <span className="text-zinc-500">& Partners</span>
           </h2>
         </motion.div>
 
@@ -105,28 +105,28 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="min-w-[290px] sm:min-w-[420px] md:min-w-[460px] bg-white border border-stone-200/80 rounded-3xl p-8 flex flex-col justify-between flex-shrink-0 shadow-[0_8px_30px_rgba(15,23,42,0.02)]"
+              className="min-w-[290px] sm:min-w-[420px] md:min-w-[460px] bg-white/[0.03] border border-white/10 rounded-3xl p-8 flex flex-col justify-between flex-shrink-0 backdrop-blur-sm hover:border-[#22d3ee]/30 transition-colors duration-300"
             >
               <div>
-                <div className="w-10 h-10 rounded-2xl flex items-center justify-center bg-stone-50 border border-stone-200/60 text-stone-900 mb-8">
-                  <Quote size={20} className="opacity-80" />
+                <div className="w-10 h-10 rounded-2xl flex items-center justify-center bg-[#22d3ee]/10 border border-[#22d3ee]/25 text-[#22d3ee] mb-8">
+                  <Quote size={20} className="opacity-90" />
                 </div>
-                
-                <p className="text-stone-700 text-sm sm:text-base md:text-lg leading-relaxed font-light italic">
+
+                <p className="text-zinc-300 text-sm sm:text-base md:text-lg leading-relaxed font-light italic">
                   "{item.quote}"
                 </p>
               </div>
 
-              <div className="mt-8 border-t border-stone-200/60 pt-6 flex items-center justify-between">
+              <div className="mt-8 border-t border-white/[0.08] pt-6 flex items-center justify-between">
                 <div>
-                  <h4 className="font-syne font-bold uppercase tracking-tight text-sm text-stone-900">
+                  <h4 className="font-syne font-bold uppercase tracking-tight text-sm text-white">
                     {item.author}
                   </h4>
-                  <p className="text-[10px] text-stone-400 uppercase tracking-widest mt-1 font-light">
+                  <p className="text-[10px] text-zinc-500 uppercase tracking-widest mt-1 font-light font-mono">
                     {item.role}
                   </p>
                 </div>
-                <div className="text-[10px] text-stone-900 font-syne uppercase tracking-wider font-semibold">
+                <div className="text-[10px] text-[#22d3ee] font-mono uppercase tracking-wider font-semibold">
                   {item.company}
                 </div>
               </div>

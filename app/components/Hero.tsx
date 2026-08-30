@@ -85,8 +85,8 @@ export default function Hero() {
     const render = () => {
       if (!isHeroVisible.current) return;
 
-      // Clear canvas with a very soft trail effect
-      ctx.fillStyle = "rgba(245, 244, 240, 1)";
+      // Clear canvas with the base ground color
+      ctx.fillStyle = "rgba(8, 8, 11, 1)";
       ctx.fillRect(0, 0, width, height);
 
       // Lerp mouse coordinates
@@ -155,7 +155,7 @@ export default function Hero() {
           if (c < cols - 1) {
             const right = projected[idx + 1];
             if (right && right.visible) {
-              ctx.strokeStyle = `rgba(120, 113, 108, ${Math.min(curr.alpha, right.alpha) * 0.12})`;
+              ctx.strokeStyle = `rgba(110, 125, 150, ${Math.min(curr.alpha, right.alpha) * 0.16})`;
               ctx.beginPath();
               ctx.moveTo(curr.sx, curr.sy);
               ctx.lineTo(right.sx, right.sy);
@@ -167,7 +167,7 @@ export default function Hero() {
           if (r < rows - 1) {
             const bottom = projected[idx + cols];
             if (bottom && bottom.visible) {
-              ctx.strokeStyle = `rgba(120, 113, 108, ${Math.min(curr.alpha, bottom.alpha) * 0.12})`;
+              ctx.strokeStyle = `rgba(110, 125, 150, ${Math.min(curr.alpha, bottom.alpha) * 0.16})`;
               ctx.beginPath();
               ctx.moveTo(curr.sx, curr.sy);
               ctx.lineTo(bottom.sx, bottom.sy);
@@ -175,8 +175,8 @@ export default function Hero() {
             }
           }
 
-          // Draw Particle Point
-          ctx.fillStyle = `rgba(120, 113, 108, ${curr.alpha * 0.75})`;
+          // Draw Particle Point — cyan-lit nodes
+          ctx.fillStyle = `rgba(34, 211, 238, ${curr.alpha * 0.7})`;
           ctx.beginPath();
           ctx.arc(curr.sx, curr.sy, 1.2 * curr.alpha + 0.3, 0, Math.PI * 2);
           ctx.fill();
@@ -238,12 +238,15 @@ export default function Hero() {
       />
 
       {/* Background Glow */}
-      <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-stone-1000/5 blur-[180px] rounded-full pointer-events-none z-0" />
+      <div className="absolute top-[-220px] left-1/2 -translate-x-1/2 w-[900px] h-[620px] bg-[#22d3ee]/10 blur-[190px] rounded-full pointer-events-none z-0" />
 
       {/* Grid Overlay */}
-      <div className="absolute inset-0 opacity-[0.01] pointer-events-none z-0">
-        <div className="h-full w-full bg-[linear-gradient(to_right,#1c1917_1px,transparent_1px),linear-gradient(to_bottom,#1c1917_1px,transparent_1px)] bg-[size:60px_60px]" />
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none z-0">
+        <div className="h-full w-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:60px_60px]" />
       </div>
+
+      {/* Bottom fade into page */}
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#08080b] to-transparent pointer-events-none z-0" />
 
       <div className="relative z-10 max-w-6xl mx-auto w-full flex flex-col items-start justify-center mt-10">
         
@@ -255,8 +258,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="flex items-center gap-4 mb-8"
           >
-            <div className="w-12 h-px bg-stone-400" />
-            <span className="text-stone-500 font-syne text-[10px] uppercase tracking-[0.3em]">
+            <div className="w-12 h-px bg-gradient-to-r from-[#22d3ee] to-transparent" />
+            <span className="text-[#22d3ee] font-mono text-[10px] uppercase tracking-[0.3em]">
               AI Systems · Analytics · Automation
             </span>
           </motion.div>
@@ -265,14 +268,14 @@ export default function Hero() {
             <SplitText
               text={"WHERE DATA\nBECOMES"}
               charClass="hero-char"
-              className="font-syne font-bold uppercase tracking-tighter leading-[0.9] text-[48px] sm:text-[72px] md:text-[100px] lg:text-[116px] text-stone-900"
+              className="font-syne font-bold uppercase tracking-tighter leading-[0.9] text-[48px] sm:text-[72px] md:text-[100px] lg:text-[116px] text-white"
             />
           </div>
           <div className="block mt-2">
             <SplitText
               text="DECISION."
               charClass="hero-char"
-              className="font-syne font-bold uppercase tracking-tighter leading-[0.9] text-[48px] sm:text-[72px] md:text-[100px] lg:text-[116px] text-stone-950"
+              className="font-syne font-bold uppercase tracking-tighter leading-[0.9] text-[48px] sm:text-[72px] md:text-[100px] lg:text-[116px] text-[#22d3ee]"
             />
           </div>
 
@@ -283,9 +286,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
             className="mt-12 max-w-2xl text-left"
           >
-            <p className="text-base md:text-lg text-stone-500 leading-relaxed font-light">
-              NordNeuron designs intelligent decision systems, predictive logistics platforms, 
-              and AI-driven operations for enterprise teams—merging data engineering 
+            <p className="text-base md:text-lg text-zinc-400 leading-relaxed font-light">
+              NordNeuron designs intelligent decision systems, predictive logistics platforms,
+              and AI-driven operations for enterprise teams—merging data engineering
               with modern machine reasoning.
             </p>
           </motion.div>
@@ -299,18 +302,19 @@ export default function Hero() {
           >
             <Link
               href="/#work"
-              className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-stone-900 text-stone-50 font-syne text-xs uppercase tracking-widest hover:bg-stone-800 hover:text-white transition-all duration-300 shadow-[0_4px_20px_rgba(120,113,108,0.15)]"
+              className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#22d3ee] text-[#041014] font-mono text-xs uppercase tracking-widest hover:bg-[#67e8f9] transition-all duration-300 shadow-[0_0_30px_rgba(34,211,238,0.28)]"
             >
               Explore Work
               <ArrowUpRight
                 size={16}
+                strokeWidth={2.5}
                 className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
               />
             </Link>
 
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-stone-200 bg-white/60 text-stone-900 font-syne text-xs uppercase tracking-widest hover:bg-stone-900 hover:text-stone-50 transition-all duration-300 shadow-sm"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/15 bg-white/[0.03] text-white font-mono text-xs uppercase tracking-widest hover:border-[#22d3ee] hover:text-[#22d3ee] transition-all duration-300"
             >
               Let’s Connect
             </Link>
@@ -319,22 +323,22 @@ export default function Hero() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-stone-200/60">
+      <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/[0.08]">
         <div className="max-w-6xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between">
           <div className="flex items-center gap-8 sm:gap-12">
             <div className="flex items-center gap-3">
-              <span className="text-2xl font-syne font-bold text-stone-950 tabular-nums">12+</span>
-              <span className="text-[9px] uppercase font-syne tracking-widest text-stone-400 leading-tight">AI<br/>Projects</span>
+              <span className="text-2xl font-syne font-bold text-white tabular-nums">12+</span>
+              <span className="text-[9px] uppercase font-mono tracking-widest text-zinc-500 leading-tight">AI<br/>Projects</span>
             </div>
-            <div className="w-px h-5 bg-stone-200" />
+            <div className="w-px h-5 bg-white/10" />
             <div className="flex items-center gap-3">
-              <span className="text-2xl font-syne font-bold text-stone-950 tabular-nums">3</span>
-              <span className="text-[9px] uppercase font-syne tracking-widest text-stone-400 leading-tight">Active<br/>Products</span>
+              <span className="text-2xl font-syne font-bold text-white tabular-nums">3</span>
+              <span className="text-[9px] uppercase font-mono tracking-widest text-zinc-500 leading-tight">Active<br/>Products</span>
             </div>
-            <div className="hidden sm:block w-px h-5 bg-stone-200" />
+            <div className="hidden sm:block w-px h-5 bg-white/10" />
             <div className="hidden sm:flex items-center gap-3">
-              <span className="text-sm font-syne font-semibold text-stone-900">LLM · BI · MLOps</span>
-              <span className="text-[9px] uppercase font-syne tracking-widest text-stone-400 leading-tight">Core<br/>Stack</span>
+              <span className="text-sm font-syne font-semibold text-zinc-200">LLM · BI · MLOps</span>
+              <span className="text-[9px] uppercase font-mono tracking-widest text-zinc-500 leading-tight">Core<br/>Stack</span>
             </div>
           </div>
 
@@ -343,12 +347,12 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.6, duration: 0.8 }}
-            className="flex items-center gap-2 text-stone-400"
+            className="flex items-center gap-2 text-zinc-500"
           >
-            <span className="font-syne text-[9px] uppercase tracking-widest hidden sm:block">Scroll</span>
-            <div className="w-px h-8 bg-stone-300 relative overflow-hidden rounded-full">
+            <span className="font-mono text-[9px] uppercase tracking-widest hidden sm:block">Scroll</span>
+            <div className="w-px h-8 bg-white/15 relative overflow-hidden rounded-full">
               <motion.div
-                className="absolute top-0 left-0 w-full bg-stone-600 rounded-full"
+                className="absolute top-0 left-0 w-full bg-[#22d3ee] rounded-full"
                 style={{ height: "40%" }}
                 animate={{ y: ["0%", "160%", "0%"] }}
                 transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}

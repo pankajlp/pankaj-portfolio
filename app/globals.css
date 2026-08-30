@@ -1,9 +1,20 @@
 @import "tailwindcss";
 
-@theme {
-  --color-cyan-300: #78716c;
-  --color-cyan-400: #1c1917;
-  --color-cyan-500: #000000;
+/* ── DESIGN TOKENS ──────────────────────────────────
+   Sleek AI/tech dark system: true near-black grounds,
+   cool zinc text, electric cyan → violet accent.       */
+:root {
+  --bg: #08080b;           /* base page ground */
+  --bg-lift: #0f0f14;      /* lifted panels / cards */
+  --bg-lift-2: #14141b;    /* hover / elevated */
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --fg: #f4f4f5;           /* primary text */
+  --fg-dim: #a1a1aa;       /* secondary text */
+  --fg-mute: #6b6b76;      /* muted labels */
+  --accent: #22d3ee;       /* electric cyan */
+  --accent-2: #7c6cff;     /* violet (for gradients) */
+  --accent-soft: rgba(34, 211, 238, 0.14);
 }
 
 * {
@@ -18,11 +29,23 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background: #f5f4f0;
-  color: #1c1917;
+  background: var(--bg);
+  color: var(--fg);
   font-family: var(--font-inter), sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* Ambient depth: a soft cool aura anchored top-center */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(60% 45% at 50% -8%, rgba(34, 211, 238, 0.08), transparent 70%),
+    radial-gradient(50% 40% at 100% 0%, rgba(124, 108, 255, 0.06), transparent 70%);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -32,16 +55,29 @@ body {
 }
 
 ::selection {
-  background-color: rgba(120, 113, 108, 0.2);
-  color: #1c1917;
+  background-color: var(--accent-soft);
+  color: #ffffff;
 }
 
+/* ── FONTS ──────────────────────────────────────────
+   --font-syne now maps to Sora (sharp geometric display).
+   Kept the class name so existing markup needs no churn. */
 .font-syne {
-  font-family: var(--font-syne), sans-serif;
+  font-family: var(--font-syne), "Segoe UI", sans-serif;
 }
 
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, "SFMono-Regular", monospace;
+}
+
+/* Back-compat: some markup still references .font-grotesk */
 .font-grotesk {
-  font-family: var(--font-grotesk), sans-serif;
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+/* Accent helpers */
+.text-accent {
+  color: var(--accent);
 }
 
 @layer base {

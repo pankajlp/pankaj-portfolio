@@ -9,12 +9,12 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative bg-[#0f0e0d] overflow-hidden border-t border-white/[0.06]"
+      className="relative bg-[#0a0a0e] overflow-hidden border-t border-white/[0.06]"
     >
       {/* Subtle radial glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full"
-          style={{ background: "radial-gradient(ellipse, rgba(120,113,108,0.06) 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(ellipse, rgba(34,211,238,0.10) 0%, transparent 70%)" }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 py-28 md:py-40">
@@ -27,8 +27,8 @@ export default function Contact() {
           viewport={{ once: true }}
           className="flex items-center gap-4 mb-12"
         >
-          <div className="w-10 h-px bg-stone-500" />
-          <span className="text-stone-400 font-syne text-[10px] uppercase tracking-widest">Let&apos;s Work Together</span>
+          <div className="w-10 h-px bg-gradient-to-r from-[#22d3ee] to-transparent" />
+          <span className="text-[#22d3ee] font-mono text-[10px] uppercase tracking-widest">Let&apos;s Work Together</span>
         </motion.div>
 
         {/* Oversized heading */}
@@ -40,7 +40,7 @@ export default function Contact() {
         >
           <h2 className="font-syne font-bold uppercase tracking-tighter leading-[0.88] text-[clamp(52px,10vw,160px)] text-white">
             Start A<br />
-            <span className="text-stone-400">Project.</span>
+            <span className="text-[#22d3ee]">Project.</span>
           </h2>
         </motion.div>
 
@@ -52,7 +52,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 border-t border-white/[0.06] pt-10"
         >
-          <p className="text-stone-300 text-base md:text-lg leading-relaxed font-light max-w-md">
+          <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-light max-w-md">
             Interested in analytics engineering, AI workflows,
             automation systems, or enterprise intelligence?
             Let&apos;s build something.
@@ -60,7 +60,7 @@ export default function Contact() {
 
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/10 text-white font-syne text-xs uppercase tracking-widest hover:bg-white hover:text-black hover:border-white transition-all duration-300"
+            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#22d3ee] text-[#041014] font-mono text-xs uppercase tracking-widest hover:bg-[#67e8f9] transition-all duration-300 shadow-[0_0_28px_rgba(34,211,238,0.25)]"
           >
             Open Inquiry Form
             <ArrowUpRight
@@ -80,7 +80,7 @@ export default function Contact() {
         >
           <a
             href="mailto:contact@nordneuron.com"
-            className="group flex items-center gap-2 text-stone-400 hover:text-white font-syne text-[11px] uppercase tracking-widest transition-colors duration-300"
+            className="group flex items-center gap-2 text-zinc-400 hover:text-[#22d3ee] font-mono text-[11px] uppercase tracking-widest transition-colors duration-300"
           >
             contact@nordneuron.com
             <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -90,7 +90,7 @@ export default function Contact() {
             href="https://linkedin.com/in/pankajlp"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 text-stone-400 hover:text-white font-syne text-[11px] uppercase tracking-widest transition-colors duration-300"
+            className="group flex items-center gap-2 text-zinc-400 hover:text-[#22d3ee] font-mono text-[11px] uppercase tracking-widest transition-colors duration-300"
           >
             <FaLinkedin size={13} />
             LinkedIn
@@ -101,7 +101,7 @@ export default function Contact() {
             href="https://github.com/pankajlp"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 text-stone-400 hover:text-white font-syne text-[11px] uppercase tracking-widest transition-colors duration-300"
+            className="group flex items-center gap-2 text-zinc-400 hover:text-[#22d3ee] font-mono text-[11px] uppercase tracking-widest transition-colors duration-300"
           >
             <FaGithub size={13} />
             GitHub

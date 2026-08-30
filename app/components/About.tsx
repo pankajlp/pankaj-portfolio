@@ -68,10 +68,10 @@ export default function About() {
     <section
       id="about"
       ref={containerRef}
-      className="relative py-32 px-6 md:px-10 bg-transparent overflow-hidden border-t border-stone-200"
+      className="relative py-32 px-6 md:px-10 bg-transparent overflow-hidden border-t border-white/[0.06]"
     >
       {/* Background Glow */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-stone-1000/5 blur-[180px] rounded-full pointer-events-none" />
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#7c6cff]/10 blur-[180px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-[1.1fr_1fr] gap-20">
         
@@ -79,8 +79,8 @@ export default function About() {
         <div className="lg:sticky lg:top-32 h-fit space-y-6">
           {/* Label */}
           <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-stone-200" />
-            <span className="text-[10px] tracking-widest uppercase font-syne text-stone-400">
+            <div className="w-12 h-px bg-gradient-to-r from-[#22d3ee] to-transparent" />
+            <span className="text-[10px] tracking-widest uppercase font-mono text-[#22d3ee]">
               About NordNeuron
             </span>
           </div>
@@ -90,19 +90,19 @@ export default function About() {
             <SplitText
               text={"BEYOND DASHBOARDS —"}
               charClass="about-char"
-              className="text-4xl md:text-6xl font-bold font-syne uppercase tracking-tight text-stone-900 leading-[1.05]"
+              className="text-4xl md:text-6xl font-bold font-syne uppercase tracking-tight text-white leading-[1.05]"
             />
           </div>
           <div className="block mt-2">
             <SplitText
               text={"TOWARD ENTERPRISE\nINTELLIGENCE."}
               charClass="about-char"
-              className="text-4xl md:text-6xl font-bold font-syne uppercase tracking-tight text-stone-950 leading-[1.05]"
+              className="text-4xl md:text-6xl font-bold font-syne uppercase tracking-tight text-zinc-500 leading-[1.05]"
             />
           </div>
 
           {/* Paragraph */}
-          <p className="mt-8 text-base md:text-lg text-stone-500 leading-relaxed max-w-2xl font-light">
+          <p className="mt-8 text-base md:text-lg text-zinc-400 leading-relaxed max-w-2xl font-light">
             NordNeuron designs intelligent operational systems that
             unify analytics, automation, and decision-making into a
             single enterprise layer — purpose-built for environments
@@ -110,20 +110,20 @@ export default function About() {
           </p>
 
           {/* Founder Card */}
-          <div className="mt-10 p-6 rounded-3xl border border-stone-200 bg-white/60 backdrop-blur-xl max-w-xl shadow-sm">
+          <div className="mt-10 p-6 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl max-w-xl">
             <div className="flex flex-col sm:flex-row sm:items-center gap-5">
-              
+
               {/* Avatar */}
-              <div className="w-16 h-16 rounded-full bg-stone-100 border border-stone-200/20 text-stone-500 flex items-center justify-center font-syne font-bold text-lg shadow-sm">
+              <div className="w-16 h-16 rounded-full bg-white/[0.04] border border-[#22d3ee]/30 text-[#22d3ee] flex items-center justify-center font-syne font-bold text-lg shadow-[0_0_20px_rgba(34,211,238,0.15)]">
                 PK
               </div>
 
               {/* Info */}
               <div>
-                <h3 className="text-xl text-stone-900 font-bold font-syne uppercase tracking-tight">
+                <h3 className="text-xl text-white font-bold font-syne uppercase tracking-tight">
                   Pankaj Kumar
                 </h3>
-                <p className="mt-1 text-sm text-stone-400 leading-relaxed font-light">
+                <p className="mt-1 text-sm text-zinc-500 leading-relaxed font-light">
                   Founder · AI Systems & Enterprise Intelligence
                 </p>
               </div>
@@ -134,11 +134,12 @@ export default function About() {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
               href="/about"
-              className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-stone-900 text-stone-50 font-syne text-xs uppercase tracking-widest hover:bg-stone-800 hover:text-white transition-all duration-300 shadow-[0_4px_20px_rgba(120,113,108,0.15)]"
+              className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#22d3ee] text-[#041014] font-mono text-xs uppercase tracking-widest hover:bg-[#67e8f9] transition-all duration-300 shadow-[0_0_28px_rgba(34,211,238,0.25)]"
             >
               Read Full Story
               <ArrowUpRight
                 size={16}
+                strokeWidth={2.5}
                 className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
               />
             </Link>
@@ -148,7 +149,7 @@ export default function About() {
               {tags.map((tag) => (
                 <div
                   key={tag}
-                  className="px-4 py-2 rounded-full border border-stone-200 bg-white/60 text-[10px] font-syne uppercase tracking-widest text-stone-400 shadow-sm"
+                  className="px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] text-[10px] font-mono uppercase tracking-widest text-zinc-400"
                 >
                   {tag}
                 </div>
@@ -162,22 +163,22 @@ export default function About() {
           {capabilities.map((item) => (
             <div
               key={item.number}
-              className="group border-b border-stone-200 py-8 last:border-b-0 hover:border-stone-400 transition-colors duration-300 cursor-default"
+              className="group border-b border-white/[0.08] py-8 last:border-b-0 hover:border-[#22d3ee]/40 transition-colors duration-300 cursor-default"
             >
               <div className="grid grid-cols-[50px_1fr] gap-6">
 
                 {/* Number */}
-                <div className="text-sm text-stone-300 group-hover:text-stone-900 font-syne font-bold tracking-[0.2em] pt-1 transition-colors duration-300">
+                <div className="text-sm text-zinc-600 group-hover:text-[#22d3ee] font-mono font-bold tracking-[0.2em] pt-1 transition-colors duration-300">
                   {item.number}
                 </div>
 
                 {/* Content */}
                 <div>
-                  <h3 className="text-xl md:text-2xl font-bold font-syne uppercase tracking-tight text-stone-900 group-hover:text-stone-950 transition-colors duration-300">
+                  <h3 className="text-xl md:text-2xl font-bold font-syne uppercase tracking-tight text-white transition-colors duration-300">
                     {item.title}
                   </h3>
 
-                  <p className="mt-3 text-sm md:text-base text-stone-400 group-hover:text-stone-500 leading-relaxed font-light transition-colors duration-300 max-h-0 group-hover:max-h-40 overflow-hidden" style={{ transition: "max-height 0.4s ease, color 0.3s ease" }}>
+                  <p className="mt-3 text-sm md:text-base text-zinc-500 group-hover:text-zinc-400 leading-relaxed font-light transition-colors duration-300 max-h-0 group-hover:max-h-40 overflow-hidden" style={{ transition: "max-height 0.4s ease, color 0.3s ease" }}>
                     {item.description}
                   </p>
                 </div>

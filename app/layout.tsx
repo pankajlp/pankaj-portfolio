@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, Syne } from "next/font/google";
+import { Inter, Sora, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import LenisProvider from "./components/LenisProvider";
@@ -12,15 +12,19 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const grotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-grotesk",
-});
-
-const syne = Syne({
+// Sharp geometric display face. Exposed as --font-syne so existing
+// `.font-syne` / `font-syne` markup picks it up with no churn.
+const sora = Sora({
   subsets: ["latin"],
   variable: "--font-syne",
-  weight: ["400", "500", "700", "800"],
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+// Techy monospace for eyebrow / tag labels.
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -60,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
 
       <head>
 
@@ -94,7 +98,7 @@ export default function RootLayout({
 
       </head>
 
-      <body className={`${inter.variable} ${grotesk.variable} ${syne.variable}`}>
+      <body className={`${inter.variable} ${sora.variable} ${jetbrainsMono.variable}`}>
         <Preloader />
         <CustomCursor />
         <TransitionCurtain />
