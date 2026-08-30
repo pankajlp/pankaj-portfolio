@@ -4,6 +4,14 @@ import Image from "next/image";
 export default function InsightsPage() {
   const articles = [
     {
+      href: "/insights/stale-by-default",
+      title: "Stale by Default: Why Agents Act on Superseded Data",
+      category: "Agentic AI",
+      description: "Retrieval systems rank by similarity, and a revised policy clause sits almost on top of the version it replaced. Temporal validity belongs in the metadata filter, not in the ranker.",
+      image: "/architecture.png",
+      meta: "August 2026 · 8 min read"
+    },
+    {
       href: "/insights/mcp-in-production-what-it-takes-to-ship-reliable-agents",
       title: "MCP in Production: What It Actually Takes to Ship Reliable AI Agents",
       category: "Agentic AI",
