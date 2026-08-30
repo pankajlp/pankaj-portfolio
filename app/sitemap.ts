@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Insights articles
   const insights = [
+    "/insights/stale-by-default",
     "/insights/why-rag-fails-in-production",
     "/insights/fine-tuning-vs-prompting-the-real-tradeoff",
     "/insights/text-to-sql-for-operational-analytics",
