@@ -8,7 +8,7 @@ export default function InsightsPage() {
       title: "Stale by Default: Why Agents Act on Superseded Data",
       category: "Agentic AI",
       description: "Retrieval systems rank by similarity, and a revised policy clause sits almost on top of the version it replaced. Temporal validity belongs in the metadata filter, not in the ranker.",
-      image: "/architecture.png",
+      image: "/stale_by_default_cover.png",
       meta: "August 2026 · 8 min read"
     },
     {
