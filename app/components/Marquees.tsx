@@ -40,9 +40,9 @@ export default function Marquees() {
   }, []);
 
   return (
-    <section className="relative bg-[#0b0b0f] py-14 overflow-hidden border-t border-b border-white/[0.06]">
+    <section className="relative bg-[#100e0c] py-14 overflow-hidden border-t border-b border-white/[0.06]">
       {/* Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[150px] bg-[#22d3ee]/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[150px] bg-[#c8a86b]/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 space-y-6">
         
@@ -51,10 +51,10 @@ export default function Marquees() {
           <div className="flex items-center gap-12 pr-12">
             {ticker1.map((item) => (
               <div key={item} className="flex items-center gap-4">
-                <span className="font-syne font-bold uppercase tracking-widest text-lg sm:text-2xl text-white">
+                <span className="font-syne italic font-normal tracking-tight text-2xl sm:text-4xl text-[#f2ede3]">
                   {item}
                 </span>
-                <span className="w-2.5 h-2.5 rounded-full bg-[#22d3ee] shadow-[0_0_12px_#22d3ee]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#c8a86b]" />
               </div>
             ))}
           </div>
@@ -65,10 +65,10 @@ export default function Marquees() {
           <div className="flex items-center gap-12 pr-12">
             {ticker2.map((item) => (
               <div key={item} className="flex items-center gap-4">
-                <span className="font-syne font-bold uppercase tracking-widest text-lg sm:text-2xl text-zinc-600">
+                <span className="font-syne italic font-normal tracking-tight text-2xl sm:text-4xl text-[#6f675b]">
                   {item}
                 </span>
-                <span className="w-2 h-2 rounded-full bg-zinc-700" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#3a352d]" />
               </div>
             ))}
           </div>

@@ -12,7 +12,7 @@ import AIAssistant from "./components/AIAssistant";
 
 export default function Home() {
   return (
-    <main className="bg-[#08080b] text-zinc-100 overflow-hidden">
+    <main className="bg-[#0c0b0a] text-[#efe9df] overflow-hidden">
       <Navbar />
       <Hero />
       <Marquees />

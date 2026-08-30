@@ -63,7 +63,7 @@ export default function FeaturedProjects() {
   return (
     <section
       id="work"
-      className="relative bg-[#0a0a0e] overflow-hidden"
+      className="relative bg-[#100e0c] overflow-hidden"
     >
       {/* Floating video preview that follows cursor */}
       <motion.div
@@ -107,15 +107,15 @@ export default function FeaturedProjects() {
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
         >
           <div>
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-[#22d3ee]/30 bg-[#22d3ee]/10 text-[#22d3ee] font-mono text-[10px] uppercase tracking-widest mb-6">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-[#c8a86b]/30 bg-[#c8a86b]/10 text-[#c8a86b] font-mono text-[10px] uppercase tracking-widest mb-6">
               Featured Work
             </div>
-            <h2 className="text-5xl md:text-7xl font-bold font-syne uppercase tracking-tight text-white leading-[0.95]">
+            <h2 className="text-5xl md:text-7xl font-medium font-syne tracking-tight text-[#f2ede3] leading-[0.95]">
               Selected<br />
-              <span className="text-zinc-600">Projects</span>
+              <span className="text-[#6f675b]">Projects</span>
             </h2>
           </div>
-          <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-xs font-light">
+          <p className="text-[#a89f8f] text-sm md:text-base leading-relaxed max-w-xs font-light">
             Enterprise AI systems, logistics intelligence, and operational platforms.
           </p>
         </motion.div>
@@ -139,14 +139,14 @@ export default function FeaturedProjects() {
             >
               {/* Left: number + title */}
               <div className="flex items-center gap-6 md:gap-10 min-w-0">
-                <span className="text-zinc-600 font-mono text-xs tracking-widest shrink-0 w-8">
+                <span className="text-[#6f675b] font-mono text-xs tracking-widest shrink-0 w-8">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <div className="min-w-0">
-                  <h3 className={`text-2xl md:text-4xl lg:text-5xl font-bold font-syne uppercase tracking-tight leading-none transition-colors duration-300 ${isHovered ? "text-[#22d3ee]" : "text-zinc-300"}`}>
+                  <h3 className={`text-2xl md:text-4xl lg:text-5xl font-medium font-syne tracking-tight leading-none transition-colors duration-300 ${isHovered ? "text-[#c8a86b]" : "text-[#cfc7b6]"}`}>
                     {project.title}
                   </h3>
-                  <p className="mt-2 text-zinc-500 text-sm font-light leading-relaxed max-w-xl hidden md:block">
+                  <p className="mt-2 text-[#8a8175] text-sm font-light leading-relaxed max-w-xl hidden md:block">
                     {project.description}
                   </p>
                 </div>
@@ -154,14 +154,14 @@ export default function FeaturedProjects() {
 
               {/* Right: category + arrow */}
               <div className="flex items-center gap-6 shrink-0">
-                <span className="hidden lg:block text-zinc-500 font-mono text-[10px] uppercase tracking-widest">
+                <span className="hidden lg:block text-[#8a8175] font-mono text-[10px] uppercase tracking-widest">
                   {project.category}
                 </span>
-                <div className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 ${isHovered ? "border-[#22d3ee] bg-[#22d3ee] shadow-[0_0_20px_rgba(34,211,238,0.4)]" : "border-white/10 bg-transparent"}`}>
+                <div className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 ${isHovered ? "border-[#c8a86b] bg-[#c8a86b] shadow-[0_0_20px_rgba(200, 168, 107,0.4)]" : "border-white/10 bg-transparent"}`}>
                   <ArrowUpRight
                     size={16}
                     strokeWidth={2.5}
-                    className={`transition-colors duration-300 ${isHovered ? "text-[#041014]" : "text-zinc-500"}`}
+                    className={`transition-colors duration-300 ${isHovered ? "text-[#171310]" : "text-[#8a8175]"}`}
                   />
                 </div>
               </div>

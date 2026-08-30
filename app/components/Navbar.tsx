@@ -85,8 +85,8 @@ export default function Navbar() {
         transition={{ duration: 0.6 }}
         className={`fixed top-0 left-0 w-full z-50 border-b transition-all duration-500 ${
           scrolled || menuOpen
-            ? "border-white/10 bg-[#08080b]/85 backdrop-blur-xl"
-            : "border-transparent bg-[#08080b]/40 backdrop-blur-md"
+            ? "border-white/10 bg-[#0c0b0a]/85 backdrop-blur-xl"
+            : "border-transparent bg-[#0c0b0a]/40 backdrop-blur-md"
         }`}
       >
         <div
@@ -112,14 +112,14 @@ export default function Navbar() {
                   key={item.label}
                   href={item.href}
                   className={`relative px-3.5 py-2 font-mono text-[11px] uppercase tracking-[0.18em] transition-colors duration-300 ${
-                    active ? "text-white" : "text-zinc-400 hover:text-white"
+                    active ? "text-[#f2ede3]" : "text-[#a89f8f] hover:text-[#f2ede3]"
                   }`}
                 >
                   {item.label}
                   {active && (
                     <motion.span
                       layoutId="nav-active"
-                      className="absolute left-3.5 right-3.5 -bottom-0.5 h-px bg-[#22d3ee] shadow-[0_0_10px_#22d3ee]"
+                      className="absolute left-3.5 right-3.5 -bottom-0.5 h-px bg-[#c8a86b] shadow-[0_0_10px_#c8a86b]"
                       transition={{ type: "spring", stiffness: 400, damping: 32 }}
                     />
                   )}
@@ -131,7 +131,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <TransitionLink
             href="/contact"
-            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-[0.18em] text-[#041014] bg-[#22d3ee] border border-[#22d3ee] hover:bg-[#67e8f9] hover:border-[#67e8f9] transition-all duration-300 shadow-[0_0_24px_rgba(34,211,238,0.3)]"
+            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-mono text-[10px] uppercase tracking-[0.18em] text-[#171310] bg-[#c8a86b] border border-[#c8a86b] hover:bg-[#d8bd86] hover:border-[#d8bd86] transition-all duration-300 shadow-[0_0_24px_rgba(200, 168, 107,0.3)]"
           >
             Start a Project
             <ArrowUpRight size={13} strokeWidth={2.5} />
@@ -143,7 +143,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
-            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-white/10 text-white hover:border-[#22d3ee] hover:text-[#22d3ee] transition-colors duration-300"
+            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-white/10 text-[#f2ede3] hover:border-[#c8a86b] hover:text-[#c8a86b] transition-colors duration-300"
           >
             {menuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -159,10 +159,10 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[120] md:hidden bg-[#08080b] backdrop-blur-xl"
+            className="fixed inset-0 z-[120] md:hidden bg-[#0c0b0a] backdrop-blur-xl"
           >
             {/* accent aura */}
-            <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(60%_40%_at_50%_0%,rgba(34,211,238,0.12),transparent_70%)]" />
+            <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(60%_40%_at_50%_0%,rgba(200, 168, 107,0.12),transparent_70%)]" />
 
             {/* Overlay header (logo + close) */}
             <div className="relative flex items-center justify-between h-[88px] px-6">
@@ -173,7 +173,7 @@ export default function Navbar() {
                 type="button"
                 onClick={() => setMenuOpen(false)}
                 aria-label="Close menu"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-white/10 text-white hover:border-[#22d3ee] hover:text-[#22d3ee] transition-colors duration-300"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-white/10 text-[#f2ede3] hover:border-[#c8a86b] hover:text-[#c8a86b] transition-colors duration-300"
               >
                 <X size={18} />
               </button>
@@ -194,12 +194,12 @@ export default function Navbar() {
                       onClick={() => setMenuOpen(false)}
                       className="group flex items-baseline gap-4 py-3 border-b border-white/[0.06]"
                     >
-                      <span className="font-mono text-[11px] text-[#22d3ee] tabular-nums w-8">
+                      <span className="font-mono text-[11px] text-[#c8a86b] tabular-nums w-8">
                         0{i + 1}
                       </span>
                       <span
-                        className={`font-syne font-bold uppercase tracking-tight text-4xl transition-colors duration-300 ${
-                          active ? "text-[#22d3ee]" : "text-white group-hover:text-[#22d3ee]"
+                        className={`font-syne font-medium tracking-tight text-4xl transition-colors duration-300 ${
+                          active ? "text-[#c8a86b]" : "text-[#f2ede3] group-hover:text-[#c8a86b]"
                         }`}
                       >
                         {item.label}
@@ -218,7 +218,7 @@ export default function Navbar() {
                 <TransitionLink
                   href="/contact"
                   onClick={() => setMenuOpen(false)}
-                  className="inline-flex items-center gap-2 px-7 py-4 rounded-full font-mono text-[11px] uppercase tracking-[0.18em] text-[#041014] bg-[#22d3ee] shadow-[0_0_28px_rgba(34,211,238,0.35)]"
+                  className="inline-flex items-center gap-2 px-7 py-4 rounded-full font-mono text-[11px] uppercase tracking-[0.18em] text-[#171310] bg-[#c8a86b] shadow-[0_0_28px_rgba(200, 168, 107,0.35)]"
                 >
                   Start a Project
                   <ArrowUpRight size={15} strokeWidth={2.5} />
@@ -232,11 +232,11 @@ export default function Navbar() {
   );
 }
 
-/* Brand mark tuned for a dark ground with a cyan-lit core. */
+/* Brand mark tuned for a dark ground with a gold-lit core. */
 function NordNeuronMark() {
   const stroke = "#3f3f46";
   const edge = "#52525b";
-  const nodeFill = "#0d0d12";
+  const nodeFill = "#141210";
   const nodeStroke = "#71717a";
 
   return (
@@ -282,9 +282,9 @@ function NordNeuronMark() {
       <circle cx="13" cy="29" r="2.5" fill={nodeFill} stroke={nodeStroke} strokeWidth="1.1" />
       <circle cx="13" cy="17" r="2.5" fill={nodeFill} stroke={nodeStroke} strokeWidth="1.1" />
 
-      {/* Center node — cyan-lit core */}
-      <circle cx="24" cy="23" r="5.5" fill="#22d3ee" filter="url(#nn-glow)" />
-      <circle cx="24" cy="23" r="2.6" fill="#041014" />
+      {/* Center node — gold-lit core */}
+      <circle cx="24" cy="23" r="5.5" fill="#c8a86b" filter="url(#nn-glow)" />
+      <circle cx="24" cy="23" r="2.6" fill="#171310" />
 
       {/* Wordmark */}
       <text

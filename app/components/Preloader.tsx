@@ -41,7 +41,7 @@ export default function Preloader() {
           initial={{ y: 0 }}
           exit={{ y: "-100%" }}
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] as [number, number, number, number] }}
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#08080b] overflow-hidden"
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0c0b0a] overflow-hidden"
         >
           {/* Subtle Background Grid Overlay */}
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
@@ -49,11 +49,11 @@ export default function Preloader() {
           </div>
 
           {/* Accent aura */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#22d3ee]/10 blur-[160px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#c8a86b]/10 blur-[160px] rounded-full pointer-events-none" />
 
           {/* Background Big Progress Text (Noomo Style) */}
           <div className="absolute bottom-8 right-8 pointer-events-none select-none overflow-hidden">
-            <h1 className="font-syne font-bold uppercase tracking-tighter leading-none text-[15vw] md:text-[12vw] text-white/[0.04] select-none">
+            <h1 className="font-syne font-medium tracking-tight leading-none text-[15vw] md:text-[12vw] text-white/[0.04] select-none">
               {progress.toString().padStart(3, "0")}%
             </h1>
           </div>
@@ -66,7 +66,7 @@ export default function Preloader() {
               width="100"
               height="100"
               viewBox="0 0 100 100"
-              className="text-zinc-100"
+              className="text-[#efe9df]"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -90,12 +90,12 @@ export default function Preloader() {
                 cx="50"
                 cy="50"
                 r="4"
-                fill="#22d3ee"
+                fill="#c8a86b"
                 stroke="none"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: [0, 1.3, 1], opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.5 }}
-                style={{ filter: "drop-shadow(0 0 6px #22d3ee)" }}
+                style={{ filter: "drop-shadow(0 0 6px #c8a86b)" }}
               />
             </svg>
 
@@ -105,7 +105,7 @@ export default function Preloader() {
                 initial={{ y: 24, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1], delay: 0.4 }}
-                className="font-syne font-bold uppercase tracking-[0.25em] text-xs text-white"
+                className="font-syne font-bold uppercase tracking-[0.25em] text-xs text-[#f2ede3]"
               >
                 NordNeuron
               </motion.p>
@@ -117,7 +117,7 @@ export default function Preloader() {
                 initial={{ y: 16, opacity: 0 }}
                 animate={{ y: 0, opacity: 0.4 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
-                className="font-mono text-[8px] uppercase tracking-widest text-zinc-500"
+                className="font-mono text-[8px] uppercase tracking-widest text-[#8a8175]"
               >
                 Initializing Intelligence Systems
               </motion.p>
@@ -127,7 +127,7 @@ export default function Preloader() {
           {/* Loading bar in center */}
           <div className="absolute bottom-0 left-0 w-full h-1 bg-white/10 pointer-events-none">
             <motion.div
-              className="h-full bg-[#22d3ee] shadow-[0_0_14px_rgba(34,211,238,0.5)]"
+              className="h-full bg-[#c8a86b] shadow-[0_0_14px_rgba(200, 168, 107,0.5)]"
               initial={{ width: "0%" }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.05 }}

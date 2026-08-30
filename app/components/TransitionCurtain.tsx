@@ -67,7 +67,7 @@ export default function TransitionCurtain() {
       animate={{ y: getY() }}
       transition={getTransition()}
       onAnimationComplete={handleAnimationComplete}
-      className="fixed inset-0 z-[9999] pointer-events-none bg-[#08080b] bg-[radial-gradient(60%_50%_at_50%_50%,rgba(34,211,238,0.12),transparent_70%)]"
+      className="fixed inset-0 z-[9999] pointer-events-none bg-[#0c0b0a] bg-[radial-gradient(60%_50%_at_50%_50%,rgba(200, 168, 107,0.12),transparent_70%)]"
     />
   );
 }

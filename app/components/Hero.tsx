@@ -155,7 +155,7 @@ export default function Hero() {
           if (c < cols - 1) {
             const right = projected[idx + 1];
             if (right && right.visible) {
-              ctx.strokeStyle = `rgba(110, 125, 150, ${Math.min(curr.alpha, right.alpha) * 0.16})`;
+              ctx.strokeStyle = `rgba(150, 140, 122, ${Math.min(curr.alpha, right.alpha) * 0.16})`;
               ctx.beginPath();
               ctx.moveTo(curr.sx, curr.sy);
               ctx.lineTo(right.sx, right.sy);
@@ -167,7 +167,7 @@ export default function Hero() {
           if (r < rows - 1) {
             const bottom = projected[idx + cols];
             if (bottom && bottom.visible) {
-              ctx.strokeStyle = `rgba(110, 125, 150, ${Math.min(curr.alpha, bottom.alpha) * 0.16})`;
+              ctx.strokeStyle = `rgba(150, 140, 122, ${Math.min(curr.alpha, bottom.alpha) * 0.16})`;
               ctx.beginPath();
               ctx.moveTo(curr.sx, curr.sy);
               ctx.lineTo(bottom.sx, bottom.sy);
@@ -175,8 +175,8 @@ export default function Hero() {
             }
           }
 
-          // Draw Particle Point — cyan-lit nodes
-          ctx.fillStyle = `rgba(34, 211, 238, ${curr.alpha * 0.7})`;
+          // Draw Particle Point — gold-lit nodes
+          ctx.fillStyle = `rgba(200, 168, 107, ${curr.alpha * 0.7})`;
           ctx.beginPath();
           ctx.arc(curr.sx, curr.sy, 1.2 * curr.alpha + 0.3, 0, Math.PI * 2);
           ctx.fill();
@@ -238,7 +238,7 @@ export default function Hero() {
       />
 
       {/* Background Glow */}
-      <div className="absolute top-[-220px] left-1/2 -translate-x-1/2 w-[900px] h-[620px] bg-[#22d3ee]/10 blur-[190px] rounded-full pointer-events-none z-0" />
+      <div className="absolute top-[-220px] left-1/2 -translate-x-1/2 w-[900px] h-[620px] bg-[#c8a86b]/10 blur-[190px] rounded-full pointer-events-none z-0" />
 
       {/* Grid Overlay */}
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none z-0">
@@ -246,7 +246,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom fade into page */}
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#08080b] to-transparent pointer-events-none z-0" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0c0b0a] to-transparent pointer-events-none z-0" />
 
       <div className="relative z-10 max-w-6xl mx-auto w-full flex flex-col items-start justify-center mt-10">
         
@@ -258,24 +258,24 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="flex items-center gap-4 mb-8"
           >
-            <div className="w-12 h-px bg-gradient-to-r from-[#22d3ee] to-transparent" />
-            <span className="text-[#22d3ee] font-mono text-[10px] uppercase tracking-[0.3em]">
+            <div className="w-12 h-px bg-gradient-to-r from-[#c8a86b] to-transparent" />
+            <span className="text-[#c8a86b] font-mono text-[10px] uppercase tracking-[0.3em]">
               AI Systems · Analytics · Automation
             </span>
           </motion.div>
 
           <div className="block">
             <SplitText
-              text={"WHERE DATA\nBECOMES"}
+              text={"Where Data\nBecomes"}
               charClass="hero-char"
-              className="font-syne font-bold uppercase tracking-tighter leading-[0.9] text-[48px] sm:text-[72px] md:text-[100px] lg:text-[116px] text-white"
+              className="font-syne font-medium tracking-[-0.015em] leading-[0.92] text-[46px] sm:text-[70px] md:text-[98px] lg:text-[112px] text-[#f2ede3]"
             />
           </div>
-          <div className="block mt-2">
+          <div className="block">
             <SplitText
-              text="DECISION."
+              text="Decision."
               charClass="hero-char"
-              className="font-syne font-bold uppercase tracking-tighter leading-[0.9] text-[48px] sm:text-[72px] md:text-[100px] lg:text-[116px] text-[#22d3ee]"
+              className="font-syne italic font-medium tracking-[-0.015em] leading-[0.92] text-[46px] sm:text-[70px] md:text-[98px] lg:text-[112px] text-[#c8a86b]"
             />
           </div>
 
@@ -286,7 +286,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
             className="mt-12 max-w-2xl text-left"
           >
-            <p className="text-base md:text-lg text-zinc-400 leading-relaxed font-light">
+            <p className="text-base md:text-lg text-[#a89f8f] leading-relaxed font-light">
               NordNeuron designs intelligent decision systems, predictive logistics platforms,
               and AI-driven operations for enterprise teams—merging data engineering
               with modern machine reasoning.
@@ -302,7 +302,7 @@ export default function Hero() {
           >
             <Link
               href="/#work"
-              className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#22d3ee] text-[#041014] font-mono text-xs uppercase tracking-widest hover:bg-[#67e8f9] transition-all duration-300 shadow-[0_0_30px_rgba(34,211,238,0.28)]"
+              className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#c8a86b] text-[#171310] font-mono text-xs uppercase tracking-widest hover:bg-[#d8bd86] transition-all duration-300 shadow-[0_0_30px_rgba(200, 168, 107,0.28)]"
             >
               Explore Work
               <ArrowUpRight
@@ -314,7 +314,7 @@ export default function Hero() {
 
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/15 bg-white/[0.03] text-white font-mono text-xs uppercase tracking-widest hover:border-[#22d3ee] hover:text-[#22d3ee] transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/15 bg-white/[0.03] text-[#f2ede3] font-mono text-xs uppercase tracking-widest hover:border-[#c8a86b] hover:text-[#c8a86b] transition-all duration-300"
             >
               Let’s Connect
             </Link>
@@ -327,18 +327,18 @@ export default function Hero() {
         <div className="max-w-6xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between">
           <div className="flex items-center gap-8 sm:gap-12">
             <div className="flex items-center gap-3">
-              <span className="text-2xl font-syne font-bold text-white tabular-nums">12+</span>
-              <span className="text-[9px] uppercase font-mono tracking-widest text-zinc-500 leading-tight">AI<br/>Projects</span>
+              <span className="text-2xl font-syne font-bold text-[#f2ede3] tabular-nums">12+</span>
+              <span className="text-[9px] uppercase font-mono tracking-widest text-[#8a8175] leading-tight">AI<br/>Projects</span>
             </div>
             <div className="w-px h-5 bg-white/10" />
             <div className="flex items-center gap-3">
-              <span className="text-2xl font-syne font-bold text-white tabular-nums">3</span>
-              <span className="text-[9px] uppercase font-mono tracking-widest text-zinc-500 leading-tight">Active<br/>Products</span>
+              <span className="text-2xl font-syne font-bold text-[#f2ede3] tabular-nums">3</span>
+              <span className="text-[9px] uppercase font-mono tracking-widest text-[#8a8175] leading-tight">Active<br/>Products</span>
             </div>
             <div className="hidden sm:block w-px h-5 bg-white/10" />
             <div className="hidden sm:flex items-center gap-3">
-              <span className="text-sm font-syne font-semibold text-zinc-200">LLM · BI · MLOps</span>
-              <span className="text-[9px] uppercase font-mono tracking-widest text-zinc-500 leading-tight">Core<br/>Stack</span>
+              <span className="text-sm font-syne font-semibold text-[#e4dece]">LLM · BI · MLOps</span>
+              <span className="text-[9px] uppercase font-mono tracking-widest text-[#8a8175] leading-tight">Core<br/>Stack</span>
             </div>
           </div>
 
@@ -347,12 +347,12 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.6, duration: 0.8 }}
-            className="flex items-center gap-2 text-zinc-500"
+            className="flex items-center gap-2 text-[#8a8175]"
           >
             <span className="font-mono text-[9px] uppercase tracking-widest hidden sm:block">Scroll</span>
             <div className="w-px h-8 bg-white/15 relative overflow-hidden rounded-full">
               <motion.div
-                className="absolute top-0 left-0 w-full bg-[#22d3ee] rounded-full"
+                className="absolute top-0 left-0 w-full bg-[#c8a86b] rounded-full"
                 style={{ height: "40%" }}
                 animate={{ y: ["0%", "160%", "0%"] }}
                 transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}

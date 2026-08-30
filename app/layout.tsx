@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Sora, JetBrains_Mono } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import LenisProvider from "./components/LenisProvider";
@@ -12,19 +12,14 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-// Sharp geometric display face. Exposed as --font-syne so existing
-// `.font-syne` / `font-syne` markup picks it up with no churn.
-const sora = Sora({
+// Editorial serif display face. Exposed as --font-syne so existing
+// `.font-syne` markup picks it up with no churn. Labels reuse Inter
+// via the .font-mono class, so no separate mono face is loaded.
+const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-syne",
-  weight: ["400", "500", "600", "700", "800"],
-});
-
-// Techy monospace for eyebrow / tag labels.
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "500", "700"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -98,7 +93,7 @@ export default function RootLayout({
 
       </head>
 
-      <body className={`${inter.variable} ${sora.variable} ${jetbrainsMono.variable}`}>
+      <body className={`${inter.variable} ${fraunces.variable}`}>
         <Preloader />
         <CustomCursor />
         <TransitionCurtain />
