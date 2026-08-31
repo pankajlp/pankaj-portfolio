@@ -4,6 +4,14 @@ import Image from "next/image";
 export default function InsightsPage() {
   const articles = [
     {
+      href: "/insights/the-allowlist-illusion",
+      title: "The Allowlist Illusion: Why Command Approval Keeps Failing in Coding Agents",
+      category: "AI Security",
+      description: "Three unrelated 2026 disclosures — Cursor, Semantic Kernel, and the wider prompt-injection numbers behind them — converge on the same gap: an allowlist checks what a command looks like, not what put it there.",
+      image: "/architecture.png",
+      meta: "August 2026 · 7 min read"
+    },
+    {
       href: "/insights/stale-by-default",
       title: "Stale by Default: Why Agents Act on Superseded Data",
       category: "Agentic AI",
