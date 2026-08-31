@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stridr — Privacy Policy</title>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #16181c;
+      --muted: #5b6470;
+      --card: #f6f7f9;
+      --border: #e4e7eb;
+      --accent: #FC4C02;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0c0e;
+        --fg: #eceef1;
+        --muted: #9aa3ad;
+        --card: #16181c;
+        --border: #262a30;
+        --accent: #FC4C02;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      margin: 0 0 0.25rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin: 2rem 0 0.5rem;
+    }
+
+    .updated {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .accent {
+      color: var(--accent);
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin: 0.3rem 0;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+    }
+
+    code {
+      background: var(--card);
+      padding: 0.1rem 0.35rem;
+      border-radius: 5px;
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 3rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+
+    <h1>
+      Stridr <span class="accent">Privacy Policy</span>
+    </h1>
+
+    <p class="updated">
+      Last updated: 31 August 2026
+    </p>
+
+    <p>
+      Stridr ("the app", "we") is an activity tracker for running, riding,
+      walking and hiking. This policy explains what data the app handles and why.
+      Stridr is built <strong>on-device first</strong>: you can use it fully as
+      a guest with no account, and your activity data stays on your phone unless
+      you choose to sign in.
+    </p>
+
+    <h2>Data we collect</h2>
+
+    <div class="card">
+      <ul>
+        <li>
+          <strong>Location (precise, foreground &amp; background).</strong>
+          While you are recording an activity, the app collects GPS location
+          to draw your route, distance, pace and elevation. With your consent,
+          it continues recording
+          <strong>even when the app is closed or the screen is off</strong>,
+          so a run isn't lost when your phone locks. Location is only collected
+          while a recording is active.
+        </li>
+
+        <li>
+          <strong>Activities you save.</strong>
+          Route, time, distance, elevation, sport type, title and the date of
+          each activity.
+        </li>
+
+        <li>
+          <strong>Photos you attach.</strong>
+          If you add photos to an activity, the selected images are stored with
+          that activity. The app only accesses images you explicitly pick.
+        </li>
+
+        <li>
+          <strong>Account info (optional).</strong>
+          If you sign in, we process your email address to authenticate you,
+          plus a display name you can edit. You can sign in with an email and
+          password, or with <strong>Google Sign-In</strong> &mdash; in which
+          case Google shares your email address and basic profile (name) with
+          the app to create your account. We never receive your Google password.
+        </li>
+
+        <li>
+          <strong>Social content (optional, when signed in).</strong>
+          Kudos, comments, follows, segments, challenges and clubs you create
+          or join.
+        </li>
+
+        <li>
+          <strong>Basic device/app info.</strong>
+          Information needed to run and update the app, such as app version
+          and over-the-air update checks.
+        </li>
+      </ul>
+    </div>
+
+    <h2>How your data is stored and shared</h2>
+
+    <ul>
+      <li>
+        <strong>On your device.</strong>
+        As a guest, your saved activities are stored locally on your phone and
+        are not uploaded to our backend.
+      </li>
+
+      <li>
+        <strong>In your account (only if you sign in).</strong>
+        Your activities, profile and social content sync to our backend
+        provider, <strong>Supabase</strong>, so you can access them across
+        devices. Row-level security is used to control access to your data
+        and public content.
+      </li>
+
+      <li>
+        <strong>Sign-in with Google (optional).</strong>
+        If you choose Google Sign-In, authentication is handled by
+        <strong>Google</strong>, which verifies your identity and returns your
+        email and basic profile to create your account. Google's handling of
+        that sign-in is governed by Google's own privacy policy.
+      </li>
+
+      <li>
+        <strong>Maps.</strong>
+        Map tiles are served by
+        <strong>OpenStreetMap / CARTO</strong>.
+        Loading a map sends standard web requests, which may include your IP
+        address, to those tile servers, as with other websites and map
+        services.
+      </li>
+
+      <li>
+        <strong>We do not sell your data</strong>, and Stridr contains
+        <strong>no third-party advertising or analytics trackers</strong>.
+      </li>
+    </ul>
+
+    <h2>Why we need background location</h2>
+
+    <p>
+      Background location is used solely to keep recording your route when the
+      app is in the background or the screen is locked during an activity.
+      You are shown an in-app explanation before the permission is requested,
+      and you can decline and record with the app open only.
+      You can revoke location access at any time in your device Settings.
+    </p>
+
+    <h2>Your choices &amp; rights</h2>
+
+    <ul>
+      <li>
+        Use the app as a guest with no account and no cloud storage for your
+        activity data.
+      </li>
+
+      <li>
+        Delete any activity in the app; deletions propagate to your account
+        if you're signed in.
+      </li>
+
+      <li>
+        Request deletion of your account and associated data by contacting us
+        below.
+      </li>
+
+      <li>
+        Revoke location, photo or other permissions in your device Settings.
+      </li>
+    </ul>
+
+    <h2>Children</h2>
+
+    <p>
+      Stridr is not directed to children under 13, and we do not knowingly
+      collect data from them.
+    </p>
+
+    <h2>Changes</h2>
+
+    <p>
+      We may update this policy; material changes will be reflected by the
+      "Last updated" date above.
+    </p>
+
+    <h2>Contact</h2>
+
+    <p>
+      Questions or data-deletion requests:
+      <a href="mailto:contact@nordneuron.com">
+        contact@nordneuron.com
+      </a>
+    </p>
+
+    <footer>
+      Stridr — activity tracker. This policy covers the Stridr mobile app.
+    </footer>
+
+  </main>
+</body>
+</html>
