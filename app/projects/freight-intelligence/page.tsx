@@ -10,23 +10,23 @@ import {
     {/* Filters */}
 <div className="mt-16 flex flex-wrap gap-4">
     
-    <button className="px-5 py-3 rounded-2xl border border-stone-900 bg-stone-900 text-stone-50 text-sm hover:bg-stone-800 hover:text-white transition-all">
+    <button className="px-5 py-3 rounded-2xl border border-white/15 bg-[#c8a86b] text-[#171310] text-sm hover:bg-[#d8bd86] hover:text-white transition-all">
         Global Operations
     </button>
 
-    <button className="px-5 py-3 rounded-2xl border border-stone-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)] text-stone-700 text-sm hover:border-stone-200 hover:text-stone-900 transition-all">
+    <button className="px-5 py-3 rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_4px_20px_rgba(15,23,42,0.02)] text-[#cfc7b6] text-sm hover:border-white/10 hover:text-[#f2ede3] transition-all">
         APAC
     </button>
 
-    <button className="px-5 py-3 rounded-2xl border border-stone-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)] text-stone-700 text-sm hover:border-stone-200 hover:text-stone-900 transition-all">
+    <button className="px-5 py-3 rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_4px_20px_rgba(15,23,42,0.02)] text-[#cfc7b6] text-sm hover:border-white/10 hover:text-[#f2ede3] transition-all">
         Europe
     </button>
 
-    <button className="px-5 py-3 rounded-2xl border border-stone-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)] text-stone-700 text-sm hover:border-stone-200 hover:text-stone-900 transition-all">
+    <button className="px-5 py-3 rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_4px_20px_rgba(15,23,42,0.02)] text-[#cfc7b6] text-sm hover:border-white/10 hover:text-[#f2ede3] transition-all">
         North America
     </button>
 
-    <button className="px-5 py-3 rounded-2xl border border-stone-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)] text-stone-700 text-sm hover:border-stone-200 hover:text-stone-900 transition-all">
+    <button className="px-5 py-3 rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_4px_20px_rgba(15,23,42,0.02)] text-[#cfc7b6] text-sm hover:border-white/10 hover:text-[#f2ede3] transition-all">
         RFQ Analytics
     </button>
 
@@ -116,9 +116,9 @@ const insights = [
 ];
 export default function FreightIntelligencePage() {
   return (
-    <main className="min-h-screen bg-[#f5f4f0] text-[#1c1917]">
+    <main className="min-h-screen bg-[#0c0b0a] text-[#efe9df]">
         {/* Navbar */}
-        <div className="sticky top-0 z-50 border-b border-stone-200 bg-[#f5f4f0]/80 backdrop-blur-xl">
+        <div className="sticky top-0 z-50 border-b border-white/10 bg-[#0c0b0a]/80 backdrop-blur-xl">
         
         <div className="max-w-7xl mx-auto px-8 h-[88px] flex items-center justify-between">
             
@@ -127,51 +127,51 @@ export default function FreightIntelligencePage() {
             
             <a
                 href="/"
-                className="text-stone-500 hover:text-stone-900 transition-colors"
+                className="text-[#8a8175] hover:text-[#f2ede3] transition-colors"
             >
                 ← Back
             </a>
 
-            <div className="w-px h-5 bg-stone-200" />
+            <div className="w-px h-5 bg-white/10" />
 
             <div>
-                <h1 className="text-stone-900 font-medium">
+                <h1 className="text-[#f2ede3] font-medium">
                 Freight Intelligence Platform
                 </h1>
 
-                <p className="text-xs text-stone-400">
+                <p className="text-xs text-[#8a8175]">
                 Enterprise Logistics Analytics
                 </p>
             </div>
             </div>
 
             {/* Right */}
-            <div className="flex items-center gap-3 px-4 py-2 rounded-full border border-stone-200 bg-stone-100/50 text-stone-900 text-sm">
+            <div className="flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/[0.06]/50 text-[#f2ede3] text-sm">
             
-            <div className="w-2 h-2 rounded-full bg-stone-900 text-white hover:bg-black animate-pulse" />
+            <div className="w-2 h-2 rounded-full bg-[#c8a86b] text-[#171310] hover:bg-[#d8bd86] animate-pulse" />
 
             Live Platform
             </div>
         </div>
         </div>
       <div className="max-w-7xl mx-auto px-8 py-16">
-        <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-stone-1000/5 blur-[180px] rounded-full pointer-events-none" />
+        <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#c8a86b]/10 blur-[180px] rounded-full pointer-events-none" />
         
         {/* Label */}
-        <div className="inline-flex items-center px-4 py-2 rounded-full border border-stone-200 bg-stone-100/50 text-stone-900 text-sm mb-8">
+        <div className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/[0.06]/50 text-[#f2ede3] text-sm mb-8">
           Logistics Intelligence Platform
         </div>
 
         {/* Heading */}
-        <h1 className="text-6xl font-bold leading-tight max-w-4xl">
+        <h1 className="text-5xl font-bold leading-tight max-w-4xl">
           Freight Intelligence
-          <span className="block text-stone-900">
+          <span className="block text-[#f2ede3]">
             Dashboard Platform
           </span>
         </h1>
 
         {/* Description */}
-        <p className="mt-8 text-xl text-stone-500 leading-relaxed max-w-3xl">
+        <p className="mt-8 text-xl text-[#8a8175] leading-relaxed max-w-3xl">
           Enterprise analytics platform for monitoring freight
           profitability, RFQ trends, operational performance,
           carrier intelligence, and logistics analytics across
@@ -183,17 +183,17 @@ export default function FreightIntelligencePage() {
           {kpis.map((item) => (
             <div
               key={item.title}
-              className="p-7 rounded-3xl border border-stone-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)] backdrop-blur-xl"
+              className="p-7 rounded-3xl border border-white/10 bg-white/[0.03] shadow-[0_4px_20px_rgba(15,23,42,0.02)] backdrop-blur-xl"
             >
-              <p className="text-sm text-stone-400">
+              <p className="text-sm text-[#8a8175]">
                 {item.title}
               </p>
 
-              <h3 className="mt-5 text-4xl font-bold text-stone-900">
+              <h3 className="mt-5 text-4xl font-bold text-[#f2ede3]">
                 {item.value}
               </h3>
 
-              <div className="mt-5 inline-flex items-center px-3 py-1 rounded-full bg-stone-100/50 border border-stone-200 text-stone-900 text-sm">
+              <div className="mt-5 inline-flex items-center px-3 py-1 rounded-full bg-white/[0.06]/50 border border-white/10 text-[#f2ede3] text-sm">
                 {item.change}
               </div>
             </div>
@@ -201,21 +201,21 @@ export default function FreightIntelligencePage() {
         </div>
 
         {/* Revenue Analytics */}
-        <div className="mt-16 p-8 rounded-3xl border border-stone-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)]">
+        <div className="mt-16 p-8 rounded-3xl border border-white/10 bg-white/[0.03] shadow-[0_4px_20px_rgba(15,23,42,0.02)]">
           
           <div className="flex items-center justify-between mb-10">
             
             <div>
-              <h2 className="text-3xl font-semibold text-stone-900">
+              <h2 className="text-3xl font-semibold text-[#f2ede3]">
                 Revenue Trend
               </h2>
 
-              <p className="mt-2 text-stone-400">
+              <p className="mt-2 text-[#8a8175]">
                 Monthly freight revenue performance across global lanes.
               </p>
             </div>
 
-            <div className="px-4 py-2 rounded-full border border-stone-200 bg-stone-100/50 text-stone-900 text-sm">
+            <div className="px-4 py-2 rounded-full border border-white/10 bg-white/[0.06]/50 text-[#f2ede3] text-sm">
               FY 2026
             </div>
           </div>
@@ -234,13 +234,13 @@ export default function FreightIntelligencePage() {
                   >
                     <stop
                       offset="0%"
-                      stopColor="#1c1917"
+                      stopColor="#efe9df"
                       stopOpacity={0.35}
                     />
 
                     <stop
                       offset="100%"
-                      stopColor="#1c1917"
+                      stopColor="#efe9df"
                       stopOpacity={0}
                     />
                   </linearGradient>
@@ -255,14 +255,14 @@ export default function FreightIntelligencePage() {
 
                 <Tooltip
                   contentStyle={{
-                    background: "#ffffff", border: "1px solid rgba(15,23,42,0.1)", borderRadius: "16px", color: "#1c1917",
+                    background: "#ffffff", border: "1px solid rgba(15,23,42,0.1)", borderRadius: "16px", color: "#efe9df",
                   }}
                 />
 
                 <Area
                   type="monotone"
                   dataKey="revenue"
-                  stroke="#1c1917"
+                  stroke="#efe9df"
                   strokeWidth={3}
                   fill="url(#colorRevenue)"
                 />
@@ -271,21 +271,21 @@ export default function FreightIntelligencePage() {
           </div>
         </div>
         {/* Trade Routes Table */}
-<div className="mt-16 p-8 rounded-3xl border border-stone-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)]">
+<div className="mt-16 p-8 rounded-3xl border border-white/10 bg-white/[0.03] shadow-[0_4px_20px_rgba(15,23,42,0.02)]">
   
   <div className="flex items-center justify-between mb-10">
     
     <div>
-      <h2 className="text-3xl font-semibold text-stone-900">
+      <h2 className="text-3xl font-semibold text-[#f2ede3]">
         Global Trade Routes
       </h2>
 
-      <p className="mt-2 text-stone-400">
+      <p className="mt-2 text-[#8a8175]">
         Operational lane intelligence across major freight corridors.
       </p>
     </div>
 
-    <div className="px-4 py-2 rounded-full border border-stone-200 bg-stone-100/50 text-stone-900 text-sm">
+    <div className="px-4 py-2 rounded-full border border-white/10 bg-white/[0.06]/50 text-[#f2ede3] text-sm">
       Live Operations
     </div>
   </div>
@@ -295,7 +295,7 @@ export default function FreightIntelligencePage() {
     <table className="w-full">
       
       <thead>
-        <tr className="border-b border-stone-200 text-left text-sm text-stone-400">
+        <tr className="border-b border-white/10 text-left text-sm text-[#8a8175]">
           
           <th className="pb-5 font-medium">
             POL
@@ -327,30 +327,30 @@ export default function FreightIntelligencePage() {
         {tradeRoutes.map((route, index) => (
           <tr
             key={index}
-            className="border-b border-stone-200/50 hover:bg-stone-50/50 transition-colors"
+            className="border-b border-white/10 hover:bg-white/[0.05]/50 transition-colors"
           >
-            <td className="py-6 text-stone-900">
+            <td className="py-6 text-[#f2ede3]">
               {route.pol}
             </td>
 
-            <td className="py-6 text-stone-900">
+            <td className="py-6 text-[#f2ede3]">
               {route.pod}
             </td>
 
-            <td className="py-6 text-stone-700">
+            <td className="py-6 text-[#cfc7b6]">
               {route.carrier}
             </td>
 
-            <td className="py-6 text-stone-900">
+            <td className="py-6 text-[#f2ede3]">
               {route.teu}
             </td>
 
-            <td className="py-6 text-stone-900">
+            <td className="py-6 text-[#f2ede3]">
               {route.revenue}
             </td>
 
             <td className="py-6">
-              <span className="px-3 py-1 rounded-full bg-stone-100/50 border border-stone-200 text-stone-900 text-sm">
+              <span className="px-3 py-1 rounded-full bg-white/[0.06]/50 border border-white/10 text-[#f2ede3] text-sm">
                 {route.margin}
               </span>
             </td>
@@ -366,16 +366,16 @@ export default function FreightIntelligencePage() {
   <div className="flex items-center justify-between mb-10">
     
     <div>
-      <h2 className="text-3xl font-semibold text-stone-900">
+      <h2 className="text-3xl font-semibold text-[#f2ede3]">
         AI Intelligence Insights
       </h2>
 
-      <p className="mt-2 text-stone-400">
+      <p className="mt-2 text-[#8a8175]">
         AI-generated operational recommendations and anomaly detection.
       </p>
     </div>
 
-    <div className="px-4 py-2 rounded-full border border-stone-200 bg-stone-100/50 text-stone-900 text-sm">
+    <div className="px-4 py-2 rounded-full border border-white/10 bg-white/[0.06]/50 text-[#f2ede3] text-sm">
       AI Engine Active
     </div>
   </div>
@@ -384,36 +384,36 @@ export default function FreightIntelligencePage() {
     {insights.map((item, index) => (
       <div
         key={index}
-        className="p-7 rounded-3xl border border-stone-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)] backdrop-blur-xl"
+        className="p-7 rounded-3xl border border-white/10 bg-white/[0.03] shadow-[0_4px_20px_rgba(15,23,42,0.02)] backdrop-blur-xl"
       >
         
         {/* Top */}
         <div className="flex items-center justify-between">
           
-          <div className="w-3 h-3 rounded-full bg-stone-900 text-white hover:bg-black shadow-[0_0_12px_rgba(120, 113, 108,0.25)]" />
+          <div className="w-3 h-3 rounded-full bg-[#c8a86b] text-[#171310] hover:bg-[#d8bd86] shadow-[0_0_12px_rgba(120, 113, 108,0.25)]" />
 
-          <div className="text-xs text-stone-900 tracking-[0.2em]">
+          <div className="text-xs text-[#f2ede3] tracking-[0.2em]">
             AI
           </div>
         </div>
 
         {/* Content */}
-        <h3 className="mt-8 text-2xl font-semibold text-stone-900 leading-snug">
+        <h3 className="mt-8 text-2xl font-semibold text-[#f2ede3] leading-snug">
           {item.title}
         </h3>
 
-        <p className="mt-5 text-stone-500 leading-relaxed">
+        <p className="mt-5 text-[#8a8175] leading-relaxed">
           {item.description}
         </p>
 
         {/* Footer */}
-        <div className="mt-8 pt-6 border-t border-stone-200 flex items-center justify-between">
+        <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
           
-          <span className="text-sm text-stone-400">
+          <span className="text-sm text-[#8a8175]">
             Confidence Score
           </span>
 
-          <span className="text-stone-900 font-medium">
+          <span className="text-[#f2ede3] font-medium">
             94%
           </span>
         </div>
@@ -422,21 +422,21 @@ export default function FreightIntelligencePage() {
   </div>
 </div>
     {/* Executive Summary */}
-<div className="mt-16 p-10 rounded-3xl border border-stone-200 bg-gradient-to-br from-stone-200/20 to-transparent">
+<div className="mt-16 p-10 rounded-3xl border border-white/10 bg-gradient-to-br from-stone-200/20 to-transparent">
   
   <div className="max-w-5xl">
     
-    <div className="inline-flex items-center px-4 py-2 rounded-full border border-stone-200 bg-stone-100/50 text-stone-900 text-sm mb-8">
+    <div className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/[0.06]/50 text-[#f2ede3] text-sm mb-8">
       Executive Intelligence Summary
     </div>
 
-    <h2 className="text-4xl md:text-5xl font-bold leading-tight text-stone-900">
+    <h2 className="text-4xl md:text-4xl font-bold leading-tight text-[#f2ede3]">
       AI-driven freight analytics for
       operational visibility, margin optimization,
       and intelligent logistics decision-making.
     </h2>
 
-    <p className="mt-8 text-xl text-stone-500 leading-relaxed max-w-4xl">
+    <p className="mt-8 text-xl text-[#8a8175] leading-relaxed max-w-4xl">
       The Freight Intelligence Platform combines operational
       analytics, carrier intelligence, RFQ visibility,
       and AI-generated recommendations into a unified
@@ -447,41 +447,41 @@ export default function FreightIntelligencePage() {
     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14">
       
       <div>
-        <p className="text-sm text-stone-400">
+        <p className="text-sm text-[#8a8175]">
           Global Trade Lanes
         </p>
 
-        <h3 className="mt-3 text-4xl font-bold text-stone-900">
+        <h3 className="mt-3 text-4xl font-bold text-[#f2ede3]">
           148
         </h3>
       </div>
 
       <div>
-        <p className="text-sm text-stone-400">
+        <p className="text-sm text-[#8a8175]">
           Freight Revenue
         </p>
 
-        <h3 className="mt-3 text-4xl font-bold text-stone-900">
+        <h3 className="mt-3 text-4xl font-bold text-[#f2ede3]">
           $12.4M
         </h3>
       </div>
 
       <div>
-        <p className="text-sm text-stone-400">
+        <p className="text-sm text-[#8a8175]">
           AI Insights Generated
         </p>
 
-        <h3 className="mt-3 text-4xl font-bold text-stone-900">
+        <h3 className="mt-3 text-4xl font-bold text-[#f2ede3]">
           1.2K+
         </h3>
       </div>
 
       <div>
-        <p className="text-sm text-stone-400">
+        <p className="text-sm text-[#8a8175]">
           Margin Improvement
         </p>
 
-        <h3 className="mt-3 text-4xl font-bold text-stone-900">
+        <h3 className="mt-3 text-4xl font-bold text-[#f2ede3]">
           +18%
         </h3>
       </div>
@@ -492,18 +492,18 @@ export default function FreightIntelligencePage() {
 <div className="mt-16 grid lg:grid-cols-[1.1fr_0.9fr] gap-10">
   
   {/* LEFT */}
-  <div className="p-10 rounded-3xl border border-stone-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)]">
+  <div className="p-10 rounded-3xl border border-white/10 bg-white/[0.03] shadow-[0_4px_20px_rgba(15,23,42,0.02)]">
     
-    <div className="inline-flex items-center px-4 py-2 rounded-full border border-stone-200 bg-stone-100/50 text-stone-900 text-sm mb-8">
+    <div className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/[0.06]/50 text-[#f2ede3] text-sm mb-8">
       Platform Architecture
     </div>
 
-    <h2 className="text-4xl font-bold text-stone-900 leading-tight">
+    <h2 className="text-4xl font-bold text-[#f2ede3] leading-tight">
       End-to-end freight intelligence
       infrastructure built for enterprise operations.
     </h2>
 
-    <p className="mt-8 text-stone-500 text-lg leading-relaxed">
+    <p className="mt-8 text-[#8a8175] text-lg leading-relaxed">
       The platform consolidates operational freight data,
       RFQ intelligence, shipment analytics, carrier performance,
       and AI-driven recommendations into a unified analytics layer.
@@ -514,16 +514,16 @@ export default function FreightIntelligencePage() {
       
       <div className="flex items-start gap-5">
         
-        <div className="w-10 h-10 rounded-2xl bg-stone-100/50 border border-stone-200 flex items-center justify-center text-stone-900 text-sm">
+        <div className="w-10 h-10 rounded-2xl bg-white/[0.06]/50 border border-white/10 flex items-center justify-center text-[#f2ede3] text-sm">
           01
         </div>
 
         <div>
-          <h3 className="text-xl text-stone-900 font-medium">
+          <h3 className="text-xl text-[#f2ede3] font-medium">
             Data Ingestion
           </h3>
 
-          <p className="mt-2 text-stone-500 leading-relaxed">
+          <p className="mt-2 text-[#8a8175] leading-relaxed">
             Freight, RFQ, and shipment datasets aggregated from enterprise operational systems.
           </p>
         </div>
@@ -531,16 +531,16 @@ export default function FreightIntelligencePage() {
 
       <div className="flex items-start gap-5">
         
-        <div className="w-10 h-10 rounded-2xl bg-stone-100/50 border border-stone-200 flex items-center justify-center text-stone-900 text-sm">
+        <div className="w-10 h-10 rounded-2xl bg-white/[0.06]/50 border border-white/10 flex items-center justify-center text-[#f2ede3] text-sm">
           02
         </div>
 
         <div>
-          <h3 className="text-xl text-stone-900 font-medium">
+          <h3 className="text-xl text-[#f2ede3] font-medium">
             Analytics Processing
           </h3>
 
-          <p className="mt-2 text-stone-500 leading-relaxed">
+          <p className="mt-2 text-[#8a8175] leading-relaxed">
             Transformation pipelines calculate profitability, carrier KPIs, and operational metrics.
           </p>
         </div>
@@ -548,16 +548,16 @@ export default function FreightIntelligencePage() {
 
       <div className="flex items-start gap-5">
         
-        <div className="w-10 h-10 rounded-2xl bg-stone-100/50 border border-stone-200 flex items-center justify-center text-stone-900 text-sm">
+        <div className="w-10 h-10 rounded-2xl bg-white/[0.06]/50 border border-white/10 flex items-center justify-center text-[#f2ede3] text-sm">
           03
         </div>
 
         <div>
-          <h3 className="text-xl text-stone-900 font-medium">
+          <h3 className="text-xl text-[#f2ede3] font-medium">
             AI Intelligence Layer
           </h3>
 
-          <p className="mt-2 text-stone-500 leading-relaxed">
+          <p className="mt-2 text-[#8a8175] leading-relaxed">
             AI systems detect anomalies, surface insights, and recommend operational optimizations.
           </p>
         </div>
@@ -565,16 +565,16 @@ export default function FreightIntelligencePage() {
 
       <div className="flex items-start gap-5">
         
-        <div className="w-10 h-10 rounded-2xl bg-stone-100/50 border border-stone-200 flex items-center justify-center text-stone-900 text-sm">
+        <div className="w-10 h-10 rounded-2xl bg-white/[0.06]/50 border border-white/10 flex items-center justify-center text-[#f2ede3] text-sm">
           04
         </div>
 
         <div>
-          <h3 className="text-xl text-stone-900 font-medium">
+          <h3 className="text-xl text-[#f2ede3] font-medium">
             Executive Intelligence
           </h3>
 
-          <p className="mt-2 text-stone-500 leading-relaxed">
+          <p className="mt-2 text-[#8a8175] leading-relaxed">
             Decision-ready dashboards provide operational visibility for enterprise leadership teams.
           </p>
         </div>
@@ -584,9 +584,9 @@ export default function FreightIntelligencePage() {
   </div>
 
   {/* RIGHT */}
-  <div className="p-10 rounded-3xl border border-stone-200 bg-gradient-to-br from-stone-200/20 to-transparent">
+  <div className="p-10 rounded-3xl border border-white/10 bg-gradient-to-br from-stone-200/20 to-transparent">
     
-    <div className="inline-flex items-center px-4 py-2 rounded-full border border-stone-200 bg-stone-100/50 text-stone-900 text-sm mb-8">
+    <div className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/[0.06]/50 text-[#f2ede3] text-sm mb-8">
       Technology Stack
     </div>
 
@@ -604,21 +604,21 @@ export default function FreightIntelligencePage() {
       ].map((tech) => (
         <div
           key={tech}
-          className="flex items-center justify-between p-5 rounded-2xl border border-stone-200 bg-stone-50/50 border-stone-200/60"
+          className="flex items-center justify-between p-5 rounded-2xl border border-white/10 bg-white/[0.04]/50 border-white/10"
         >
-          <span className="text-stone-900">
+          <span className="text-[#f2ede3]">
             {tech}
           </span>
 
-          <div className="w-2.5 h-2.5 rounded-full bg-stone-900 text-white hover:bg-black shadow-[0_0_10px_rgba(120, 113, 108,0.25)]" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#c8a86b] text-[#171310] hover:bg-[#d8bd86] shadow-[0_0_10px_rgba(120, 113, 108,0.25)]" />
         </div>
       ))}
     </div>
 
     {/* Footer */}
-    <div className="mt-10 pt-8 border-t border-stone-200">
+    <div className="mt-10 pt-8 border-t border-white/10">
       
-      <p className="text-stone-500 leading-relaxed">
+      <p className="text-[#8a8175] leading-relaxed">
         Designed as a scalable enterprise analytics foundation
         for logistics intelligence and AI-assisted operational decision-making.
       </p>

@@ -19,28 +19,28 @@ export default function ArticlePage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#f5f4f0] text-[#1c1917]">
+    <main className="min-h-screen bg-[#0c0b0a] text-[#efe9df]">
       {/* Scroll Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-[3px] bg-stone-200/50 z-[200]">
+      <div className="fixed top-0 left-0 w-full h-[3px] bg-white/10 z-[200]">
         <div
-          className="h-full bg-stone-900 text-white transition-all duration-150"
+          className="h-full bg-[#c8a86b] text-[#171310] transition-all duration-150"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
 
       {/* Clean Navigation Bar */}
-      <nav className="sticky top-0 z-50 bg-[#f5f4f0]/85 backdrop-blur-md border-b border-stone-200 px-6 py-5">
+      <nav className="sticky top-0 z-50 bg-[#0c0b0a]/85 backdrop-blur-md border-b border-white/10 px-6 py-5">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <a href="/" className="flex items-center gap-3 shrink-0">
             {/* Accent Dot */}
-            <div className="w-2.5 h-2.5 rounded-full bg-stone-900 text-white shadow-[0_0_8px_rgba(120, 113, 108,0.3)]" />
-            <span className="text-[17px] font-bold tracking-tight font-serif text-stone-900">
+            <div className="w-2.5 h-2.5 rounded-full bg-[#c8a86b] text-[#171310] shadow-[0_0_8px_rgba(120, 113, 108,0.3)]" />
+            <span className="text-[17px] font-bold tracking-tight font-serif text-[#f2ede3]">
               NordNeuron
             </span>
           </a>
           <a
             href="/insights"
-            className="text-sm font-medium text-[#6b7280] hover:text-stone-900 transition-colors duration-300 flex items-center gap-1.5"
+            className="text-sm font-medium text-[#a89f8f] hover:text-[#f2ede3] transition-colors duration-300 flex items-center gap-1.5"
           >
             <span>←</span> Back to Insights
           </a>
@@ -50,22 +50,22 @@ export default function ArticlePage() {
       {/* Article */}
       <article className="max-w-3xl mx-auto px-6 py-20">
         {/* Tag */}
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-stone-100 text-stone-900 border border-stone-200 text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/[0.06] text-[#f2ede3] border border-white/10 text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
           LLM Engineering
         </div>
 
         {/* Title */}
-        <h1 className="text-[42px] md:text-[56px] leading-[1.1] tracking-[-0.03em] font-serif text-[#1c1917]">
+        <h1 className="text-[36px] md:text-[46px] leading-[1.1] tracking-[-0.03em] font-serif text-[#efe9df]">
           Fine-tuning vs. Prompting — The Real Tradeoff
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 text-[20px] leading-[1.7] text-stone-500 italic">
+        <p className="mt-6 text-[19px] leading-[1.7] text-[#8a8175] italic">
           The question is rarely which technique is better. It is which problem you are actually trying to solve.
         </p>
 
         {/* Meta */}
-        <div className="mt-8 pb-10 border-b border-stone-200 text-[13px] text-stone-400 flex items-center gap-3 flex-wrap">
+        <div className="mt-8 pb-10 border-b border-white/10 text-[13px] text-[#8a8175] flex items-center gap-3 flex-wrap">
           <span>Pankaj Kumar</span>
           <span>•</span>
           <span>June 2026</span>
@@ -74,7 +74,7 @@ export default function ArticlePage() {
         </div>
 
         {/* Intro */}
-        <section className="mt-14 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+        <section className="mt-14 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
           <p>
             A recurring debate in enterprise AI teams: when should you fine-tune a model, and when is careful prompt engineering sufficient?
           </p>
@@ -86,11 +86,11 @@ export default function ArticlePage() {
 
         {/* Section 1 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
+          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
             What prompting actually solves
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
             <p>
               Prompt engineering — including few-shot examples, chain-of-thought instructions, and structured output constraints — can achieve a surprising amount without touching model weights.
             </p>
@@ -111,11 +111,11 @@ export default function ArticlePage() {
 
         {/* Section 2 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
+          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
             What fine-tuning actually solves
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
             <p>
               Fine-tuning adjusts model weights to internalize specific behaviors, output formats, or domain reasoning patterns. This makes certain tasks faster, more reliable, and less sensitive to prompt variation.
             </p>
@@ -124,7 +124,7 @@ export default function ArticlePage() {
               It is particularly effective for:
             </p>
 
-            <ul className="space-y-4 list-disc pl-6 text-[18px] leading-[2] text-[#1c1917]">
+            <ul className="space-y-4 list-disc pl-6 text-[18px] leading-[2] text-[#efe9df]">
               <li>Consistent output formatting in structured extraction tasks</li>
               <li>Narrow domain vocabulary the base model handles poorly</li>
               <li>Tasks requiring high reliability across many diverse inputs</li>
@@ -139,11 +139,11 @@ export default function ArticlePage() {
 
         {/* Section 3 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
+          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
             QLoRA and the case for efficient fine-tuning
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
             <p>
               Full fine-tuning of large models requires significant compute. For most teams, QLoRA — quantized low-rank adaptation — changes the economics.
             </p>
@@ -160,11 +160,11 @@ export default function ArticlePage() {
 
         {/* Section 4 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
+          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
             The real decision framework
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
             <p>
               The honest answer to the prompting vs. fine-tuning question involves three conditions:
             </p>
@@ -185,11 +185,11 @@ export default function ArticlePage() {
 
         {/* Section 5 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
+          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
             Where the industry actually is
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
             <p>
               The honest state of enterprise LLM deployment is that most production systems are still running on base models with increasingly complex prompting pipelines — and doing reasonably well.
             </p>
@@ -205,16 +205,16 @@ export default function ArticlePage() {
         </section>
 
         {/* Divider */}
-        <div className="h-px bg-stone-200 my-16" />
+        <div className="h-px bg-white/10 my-16" />
 
         {/* Closing */}
-        <div className="border-l-[3px] border-stone-200 pl-6 text-[18px] italic leading-[2] text-stone-500">
+        <div className="border-l-[3px] border-white/10 pl-6 text-[18px] italic leading-[2] text-[#8a8175]">
           Nordneuron builds AI and operational intelligence systems at NordNeuron, with a focus on LLM architecture, freight analytics, and enterprise automation.
         </div>
       </article>
 
       {/* Footer */}
-      <footer className="border-t border-stone-200 px-6 py-10 text-center text-[13px] text-stone-400">
+      <footer className="border-t border-white/10 px-6 py-10 text-center text-[13px] text-[#8a8175]">
         © 2026 Pankaj Kumar · Enterprise AI & Logistics Intelligence
       </footer>
     </main>

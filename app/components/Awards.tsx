@@ -126,7 +126,7 @@ export default function Awards() {
               Recognition
             </div>
 
-            <h2 className="text-4xl md:text-6xl font-bold font-syne uppercase tracking-tight text-stone-900 leading-[1.05]">
+            <h2 className="text-4xl md:text-5xl font-bold font-syne uppercase tracking-tight text-stone-900 leading-[1.05]">
               Awards &<br />
               <span className="text-stone-900">Industry Honors</span>
             </h2>
@@ -134,7 +134,7 @@ export default function Awards() {
 
           {/* Animated Award Count Counter */}
           <div className="flex items-center gap-4">
-            <div className="text-7xl md:text-8xl font-syne font-bold text-stone-900 select-none">
+            <div className="text-6xl md:text-8xl font-syne font-bold text-stone-900 select-none">
               {displayCount}
             </div>
             <div className="text-xs uppercase font-syne tracking-widest text-stone-400 leading-relaxed">

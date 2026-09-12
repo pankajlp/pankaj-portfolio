@@ -90,14 +90,14 @@ export default function About() {
             <SplitText
               text={"Beyond Dashboards —"}
               charClass="about-char"
-              className="text-4xl md:text-6xl font-medium font-syne tracking-tight text-[#f2ede3] leading-[1.05]"
+              className="text-4xl md:text-5xl font-medium font-syne tracking-tight text-[#f2ede3] leading-[1.05]"
             />
           </div>
           <div className="block mt-2">
             <SplitText
               text={"Toward Enterprise\nIntelligence."}
               charClass="about-char"
-              className="text-4xl md:text-6xl font-medium font-syne tracking-tight text-[#8a8175] leading-[1.05]"
+              className="text-4xl md:text-5xl font-medium font-syne tracking-tight text-[#8a8175] leading-[1.05]"
             />
           </div>
 

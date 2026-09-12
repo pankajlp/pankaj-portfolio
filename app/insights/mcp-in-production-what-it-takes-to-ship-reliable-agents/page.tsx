@@ -19,28 +19,28 @@ export default function ArticlePage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#f5f4f0] text-[#1c1917]">
+    <main className="min-h-screen bg-[#0c0b0a] text-[#efe9df]">
       {/* Scroll Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-[3px] bg-stone-200/50 z-[200]">
+      <div className="fixed top-0 left-0 w-full h-[3px] bg-white/10 z-[200]">
         <div
-          className="h-full bg-stone-900 text-white transition-all duration-150"
+          className="h-full bg-[#c8a86b] text-[#171310] transition-all duration-150"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
 
       {/* Clean Navigation Bar */}
-      <nav className="sticky top-0 z-50 bg-[#f5f4f0]/85 backdrop-blur-md border-b border-stone-200 px-6 py-5">
+      <nav className="sticky top-0 z-50 bg-[#0c0b0a]/85 backdrop-blur-md border-b border-white/10 px-6 py-5">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <a href="/" className="flex items-center gap-3 shrink-0">
             {/* Accent Dot */}
-            <div className="w-2.5 h-2.5 rounded-full bg-stone-900 text-white shadow-[0_0_8px_rgba(120, 113, 108,0.3)]" />
-            <span className="text-[17px] font-bold tracking-tight font-serif text-stone-900">
+            <div className="w-2.5 h-2.5 rounded-full bg-[#c8a86b] text-[#171310] shadow-[0_0_8px_rgba(120, 113, 108,0.3)]" />
+            <span className="text-[17px] font-bold tracking-tight font-serif text-[#f2ede3]">
               NordNeuron
             </span>
           </a>
           <a
             href="/insights"
-            className="text-sm font-medium text-[#6b7280] hover:text-stone-900 transition-colors duration-300 flex items-center gap-1.5"
+            className="text-sm font-medium text-[#a89f8f] hover:text-[#f2ede3] transition-colors duration-300 flex items-center gap-1.5"
           >
             <span>←</span> Back to Insights
           </a>
@@ -50,22 +50,22 @@ export default function ArticlePage() {
       {/* Article */}
       <article className="max-w-3xl mx-auto px-6 py-20">
         {/* Tag */}
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-stone-100 text-stone-900 border border-stone-200 text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/[0.06] text-[#f2ede3] border border-white/10 text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
           Agentic AI
         </div>
 
         {/* Title */}
-        <h1 className="text-[42px] md:text-[56px] leading-[1.1] tracking-[-0.03em] font-serif text-[#1c1917]">
+        <h1 className="text-[36px] md:text-[46px] leading-[1.1] tracking-[-0.03em] font-serif text-[#efe9df]">
           MCP in Production: What It Actually Takes to Ship Reliable AI Agents
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 text-[20px] leading-[1.7] text-stone-500 italic">
+        <p className="mt-6 text-[19px] leading-[1.7] text-[#8a8175] italic">
           The Model Context Protocol solved the integration problem. Now the industry is discovering what breaks once real users, real permissions, and real failure modes enter the picture.
         </p>
 
         {/* Meta */}
-        <div className="mt-8 pb-10 border-b border-stone-200 text-[13px] text-stone-400 flex items-center gap-3 flex-wrap">
+        <div className="mt-8 pb-10 border-b border-white/10 text-[13px] text-[#8a8175] flex items-center gap-3 flex-wrap">
           <span>Pankaj Kumar</span>
           <span>•</span>
           <span>August 2026</span>
@@ -74,7 +74,7 @@ export default function ArticlePage() {
         </div>
 
         {/* Intro */}
-        <section className="mt-14 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+        <section className="mt-14 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
           <p>
             Two years ago, connecting an LLM to a database, a ticketing system, and an internal API meant writing three separate integrations, each with its own auth handling, its own schema translation, and its own failure modes. The Model Context Protocol changed that calculus. By standardizing how models discover and call tools, it turned an M×N integration problem into an M+N one — write a server once, and any compliant client can use it.
           </p>
@@ -90,11 +90,11 @@ export default function ArticlePage() {
 
         {/* Section 1 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
+          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
             The problem MCP actually solves
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
             <p>
               Before MCP, every agent framework invented its own tool-calling convention. A tool built for one framework rarely worked in another without a rewrite. Vendors and internal platform teams were duplicating the same connector logic — for Postgres, for Slack, for internal CRMs — dozens of times over, each with slightly different semantics for errors, pagination, and auth.
             </p>
@@ -111,11 +111,11 @@ export default function ArticlePage() {
 
         {/* Section 2 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
+          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
             Where MCP deployments break in practice
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
             <p>
               The failure modes that show up once MCP-connected agents leave the sandbox are remarkably consistent across teams:
             </p>
@@ -140,11 +140,11 @@ export default function ArticlePage() {
 
         {/* Section 3 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
+          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
             The patterns that actually hold up
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
             <p>
               <strong>Scoped tool disclosure.</strong> Instead of exposing every tool from every connected server on every call, resolve the relevant subset first — by user role, by task type, or with a lightweight retrieval step over tool descriptions — and only then hand the model a short list. Smaller, more relevant tool sets consistently produce better call accuracy than exhaustive ones.
             </p>
@@ -169,11 +169,11 @@ export default function ArticlePage() {
 
         {/* Section 4 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
+          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
             The protocol is the plumbing, not the strategy
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
             <p>
               MCP's real contribution is removing the busywork of bespoke integrations, and that is not a small thing — it has meaningfully lowered the cost of connecting agents to real systems. But adopting the protocol does not automatically produce a reliable agent, any more than adopting REST automatically produced a well-designed API a decade ago.
             </p>
@@ -185,16 +185,16 @@ export default function ArticlePage() {
         </section>
 
         {/* Divider */}
-        <div className="h-px bg-stone-200 my-16" />
+        <div className="h-px bg-white/10 my-16" />
 
         {/* Closing */}
-        <div className="border-l-[3px] border-stone-200 pl-6 text-[18px] italic leading-[2] text-stone-500">
+        <div className="border-l-[3px] border-white/10 pl-6 text-[18px] italic leading-[2] text-[#8a8175]">
           Nordneuron builds AI and operational intelligence systems at NordNeuron, with a focus on LLM architecture, freight analytics, and enterprise automation.
         </div>
       </article>
 
       {/* Footer */}
-      <footer className="border-t border-stone-200 px-6 py-10 text-center text-[13px] text-stone-400">
+      <footer className="border-t border-white/10 px-6 py-10 text-center text-[13px] text-[#8a8175]">
         © 2026 Pankaj Kumar · Enterprise AI & Logistics Intelligence
       </footer>
     </main>

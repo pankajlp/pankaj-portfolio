@@ -70,7 +70,7 @@ export default function VisaReportLab() {
   }
 
   const inputClass =
-    "w-full rounded-2xl border border-stone-200 bg-white px-4 py-3 text-stone-800 placeholder:text-stone-400 focus:outline-none focus:border-stone-400 focus:ring-2 focus:ring-stone-900/5 transition-all";
+    "w-full rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-[#e4dece] placeholder:text-[#8a8175] focus:outline-none focus:border-[#c8a86b]/50 focus:ring-2 focus:ring-stone-900/5 transition-all";
 
   const counts = rows
     ? {
@@ -100,23 +100,23 @@ export default function VisaReportLab() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#f5f4f0] text-[#1c1917] overflow-hidden">
+    <main className="min-h-screen bg-[#0c0b0a] text-[#efe9df] overflow-hidden">
       <Navbar />
 
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-stone-900/5 blur-[180px] rounded-full pointer-events-none" />
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#c8a86b]/5 blur-[180px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 pt-40 pb-28">
-        <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-stone-200 bg-white/60 text-stone-500 font-syne text-[10px] uppercase tracking-widest mb-6 shadow-sm">
+        <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-[#8a8175] font-syne text-[10px] uppercase tracking-widest mb-6 shadow-sm">
           NordNeuron Labs
         </div>
 
-        <h1 className="text-4xl md:text-7xl font-bold font-syne uppercase tracking-tight text-stone-900 leading-[1.05] max-w-4xl">
+        <h1 className="text-4xl md:text-6xl font-bold font-syne uppercase tracking-tight text-[#f2ede3] leading-[1.05] max-w-4xl">
           Work-Visa
           <br />
-          <span className="text-stone-950">Fit Report</span>
+          <span className="text-[#f2ede3]">Fit Report</span>
         </h1>
 
-        <p className="mt-8 max-w-2xl text-stone-500 text-base md:text-lg leading-relaxed font-light">
+        <p className="mt-8 max-w-2xl text-[#8a8175] text-base md:text-lg leading-relaxed font-light">
           Paste your resume and get a personalised non-EU work-visa guide across
           27 countries — each rated for how well it fits your profile, with the
           real route, salary floor, and path to permanent residence. Nothing is
@@ -125,7 +125,7 @@ export default function VisaReportLab() {
 
         <a
           href="/labs/job-tailor"
-          className="mt-4 inline-flex items-center text-stone-500 hover:text-stone-900 font-syne text-[10px] uppercase tracking-widest transition-colors"
+          className="mt-4 inline-flex items-center text-[#8a8175] hover:text-[#f2ede3] font-syne text-[10px] uppercase tracking-widest transition-colors"
         >
           Applying for a specific role? Try the Job Application Tailor →
         </a>
@@ -141,7 +141,7 @@ export default function VisaReportLab() {
           <div className="mt-6">
             <ResumeUpload onText={setResume} />
           </div>
-          <label className="block mt-6 mb-2 text-stone-500 font-syne text-[10px] uppercase tracking-widest">
+          <label className="block mt-6 mb-2 text-[#8a8175] font-syne text-[10px] uppercase tracking-widest">
             Your resume
           </label>
           <textarea
@@ -161,7 +161,7 @@ export default function VisaReportLab() {
         <button
           onClick={handleSubmit}
           disabled={loading}
-          className="mt-8 inline-flex items-center px-8 py-4 rounded-2xl bg-stone-900 text-white font-syne text-xs uppercase tracking-widest hover:bg-black hover:scale-[1.02] transition-all duration-300 shadow-[0_4px_20px_rgba(120,113,108,0.15)] disabled:opacity-50 disabled:hover:scale-100 disabled:cursor-not-allowed"
+          className="mt-8 inline-flex items-center px-8 py-4 rounded-2xl bg-[#c8a86b] text-[#171310] font-syne text-xs uppercase tracking-widest hover:bg-[#d8bd86] hover:scale-[1.02] transition-all duration-300 shadow-[0_4px_20px_rgba(120,113,108,0.15)] disabled:opacity-50 disabled:hover:scale-100 disabled:cursor-not-allowed"
         >
           {loading ? "Analysing 27 countries…" : "Build my visa report →"}
         </button>
@@ -176,8 +176,8 @@ export default function VisaReportLab() {
                   onClick={() => setFilter(c.key)}
                   className={`px-4 py-2 rounded-full border text-sm font-medium transition-all ${
                     filter === c.key
-                      ? "bg-stone-900 text-white border-stone-900"
-                      : "bg-white text-stone-600 border-stone-200 hover:border-stone-300"
+                      ? "bg-[#c8a86b] text-[#171310] border-white/15"
+                      : "bg-white/[0.03] text-[#a89f8f] border-white/10 hover:border-white/15"
                   }`}
                 >
                   {c.label}
@@ -189,20 +189,20 @@ export default function VisaReportLab() {
               {visible.map((r) => (
                 <div
                   key={r.country}
-                  className="rounded-3xl border border-stone-200 bg-white p-7 shadow-[0_4px_20px_rgba(15,23,42,0.02)]"
+                  className="rounded-3xl border border-white/10 bg-white/[0.03] p-7 shadow-[0_4px_20px_rgba(15,23,42,0.02)]"
                 >
                   <div className="flex items-start justify-between gap-4 flex-wrap">
                     <div>
-                      <h3 className="text-2xl font-bold font-syne uppercase tracking-tight text-stone-900">
+                      <h3 className="text-2xl font-bold font-syne uppercase tracking-tight text-[#f2ede3]">
                         {r.country}
                       </h3>
-                      <span className="text-stone-400 text-xs uppercase tracking-widest">
+                      <span className="text-[#8a8175] text-xs uppercase tracking-widest">
                         {r.region}
                       </span>
                     </div>
                     <div className="flex items-center gap-2">
                       {r.noOfferRoute && (
-                        <span className="px-3 py-1 rounded-full bg-stone-100 border border-stone-200 text-stone-600 text-xs font-medium">
+                        <span className="px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-[#a89f8f] text-xs font-medium">
                           No job offer needed
                         </span>
                       )}
@@ -216,7 +216,7 @@ export default function VisaReportLab() {
                     </div>
                   </div>
 
-                  <p className="mt-4 text-stone-600 leading-relaxed">{r.note}</p>
+                  <p className="mt-4 text-[#a89f8f] leading-relaxed">{r.note}</p>
 
                   <div className="mt-5 grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm">
                     <Fact label="Best route" value={r.route} />
@@ -231,7 +231,7 @@ export default function VisaReportLab() {
                     href={r.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center text-stone-500 hover:text-stone-900 font-syne text-[10px] uppercase tracking-widest transition-colors"
+                    className="mt-5 inline-flex items-center text-[#8a8175] hover:text-[#f2ede3] font-syne text-[10px] uppercase tracking-widest transition-colors"
                   >
                     Official immigration site →
                   </a>
@@ -239,7 +239,7 @@ export default function VisaReportLab() {
               ))}
             </div>
 
-            <p className="mt-10 text-stone-400 text-xs">
+            <p className="mt-10 text-[#8a8175] text-xs">
               Fit ratings are AI-tailored to your profile; country facts are as of{" "}
               {(rows && "2026")}. Salary floors change yearly — always verify on
               the official link before applying. Want the full local toolkit
@@ -248,7 +248,7 @@ export default function VisaReportLab() {
                 href="https://github.com/NordNeuron/job-cockpit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-stone-600 underline hover:text-stone-900"
+                className="text-[#a89f8f] underline hover:text-[#f2ede3]"
               >
                 Get Job Cockpit on GitHub
               </a>
@@ -265,8 +265,8 @@ export default function VisaReportLab() {
 function Fact({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex gap-2">
-      <span className="text-stone-400 shrink-0">{label}:</span>
-      <span className="text-stone-700">{value}</span>
+      <span className="text-[#8a8175] shrink-0">{label}:</span>
+      <span className="text-[#cfc7b6]">{value}</span>
     </div>
   );
 }

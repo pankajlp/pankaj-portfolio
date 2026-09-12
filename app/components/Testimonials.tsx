@@ -69,7 +69,7 @@ export default function Testimonials() {
             Testimonials
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-medium font-syne tracking-tight text-[#f2ede3] leading-[1.05]">
+          <h2 className="text-4xl md:text-5xl font-medium font-syne tracking-tight text-[#f2ede3] leading-[1.05]">
             Client Stories<br />
             <span className="text-[#8a8175]">& Partners</span>
           </h2>

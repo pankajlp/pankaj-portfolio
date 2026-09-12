@@ -63,7 +63,7 @@ export default function TechStack() {
                 Capabilities
               </span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-medium font-syne tracking-tight text-[#f2ede3] leading-[1.02]">
+            <h2 className="text-4xl md:text-5xl font-medium font-syne tracking-tight text-[#f2ede3] leading-[1.02]">
               What We Build<br />
               <span className="text-[#8a8175]">With</span>
             </h2>

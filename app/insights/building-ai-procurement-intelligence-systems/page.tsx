@@ -33,28 +33,28 @@ useEffect(() => {
 
 }, []);
   return (
-    <main className="min-h-screen bg-[#f5f4f0] text-[#1c1917]">
+    <main className="min-h-screen bg-[#0c0b0a] text-[#efe9df]">
       {/* Scroll Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-[3px] bg-stone-200/50 z-[200]">
+      <div className="fixed top-0 left-0 w-full h-[3px] bg-white/10 z-[200]">
         <div
-          className="h-full bg-stone-900 text-white transition-all duration-150"
+          className="h-full bg-[#c8a86b] text-[#171310] transition-all duration-150"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
 
       {/* Clean Navigation Bar */}
-      <nav className="sticky top-0 z-50 bg-[#f5f4f0]/85 backdrop-blur-md border-b border-stone-200 px-6 py-5">
+      <nav className="sticky top-0 z-50 bg-[#0c0b0a]/85 backdrop-blur-md border-b border-white/10 px-6 py-5">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <a href="/" className="flex items-center gap-3 shrink-0">
             {/* Accent Dot */}
-            <div className="w-2.5 h-2.5 rounded-full bg-stone-900 text-white shadow-[0_0_8px_rgba(120, 113, 108,0.3)]" />
-            <span className="text-[17px] font-bold tracking-tight font-serif text-stone-900">
+            <div className="w-2.5 h-2.5 rounded-full bg-[#c8a86b] text-[#171310] shadow-[0_0_8px_rgba(120, 113, 108,0.3)]" />
+            <span className="text-[17px] font-bold tracking-tight font-serif text-[#f2ede3]">
               NordNeuron
             </span>
           </a>
           <a
             href="/insights"
-            className="text-sm font-medium text-[#6b7280] hover:text-stone-900 transition-colors duration-300 flex items-center gap-1.5"
+            className="text-sm font-medium text-[#a89f8f] hover:text-[#f2ede3] transition-colors duration-300 flex items-center gap-1.5"
           >
             <span>←</span> Back to Insights
           </a>
@@ -64,18 +64,18 @@ useEffect(() => {
       {/* Article */}
       <article className="max-w-3xl mx-auto px-6 py-20">
         {/* Tag */}
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-stone-100 text-stone-900 border border-stone-200 text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/[0.06] text-[#f2ede3] border border-white/10 text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
           Enterprise AI
         </div>
 
         {/* Title */}
-        <h1 className="text-[42px] md:text-[56px] leading-[1.1] tracking-[-0.03em] font-serif text-[#1c1917]">
+        <h1 className="text-[36px] md:text-[46px] leading-[1.1] tracking-[-0.03em] font-serif text-[#efe9df]">
           Building AI procurement intelligence systems
           with local LLMs
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 text-[18px] leading-[1.7] text-stone-500">
+        <p className="mt-6 text-[18px] leading-[1.7] text-[#8a8175]">
                 Procurement workflows are fragmented by design.
       RFQs arrive as spreadsheets, PDFs, emails,
       pricing tables, carrier notes, and operational updates —
@@ -83,7 +83,7 @@ useEffect(() => {
         </p>
 
         {/* Meta */}
-        <div className="mt-8 pb-10 border-b border-stone-200 text-[13px] text-stone-400 flex items-center gap-3 flex-wrap">
+        <div className="mt-8 pb-10 border-b border-white/10 text-[13px] text-[#8a8175] flex items-center gap-3 flex-wrap">
           <span>Pankaj Kumar</span>
           <span>•</span>
           <span>May 2026</span>
@@ -94,7 +94,7 @@ useEffect(() => {
         {/* Section */}
 <section className="mt-2">
 
-  <div className="mt-8 space-y-2 text-[18px] leading-[2] text-[#1c1917]">
+  <div className="mt-8 space-y-2 text-[18px] leading-[2] text-[#efe9df]">
 
     <p>
       Traditional dashboards help visualize procurement activity,
@@ -114,7 +114,7 @@ useEffect(() => {
 {/* Why Local LLMs */}
 <section className="mt-16">
 
-  <h2 className="text-[34px] md:text-[42px] leading-[1.15] tracking-[-0.03em] font-serif text-[#1c1917]">
+  <h2 className="text-[28px] md:text-[36px] leading-[1.15] tracking-[-0.03em] font-serif text-[#efe9df]">
     Why local LLMs matter
   </h2>
 
@@ -140,13 +140,13 @@ useEffect(() => {
     ].map((item) => (
       <div
         key={item.title}
-        className="rounded-2xl border border-stone-200 bg-white p-8"
+        className="rounded-2xl border border-white/10 bg-white/[0.03] p-8"
       >
-        <h3 className="text-[24px] font-serif text-[#1c1917]">
+        <h3 className="text-[24px] font-serif text-[#efe9df]">
           {item.title}
         </h3>
 
-        <p className="mt-4 text-[16px] leading-[1.9] text-stone-500">
+        <p className="mt-4 text-[16px] leading-[1.9] text-[#8a8175]">
           {item.desc}
         </p>
       </div>
@@ -157,11 +157,11 @@ useEffect(() => {
 {/* Architecture */}
 <section className="mt-16">
 
-  <h2 className="text-[34px] md:text-[42px] leading-[1.15] tracking-[-0.03em] font-serif text-[#1c1917]">
+  <h2 className="text-[28px] md:text-[36px] leading-[1.15] tracking-[-0.03em] font-serif text-[#efe9df]">
     The architecture stack
   </h2>
 
-  <div className="mt-10 space-y-8 text-[18px] leading-[2] text-[#1c1917]">
+  <div className="mt-10 space-y-8 text-[18px] leading-[2] text-[#efe9df]">
 
     <p>
       The architecture behind AI-native procurement systems
@@ -192,14 +192,14 @@ useEffect(() => {
     ].map((item) => (
       <div
         key={item}
-        className="px-4 py-2 rounded-full bg-[#eeede8] border border-stone-200 text-stone-500 text-[14px]"
+        className="px-4 py-2 rounded-full bg-[#eeede8] border border-white/10 text-[#8a8175] text-[14px]"
       >
         {item}
       </div>
     ))}
   </div>
 
-  <div className="mt-10 space-y-8 text-[18px] leading-[2] text-[#1c1917]">
+  <div className="mt-10 space-y-8 text-[18px] leading-[2] text-[#efe9df]">
 
     <p>
       DuckDB handled lightweight analytical querying directly
@@ -219,11 +219,11 @@ useEffect(() => {
 {/* Text-to-SQL */}
 <section className="mt-16">
 
-  <h2 className="text-[30px] md:text-[42px] leading-[1.15] tracking-[-0.03em] font-serif text-[#1c1917]">
+  <h2 className="text-[30px] md:text-[36px] leading-[1.15] tracking-[-0.03em] font-serif text-[#efe9df]">
     The real complexity of text-to-SQL systems
   </h2>
 
-  <div className="mt-10 space-y-8 text-[18px] leading-[2] text-[#1c1917]">
+  <div className="mt-10 space-y-8 text-[18px] leading-[2] text-[#efe9df]">
 
     <p>
       Most discussions around text-to-SQL workflows focus almost entirely
@@ -259,18 +259,18 @@ useEffect(() => {
     ].map((item) => (
       <div
         key={item.step}
-        className="rounded-2xl border border-stone-200 bg-white p-8 flex gap-6"
+        className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 flex gap-6"
       >
-        <div className="text-[#1c1917] text-[13px] font-medium tracking-[0.12em]">
+        <div className="text-[#efe9df] text-[13px] font-medium tracking-[0.12em]">
           {item.step}
         </div>
 
         <div>
-          <h3 className="text-[22px] font-serif text-[#1c1917]">
+          <h3 className="text-[22px] font-serif text-[#efe9df]">
             {item.title}
           </h3>
 
-          <p className="mt-3 text-[16px] leading-[1.9] text-stone-500">
+          <p className="mt-3 text-[16px] leading-[1.9] text-[#8a8175]">
             {item.desc}
           </p>
         </div>
@@ -278,7 +278,7 @@ useEffect(() => {
     ))}
   </div>
 
-  <div className="mt-10 space-y-8 text-[18px] leading-[2] text-[#1c1917]">
+  <div className="mt-10 space-y-8 text-[18px] leading-[2] text-[#efe9df]">
 
     <p>
       The engineering challenge is rarely just “getting the model to work.”
@@ -289,23 +289,23 @@ useEffect(() => {
 </section>
 
 {/* Closing */}
-<section className="mt-24 border-t border-stone-200 pt-16">
+<section className="mt-24 border-t border-white/10 pt-16">
 
-  <p className="text-[22px] italic leading-[2] text-stone-500 border-l-[3px] border-stone-200 pl-6">
+  <p className="text-[22px] italic leading-[2] text-[#8a8175] border-l-[3px] border-white/10 pl-6">
     The most difficult part of building AI procurement systems
     is not choosing the model.
     It is understanding your operational data deeply enough
     to reason over it meaningfully.
   </p>
 
-  <p className="mt-10 text-[18px] leading-[2] text-[#1c1917]">
+  <p className="mt-10 text-[18px] leading-[2] text-[#efe9df]">
     That is the part most AI discussions skip —
     but in practice, it is where the real systems engineering begins.
   </p>
 </section></article>
 
       {/* Footer */}
-      <footer className="border-t border-stone-200 px-6 py-10 text-center text-[13px] text-stone-400">
+      <footer className="border-t border-white/10 px-6 py-10 text-center text-[13px] text-[#8a8175]">
         © 2026 Pankaj Kumar · Enterprise AI & Logistics Intelligence
       </footer>
     </main>

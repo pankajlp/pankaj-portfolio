@@ -34,13 +34,13 @@ const nextSteps = [
 ];
 
 const inputClass =
-  "w-full rounded-2xl bg-white border border-stone-200 px-5 py-4 text-stone-900 outline-none focus:border-stone-500 transition-all duration-300 font-light placeholder:text-stone-400";
+  "w-full rounded-2xl bg-white/[0.03] border border-white/10 px-5 py-4 text-[#f2ede3] outline-none focus:border-[#c8a86b]/50 transition-all duration-300 font-light placeholder:text-[#8a8175]";
 
 function FieldLabel({ children, optional }: { children: React.ReactNode; optional?: boolean }) {
   return (
-    <label className="block mb-2 text-[11px] font-syne uppercase tracking-widest text-stone-500">
+    <label className="block mb-2 text-[11px] font-syne uppercase tracking-widest text-[#8a8175]">
       {children}
-      {optional && <span className="ml-2 text-stone-400 normal-case tracking-normal">(optional)</span>}
+      {optional && <span className="ml-2 text-[#8a8175] normal-case tracking-normal">(optional)</span>}
     </label>
   );
 }
@@ -90,24 +90,24 @@ export default function ContactPage() {
 
   if (submitted) {
     return (
-      <main className="min-h-screen bg-[#f5f4f0] text-[#1c1917] flex items-center justify-center px-6">
+      <main className="min-h-screen bg-[#0c0b0a] text-[#efe9df] flex items-center justify-center px-6">
         <div className="max-w-2xl text-center">
-          <div className="text-stone-900 font-syne text-[10px] uppercase tracking-widest">
+          <div className="text-[#f2ede3] font-syne text-[10px] uppercase tracking-widest">
             NordNeuron
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold font-syne uppercase tracking-tight text-stone-900 leading-tight mt-6">
+          <h1 className="text-4xl md:text-5xl font-bold font-syne uppercase tracking-tight text-[#f2ede3] leading-tight mt-6">
             Thanks for reaching out.
           </h1>
 
-          <p className="mt-6 text-stone-500 text-base md:text-lg leading-relaxed font-light">
+          <p className="mt-6 text-[#8a8175] text-base md:text-lg leading-relaxed font-light">
             We've received your information and will review your use case.
             If there's a good fit, we'll get back to you within 24–48 hours.
           </p>
 
           <TransitionLink
             href="/"
-            className="group inline-flex items-center gap-2.5 mt-10 px-8 py-4 rounded-full bg-stone-900 text-stone-50 font-syne text-xs uppercase tracking-widest hover:bg-stone-800 hover:text-white transition-all duration-300"
+            className="group inline-flex items-center gap-2.5 mt-10 px-8 py-4 rounded-full bg-[#c8a86b] text-[#171310] font-syne text-xs uppercase tracking-widest hover:bg-[#d8bd86] hover:text-white transition-all duration-300"
           >
             Back to Home
             <ArrowUpRight size={16} />
@@ -118,7 +118,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f5f4f0] text-[#1c1917] overflow-hidden">
+    <main className="min-h-screen bg-[#0c0b0a] text-[#efe9df] overflow-hidden">
       <Navbar />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-40 pb-28">
@@ -126,17 +126,17 @@ export default function ContactPage() {
         {/* Header */}
         <div className="max-w-3xl">
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-px bg-stone-400" />
-            <span className="text-stone-500 font-syne text-[10px] uppercase tracking-[0.3em]">
+            <div className="w-12 h-px bg-gradient-to-r from-[#c8a86b] to-transparent" />
+            <span className="text-[#8a8175] font-syne text-[10px] uppercase tracking-[0.3em]">
               Contact
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold font-syne uppercase tracking-tight text-stone-900 leading-[0.95]">
+          <h1 className="text-4xl md:text-6xl font-bold font-syne uppercase tracking-tight text-[#f2ede3] leading-[0.95]">
             Let&apos;s Talk.
           </h1>
 
-          <p className="mt-6 text-stone-500 text-base md:text-lg leading-relaxed font-light max-w-xl">
+          <p className="mt-6 text-[#8a8175] text-base md:text-lg leading-relaxed font-light max-w-xl">
             Tell us a little about your project — operational analytics, workflow
             automation, AI initiatives, or anything in between. It takes two minutes.
           </p>
@@ -148,24 +148,24 @@ export default function ContactPage() {
           <aside className="lg:col-span-4 lg:sticky lg:top-32 space-y-10">
 
             {/* Direct contact */}
-            <div className="rounded-3xl border border-stone-200 bg-white p-8">
-              <h2 className="text-[11px] font-syne uppercase tracking-widest text-stone-500 mb-5">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8">
+              <h2 className="text-[11px] font-syne uppercase tracking-widest text-[#8a8175] mb-5">
                 Prefer email?
               </h2>
               <a
                 href="mailto:contact@nordneuron.com"
-                className="group flex items-center gap-3 text-stone-900 font-syne font-bold text-lg tracking-tight hover:text-stone-600 transition-colors duration-300 break-all"
+                className="group flex items-center gap-3 text-[#f2ede3] font-syne font-bold text-lg tracking-tight hover:text-[#a89f8f] transition-colors duration-300 break-all"
               >
                 <Mail size={18} className="shrink-0" />
                 contact@nordneuron.com
               </a>
 
-              <div className="mt-6 pt-6 border-t border-stone-200 flex gap-6">
+              <div className="mt-6 pt-6 border-t border-white/10 flex gap-6">
                 <a
                   href="https://www.linkedin.com/company/nordneuron/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-2 text-stone-500 hover:text-stone-900 font-syne text-[11px] uppercase tracking-widest transition-colors duration-300"
+                  className="group flex items-center gap-2 text-[#8a8175] hover:text-[#f2ede3] font-syne text-[11px] uppercase tracking-widest transition-colors duration-300"
                 >
                   <FaLinkedin size={14} /> LinkedIn
                 </a>
@@ -173,7 +173,7 @@ export default function ContactPage() {
                   href="https://github.com/NordNeuron"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-2 text-stone-500 hover:text-stone-900 font-syne text-[11px] uppercase tracking-widest transition-colors duration-300"
+                  className="group flex items-center gap-2 text-[#8a8175] hover:text-[#f2ede3] font-syne text-[11px] uppercase tracking-widest transition-colors duration-300"
                 >
                   <FaGithub size={14} /> GitHub
                 </a>
@@ -182,20 +182,20 @@ export default function ContactPage() {
 
             {/* What happens next */}
             <div>
-              <h2 className="text-[11px] font-syne uppercase tracking-widest text-stone-500 mb-6">
+              <h2 className="text-[11px] font-syne uppercase tracking-widest text-[#8a8175] mb-6">
                 What happens next
               </h2>
               <div className="space-y-6">
                 {nextSteps.map((step) => (
                   <div key={step.number} className="flex gap-5">
-                    <span className="text-stone-400 font-syne text-xs font-bold tracking-widest pt-0.5">
+                    <span className="text-[#8a8175] font-syne text-xs font-bold tracking-widest pt-0.5">
                       {step.number}
                     </span>
                     <div>
-                      <h3 className="text-stone-900 font-syne font-bold text-sm uppercase tracking-tight">
+                      <h3 className="text-[#f2ede3] font-syne font-bold text-sm uppercase tracking-tight">
                         {step.title}
                       </h3>
-                      <p className="mt-1 text-stone-500 text-sm font-light leading-relaxed">
+                      <p className="mt-1 text-[#8a8175] text-sm font-light leading-relaxed">
                         {step.description}
                       </p>
                     </div>
@@ -212,8 +212,8 @@ export default function ContactPage() {
               {/* Step 1: About you */}
               <fieldset>
                 <legend className="flex items-center gap-4 mb-7">
-                  <span className="text-stone-400 font-syne text-xs font-bold tracking-[0.2em]">01</span>
-                  <span className="text-stone-900 font-syne font-bold uppercase tracking-tight text-lg">About you</span>
+                  <span className="text-[#8a8175] font-syne text-xs font-bold tracking-[0.2em]">01</span>
+                  <span className="text-[#f2ede3] font-syne font-bold uppercase tracking-tight text-lg">About you</span>
                 </legend>
 
                 <div className="grid md:grid-cols-2 gap-6">
@@ -252,10 +252,10 @@ export default function ContactPage() {
               {/* Step 2: Your challenge */}
               <fieldset>
                 <legend className="flex items-center gap-4 mb-3">
-                  <span className="text-stone-400 font-syne text-xs font-bold tracking-[0.2em]">02</span>
-                  <span className="text-stone-900 font-syne font-bold uppercase tracking-tight text-lg">What do you need help with?</span>
+                  <span className="text-[#8a8175] font-syne text-xs font-bold tracking-[0.2em]">02</span>
+                  <span className="text-[#f2ede3] font-syne font-bold uppercase tracking-tight text-lg">What do you need help with?</span>
                 </legend>
-                <p className="text-stone-500 text-sm font-light mb-6">Pick the closest match — we&apos;ll figure out the details together.</p>
+                <p className="text-[#8a8175] text-sm font-light mb-6">Pick the closest match — we&apos;ll figure out the details together.</p>
 
                 <div className="flex flex-wrap gap-3">
                   {challengeOptions.map((opt) => {
@@ -267,8 +267,8 @@ export default function ContactPage() {
                         onClick={() => setSelectedChallenge(isSelected ? "" : opt)}
                         className={`py-3 px-5 rounded-full border text-xs font-syne uppercase tracking-wider transition-all duration-300 ${
                           isSelected
-                            ? "bg-stone-900 text-white border-stone-900"
-                            : "bg-white border-stone-200 text-stone-600 hover:border-stone-500 hover:text-stone-900"
+                            ? "bg-[#c8a86b] text-[#171310] border-white/15"
+                            : "bg-white/[0.03] border-white/10 text-[#a89f8f] hover:border-[#c8a86b]/40 hover:text-[#f2ede3]"
                         }`}
                       >
                         {opt}
@@ -281,8 +281,8 @@ export default function ContactPage() {
               {/* Step 3: Message */}
               <fieldset>
                 <legend className="flex items-center gap-4 mb-7">
-                  <span className="text-stone-400 font-syne text-xs font-bold tracking-[0.2em]">03</span>
-                  <span className="text-stone-900 font-syne font-bold uppercase tracking-tight text-lg">Tell us more</span>
+                  <span className="text-[#8a8175] font-syne text-xs font-bold tracking-[0.2em]">03</span>
+                  <span className="text-[#f2ede3] font-syne font-bold uppercase tracking-tight text-lg">Tell us more</span>
                 </legend>
 
                 <textarea
@@ -299,7 +299,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="group inline-flex items-center justify-center gap-2.5 px-10 py-5 rounded-full bg-stone-900 text-white font-syne text-xs uppercase tracking-widest hover:bg-stone-700 transition-all duration-300 disabled:opacity-50"
+                  className="group inline-flex items-center justify-center gap-2.5 px-10 py-5 rounded-full bg-[#c8a86b] text-[#171310] font-syne text-xs uppercase tracking-widest hover:bg-white/15 transition-all duration-300 disabled:opacity-50"
                 >
                   {loading ? "Submitting..." : "Submit Inquiry"}
                   {!loading && (
@@ -309,7 +309,7 @@ export default function ContactPage() {
                     />
                   )}
                 </button>
-                <p className="text-stone-400 text-xs font-light">
+                <p className="text-[#8a8175] text-xs font-light">
                   No spam, no obligation — we reply to every serious inquiry.
                 </p>
               </div>

@@ -71,24 +71,24 @@ export default function LabsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#f5f4f0] text-[#1c1917] overflow-hidden">
+    <main className="min-h-screen bg-[#0c0b0a] text-[#efe9df] overflow-hidden">
       <Navbar />
       
       {/* Background Glow */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-stone-900/5 blur-[180px] rounded-full pointer-events-none" />
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#c8a86b]/5 blur-[180px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 pt-40 pb-28">
 
-        <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-stone-200 bg-white/60 text-stone-500 font-syne text-[10px] uppercase tracking-widest mb-6 shadow-sm">
+        <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-[#8a8175] font-syne text-[10px] uppercase tracking-widest mb-6 shadow-sm">
           Labs
         </div>
 
-        <h1 className="text-4xl md:text-5xl font-medium font-syne tracking-tight text-stone-900 leading-[1.08] max-w-3xl">
+        <h1 className="text-4xl md:text-4xl font-medium font-syne tracking-tight text-[#f2ede3] leading-[1.08] max-w-3xl">
           Experimental AI-Native<br />
-          <span className="text-stone-900">Intelligence Systems</span>
+          <span className="text-[#f2ede3]">Intelligence Systems</span>
         </h1>
 
-        <p className="mt-6 max-w-2xl text-stone-600 text-base md:text-lg leading-relaxed font-light">
+        <p className="mt-6 max-w-2xl text-[#a89f8f] text-base md:text-lg leading-relaxed font-light">
           A collection of experimental tools, prototypes,
           and research projects exploring the future of
           operational intelligence.
@@ -101,23 +101,23 @@ export default function LabsPage() {
               <a
                 key={lab.title}
                 href={lab.href}
-                className="group relative block rounded-3xl border border-stone-200 bg-white/60 p-8 hover:border-stone-200/40 hover:bg-white/95 transition-all duration-300 flex flex-col justify-between shadow-sm"
+                className="group relative block rounded-3xl border border-white/10 bg-white/[0.03] p-8 hover:border-white/10 hover:bg-[#0f0d0b]/95 transition-all duration-300 flex flex-col justify-between shadow-sm"
               >
                 <div>
-                  <div className="text-stone-950 font-syne text-[10px] uppercase tracking-widest mb-6">
+                  <div className="text-[#f2ede3] font-syne text-[10px] uppercase tracking-widest mb-6">
                     {lab.status}
                   </div>
 
-                  <h2 className="text-2xl font-bold font-syne uppercase tracking-tight text-stone-900 leading-tight">
+                  <h2 className="text-2xl font-bold font-syne uppercase tracking-tight text-[#f2ede3] leading-tight">
                     {lab.title}
                   </h2>
 
-                  <p className="mt-4 text-stone-400 text-sm md:text-base leading-relaxed font-light">
+                  <p className="mt-4 text-[#8a8175] text-sm md:text-base leading-relaxed font-light">
                     {lab.description}
                   </p>
                 </div>
 
-                <div className="mt-8 text-stone-500 font-syne text-xs uppercase tracking-widest flex items-center gap-1">
+                <div className="mt-8 text-[#8a8175] font-syne text-xs uppercase tracking-widest flex items-center gap-1">
                   Launch Platform <span>→</span>
                 </div>
               </a>
@@ -127,23 +127,23 @@ export default function LabsPage() {
                 href={lab.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative block rounded-3xl border border-stone-200 bg-white/60 p-8 hover:border-stone-200/40 hover:bg-white/95 transition-all duration-300 flex flex-col justify-between shadow-sm"
+                className="group relative block rounded-3xl border border-white/10 bg-white/[0.03] p-8 hover:border-white/10 hover:bg-[#0f0d0b]/95 transition-all duration-300 flex flex-col justify-between shadow-sm"
               >
                 <div>
-                  <div className="text-stone-950 font-syne text-[10px] uppercase tracking-widest mb-6">
+                  <div className="text-[#f2ede3] font-syne text-[10px] uppercase tracking-widest mb-6">
                     {lab.status}
                   </div>
 
-                  <h2 className="text-2xl font-bold font-syne uppercase tracking-tight text-stone-900 leading-tight">
+                  <h2 className="text-2xl font-bold font-syne uppercase tracking-tight text-[#f2ede3] leading-tight">
                     {lab.title}
                   </h2>
 
-                  <p className="mt-4 text-stone-400 text-sm md:text-base leading-relaxed font-light">
+                  <p className="mt-4 text-[#8a8175] text-sm md:text-base leading-relaxed font-light">
                     {lab.description}
                   </p>
                 </div>
 
-                <div className="mt-8 text-stone-500 font-syne text-xs uppercase tracking-widest flex items-center gap-1.5">
+                <div className="mt-8 text-[#8a8175] font-syne text-xs uppercase tracking-widest flex items-center gap-1.5">
                   <svg
                     aria-hidden="true"
                     height="14"
@@ -159,18 +159,18 @@ export default function LabsPage() {
             ) : (
               <div
                 key={lab.title}
-                className="group relative block rounded-3xl border border-stone-200 bg-white/40 p-8 opacity-60 flex flex-col justify-between shadow-sm"
+                className="group relative block rounded-3xl border border-white/10 bg-white/[0.03] p-8 opacity-60 flex flex-col justify-between shadow-sm"
               >
                 <div>
-                  <div className="text-stone-400 font-syne text-[10px] uppercase tracking-widest mb-6">
+                  <div className="text-[#8a8175] font-syne text-[10px] uppercase tracking-widest mb-6">
                     {lab.status}
                   </div>
 
-                  <h2 className="text-2xl font-bold font-syne uppercase tracking-tight text-stone-500 leading-tight">
+                  <h2 className="text-2xl font-bold font-syne uppercase tracking-tight text-[#8a8175] leading-tight">
                     {lab.title}
                   </h2>
 
-                  <p className="mt-4 text-stone-400 text-sm md:text-base leading-relaxed font-light">
+                  <p className="mt-4 text-[#8a8175] text-sm md:text-base leading-relaxed font-light">
                     {lab.description}
                   </p>
                 </div>
@@ -180,16 +180,16 @@ export default function LabsPage() {
         </div>
 
         {/* Section 2: Open Source & Developer Utilities */}
-        <div className="mt-28 pt-20 border-t border-stone-200">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-stone-200 bg-white/60 text-stone-500 font-syne text-[10px] uppercase tracking-widest mb-6 shadow-sm">
+        <div className="mt-28 pt-20 border-t border-white/10">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-[#8a8175] font-syne text-[10px] uppercase tracking-widest mb-6 shadow-sm">
             Open Source
           </div>
           
-          <h2 className="text-3xl md:text-5xl font-bold font-syne uppercase tracking-tight text-stone-900 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold font-syne uppercase tracking-tight text-[#f2ede3] leading-tight">
             Developer Utilities
           </h2>
           
-          <p className="mt-4 max-w-2xl text-stone-400 text-base md:text-lg leading-relaxed font-light">
+          <p className="mt-4 max-w-2xl text-[#8a8175] text-base md:text-lg leading-relaxed font-light">
             Lightweight tools, packages, and utilities built for developers and proxy routing translation.
           </p>
 
@@ -197,18 +197,18 @@ export default function LabsPage() {
             {utilities.map((util) => (
               <div
                 key={util.title}
-                className="group relative block rounded-3xl border border-stone-200 bg-white/60 p-8 hover:border-stone-200/40 hover:bg-white/95 transition-all duration-300 flex flex-col justify-between shadow-sm"
+                className="group relative block rounded-3xl border border-white/10 bg-white/[0.03] p-8 hover:border-white/10 hover:bg-[#0f0d0b]/95 transition-all duration-300 flex flex-col justify-between shadow-sm"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <div className="text-stone-950 font-syne text-[10px] uppercase tracking-widest">
+                    <div className="text-[#f2ede3] font-syne text-[10px] uppercase tracking-widest">
                       {util.status}
                     </div>
                     <a
                       href={util.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-stone-400 hover:text-stone-500 transition-colors duration-300 flex items-center gap-1.5 font-syne text-[10px] uppercase tracking-wider"
+                      className="text-[#8a8175] hover:text-[#8a8175] transition-colors duration-300 flex items-center gap-1.5 font-syne text-[10px] uppercase tracking-wider"
                     >
                       <svg
                         aria-hidden="true"
@@ -224,11 +224,11 @@ export default function LabsPage() {
                     </a>
                   </div>
 
-                  <h3 className="text-2xl font-bold font-syne uppercase tracking-tight text-stone-900 leading-tight">
+                  <h3 className="text-2xl font-bold font-syne uppercase tracking-tight text-[#f2ede3] leading-tight">
                     {util.title}
                   </h3>
 
-                  <p className="mt-4 text-stone-400 text-sm md:text-base leading-relaxed font-light">
+                  <p className="mt-4 text-[#8a8175] text-sm md:text-base leading-relaxed font-light">
                     {util.description}
                   </p>
                 </div>
@@ -238,7 +238,7 @@ export default function LabsPage() {
                     href={util.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center px-6 py-3 rounded-full border border-stone-200 bg-stone-900 text-stone-50 font-syne text-[10px] uppercase tracking-widest hover:bg-stone-800 hover:text-white hover:border-stone-400 transition-all duration-300"
+                    className="group inline-flex items-center px-6 py-3 rounded-full border border-white/10 bg-[#c8a86b] text-[#171310] font-syne text-[10px] uppercase tracking-widest hover:bg-[#d8bd86] hover:text-white hover:border-[#c8a86b]/40 transition-all duration-300"
                   >
                     Launch Tool
                     <span className="ml-1">→</span>

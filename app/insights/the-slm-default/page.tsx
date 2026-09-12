@@ -19,28 +19,28 @@ export default function ArticlePage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#f5f4f0] text-[#1c1917]">
+    <main className="min-h-screen bg-[#0c0b0a] text-[#efe9df]">
       {/* Scroll Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-[3px] bg-stone-200/50 z-[200]">
+      <div className="fixed top-0 left-0 w-full h-[3px] bg-white/10 z-[200]">
         <div
-          className="h-full bg-stone-900 text-white transition-all duration-150"
+          className="h-full bg-[#c8a86b] text-[#171310] transition-all duration-150"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
 
       {/* Clean Navigation Bar */}
-      <nav className="sticky top-0 z-50 bg-[#f5f4f0]/85 backdrop-blur-md border-b border-stone-200 px-6 py-5">
+      <nav className="sticky top-0 z-50 bg-[#0c0b0a]/85 backdrop-blur-md border-b border-white/10 px-6 py-5">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <a href="/" className="flex items-center gap-3 shrink-0">
             {/* Accent Dot */}
-            <div className="w-2.5 h-2.5 rounded-full bg-stone-900 text-white shadow-[0_0_8px_rgba(120, 113, 108,0.3)]" />
-            <span className="text-[17px] font-bold tracking-tight font-serif text-stone-900">
+            <div className="w-2.5 h-2.5 rounded-full bg-[#c8a86b] text-[#171310] shadow-[0_0_8px_rgba(120, 113, 108,0.3)]" />
+            <span className="text-[17px] font-bold tracking-tight font-serif text-[#f2ede3]">
               NordNeuron
             </span>
           </a>
           <a
             href="/insights"
-            className="text-sm font-medium text-[#6b7280] hover:text-stone-900 transition-colors duration-300 flex items-center gap-1.5"
+            className="text-sm font-medium text-[#a89f8f] hover:text-[#f2ede3] transition-colors duration-300 flex items-center gap-1.5"
           >
             <span>←</span> Back to Insights
           </a>
@@ -50,22 +50,22 @@ export default function ArticlePage() {
       {/* Article */}
       <article className="max-w-3xl mx-auto px-6 py-20">
         {/* Tag */}
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-stone-100 text-stone-900 border border-stone-200 text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/[0.06] text-[#f2ede3] border border-white/10 text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
           Agentic AI
         </div>
 
         {/* Title */}
-        <h1 className="text-[42px] md:text-[56px] leading-[1.1] tracking-[-0.03em] font-serif text-[#1c1917]">
+        <h1 className="text-[36px] md:text-[46px] leading-[1.1] tracking-[-0.03em] font-serif text-[#efe9df]">
           The SLM Default: Why 2026&apos;s Production Agents Run Small Models First
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 text-[20px] leading-[1.7] text-stone-500 italic">
+        <p className="mt-6 text-[19px] leading-[1.7] text-[#8a8175] italic">
           Frontier launches still make the headlines, but the agent stacks actually shipping this year default most steps to a small, fine-tuned model and escalate to a frontier one only when a step earns it.
         </p>
 
         {/* Meta */}
-        <div className="mt-8 pb-10 border-b border-stone-200 text-[13px] text-stone-400 flex items-center gap-3 flex-wrap">
+        <div className="mt-8 pb-10 border-b border-white/10 text-[13px] text-[#8a8175] flex items-center gap-3 flex-wrap">
           <span>Pankaj Kumar</span>
           <span>•</span>
           <span>September 2026</span>
@@ -74,7 +74,7 @@ export default function ArticlePage() {
         </div>
 
         {/* Intro */}
-        <section className="mt-14 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+        <section className="mt-14 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
           <p>
             Every few weeks another frontier model tops a benchmark leaderboard, and the coverage treats each release as the story of where agentic AI is headed. Sit inside an actual production agent stack in 2026 and a quieter, less photogenic story is playing out: most of the steps in the loop never touch a frontier model at all. They run on something in the 1–8B range, fine-tuned for one narrow job, chosen because it is fast and cheap enough to call on every single step without anyone doing a cost review.
           </p>
@@ -90,11 +90,11 @@ export default function ArticlePage() {
 
         {/* Section 1 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
+          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
             Most of what an agent does doesn&apos;t need a frontier model
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
             <p>
               Break an agentic loop into its actual steps and the profile is narrower than the marketing suggests: parse a structured instruction, pick a tool from a fixed set, format the call against a known schema, validate the response, decide whether to retry or move on. None of that is open-ended reasoning. It is closer to classification and constrained generation, which is exactly the workload a fine-tuned small model handles well — often better than a general-purpose frontier model, because the small model was trained on nothing but that task and doesn&apos;t have to arbitrate between it and a thousand other capabilities.
             </p>
@@ -111,11 +111,11 @@ export default function ArticlePage() {
 
         {/* Section 2 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
+          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
             Routing is the architecture, not a cost hack bolted on after
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
             <p>
               Swapping a frontier model for a small one on every step would just trade an expensive failure mode for a cheap one. The pattern that actually made SLM-first agents viable in production is an explicit routing layer sitting between the agent loop and the model pool: a fast, cheap model attempts each step first, and the request escalates to a stronger model only when the cheap attempt fails validation, comes back with low confidence, or exceeds a retry budget. NVIDIA&apos;s open-source NeMo Switchyard formalizes this as an orchestration layer that keeps routing logic separate from the provider endpoints underneath it, so the decision of which model handles a step is a config change, not a rewrite.
             </p>
@@ -132,11 +132,11 @@ export default function ArticlePage() {
 
         {/* Section 3 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
+          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
             What doesn&apos;t get smaller, and what gets harder to see
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
             <p>
               None of this argues the frontier model is going away. Long-context synthesis, genuinely open-ended requests, and the judgment call of whether to escalate in the first place still lean on the larger model — the NVIDIA paper is explicit that the frontier model&apos;s remaining job is the tough, open-ended, long-context minority of the workload, not the whole of it. The harder problem is that a per-step confidence signal from a 3B model is exactly the least reliable thing precisely when a step is genuinely hard, so a routing layer that trusts self-reported confidence too literally will occasionally let a wrong tool call through with the same fluent, confident-looking output a correct one would have produced.
             </p>
@@ -148,16 +148,16 @@ export default function ArticlePage() {
         </section>
 
         {/* Divider */}
-        <div className="h-px bg-stone-200 my-16" />
+        <div className="h-px bg-white/10 my-16" />
 
         {/* Closing */}
-        <div className="border-l-[3px] border-stone-200 pl-6 text-[18px] italic leading-[2] text-stone-500">
+        <div className="border-l-[3px] border-white/10 pl-6 text-[18px] italic leading-[2] text-[#8a8175]">
           The interesting number for 2026 isn&apos;t which model leads a benchmark — it&apos;s how much of a production agent&apos;s traffic never reaches one. Treat the routing layer and its per-step evals as the architecture decision, not an afterthought bolted on once the frontier bill arrives.
         </div>
       </article>
 
       {/* Footer */}
-      <footer className="border-t border-stone-200 px-6 py-10 text-center text-[13px] text-stone-400">
+      <footer className="border-t border-white/10 px-6 py-10 text-center text-[13px] text-[#8a8175]">
         © 2026 Pankaj Kumar · Enterprise AI & Logistics Intelligence
       </footer>
     </main>

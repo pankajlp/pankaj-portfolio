@@ -110,7 +110,7 @@ export default function FeaturedProjects() {
             <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-[#c8a86b]/30 bg-[#c8a86b]/10 text-[#c8a86b] font-mono text-[10px] uppercase tracking-widest mb-6">
               Featured Work
             </div>
-            <h2 className="text-5xl md:text-7xl font-medium font-syne tracking-tight text-[#f2ede3] leading-[0.95]">
+            <h2 className="text-4xl md:text-6xl font-medium font-syne tracking-tight text-[#f2ede3] leading-[0.95]">
               Selected<br />
               <span className="text-[#6f675b]">Projects</span>
             </h2>
@@ -143,7 +143,7 @@ export default function FeaturedProjects() {
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <div className="min-w-0">
-                  <h3 className={`text-2xl md:text-4xl lg:text-5xl font-medium font-syne tracking-tight leading-none transition-colors duration-300 ${isHovered ? "text-[#c8a86b]" : "text-[#cfc7b6]"}`}>
+                  <h3 className={`text-2xl md:text-4xl lg:text-4xl font-medium font-syne tracking-tight leading-none transition-colors duration-300 ${isHovered ? "text-[#c8a86b]" : "text-[#cfc7b6]"}`}>
                     {project.title}
                   </h3>
                   <p className="mt-2 text-[#8a8175] text-sm font-light leading-relaxed max-w-xl hidden md:block">

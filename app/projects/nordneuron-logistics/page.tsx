@@ -98,21 +98,21 @@ const stack = [
 
 export default function NordNeuronLogisticsPage() {
   return (
-    <main className="min-h-screen bg-[#f5f4f0] text-[#1c1917]">
+    <main className="min-h-screen bg-[#0c0b0a] text-[#efe9df]">
       {/* Sticky sub-navbar */}
-      <div className="sticky top-0 z-50 border-b border-stone-200 bg-[#f5f4f0]/80 backdrop-blur-xl">
+      <div className="sticky top-0 z-50 border-b border-white/10 bg-[#0c0b0a]/80 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-8 h-[88px] flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Link href="/" className="text-stone-500 hover:text-stone-900 transition-colors">
+            <Link href="/" className="text-[#8a8175] hover:text-[#f2ede3] transition-colors">
               ← Back
             </Link>
-            <div className="w-px h-5 bg-stone-200" />
+            <div className="w-px h-5 bg-white/10" />
             <div>
-              <h1 className="text-stone-900 font-medium">NordNeuron Logistics AI Suite</h1>
-              <p className="text-xs text-stone-400">Runnable Full-Stack App</p>
+              <h1 className="text-[#f2ede3] font-medium">NordNeuron Logistics AI Suite</h1>
+              <p className="text-xs text-[#8a8175]">Runnable Full-Stack App</p>
             </div>
           </div>
-          <div className="flex items-center gap-3 px-4 py-2 rounded-full border border-stone-200 bg-stone-100/50 text-stone-900 text-sm">
+          <div className="flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/[0.06]/50 text-[#f2ede3] text-sm">
             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             Live Demo
           </div>
@@ -121,16 +121,16 @@ export default function NordNeuronLogisticsPage() {
 
       {/* Hero */}
       <section className="relative max-w-7xl mx-auto px-8 py-16 md:py-24">
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-stone-900/5 blur-[180px] rounded-full pointer-events-none" />
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#c8a86b]/5 blur-[180px] rounded-full pointer-events-none" />
         <div className="relative z-10 max-w-4xl">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-stone-300 text-stone-500 font-syne text-[10px] uppercase tracking-widest mb-8">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/15 text-[#8a8175] font-syne text-[10px] uppercase tracking-widest mb-8">
             Logistics Intelligence · Full-Stack
           </div>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold font-syne uppercase tracking-tight leading-[0.95]">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-syne uppercase tracking-tight leading-[0.95]">
             Ocean freight ops,<br />
-            <span className="text-stone-400">end to end.</span>
+            <span className="text-[#8a8175]">end to end.</span>
           </h2>
-          <p className="mt-8 text-stone-600 text-lg md:text-xl leading-relaxed max-w-2xl font-light">
+          <p className="mt-8 text-[#a89f8f] text-lg md:text-xl leading-relaxed max-w-2xl font-light">
             Six logistics modules behind one dashboard — from parsing a messy tender
             spreadsheet into a structured RFQ, to pricing the lane, packing the box in
             3D, and predicting the vessel&apos;s arrival. Backed by a real FastAPI
@@ -143,7 +143,7 @@ export default function NordNeuronLogisticsPage() {
               href={LIVE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-7 py-4 rounded-full bg-stone-900 text-white font-medium hover:bg-black transition-colors"
+              className="group inline-flex items-center gap-2 px-7 py-4 rounded-full bg-[#c8a86b] text-[#171310] font-medium hover:bg-[#d8bd86] transition-colors"
             >
               Launch Live App
               <ArrowUpRight size={18} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -152,13 +152,13 @@ export default function NordNeuronLogisticsPage() {
               href={REPO_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-stone-300 text-stone-900 font-medium hover:border-stone-900 transition-colors"
+              className="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-white/15 text-[#f2ede3] font-medium hover:border-white/15 transition-colors"
             >
               <GitBranch size={18} />
               View Source
             </a>
           </div>
-          <p className="mt-4 text-xs text-stone-400">
+          <p className="mt-4 text-xs text-[#8a8175]">
             The live demo runs fully standalone in your browser. Clone the repo to run the
             FastAPI backend and real document extractor locally.
           </p>
@@ -167,7 +167,7 @@ export default function NordNeuronLogisticsPage() {
 
       {/* Modules */}
       <section className="max-w-7xl mx-auto px-8 pb-8">
-        <div className="border-t border-stone-200 pt-14">
+        <div className="border-t border-white/10 pt-14">
           <h3 className="text-2xl md:text-3xl font-bold font-syne uppercase tracking-tight mb-10">
             Six modules
           </h3>
@@ -175,13 +175,13 @@ export default function NordNeuronLogisticsPage() {
             {modules.map((m) => (
               <div
                 key={m.title}
-                className="group rounded-2xl border border-stone-200 bg-white/60 p-7 hover:border-stone-900 transition-colors"
+                className="group rounded-2xl border border-white/10 bg-white/[0.03] p-7 hover:border-white/15 transition-colors"
               >
-                <div className="w-11 h-11 rounded-xl bg-stone-900 text-white flex items-center justify-center mb-5">
+                <div className="w-11 h-11 rounded-xl bg-[#c8a86b] text-[#171310] flex items-center justify-center mb-5">
                   <m.icon size={20} />
                 </div>
                 <h4 className="font-syne font-bold text-lg mb-2">{m.title}</h4>
-                <p className="text-stone-600 text-sm leading-relaxed font-light">{m.description}</p>
+                <p className="text-[#a89f8f] text-sm leading-relaxed font-light">{m.description}</p>
               </div>
             ))}
           </div>
@@ -190,18 +190,18 @@ export default function NordNeuronLogisticsPage() {
 
       {/* Architecture */}
       <section className="max-w-7xl mx-auto px-8 py-8">
-        <div className="border-t border-stone-200 pt-14">
+        <div className="border-t border-white/10 pt-14">
           <h3 className="text-2xl md:text-3xl font-bold font-syne uppercase tracking-tight mb-10">
             Architecture
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {architecture.map((a) => (
-              <div key={a.title} className="rounded-2xl border border-stone-200 bg-white/60 p-7">
-                <div className="w-11 h-11 rounded-xl bg-stone-100 text-stone-900 flex items-center justify-center mb-5">
+              <div key={a.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-7">
+                <div className="w-11 h-11 rounded-xl bg-white/[0.06] text-[#f2ede3] flex items-center justify-center mb-5">
                   <a.icon size={20} />
                 </div>
                 <h4 className="font-syne font-bold text-lg mb-2">{a.title}</h4>
-                <p className="text-stone-600 text-sm leading-relaxed font-light">{a.description}</p>
+                <p className="text-[#a89f8f] text-sm leading-relaxed font-light">{a.description}</p>
               </div>
             ))}
           </div>
@@ -210,29 +210,29 @@ export default function NordNeuronLogisticsPage() {
 
       {/* Run locally */}
       <section className="max-w-7xl mx-auto px-8 py-8">
-        <div className="border-t border-stone-200 pt-14 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        <div className="border-t border-white/10 pt-14 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           <div>
             <h3 className="text-2xl md:text-3xl font-bold font-syne uppercase tracking-tight mb-4">
               Run it yourself
             </h3>
-            <p className="text-stone-600 leading-relaxed font-light mb-6">
+            <p className="text-[#a89f8f] leading-relaxed font-light mb-6">
               The full stack — SPA, FastAPI backend, seeded SQLite database, and the real
               multi-format RFQ extractor — starts with a single command. The API serves
-              interactive docs at <span className="font-mono text-stone-900">localhost:8000/docs</span>.
+              interactive docs at <span className="font-mono text-[#f2ede3]">localhost:8000/docs</span>.
             </p>
             <div className="flex flex-wrap gap-2">
               {stack.map((s) => (
                 <span
                   key={s}
-                  className="px-3 py-1.5 rounded-full border border-stone-300 text-stone-600 text-xs font-mono"
+                  className="px-3 py-1.5 rounded-full border border-white/15 text-[#a89f8f] text-xs font-mono"
                 >
                   {s}
                 </span>
               ))}
             </div>
           </div>
-          <div className="rounded-2xl border border-stone-800 bg-[#0f0e0d] p-6 font-mono text-sm text-stone-300 overflow-x-auto">
-            <div className="text-stone-500"># clone and launch the full stack</div>
+          <div className="rounded-2xl border border-white/15 bg-[#0f0e0d] p-6 font-mono text-sm text-[#6f675b] overflow-x-auto">
+            <div className="text-[#8a8175]"># clone and launch the full stack</div>
             <div className="mt-2">
               <span className="text-emerald-400">git</span> clone {REPO_URL}.git
             </div>
@@ -242,19 +242,19 @@ export default function NordNeuronLogisticsPage() {
             <div>
               <span className="text-emerald-400">docker</span> compose up --build
             </div>
-            <div className="mt-4 text-stone-500"># app → localhost:8080 · api → localhost:8000/docs</div>
+            <div className="mt-4 text-[#8a8175]"># app → localhost:8080 · api → localhost:8000/docs</div>
           </div>
         </div>
       </section>
 
       {/* Footer CTA */}
       <section className="max-w-7xl mx-auto px-8 py-20">
-        <div className="border-t border-stone-200 pt-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="border-t border-white/10 pt-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <a
             href={LIVE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 text-3xl md:text-5xl font-bold font-syne uppercase tracking-tight hover:text-stone-500 transition-colors"
+            className="group inline-flex items-center gap-3 text-3xl md:text-4xl font-bold font-syne uppercase tracking-tight hover:text-[#8a8175] transition-colors"
           >
             Open the live app
             <ArrowUpRight
@@ -262,7 +262,7 @@ export default function NordNeuronLogisticsPage() {
               className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
             />
           </a>
-          <Link href="/" className="text-stone-500 hover:text-stone-900 transition-colors">
+          <Link href="/" className="text-[#8a8175] hover:text-[#f2ede3] transition-colors">
             ← Back to all work
           </Link>
         </div>

@@ -38,7 +38,7 @@ export default function Contact() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <h2 className="font-syne font-medium tracking-tight leading-[0.88] text-[clamp(52px,10vw,160px)] text-[#f2ede3]">
+          <h2 className="font-syne font-medium tracking-tight leading-[0.88] text-[clamp(44px,9vw,128px)] text-[#f2ede3]">
             Start A<br />
             <span className="text-[#c8a86b]">Project.</span>
           </h2>

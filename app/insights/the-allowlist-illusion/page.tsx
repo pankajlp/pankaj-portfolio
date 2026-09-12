@@ -19,28 +19,28 @@ export default function ArticlePage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#f5f4f0] text-[#1c1917]">
+    <main className="min-h-screen bg-[#0c0b0a] text-[#efe9df]">
       {/* Scroll Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-[3px] bg-stone-200/50 z-[200]">
+      <div className="fixed top-0 left-0 w-full h-[3px] bg-white/10 z-[200]">
         <div
-          className="h-full bg-stone-900 text-white transition-all duration-150"
+          className="h-full bg-[#c8a86b] text-[#171310] transition-all duration-150"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
 
       {/* Clean Navigation Bar */}
-      <nav className="sticky top-0 z-50 bg-[#f5f4f0]/85 backdrop-blur-md border-b border-stone-200 px-6 py-5">
+      <nav className="sticky top-0 z-50 bg-[#0c0b0a]/85 backdrop-blur-md border-b border-white/10 px-6 py-5">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <a href="/" className="flex items-center gap-3 shrink-0">
             {/* Accent Dot */}
-            <div className="w-2.5 h-2.5 rounded-full bg-stone-900 text-white shadow-[0_0_8px_rgba(120, 113, 108,0.3)]" />
-            <span className="text-[17px] font-bold tracking-tight font-serif text-stone-900">
+            <div className="w-2.5 h-2.5 rounded-full bg-[#c8a86b] text-[#171310] shadow-[0_0_8px_rgba(120, 113, 108,0.3)]" />
+            <span className="text-[17px] font-bold tracking-tight font-serif text-[#f2ede3]">
               NordNeuron
             </span>
           </a>
           <a
             href="/insights"
-            className="text-sm font-medium text-[#6b7280] hover:text-stone-900 transition-colors duration-300 flex items-center gap-1.5"
+            className="text-sm font-medium text-[#a89f8f] hover:text-[#f2ede3] transition-colors duration-300 flex items-center gap-1.5"
           >
             <span>←</span> Back to Insights
           </a>
@@ -50,22 +50,22 @@ export default function ArticlePage() {
       {/* Article */}
       <article className="max-w-3xl mx-auto px-6 py-20">
         {/* Tag */}
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-stone-100 text-stone-900 border border-stone-200 text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/[0.06] text-[#f2ede3] border border-white/10 text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
           AI Security
         </div>
 
         {/* Title */}
-        <h1 className="text-[42px] md:text-[56px] leading-[1.1] tracking-[-0.03em] font-serif text-[#1c1917]">
+        <h1 className="text-[36px] md:text-[46px] leading-[1.1] tracking-[-0.03em] font-serif text-[#efe9df]">
           The Allowlist Illusion: Why Command Approval Keeps Failing in Coding Agents
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 text-[20px] leading-[1.7] text-stone-500 italic">
+        <p className="mt-6 text-[19px] leading-[1.7] text-[#8a8175] italic">
           Three unrelated 2026 disclosures — Cursor, Semantic Kernel, and the wider prompt-injection numbers behind them — converge on the same gap: an allowlist checks what a command looks like, not what put it there.
         </p>
 
         {/* Meta */}
-        <div className="mt-8 pb-10 border-b border-stone-200 text-[13px] text-stone-400 flex items-center gap-3 flex-wrap">
+        <div className="mt-8 pb-10 border-b border-white/10 text-[13px] text-[#8a8175] flex items-center gap-3 flex-wrap">
           <span>Pankaj Kumar</span>
           <span>•</span>
           <span>August 2026</span>
@@ -74,7 +74,7 @@ export default function ArticlePage() {
         </div>
 
         {/* Intro */}
-        <section className="mt-14 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+        <section className="mt-14 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
           <p>
             Ask an AI coding agent to run terminal commands unattended and the standard mitigation is an allowlist: a fixed set of commands — <code>git status</code>, <code>npm test</code>, <code>ls</code> — that execute without a human in the loop, with everything else routed to approval. It is a sensible design on its face. The commands look safe individually, and a person still signs off on anything unfamiliar.
           </p>
@@ -90,11 +90,11 @@ export default function ArticlePage() {
 
         {/* Section 1 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
+          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
             The allowlist never looked at built-ins
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
             <p>
               CVE-2026-22708 landed on Cursor. In Auto-Run mode with an allowlist configured, the check only inspected external binaries. Shell built-ins — <code>export</code>, <code>alias</code>, <code>typeset</code>, <code>declare</code> — ran unchecked regardless of allowlist state, because they are not separate processes the allowlist mechanism was watching for.
             </p>
@@ -111,11 +111,11 @@ export default function ArticlePage() {
 
         {/* Section 2 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
+          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
             Some agents don&apos;t need a shell to get one
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
             <p>
               Microsoft&apos;s Semantic Kernel disclosure in May made a related point more starkly. There was no shell to bypass and no allowlist to route around — the vulnerable primitive was a tool function the framework had already, legitimately, exposed to the model.
             </p>
@@ -132,11 +132,11 @@ export default function ArticlePage() {
 
         {/* Section 3 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
+          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
             Single-attempt defense is answering the wrong question
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
             <p>
               Put a number on how often this actually works and the case for urgency gets stronger, not weaker. OWASP&apos;s 2026 GenAI Top Ten — led by prompt injection for the third year running, and for the first time weighted 25% on data drawn from 6,639 real incidents rather than expert opinion alone — reports indirect prompt-injection success in agentic coding environments at 4.7% for a single attempt, 33.6% at ten attempts, and 63.0% at a hundred.
             </p>
@@ -153,11 +153,11 @@ export default function ArticlePage() {
 
         {/* Section 4 */}
         <section className="mt-20">
-          <h2 className="text-[34px] leading-[1.2] tracking-[-0.02em] font-serif text-[#1c1917]">
+          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
             What changes when you design for this
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#1c1917]">
+          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
             <p>
               <strong>Bound capability, not command shape.</strong> A process&apos;s reachable filesystem paths, network egress, and ability to mutate its own environment are properties you can scope with a sandbox or a restricted credential. They survive an attacker choosing different arguments than the ones you allowlisted; a list of approved strings does not.
             </p>
@@ -177,16 +177,16 @@ export default function ArticlePage() {
         </section>
 
         {/* Divider */}
-        <div className="h-px bg-stone-200 my-16" />
+        <div className="h-px bg-white/10 my-16" />
 
         {/* Closing */}
-        <div className="border-l-[3px] border-stone-200 pl-6 text-[18px] italic leading-[2] text-stone-500">
+        <div className="border-l-[3px] border-white/10 pl-6 text-[18px] italic leading-[2] text-[#8a8175]">
           Nordneuron builds AI and operational intelligence systems at NordNeuron, with a focus on LLM architecture, freight analytics, and enterprise automation.
         </div>
       </article>
 
       {/* Footer */}
-      <footer className="border-t border-stone-200 px-6 py-10 text-center text-[13px] text-stone-400">
+      <footer className="border-t border-white/10 px-6 py-10 text-center text-[13px] text-[#8a8175]">
         © 2026 Pankaj Kumar · Enterprise AI & Logistics Intelligence
       </footer>
     </main>

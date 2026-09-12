@@ -61,7 +61,7 @@ export default function Footer() {
 
       {/* Large wordmark */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-10">
-        <h2 className="font-syne font-medium tracking-tight leading-none text-[clamp(52px,11vw,160px)] text-white/[0.06] select-none">
+        <h2 className="font-syne font-medium tracking-tight leading-none text-[clamp(44px,10vw,132px)] text-white/[0.06] select-none">
           NordNeuron
         </h2>
       </div>

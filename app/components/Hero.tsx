@@ -268,14 +268,14 @@ export default function Hero() {
             <SplitText
               text={"Where Data\nBecomes"}
               charClass="hero-char"
-              className="font-syne font-medium tracking-[-0.015em] leading-[0.92] text-[46px] sm:text-[70px] md:text-[98px] lg:text-[112px] text-[#f2ede3]"
+              className="font-syne font-medium tracking-[-0.015em] leading-[0.92] text-[40px] sm:text-[62px] md:text-[86px] lg:text-[98px] text-[#f2ede3]"
             />
           </div>
           <div className="block">
             <SplitText
               text="Decision."
               charClass="hero-char"
-              className="font-syne italic font-medium tracking-[-0.015em] leading-[0.92] text-[46px] sm:text-[70px] md:text-[98px] lg:text-[112px] text-[#c8a86b]"
+              className="font-syne italic font-medium tracking-[-0.015em] leading-[0.92] text-[40px] sm:text-[62px] md:text-[86px] lg:text-[98px] text-[#c8a86b]"
             />
           </div>
 
