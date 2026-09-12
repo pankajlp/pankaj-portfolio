@@ -273,7 +273,7 @@ export default function ArticlePage() {
             <p className="text-stone-500 text-sm mt-1">Harness, tasks, frozen results, and the full pre-registration.</p>
           </div>
           <a
-            href="https://github.com/pankajlp/ledgerbench"
+            href="https://github.com/NordNeuron/ledgerbench"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-stone-900 text-stone-50 text-[13px] font-medium hover:bg-stone-800 transition-colors duration-300 shrink-0"

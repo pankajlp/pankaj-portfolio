@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 const LIVE_URL = "https://pankajlp.github.io/nordneuron_logistics_AI/";
-const REPO_URL = "https://github.com/pankajlp/nordneuron_logistics_AI";
+const REPO_URL = "https://github.com/NordNeuron/nordneuron_logistics_AI";
 
 export const metadata: Metadata = {
   title: "NordNeuron Logistics AI Suite — Runnable Full-Stack App",

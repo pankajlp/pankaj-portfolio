@@ -288,7 +288,7 @@ export default function JobTailorLab() {
               stored. Want the full local toolkit (auto-fill, job tracker, visa
               reports)?{" "}
               <a
-                href="https://github.com/pankajlp/job-cockpit"
+                href="https://github.com/NordNeuron/job-cockpit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-stone-600 underline hover:text-stone-900"

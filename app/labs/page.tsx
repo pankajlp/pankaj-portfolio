@@ -8,7 +8,7 @@ export default function LabsPage() {
       status: "Research",
       description:
         "A pre-registered benchmark for how AI coding agents remember requirements across sessions: does an append-only test ledger keep them honest, or calcify into stale checks that block correct work? Five memory strategies, 24 tasks, 60 frozen runs.",
-      githubUrl: "https://github.com/pankajlp/ledgerbench",
+      githubUrl: "https://github.com/NordNeuron/ledgerbench",
     },
     {
       title: "Job Application Tailor",
@@ -58,7 +58,7 @@ export default function LabsPage() {
       description:
         "A web-based configuration translator designed to parse and convert Clash settings (.yaml) into Sing-box compatible formats (.json) with a modern web dashboard.",
       liveUrl: "https://convert.nordneuron.com",
-      githubUrl: "https://github.com/pankajlp/nexconvert-tool",
+      githubUrl: "https://github.com/NordNeuron/nexconvert-tool",
     },
     {
       title: "Folder Flow",
@@ -66,7 +66,7 @@ export default function LabsPage() {
       description:
         "A client-side web application designed to organize local file directories engineered from first principles, utilizing a visual tree-like dashboard for real-time hierarchy previews.",
       liveUrl: "https://flow.nordneuron.com",
-      githubUrl: "https://github.com/pankajlp/folder-organizer",
+      githubUrl: "https://github.com/NordNeuron/folder-organizer",
     },
   ];
 

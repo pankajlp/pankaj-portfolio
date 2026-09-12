@@ -483,7 +483,7 @@ export default function RFQIntelligencePage() {
   </p>
 
   <a
-    href="https://github.com/pankajlp/ai-procurement-intelligence"
+    href="https://github.com/NordNeuron/ai-procurement-intelligence"
     target="_blank"
     className="inline-flex items-center gap-3 mt-8 px-6 py-4 rounded-2xl bg-stone-900 text-stone-50 hover:bg-stone-800 hover:text-white font-medium hover:scale-[1.02] transition-all duration-300"
   >
