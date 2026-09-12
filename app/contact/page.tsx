@@ -7,8 +7,6 @@ import TransitionLink from "../components/TransitionLink";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const budgetOptions = ["Under $20K", "$20K - $50K", "$50K - $100K", "$100K+"];
-
 const challengeOptions = [
   "Reporting & Dashboarding",
   "Workflow Automation",
@@ -51,7 +49,6 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [selectedBudget, setSelectedBudget] = useState("");
   const [selectedChallenge, setSelectedChallenge] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -67,7 +64,6 @@ export default function ContactPage() {
       website: formData.get("website"),
       industry: formData.get("industry"),
       challenge: selectedChallenge,
-      budget: selectedBudget,
       message: formData.get("message"),
     };
 
@@ -282,39 +278,10 @@ export default function ContactPage() {
                 </div>
               </fieldset>
 
-              {/* Step 3: Budget */}
-              <fieldset>
-                <legend className="flex items-center gap-4 mb-3">
-                  <span className="text-stone-400 font-syne text-xs font-bold tracking-[0.2em]">03</span>
-                  <span className="text-stone-900 font-syne font-bold uppercase tracking-tight text-lg">Estimated budget</span>
-                </legend>
-                <p className="text-stone-500 text-sm font-light mb-6">Optional — a rough range helps us recommend the right scope.</p>
-
-                <div className="flex flex-wrap gap-3">
-                  {budgetOptions.map((opt) => {
-                    const isSelected = selectedBudget === opt;
-                    return (
-                      <button
-                        key={opt}
-                        type="button"
-                        onClick={() => setSelectedBudget(isSelected ? "" : opt)}
-                        className={`py-3 px-5 rounded-full border text-xs font-syne uppercase tracking-wider transition-all duration-300 ${
-                          isSelected
-                            ? "bg-stone-900 text-white border-stone-900"
-                            : "bg-white border-stone-200 text-stone-600 hover:border-stone-500 hover:text-stone-900"
-                        }`}
-                      >
-                        {opt}
-                      </button>
-                    );
-                  })}
-                </div>
-              </fieldset>
-
-              {/* Step 4: Message */}
+              {/* Step 3: Message */}
               <fieldset>
                 <legend className="flex items-center gap-4 mb-7">
-                  <span className="text-stone-400 font-syne text-xs font-bold tracking-[0.2em]">04</span>
+                  <span className="text-stone-400 font-syne text-xs font-bold tracking-[0.2em]">03</span>
                   <span className="text-stone-900 font-syne font-bold uppercase tracking-tight text-lg">Tell us more</span>
                 </legend>
 

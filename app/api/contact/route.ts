@@ -22,7 +22,6 @@ export async function POST(req: Request) {
     const website = escapeHtml(body.website);
     const industry = escapeHtml(body.industry);
     const challenge = escapeHtml(body.challenge);
-    const budget = escapeHtml(body.budget);
     const message = escapeHtml(body.message);
 
     const transporter = nodemailer.createTransport({
@@ -49,7 +48,6 @@ export async function POST(req: Request) {
         <p><strong>Website:</strong> ${website}</p>
         <p><strong>Industry:</strong> ${industry}</p>
         <p><strong>Challenge:</strong> ${challenge}</p>
-        <p><strong>Estimated Budget:</strong> ${budget || "Not Specified"}</p>
 
         <hr />
 
