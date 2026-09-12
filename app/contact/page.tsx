@@ -162,7 +162,7 @@ export default function ContactPage() {
 
               <div className="mt-6 pt-6 border-t border-stone-200 flex gap-6">
                 <a
-                  href="https://www.linkedin.com/company/117884056/"
+                  href="https://www.linkedin.com/company/nordneuron/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center gap-2 text-stone-500 hover:text-stone-900 font-syne text-[11px] uppercase tracking-widest transition-colors duration-300"
