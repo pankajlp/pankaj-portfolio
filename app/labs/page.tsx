@@ -83,12 +83,12 @@ export default function LabsPage() {
           Labs
         </div>
 
-        <h1 className="text-4xl md:text-7xl font-bold font-syne uppercase tracking-tight text-stone-900 leading-[1.05] max-w-5xl">
+        <h1 className="text-4xl md:text-5xl font-medium font-syne tracking-tight text-stone-900 leading-[1.08] max-w-3xl">
           Experimental AI-Native<br />
-          <span className="text-stone-950">Intelligence Systems</span>
+          <span className="text-stone-900">Intelligence Systems</span>
         </h1>
 
-        <p className="mt-8 max-w-3xl text-stone-400 text-base md:text-lg leading-relaxed font-light">
+        <p className="mt-6 max-w-2xl text-stone-600 text-base md:text-lg leading-relaxed font-light">
           A collection of experimental tools, prototypes,
           and research projects exploring the future of
           operational intelligence.
