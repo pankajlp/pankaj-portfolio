@@ -49,9 +49,14 @@ body::before {
     radial-gradient(80% 60% at 50% 120%, rgba(0, 0, 0, 0.5), transparent 70%);
 }
 
+/* Hide the native cursor only where the custom cursor stands in for it.
+   Text fields keep their native caret so typing feels normal. */
 @media (hover: hover) and (pointer: fine) {
-  body, a, button, select, input, textarea, [role="button"] {
+  body, a, button, [role="button"], label, summary {
     cursor: none !important;
+  }
+  input, textarea, select, [contenteditable="true"] {
+    cursor: auto !important;
   }
 }
 

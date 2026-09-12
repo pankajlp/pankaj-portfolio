@@ -3,94 +3,89 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function CustomCursor() {
-  const cursorDotRef = useRef<HTMLDivElement | null>(null);
-  const cursorRingRef = useRef<HTMLDivElement | null>(null);
-  const cursorTextRef = useRef<HTMLDivElement | null>(null);
+  const dotRef = useRef<HTMLDivElement | null>(null);
+  const ringRef = useRef<HTMLDivElement | null>(null);
 
   const [isVisible, setIsVisible] = useState(false);
-  const [cursorText, setCursorText] = useState("");
 
-  const mouseCoords = useRef({ x: 0, y: 0 });
-  const ringCoords = useRef({ x: 0, y: 0 });
+  // Target (true mouse) vs the ring's eased position.
+  const mouse = useRef({ x: 0, y: 0 });
+  const ring = useRef({ x: 0, y: 0 });
+  const state = useRef({ hover: false, down: false, active: false });
 
   useEffect(() => {
-    // Only enable custom cursor if device has a fine pointer (desktop)
-    const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
-    if (!mediaQuery.matches) return;
-
+    // Desktop / fine-pointer only.
+    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    if (!mq.matches) return;
     setIsVisible(true);
 
-    const onMouseMove = (e: MouseEvent) => {
-      mouseCoords.current.x = e.clientX;
-      mouseCoords.current.y = e.clientY;
-      
-      // Instantly position the center dot (centering handled by CSS translate)
-      if (cursorDotRef.current) {
-        cursorDotRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+    const onMove = (e: MouseEvent) => {
+      mouse.current.x = e.clientX;
+      mouse.current.y = e.clientY;
+      // The precise dot tracks the pointer exactly — clicks land where you expect.
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+      }
+      if (!state.current.active) {
+        state.current.active = true;
+        // Snap the ring to the cursor on first move so it doesn't fly in.
+        ring.current.x = e.clientX;
+        ring.current.y = e.clientY;
+        document.body.classList.add("cursor-active");
       }
     };
 
-    const onMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      
-      // Check if target is interactive or has custom hover requests
-      const isLink = target.closest("a") || target.closest("button") || target.closest('input[type="submit"]') || target.closest('[role="button"]');
-      
-      if (isLink) {
-        // Expand the outer ring on hover
-        if (cursorRingRef.current) {
-          cursorRingRef.current.classList.add("cursor-hover");
-        }
-        
-        // Show interactive text on cards or specific elements
-        const customText = (target.closest("[data-cursor-text]") as HTMLElement)?.dataset.cursorText;
-        if (customText) {
-          setCursorText(customText);
-          if (cursorRingRef.current) cursorRingRef.current.classList.add("cursor-has-text");
-        }
-      }
+    const isInteractive = (t: EventTarget | null) => {
+      const el = t as HTMLElement | null;
+      return !!el?.closest?.(
+        'a, button, [role="button"], label, summary, input, textarea, select'
+      );
     };
 
-    const onMouseOut = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const isLink = target.closest("a") || target.closest("button") || target.closest('input[type="submit"]') || target.closest('[role="button"]');
-      
-      if (isLink) {
-        if (cursorRingRef.current) {
-          cursorRingRef.current.classList.remove("cursor-hover");
-          cursorRingRef.current.classList.remove("cursor-has-text");
-        }
-        setCursorText("");
-      }
+    const onOver = (e: MouseEvent) => {
+      state.current.hover = isInteractive(e.target);
+      ringRef.current?.classList.toggle("cursor-hover", state.current.hover);
     };
-
-    window.addEventListener("mousemove", onMouseMove);
-    window.addEventListener("mouseover", onMouseOver);
-    window.addEventListener("mouseout", onMouseOut);
-
-    // Smooth animation loop for the outer ring (lerp lag effect)
-    let animFrameId: number;
-    const updateRing = () => {
-      // Linear interpolation: current + (target - current) * ease
-      const ease = 0.15; // Lower values = more lag
-      
-      ringCoords.current.x += (mouseCoords.current.x - ringCoords.current.x) * ease;
-      ringCoords.current.y += (mouseCoords.current.y - ringCoords.current.y) * ease;
-
-      if (cursorRingRef.current) {
-        cursorRingRef.current.style.transform = `translate3d(${ringCoords.current.x}px, ${ringCoords.current.y}px, 0)`;
-      }
-
-      animFrameId = requestAnimationFrame(updateRing);
+    const onDown = () => {
+      state.current.down = true;
+      ringRef.current?.classList.add("cursor-down");
     };
+    const onUp = () => {
+      state.current.down = false;
+      ringRef.current?.classList.remove("cursor-down");
+    };
+    const onLeave = () => document.body.classList.add("cursor-hidden");
+    const onEnter = () => document.body.classList.remove("cursor-hidden");
 
-    animFrameId = requestAnimationFrame(updateRing);
+    window.addEventListener("mousemove", onMove, { passive: true });
+    window.addEventListener("mouseover", onOver, { passive: true });
+    window.addEventListener("mousedown", onDown);
+    window.addEventListener("mouseup", onUp);
+    document.addEventListener("mouseleave", onLeave);
+    document.addEventListener("mouseenter", onEnter);
+
+    // Smoothly ease the ring toward the pointer.
+    let raf = 0;
+    const loop = () => {
+      const ease = 0.2;
+      ring.current.x += (mouse.current.x - ring.current.x) * ease;
+      ring.current.y += (mouse.current.y - ring.current.y) * ease;
+      if (ringRef.current) {
+        ringRef.current.style.transform = `translate3d(${ring.current.x}px, ${ring.current.y}px, 0) translate(-50%, -50%)`;
+      }
+      raf = requestAnimationFrame(loop);
+    };
+    raf = requestAnimationFrame(loop);
 
     return () => {
-      window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("mouseover", onMouseOver);
-      window.removeEventListener("mouseout", onMouseOut);
-      cancelAnimationFrame(animFrameId);
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseover", onOver);
+      window.removeEventListener("mousedown", onDown);
+      window.removeEventListener("mouseup", onUp);
+      document.removeEventListener("mouseleave", onLeave);
+      document.removeEventListener("mouseenter", onEnter);
+      cancelAnimationFrame(raf);
+      document.body.classList.remove("cursor-active", "cursor-hidden");
     };
   }, []);
 
@@ -98,44 +93,67 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Inner Dot — white + difference blend so it inverts on any background */}
-      <div
-        ref={cursorDotRef}
-        className="fixed top-0 left-0 w-2 h-2 bg-white mix-blend-difference rounded-full z-[99999] pointer-events-none transition-transform duration-75 ease-out [translate:-50%_-50%]"
-      />
-
-      {/* Outer Ring */}
-      <div
-        ref={cursorRingRef}
-        className="fixed top-0 left-0 w-10 h-10 border border-white/70 mix-blend-difference rounded-full z-[99998] pointer-events-none transition-[width,height,background-color,border-color] duration-300 ease-out flex items-center justify-center [translate:-50%_-50%]"
-      >
-        <span
-          ref={cursorTextRef}
-          className="text-[8px] font-syne font-bold uppercase tracking-widest text-white opacity-0 transition-opacity duration-300"
-        >
-          {cursorText}
-        </span>
-      </div>
+      <div ref={dotRef} className="nn-cursor-dot" aria-hidden="true" />
+      <div ref={ringRef} className="nn-cursor-ring" aria-hidden="true" />
 
       <style jsx global>{`
-        /* Custom hover styles */
-        .cursor-hover {
-          width: 56px !important;
-          height: 56px !important;
-          border-color: rgba(255, 255, 255, 0.9) !important;
-          background-color: rgba(255, 255, 255, 0.08) !important;
+        .nn-cursor-dot,
+        .nn-cursor-ring {
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 99999;
+          pointer-events: none;
+          border-radius: 9999px;
+          opacity: 0;
+          will-change: transform;
         }
 
-        .cursor-has-text {
-          width: 72px !important;
-          height: 72px !important;
-          background-color: #ffffff !important;
-          border-color: #ffffff !important;
+        /* fade in once the pointer is on the page */
+        .cursor-active .nn-cursor-dot,
+        .cursor-active .nn-cursor-ring {
+          opacity: 1;
+        }
+        .cursor-hidden .nn-cursor-dot,
+        .cursor-hidden .nn-cursor-ring {
+          opacity: 0;
         }
 
-        .cursor-has-text span {
-          opacity: 1 !important;
-          color: #000000 !important;
+        .nn-cursor-dot {
+          width: 6px;
+          height: 6px;
+          background: #c8a86b;
+          transition: opacity 0.25s ease, width 0.2s ease, height 0.2s ease;
+        }
+
+        .nn-cursor-ring {
+          width: 34px;
+          height: 34px;
+          border: 1.5px solid rgba(200, 168, 107, 0.55);
+          background: rgba(200, 168, 107, 0);
+          transition: opacity 0.25s ease, width 0.25s ease, height 0.25s ease,
+            background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        /* hovering something clickable: ring grows and fills faintly */
+        .nn-cursor-ring.cursor-hover {
+          width: 52px;
+          height: 52px;
+          border-color: rgba(200, 168, 107, 0.9);
+          background: rgba(200, 168, 107, 0.08);
+        }
+
+        /* click feedback: ring dips inward */
+        .nn-cursor-ring.cursor-down {
+          width: 26px;
+          height: 26px;
+          background: rgba(200, 168, 107, 0.14);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .nn-cursor-ring {
+            transition: opacity 0.25s ease;
+          }
         }
       `}</style>
     </>
