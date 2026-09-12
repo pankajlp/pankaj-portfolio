@@ -35,7 +35,7 @@ export default function Footer() {
         {/* Social icons */}
         <div className="flex items-center gap-5">
           <a
-            href="https://github.com/pankajlp"
+            href="https://github.com/NordNeuron"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#a89f8f] hover:text-[#c8a86b] transition-colors duration-300"

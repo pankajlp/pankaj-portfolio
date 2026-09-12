@@ -98,7 +98,7 @@ export default function Contact() {
           </a>
 
           <a
-            href="https://github.com/pankajlp"
+            href="https://github.com/NordNeuron"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-2 text-[#a89f8f] hover:text-[#c8a86b] font-mono text-[11px] uppercase tracking-widest transition-colors duration-300"

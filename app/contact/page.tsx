@@ -170,7 +170,7 @@ export default function ContactPage() {
                   <FaLinkedin size={14} /> LinkedIn
                 </a>
                 <a
-                  href="https://github.com/pankajlp"
+                  href="https://github.com/NordNeuron"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center gap-2 text-stone-500 hover:text-stone-900 font-syne text-[11px] uppercase tracking-widest transition-colors duration-300"
