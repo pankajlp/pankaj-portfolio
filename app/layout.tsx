@@ -4,7 +4,6 @@ import Script from "next/script";
 import "./globals.css";
 import LenisProvider from "./components/LenisProvider";
 import Preloader from "./components/Preloader";
-import CustomCursor from "./components/CustomCursor";
 import TransitionCurtain from "./components/TransitionCurtain";
 
 const inter = Inter({
@@ -95,7 +94,6 @@ export default function RootLayout({
 
       <body className={`${inter.variable} ${fraunces.variable}`}>
         <Preloader />
-        <CustomCursor />
         <TransitionCurtain />
         <LenisProvider>
           {children}
