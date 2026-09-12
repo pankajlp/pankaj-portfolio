@@ -4,6 +4,14 @@ import Image from "next/image";
 export default function InsightsPage() {
   const articles = [
     {
+      href: "/insights/when-agents-cant-forget",
+      title: "When Agents Can't Forget: What LedgerBench Found About Requirement Memory",
+      category: "AI Research",
+      description: "A pre-registered benchmark on how AI coding agents remember requirements across sessions: an append-only test ledger roughly doubles retention, but calcifies into stale checks that coerce wrong edits — and an isolated judge recovers the benefit at 56% of the cost.",
+      image: "/architecture.png",
+      meta: "September 2026 · 8 min read"
+    },
+    {
       href: "/insights/the-slm-default",
       title: "The SLM Default: Why 2026's Production Agents Run Small Models First",
       category: "Agentic AI",
