@@ -4,6 +4,14 @@ import Image from "next/image";
 export default function InsightsPage() {
   const articles = [
     {
+      href: "/insights/the-slm-default",
+      title: "The SLM Default: Why 2026's Production Agents Run Small Models First",
+      category: "Agentic AI",
+      description: "Frontier launches still make the headlines, but the agent stacks actually shipping this year default most steps to a small, fine-tuned model and escalate to a frontier one only when a step earns it.",
+      image: "/slm_default_cover.png",
+      meta: "September 2026 · 7 min read"
+    },
+    {
       href: "/insights/the-allowlist-illusion",
       title: "The Allowlist Illusion: Why Command Approval Keeps Failing in Coding Agents",
       category: "AI Security",
