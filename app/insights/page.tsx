@@ -8,7 +8,7 @@ export default function InsightsPage() {
       title: "The Accountability Gap: Governance Frameworks Meet the Autonomous Agent",
       category: "AI Governance",
       description: "NIST's AI RMF, ISO 42001, and the EU AI Act govern the model. Autonomous agents act as non-human identities with standing access — and the owner of record, the decision-level audit trail, and the kill switch are all still being retrofitted.",
-      image: "/architecture.png",
+      image: "",
       meta: "September 2026 · 7 min read"
     },
     {
@@ -176,12 +176,21 @@ export default function InsightsPage() {
 
                 {/* Right Side: Small Square Thumbnail */}
                 <div className="relative w-full md:w-36 h-40 md:h-28 shrink-0 overflow-hidden rounded-lg bg-[#16130f] border border-white/10">
-                  <Image
-                    src={article.image}
-                    alt={article.title}
-                    fill
-                    className="object-cover group-hover:scale-102 transition-transform duration-500"
-                  />
+                  {article.image ? (
+                    <Image
+                      src={article.image}
+                      alt={article.title}
+                      fill
+                      className="object-cover group-hover:scale-102 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div
+                      className="absolute inset-0 flex items-center justify-center"
+                      style={{ background: "radial-gradient(circle at 50% 40%, rgba(200,168,107,0.12) 0%, transparent 70%)" }}
+                    >
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#c8a86b] shadow-[0_0_10px_rgba(200,168,107,0.5)] group-hover:scale-125 transition-transform duration-500" />
+                    </div>
+                  )}
                 </div>
 
               </div>
