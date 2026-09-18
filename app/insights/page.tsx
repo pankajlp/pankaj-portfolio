@@ -4,6 +4,14 @@ import Image from "next/image";
 export default function InsightsPage() {
   const articles = [
     {
+      href: "/insights/the-accountability-gap",
+      title: "The Accountability Gap: Governance Frameworks Meet the Autonomous Agent",
+      category: "AI Governance",
+      description: "NIST's AI RMF, ISO 42001, and the EU AI Act govern the model. Autonomous agents act as non-human identities with standing access — and the owner of record, the decision-level audit trail, and the kill switch are all still being retrofitted.",
+      image: "/architecture.png",
+      meta: "September 2026 · 7 min read"
+    },
+    {
       href: "/insights/when-agents-cant-forget",
       title: "When Agents Can't Forget: What LedgerBench Found About Requirement Memory",
       category: "AI Research",
