@@ -109,6 +109,116 @@ export default function ArticlePage() {
           </div>
         </section>
 
+        {/* Diagram: how Jev works vs a conventional LLM */}
+        <figure className="mt-16 rounded-2xl border border-white/10 bg-white/[0.02] p-5 md:p-7">
+          <svg
+            viewBox="0 0 680 300"
+            role="img"
+            aria-label="Comparison of how a conventional LLM and Jev turn unstructured state into a typed decision. A conventional LLM generates text token-by-token, then parses and validates it, with a retry loop when the output is invalid. Jev takes the state plus a typed schema and returns typed decisions with calibrated confidence in a single parallel pass, bounded by the schema so it cannot hallucinate."
+            className="w-full h-auto"
+            style={{ maxWidth: "100%" }}
+          >
+            <defs>
+              <marker id="arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="#6f675b" />
+              </marker>
+              <marker id="arwg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="#c8a86b" />
+              </marker>
+            </defs>
+
+            {/* ===== Lane 1: Conventional LLM ===== */}
+            <text x="12" y="20" fill="#8a8175" fontSize="12" fontWeight="600" letterSpacing="0.08em">CONVENTIONAL LLM</text>
+
+            {/* retry arc */}
+            <path d="M414,42 C414,22 227,22 227,42" fill="none" stroke="#6f675b" strokeWidth="1.2" strokeDasharray="4 3" markerEnd="url(#arw)" />
+            <text x="320" y="18" fill="#8a8175" fontSize="11" textAnchor="middle" fontStyle="italic">invalid → retry</text>
+
+            {/* state */}
+            <rect x="12" y="42" width="104" height="62" rx="8" fill="#16130f" stroke="#34302a" />
+            <text x="64" y="69" fill="#e7e0d2" fontSize="12" textAnchor="middle">Unstructured</text>
+            <text x="64" y="85" fill="#e7e0d2" fontSize="12" textAnchor="middle">state</text>
+
+            <line x1="118" y1="73" x2="150" y2="73" stroke="#6f675b" strokeWidth="1.4" markerEnd="url(#arw)" />
+
+            {/* LLM box with token pills */}
+            <rect x="152" y="42" width="150" height="62" rx="8" fill="#16130f" stroke="#34302a" />
+            <text x="227" y="58" fill="#e7e0d2" fontSize="12" textAnchor="middle" fontWeight="600">LLM</text>
+            <rect x="164" y="66" width="26" height="16" rx="3" fill="#2a2620" />
+            <rect x="196" y="66" width="26" height="16" rx="3" fill="#2a2620" />
+            <rect x="228" y="66" width="26" height="16" rx="3" fill="#2a2620" />
+            <text x="170" y="78" fill="#8a8175" fontSize="9">tok</text>
+            <text x="202" y="78" fill="#8a8175" fontSize="9">tok</text>
+            <text x="234" y="78" fill="#8a8175" fontSize="9">tok</text>
+            <text x="262" y="79" fill="#8a8175" fontSize="12">…</text>
+            <text x="227" y="98" fill="#8a8175" fontSize="10" textAnchor="middle" fontStyle="italic">token-by-token</text>
+
+            <line x1="304" y1="73" x2="342" y2="73" stroke="#6f675b" strokeWidth="1.4" markerEnd="url(#arw)" />
+            <text x="323" y="67" fill="#8a8175" fontSize="10" textAnchor="middle">text</text>
+
+            {/* parse + validate */}
+            <rect x="344" y="42" width="140" height="62" rx="8" fill="#16130f" stroke="#34302a" />
+            <text x="414" y="69" fill="#e7e0d2" fontSize="12" textAnchor="middle">Parse +</text>
+            <text x="414" y="85" fill="#e7e0d2" fontSize="12" textAnchor="middle">validate</text>
+
+            <line x1="486" y1="73" x2="524" y2="73" stroke="#6f675b" strokeWidth="1.4" markerEnd="url(#arw)" />
+
+            {/* output */}
+            <rect x="526" y="42" width="138" height="62" rx="8" fill="#16130f" stroke="#34302a" />
+            <text x="595" y="69" fill="#e7e0d2" fontSize="12" textAnchor="middle">Typed value</text>
+            <text x="595" y="85" fill="#8a8175" fontSize="11" textAnchor="middle">(if it parses)</text>
+            <text x="595" y="120" fill="#8a8175" fontSize="10" textAnchor="middle">seconds · output billed</text>
+
+            {/* divider */}
+            <line x1="12" y1="140" x2="664" y2="140" stroke="#241f1a" strokeWidth="1" />
+
+            {/* ===== Lane 2: Jev ===== */}
+            <text x="12" y="162" fill="#c8a86b" fontSize="12" fontWeight="600" letterSpacing="0.08em">JEV — SYSTEM ONE</text>
+
+            {/* inputs */}
+            <rect x="12" y="176" width="104" height="30" rx="7" fill="#16130f" stroke="#34302a" />
+            <text x="64" y="195" fill="#e7e0d2" fontSize="12" textAnchor="middle">Unstructured state</text>
+            <rect x="12" y="222" width="104" height="30" rx="7" fill="#1c1710" stroke="#5f4f30" />
+            <text x="64" y="241" fill="#d8bd86" fontSize="12" textAnchor="middle">Typed schema</text>
+
+            {/* merge arrows into Jev */}
+            <path d="M118,191 C140,191 140,208 152,214" fill="none" stroke="#c8a86b" strokeWidth="1.4" markerEnd="url(#arwg)" />
+            <path d="M118,237 C140,237 140,222 152,216" fill="none" stroke="#c8a86b" strokeWidth="1.4" markerEnd="url(#arwg)" />
+            <text x="214" y="259" fill="#c8a86b" fontSize="10" textAnchor="middle" fontStyle="italic">one parallel pass</text>
+
+            {/* Jev box */}
+            <rect x="154" y="184" width="120" height="60" rx="10" fill="#1c1710" stroke="#c8a86b" strokeWidth="1.4" />
+            <text x="214" y="210" fill="#efe9df" fontSize="15" textAnchor="middle" fontWeight="700">Jev</text>
+            <text x="214" y="228" fill="#c8a86b" fontSize="10" textAnchor="middle">non-autoregressive</text>
+
+            <line x1="276" y1="214" x2="306" y2="214" stroke="#c8a86b" strokeWidth="1.4" markerEnd="url(#arwg)" />
+
+            {/* output: typed decisions with confidence */}
+            <rect x="308" y="168" width="356" height="96" rx="10" fill="#16130f" stroke="#34302a" />
+
+            <text x="322" y="188" fill="#e7e0d2" fontSize="11">category → refund</text>
+            <rect x="474" y="180" width="150" height="6" rx="3" fill="#2a2620" />
+            <rect x="474" y="180" width="141" height="6" rx="3" fill="#c8a86b" />
+            <text x="650" y="187" fill="#d8bd86" fontSize="11" textAnchor="end">0.94</text>
+
+            <text x="322" y="214" fill="#e7e0d2" fontSize="11">needs_human → false</text>
+            <rect x="474" y="206" width="150" height="6" rx="3" fill="#2a2620" />
+            <rect x="474" y="206" width="132" height="6" rx="3" fill="#c8a86b" />
+            <text x="650" y="213" fill="#d8bd86" fontSize="11" textAnchor="end">0.88</text>
+
+            <text x="322" y="240" fill="#e7e0d2" fontSize="11">priority → high</text>
+            <rect x="474" y="232" width="150" height="6" rx="3" fill="#2a2620" />
+            <rect x="474" y="232" width="118" height="6" rx="3" fill="#c8a86b" />
+            <text x="650" y="239" fill="#d8bd86" fontSize="11" textAnchor="end">0.79</text>
+
+            <text x="486" y="282" fill="#8a8175" fontSize="10" textAnchor="middle">schema-bounded · calibrated · can&apos;t hallucinate · 70–500ms · output free</text>
+          </svg>
+
+          <figcaption className="mt-5 text-[13px] leading-[1.7] text-[#8a8175] italic">
+            The same job, two mechanisms. A conventional LLM generates a typed answer as text, token by token, then parses and validates it — and loops when the string doesn&apos;t fit. Jev takes the state and a typed schema and selects among the schema&apos;s allowed outputs in a single parallel pass, returning each decision with a calibrated confidence. Latency and cost figures are TypeSafe&apos;s claims.
+          </figcaption>
+        </figure>
+
         {/* Section 2 */}
         <section className="mt-20">
           <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
