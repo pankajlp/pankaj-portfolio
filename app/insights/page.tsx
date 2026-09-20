@@ -4,6 +4,14 @@ import Image from "next/image";
 export default function InsightsPage() {
   const articles = [
     {
+      href: "/insights/the-jevons-trap",
+      title: "The Jevons Trap: Why Cheaper AI Means More AI, Not Less",
+      category: "AI Economics",
+      description: "A 160-year-old observation about coal explains the most misread trend in AI: every collapse in the cost of a token has been followed by more tokens consumed, not fewer. Efficiency isn't a savings lever — it's a scope lever.",
+      image: "",
+      meta: "September 2026 · 7 min read"
+    },
+    {
       href: "/insights/the-accountability-gap",
       title: "The Accountability Gap: Governance Frameworks Meet the Autonomous Agent",
       category: "AI Governance",
