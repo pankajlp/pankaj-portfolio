@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Insights articles
   const insights = [
-    "/insights/the-jevons-trap",
+    "/insights/the-decision-only-model",
     "/insights/the-accountability-gap",
     "/insights/when-agents-cant-forget",
     "/insights/the-slm-default",

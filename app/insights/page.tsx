@@ -4,12 +4,12 @@ import Image from "next/image";
 export default function InsightsPage() {
   const articles = [
     {
-      href: "/insights/the-jevons-trap",
-      title: "The Jevons Trap: Why Cheaper AI Means More AI, Not Less",
-      category: "AI Economics",
-      description: "A 160-year-old observation about coal explains the most misread trend in AI: every collapse in the cost of a token has been followed by more tokens consumed, not fewer. Efficiency isn't a savings lever — it's a scope lever.",
+      href: "/insights/the-decision-only-model",
+      title: "The Decision-Only Model: What Jev Signals About How AI Gets Used Next",
+      category: "AI Research",
+      description: "TypeSafe AI's Jev came out of stealth generating no text at all — it returns typed decisions with calibrated probabilities instead. It points at a split in how production AI is built: a fast decision layer beneath the generative one.",
       image: "",
-      meta: "September 2026 · 7 min read"
+      meta: "September 2026 · 8 min read"
     },
     {
       href: "/insights/the-accountability-gap",
