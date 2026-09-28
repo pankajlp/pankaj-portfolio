@@ -47,5 +47,6 @@ search_colors*.json
 replace_colors*.js
 replace_colors*.json
 
-# claude local config
-.claude/
+# claude local config (but track shared project skills)
+.claude/*
+!.claude/skills/
