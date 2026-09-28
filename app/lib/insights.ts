@@ -14,6 +14,14 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    href: "/insights/whose-safety-are-you-buying",
+    title: "Whose Safety Are You Buying? Security and Governance Across the Big AI Labs",
+    category: "AI Governance",
+    description: "\"AI safety\" is three questions wearing one name — the frontier-risk framework a lab imposes on itself, the closed-vs-open access architecture it ships, and the data defaults on the tier you actually use. Anthropic, OpenAI, Google, and Meta compared across all three.",
+    image: "",
+    meta: "September 2026 · 9 min read"
+  },
+  {
     href: "/insights/the-decision-only-model",
     title: "The Decision-Only Model: What Jev Signals About How AI Gets Used Next",
     category: "AI Research",
