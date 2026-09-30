@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitText from "./SplitText";
@@ -132,18 +130,6 @@ export default function About() {
 
           {/* CTAs */}
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link
-              href="/about"
-              className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#c8a86b] text-[#171310] font-mono text-xs uppercase tracking-widest hover:bg-[#d8bd86] transition-all duration-300 shadow-[0_0_28px_rgba(200, 168, 107,0.25)]"
-            >
-              Read Full Story
-              <ArrowUpRight
-                size={16}
-                strokeWidth={2.5}
-                className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
-              />
-            </Link>
-
             {/* Tags */}
             <div className="flex flex-wrap gap-2">
               {tags.map((tag) => (
