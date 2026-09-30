@@ -14,6 +14,14 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    href: "/insights/the-horse-or-the-cart",
+    title: "Are We the Horse or the Cart? Employment After AI's Exponential Curve",
+    category: "AI Economics",
+    description: "The last general-purpose technology this fast — the car — net-created work for humans but retired the horse as labor entirely. Which precedent AI follows is the real question behind Musk's \"universal high income\" and a 20x disagreement among serious forecasters.",
+    image: "",
+    meta: "September 2026 · 9 min read"
+  },
+  {
     href: "/insights/whose-safety-are-you-buying",
     title: "Whose Safety Are You Buying? Security and Governance Across the Big AI Labs",
     category: "AI Governance",

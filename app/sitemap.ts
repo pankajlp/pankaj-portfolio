@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Insights articles
   const insights = [
+    "/insights/the-horse-or-the-cart",
     "/insights/whose-safety-are-you-buying",
     "/insights/the-decision-only-model",
     "/insights/the-accountability-gap",
