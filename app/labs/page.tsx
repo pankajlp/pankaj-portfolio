@@ -68,6 +68,14 @@ export default function LabsPage() {
       liveUrl: "https://flow.nordneuron.com",
       githubUrl: "https://github.com/NordNeuron/folder-organizer",
     },
+    {
+      title: "Algo Arsenal",
+      status: "Live",
+      description:
+        "A gamified way to learn data structures and algorithms — every pattern is a weapon and every LeetCode problem a mission, built to teach how to think rather than what to memorize. 20 patterns with animated visualizers, 33 guided problems, a pattern-recognition trainer, and a problem decoder. Runs entirely in the browser, no build.",
+      liveUrl: "https://pankajlp.github.io/algo-arsenal/",
+      githubUrl: "https://github.com/pankajlp/algo-arsenal",
+    },
   ];
 
   return (
