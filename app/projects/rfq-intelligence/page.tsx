@@ -1,3 +1,5 @@
+import DemoDataNotice from "../../components/DemoDataNotice";
+
 const kpis = [
   {
     title: "RFQs Processed",
@@ -135,6 +137,8 @@ export default function RFQIntelligencePage() {
             for RFQ processing, tender analytics, operational automation,
             and intelligent bid decision support across logistics operations.
           </p>
+
+          <DemoDataNotice />
         </div>
       </div>
       {/* KPI Dashboard */}
@@ -189,6 +193,7 @@ export default function RFQIntelligencePage() {
     </div>
 
     {/* Table */}
+    <DemoDataNotice compact />
     <div className="overflow-x-auto">
       
       <table className="w-full">

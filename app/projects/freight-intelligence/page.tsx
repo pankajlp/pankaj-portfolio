@@ -7,6 +7,7 @@ import {
   XAxis,
   Tooltip,
 } from "recharts";
+import DemoDataNotice from "../../components/DemoDataNotice";
     {/* Filters */}
 <div className="mt-16 flex flex-wrap gap-4">
     
@@ -178,6 +179,8 @@ export default function FreightIntelligencePage() {
           global trade routes.
         </p>
 
+        <DemoDataNotice />
+
         {/* KPI Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mt-14">
           {kpis.map((item) => (
@@ -283,6 +286,9 @@ export default function FreightIntelligencePage() {
       <p className="mt-2 text-[#8a8175]">
         Operational lane intelligence across major freight corridors.
       </p>
+      <div className="mt-3">
+        <DemoDataNotice compact />
+      </div>
     </div>
 
     <div className="px-4 py-2 rounded-full border border-white/10 bg-white/[0.06]/50 text-[#f2ede3] text-sm">
