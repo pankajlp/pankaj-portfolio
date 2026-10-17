@@ -16,7 +16,6 @@ type NavItem = {
 // Grouped for clarity: on-page sections first, then standalone pages.
 const NAV_ITEMS: NavItem[] = [
   { label: "Capabilities", href: "/#stack", section: "stack" },
-  { label: "Approach", href: "/#approach", section: "approach" },
   { label: "Work", href: "/#work", section: "work" },
   { label: "Labs", href: "/labs" },
   { label: "Insights", href: "/insights" },
@@ -45,7 +44,7 @@ export default function Navbar() {
   useEffect(() => {
     if (pathname !== "/") return;
 
-    const ids = ["stack", "approach", "work"];
+    const ids = ["stack", "work"];
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries

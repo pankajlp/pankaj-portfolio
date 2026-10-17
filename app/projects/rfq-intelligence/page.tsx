@@ -331,7 +331,7 @@ export default function RFQIntelligencePage() {
 {/* AI Architecture */}
 <div className="max-w-7xl mx-auto px-8 pb-24">
   
-  <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10">
+  <div className="grid gap-10">
     
     {/* LEFT */}
     <div className="p-10 rounded-3xl border border-white/10 bg-white/[0.03] shadow-[0_4px_20px_rgba(15,23,42,0.02)]">
@@ -424,49 +424,6 @@ export default function RFQIntelligencePage() {
           </div>
         </div>
 
-      </div>
-    </div>
-
-    {/* RIGHT */}
-    <div className="p-10 rounded-3xl border border-white/10 bg-gradient-to-br from-stone-200/20 to-transparent">
-      
-      <div className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/[0.06]/50 text-[#f2ede3] text-sm mb-8">
-        Technical Stack
-      </div>
-
-      <div className="space-y-5">
-        
-        {[
-          "DuckDB",
-          "llama.cpp",
-          "Local LLM Inference",
-          "Python",
-          "Text-to-SQL",
-          "Prompt Engineering",
-          "Procurement Analytics",
-          "Operational Intelligence",
-        ].map((tech) => (
-          <div
-            key={tech}
-            className="flex items-center justify-between p-5 rounded-2xl border border-white/10 bg-white/[0.04]/50 border-white/10"
-          >
-            <span className="text-[#f2ede3]">
-              {tech}
-            </span>
-
-            <div className="w-2.5 h-2.5 rounded-full bg-[#c8a86b] text-[#171310] hover:bg-[#d8bd86] shadow-[0_0_10px_rgba(120, 113, 108,0.25)]" />
-          </div>
-        ))}
-      </div>
-
-      {/* Footer */}
-      <div className="mt-10 pt-8 border-t border-white/10">
-        
-        <p className="text-[#8a8175] leading-relaxed">
-          Designed as a scalable enterprise AI workflow
-          for procurement operations, tender intelligence,
-          and logistics decision support systems.
-        </p>
       </div>
     </div>
   </div>

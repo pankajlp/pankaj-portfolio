@@ -71,8 +71,9 @@ export default function FeaturedProjects() {
         style={{
           left: springX,
           top: springY,
-          x: "-50%",
-          y: "-50%",
+          // Offset below-right of the cursor so the preview never covers the pointer
+          x: 28,
+          y: 28,
           opacity: hoveredIndex !== null ? 1 : 0,
           scale: hoveredIndex !== null ? 1 : 0.85,
           transition: "opacity 0.3s ease, scale 0.3s ease",
@@ -134,7 +135,7 @@ export default function FeaturedProjects() {
               viewport={{ once: true }}
               onMouseEnter={() => handleMouseEnter(project.title, index)}
               onMouseLeave={() => handleMouseLeave(project.title)}
-              className="group relative border-b border-white/[0.06] py-10 md:py-12 flex items-center justify-between gap-6 cursor-none"
+              className="group relative border-b border-white/[0.06] py-10 md:py-12 flex items-center justify-between gap-6 cursor-pointer"
               style={{ opacity: hoveredIndex !== null && !isHovered ? 0.35 : 1, transition: "opacity 0.4s ease" }}
             >
               {/* Left: number + title */}
