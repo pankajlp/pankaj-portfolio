@@ -16,7 +16,6 @@ export default function Footer() {
         <div className="flex flex-wrap gap-8 font-mono text-[11px] uppercase tracking-widest text-[#a89f8f]">
           {[
             { label: "Capabilities", href: "/#stack" },
-            { label: "Approach", href: "/#approach" },
             { label: "Work", href: "/#work" },
             { label: "Labs", href: "/labs" },
             { label: "Insights", href: "/insights" },
@@ -69,7 +68,6 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 pb-10 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-[#8a8175] font-mono border-t border-white/[0.04] pt-6">
         <p>© {new Date().getFullYear()} NordNeuron. All rights reserved.</p>
-        <p>Designed & engineered by Pankaj Kumar</p>
       </div>
     </footer>
   );
