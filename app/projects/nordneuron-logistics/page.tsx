@@ -14,7 +14,7 @@ import {
   Layers,
 } from "lucide-react";
 
-const LIVE_URL = "https://pankajlp.github.io/nordneuron_logistics_AI/";
+const LIVE_URL = "https://nordneuron.github.io/nordneuron_logistics_AI/";
 const REPO_URL = "https://github.com/NordNeuron/nordneuron_logistics_AI";
 
 export const metadata: Metadata = {

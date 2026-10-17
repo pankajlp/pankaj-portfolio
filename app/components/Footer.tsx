@@ -1,6 +1,5 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Mail } from "lucide-react";
 import TransitionLink from "./TransitionLink";
