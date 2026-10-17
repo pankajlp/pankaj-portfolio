@@ -15,11 +15,11 @@ export default function Footer() {
         {/* Nav links */}
         <div className="flex flex-wrap gap-8 font-mono text-[11px] uppercase tracking-widest text-[#a89f8f]">
           {[
-            { label: "About", href: "/#about" },
+            { label: "Capabilities", href: "/#stack" },
+            { label: "Approach", href: "/#approach" },
             { label: "Work", href: "/#work" },
             { label: "Labs", href: "/labs" },
             { label: "Insights", href: "/insights" },
-            { label: "Stack", href: "/#stack" },
             { label: "Contact", href: "/contact" },
           ].map((link) => (
             <TransitionLink

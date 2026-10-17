@@ -1,7 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Marquees from "./components/Marquees";
-import About from "./components/About";
 import TechStack from "./components/Techstack";
 import SupplyChainEcosystem from "./components/SupplyChainEcosystem";
 import FeaturedProjects from "./components/Featuredprojects";
@@ -16,9 +15,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Marquees />
-      <About />
-      <SupplyChainEcosystem />
+      {/* What we offer, then how we deliver it, then the proof */}
       <TechStack />
+      <SupplyChainEcosystem />
       {/* Dark sections grouped at the bottom for dramatic contrast */}
       <FeaturedProjects />
       <LatestInsights />
