@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   ResponsiveContainer,
   AreaChart,
@@ -126,12 +127,12 @@ export default function FreightIntelligencePage() {
             {/* Left */}
             <div className="flex items-center gap-4">
             
-            <a
+            <Link
                 href="/"
                 className="text-[#8a8175] hover:text-[#f2ede3] transition-colors"
             >
                 ← Back
-            </a>
+            </Link>
 
             <div className="w-px h-5 bg-white/10" />
 

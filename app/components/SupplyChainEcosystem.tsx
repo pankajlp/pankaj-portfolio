@@ -32,7 +32,7 @@ const stages = [
 
 export default function SupplyChainEcosystem() {
   return (
-    <section className="relative py-32 px-6 md:px-10 bg-transparent overflow-hidden border-t border-white/[0.06]">
+    <section id="approach" className="relative py-32 px-6 md:px-10 bg-transparent overflow-hidden border-t border-white/[0.06]">
 
       <div className="relative z-10 max-w-7xl mx-auto">
 
