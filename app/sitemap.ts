@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Insights articles
   const insights = [
+    "/insights/reading-a-psu-freight-tender",
     "/insights/text-to-sql-for-operational-analytics",
     "/insights/from-dashboards-to-intelligence-systems",
     "/insights/building-ai-procurement-intelligence-systems",
