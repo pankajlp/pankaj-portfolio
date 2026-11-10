@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://nordneuron.com";
 
   // Base routes
-  const routes = ["", "/contact", "/insights", "/labs"].map((route) => ({
+  const routes = ["", "/contact", "/insights", "/labs", "/ai-security-check"].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
