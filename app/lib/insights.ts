@@ -14,6 +14,14 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    href: "/insights/reading-a-psu-freight-tender",
+    title: "Inside a 49-page PSU freight tender: what a forwarder actually has to quote",
+    category: "Freight Tenders",
+    description: "A walk through BHEL's public ocean-freight tender the way a pricing desk would: 55 priced lines, an all-in rate held for up to 15 months, buyer-fixed THC and haulage, and a winner-takes-all weighted total.",
+    image: "",
+    meta: "November 2026 · 8 min read"
+  },
+  {
     href: "/insights/text-to-sql-for-operational-analytics",
     title: "Text-to-SQL for Operational Analytics — Beyond the Toy Examples",
     category: "Analytics Engineering",
