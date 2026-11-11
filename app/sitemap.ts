@@ -21,18 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Insights articles
   const insights = [
-    "/insights/the-horse-or-the-cart",
-    "/insights/whose-safety-are-you-buying",
-    "/insights/the-decision-only-model",
-    "/insights/the-accountability-gap",
-    "/insights/when-agents-cant-forget",
-    "/insights/the-slm-default",
-    "/insights/the-allowlist-illusion",
-    "/insights/stale-by-default",
-    "/insights/why-rag-fails-in-production",
-    "/insights/fine-tuning-vs-prompting-the-real-tradeoff",
     "/insights/text-to-sql-for-operational-analytics",
-    "/insights/llmops-what-enterprise-teams-miss",
     "/insights/from-dashboards-to-intelligence-systems",
     "/insights/building-ai-procurement-intelligence-systems",
   ].map((route) => ({
