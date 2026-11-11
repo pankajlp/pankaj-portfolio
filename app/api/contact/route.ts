@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import { transporter, mailFrom, mailTo } from "../../lib/mailer";
 import { NextResponse } from "next/server";
 
 function escapeHtml(str: string): string {
@@ -24,19 +24,9 @@ export async function POST(req: Request) {
     const challenge = escapeHtml(body.challenge);
     const message = escapeHtml(body.message);
 
-    const transporter = nodemailer.createTransport({
-      host: "smtppro.zoho.in",
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.ZOHO_EMAIL,
-        pass: process.env.ZOHO_PASSWORD,
-      },
-    });
-
     await transporter.sendMail({
-      from: process.env.ZOHO_EMAIL,
-      to: process.env.ZOHO_EMAIL,
+      from: mailFrom,
+      to: mailTo,
       subject: `New NordNeuron Inquiry - ${company || "General"}`,
       html: `
         <h2>New NordNeuron Inquiry</h2>

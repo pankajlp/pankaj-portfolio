@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import { transporter, mailFrom, mailTo } from "../../lib/mailer";
 import { NextResponse } from "next/server";
 
 // Keep in step with MAX_TOTAL_BYTES in app/rfq/RfqPilotForm.tsx.
@@ -58,19 +58,9 @@ export async function POST(req: Request) {
       }))
     );
 
-    const transporter = nodemailer.createTransport({
-      host: "smtppro.zoho.in",
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.ZOHO_EMAIL,
-        pass: process.env.ZOHO_PASSWORD,
-      },
-    });
-
     await transporter.sendMail({
-      from: process.env.ZOHO_EMAIL,
-      to: process.env.ZOHO_EMAIL,
+      from: mailFrom,
+      to: mailTo,
       replyTo: email,
       subject: `RFQ Pilot Request - ${company} (${files.length} file${files.length === 1 ? "" : "s"})`,
       html: `
