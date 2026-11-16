@@ -9,7 +9,7 @@ export type Article = {
   category: string;
   description: string;
   image: string; // empty string renders a dark brand tile instead of a photo
-  meta: string; // e.g. "September 2026 · 8 min read"
+  meta: string; // e.g. "September 2026, 8 min read"
 };
 
 export const articles: Article[] = [
@@ -19,30 +19,30 @@ export const articles: Article[] = [
     category: "Freight Tenders",
     description: "A walk through BHEL's public ocean-freight tender the way a pricing desk would: 55 priced lines, an all-in rate held for up to 15 months, buyer-fixed THC and haulage, and a winner-takes-all weighted total.",
     image: "",
-    meta: "November 2026 · 8 min read"
+    meta: "November 2026, 8 min read"
   },
   {
     href: "/insights/text-to-sql-for-operational-analytics",
-    title: "Text-to-SQL for Operational Analytics — Beyond the Toy Examples",
+    title: "Text-to-SQL for Operational Analytics: Beyond the Toy Examples",
     category: "Analytics Engineering",
     description: "Making natural language querying work against real freight and procurement data requires hybrid search, metadata filters, self-correction loops, and context budgeting.",
     image: "/text_to_sql_cover.png",
-    meta: "June 2026 · 7 min read"
+    meta: "June 2026, 7 min read"
   },
   {
     href: "/insights/from-dashboards-to-intelligence-systems",
     title: "From Dashboards to Intelligence Systems",
     category: "Enterprise AI",
-    description: "Why visualizing data is no longer enough — and what comes after the dashboard era.",
+    description: "Why visualizing data is no longer enough, and what comes after the dashboard era.",
     image: "/dashboard_to_ai.png",
-    meta: "May 2026 · 6 min read"
+    meta: "May 2026, 6 min read"
   },
   {
     href: "/insights/building-ai-procurement-intelligence-systems",
     title: "Building AI Procurement Intelligence Systems",
     category: "Enterprise AI",
-    description: "Procurement workflows are fragmented by design. RFQs arrive as spreadsheets, PDFs, emails, pricing tables, carrier notes, and operational updates — usually spread across disconnected systems.",
+    description: "Procurement workflows are fragmented by design. RFQs arrive as spreadsheets, PDFs, emails, pricing tables, carrier notes, and operational updates, usually spread across disconnected systems.",
     image: "/procurement.png",
-    meta: "May 2026 · 6 min read"
+    meta: "May 2026, 6 min read"
   }
 ];

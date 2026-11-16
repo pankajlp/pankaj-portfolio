@@ -113,38 +113,33 @@ export default function Awards() {
   };
 
   return (
-    <section className="relative py-32 px-6 md:px-10 bg-[#f5f4f0] overflow-hidden border-t border-stone-200">
-      {/* Background Glow */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-stone-1000/5 blur-[180px] rounded-full pointer-events-none" />
+    <section className="relative py-32 px-6 md:px-10 bg-paper-3 overflow-hidden border-t border-rule-2">
 
       <div className="relative z-10 max-w-7xl mx-auto">
         
         {/* Header Block */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-stone-200 bg-white/50 text-stone-900 font-syne text-[10px] uppercase tracking-widest mb-6">
-              Recognition
-            </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold font-syne uppercase tracking-tight text-stone-900 leading-[1.05]">
+            <h2 className="text-4xl md:text-5xl font-display font-medium text-ink leading-[1.05]">
               Awards &<br />
-              <span className="text-stone-900">Industry Honors</span>
+              <span className="text-ink">Industry Honors</span>
             </h2>
           </div>
 
           {/* Animated Award Count Counter */}
           <div className="flex items-center gap-4">
-            <div className="text-6xl md:text-8xl font-syne font-bold text-stone-900 select-none">
+            <div className="text-6xl md:text-8xl font-display font-medium text-ink select-none">
               {displayCount}
             </div>
-            <div className="text-xs uppercase font-syne tracking-widest text-stone-400 leading-relaxed">
+            <div className="text-xs font-display text-muted leading-relaxed">
               Design & Dev<br />Honors Won
             </div>
           </div>
         </div>
 
         {/* Tab Buttons */}
-        <div className="flex border-b border-stone-200 mb-10 font-syne text-xs uppercase tracking-widest gap-8">
+        <div className="flex border-b border-rule-2 mb-10 font-display text-xs gap-8">
           {Object.keys(awardData).map((tab) => (
             <button
               key={tab}
@@ -152,15 +147,15 @@ export default function Awards() {
                 setActiveTab(tab);
                 setExpandedId(null);
               }}
-              className={`pb-4 relative transition-all duration-300 ${
-                activeTab === tab ? "text-stone-900 font-bold" : "text-stone-400 hover:text-stone-800"
+              className={`pb-4 relative transition duration-300 ${
+                activeTab === tab ? "text-ink font-bold" : "text-muted hover:text-ink"
               }`}
             >
               {tab}
               {activeTab === tab && (
                 <motion.div
                   layoutId="activeTabUnderline"
-                  className="absolute bottom-0 left-0 w-full h-[2px] bg-stone-900 text-white"
+                  className="absolute bottom-0 left-0 w-full h-[2px] bg-paper-3 text-ink"
                 />
               )}
             </button>
@@ -181,10 +176,10 @@ export default function Awards() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -15 }}
                   transition={{ duration: 0.3 }}
-                  className={`rounded-3xl border transition-all duration-300 overflow-hidden ${
+                  className={`rounded-card border transition duration-300 overflow-hidden ${
                     isExpanded
-                      ? "border-stone-450/25 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.03)]"
-                      : "border-stone-200/80 bg-white/60 hover:border-stone-400 hover:bg-white/95"
+                      ? "border-rule-2 bg-paper-3"
+                      : "border-rule-2 bg-paper-3 hover:border-rule-2 hover:bg-paper-3"
                   }`}
                 >
                   {/* Row Header */}
@@ -196,18 +191,18 @@ export default function Awards() {
                     <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 flex-1">
                       {/* Year Icon */}
                       <div className="flex items-center gap-2 shrink-0">
-                        <Trophy size={16} className={isExpanded ? "text-stone-900" : "text-stone-400"} />
-                        <span className="text-xs font-syne text-stone-400 tracking-wider">
+                        <Trophy size={16} className={isExpanded ? "text-ink" : "text-muted"} />
+                        <span className="text-xs font-display text-muted">
                           {award.year}
                         </span>
                       </div>
 
                       {/* Title & Project */}
-                      <div className="grid md:grid-cols-2 gap-2 md:gap-8 flex-1">
-                        <h4 className="font-syne font-bold uppercase tracking-tight text-stone-900 text-base sm:text-lg">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8 flex-1">
+                        <h4 className="font-display font-medium text-ink text-base sm:text-lg">
                           {award.title}
                         </h4>
-                        <p className="text-sm font-light text-stone-900/80">
+                        <p className="text-sm text-ink/80">
                           {award.project}
                         </p>
                       </div>
@@ -217,7 +212,7 @@ export default function Awards() {
                     <motion.div
                       animate={{ rotate: isExpanded ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
-                      className="text-stone-400 hover:text-stone-700 shrink-0 ml-4"
+                      className="text-muted hover:text-ink shrink-0 ml-4"
                     >
                       <ChevronDown size={18} />
                     </motion.div>
@@ -232,43 +227,43 @@ export default function Awards() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                       >
-                        <div className="px-8 pb-8 pt-2 border-t border-stone-200/60 grid md:grid-cols-[1.3fr_1fr] gap-8 text-stone-500 text-sm md:text-base font-light leading-relaxed">
+                        <div className="px-8 pb-8 pt-2 border-t border-rule-2 grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-8 text-ink-2 text-sm md:text-base leading-relaxed">
                           <div>
-                            <h5 className="text-[10px] uppercase font-syne tracking-widest text-stone-900 mb-2 font-bold">
+                            <h5 className="text-xs font-display text-ink mb-2 font-bold">
                               Summary
                             </h5>
                             <p>{award.description}</p>
                             
-                            <h5 className="text-[10px] uppercase font-syne tracking-widest text-stone-900 mt-6 mb-2 font-bold">
+                            <h5 className="text-xs font-display text-ink mt-6 mb-2 font-bold">
                               Evaluation details
                             </h5>
-                            <p className="text-xs text-stone-400">{award.details}</p>
+                            <p className="text-xs text-muted">{award.details}</p>
                           </div>
 
-                          <div className="bg-stone-50 border border-stone-200/60 p-6 rounded-2xl h-fit space-y-4">
+                          <div className="bg-paper-3 border border-rule-2 p-6 rounded-card h-fit space-y-4">
                             <div className="flex items-center gap-3">
-                              <Star size={16} className="text-stone-600" />
-                              <span className="text-[10px] uppercase font-syne tracking-wider text-stone-400">
+                              <Star size={16} className="text-ink-2" />
+                              <span className="text-xs font-display text-muted">
                                 Categories Judged
                               </span>
                             </div>
                             
                             <div className="flex flex-wrap gap-2 pt-1">
-                              <span className="px-2.5 py-1 rounded-full border border-stone-200 bg-white text-[10px] font-syne uppercase text-stone-500">
+                              <span className="px-2.5 py-1 rounded-full border border-rule-2 bg-paper-3 text-xs font-display text-ink-2">
                                 Interface Layout
                               </span>
-                              <span className="px-2.5 py-1 rounded-full border border-stone-200 bg-white text-[10px] font-syne uppercase text-stone-500">
+                              <span className="px-2.5 py-1 rounded-full border border-rule-2 bg-paper-3 text-xs font-display text-ink-2">
                                 Canvas Frame Rate
                               </span>
-                              <span className="px-2.5 py-1 rounded-full border border-stone-200 bg-white text-[10px] font-syne uppercase text-stone-500">
+                              <span className="px-2.5 py-1 rounded-full border border-rule-2 bg-paper-3 text-xs font-display text-ink-2">
                                 Custom Physics
                               </span>
                             </div>
 
                             {award.score && (
-                              <div className="pt-4 border-t border-stone-200 flex items-center justify-between text-xs">
-                                <span className="text-stone-400">Score Metric:</span>
-                                <span className="font-syne font-bold text-stone-900">{award.score}</span>
+                              <div className="pt-4 border-t border-rule-2 flex items-center justify-between text-xs">
+                                <span className="text-muted">Score Metric:</span>
+                                <span className="font-display font-medium text-ink">{award.score}</span>
                               </div>
                             )}
                           </div>

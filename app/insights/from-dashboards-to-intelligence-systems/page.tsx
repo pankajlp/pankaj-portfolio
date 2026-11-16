@@ -1,4 +1,6 @@
 "use client";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 import { useEffect, useState } from "react";
 
 export default function ArticlePage() {
@@ -33,65 +35,45 @@ useEffect(() => {
 
 }, []);
   return (
-    <main className="min-h-screen bg-[#0c0b0a] text-[#efe9df]">
+    <main id="main" className="min-h-dvh bg-paper text-ink pt-[var(--nav-h)]">
       {/* Scroll Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-[3px] bg-white/10 z-[200]">
+      <div className="fixed top-0 left-0 w-full h-[3px] bg-paper-3 z-[200]">
         <div
-          className="h-full bg-[#c8a86b] text-[#171310] transition-all duration-150"
+          className="h-full bg-accent text-accent-ink transition duration-150"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
 
-      {/* Clean Navigation Bar */}
-      <nav className="sticky top-0 z-50 bg-[#0c0b0a]/85 backdrop-blur-md border-b border-white/10 px-6 py-5">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <a href="/" className="flex items-center gap-3 shrink-0">
-            {/* Accent Dot */}
-            <div className="w-2.5 h-2.5 rounded-full bg-[#c8a86b] text-[#171310] shadow-[0_0_8px_rgba(120, 113, 108,0.3)]" />
-            <span className="text-[17px] font-bold tracking-tight font-serif text-[#f2ede3]">
-              NordNeuron
-            </span>
-          </a>
-          <a
-            href="/insights"
-            className="text-sm font-medium text-[#a89f8f] hover:text-[#f2ede3] transition-colors duration-300 flex items-center gap-1.5"
-          >
-            <span>←</span> Back to Insights
-          </a>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Article */}
       <article className="max-w-3xl mx-auto px-6 py-20">
         {/* Tag */}
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/[0.06] text-[#f2ede3] border border-white/10 text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
-          Enterprise AI
-        </div>
 
         {/* Title */}
-        <h1 className="text-[36px] md:text-[46px] leading-[1.1] tracking-[-0.03em] font-serif text-[#efe9df]">
+        <h1 className="text-3xl md:text-[46px] leading-[1.1] font-serif text-ink">
           From Dashboards to Intelligence Systems
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 text-[19px] leading-[1.7] text-[#8a8175]">
-          Why visualizing data is no longer enough — and what comes after the dashboard era.
+        <p className="mt-6 text-lg leading-[1.7] text-muted">
+          Why visualizing data is no longer enough, and what comes after the dashboard era.
         </p>
 
         {/* Meta */}
-        <div className="mt-8 pb-10 border-b border-white/10 text-[13px] text-[#8a8175] flex items-center gap-3 flex-wrap">
+        <div className="mt-8 pb-10 border-b border-rule-2 text-sm text-muted flex items-center gap-3 flex-wrap">
           <span>Pankaj Kumar</span>
-          <span>•</span>
+          <span>,</span>
           <span>May 2026</span>
-          <span>•</span>
+          <span>,</span>
           <span>6 min read</span>
         </div>
 
         {/* Intro */}
-        <section className="mt-14 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
+        <section className="mt-14 space-y-7 text-lg leading-[2] text-ink">
           <p>
             For years, enterprise analytics has revolved around dashboards.
-            Power BI, Tableau, Excel — these tools gave organizations a way to
+            Power BI, Tableau, Excel, these tools gave organizations a way to
             track KPIs, monitor operations, and report on financials. They
             remain foundational. But something is shifting.
           </p>
@@ -99,37 +81,37 @@ useEffect(() => {
           <p>
             We are moving from systems that answer <em>what happened</em> to
             systems that recommend <em>what should happen next</em>. That
-            distinction — subtle as it sounds — changes how operational
+            distinction, subtle as it sounds, changes how operational
             platforms are designed, and who builds them.
           </p>
         </section>
 
         {/* Compare Grid */}
-        <div className="grid md:grid-cols-2 border border-white/10 rounded-2xl overflow-hidden mt-14 bg-white/[0.03]">
-          <div className="p-8">
-            <div className="text-[10px] uppercase tracking-[0.12em] text-[#8a8175] font-medium mb-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 border border-rule-2 rounded-card overflow-hidden mt-14 bg-paper-2">
+          <div className="p-6 md:p-8">
+            <div className="text-xs text-muted font-medium mb-3">
               Dashboard
             </div>
 
-            <h3 className="text-[24px] font-serif text-[#efe9df] mb-3">
+            <h3 className="text-xl font-serif text-ink mb-3">
               “What happened?”
             </h3>
 
-            <p className="text-[15px] leading-[1.8] text-[#8a8175]">
+            <p className="text-md leading-[1.8] text-muted">
               Visualizes historical data. The user performs the reasoning.
             </p>
           </div>
 
-          <div className="p-8 border-t md:border-t-0 md:border-l border-white/10">
-            <div className="text-[10px] uppercase tracking-[0.12em] text-[#8a8175] font-medium mb-3">
+          <div className="p-6 md:p-8 border-t md:border-t-0 md:border-l border-rule-2">
+            <div className="text-xs text-muted font-medium mb-3">
               Intelligence system
             </div>
 
-            <h3 className="text-[24px] font-serif text-[#efe9df] mb-3">
+            <h3 className="text-xl font-serif text-ink mb-3">
               “What should happen next?”
             </h3>
 
-            <p className="text-[15px] leading-[1.8] text-[#8a8175]">
+            <p className="text-md leading-[1.8] text-muted">
               Explains, recommends, and participates in the decision.
             </p>
           </div>
@@ -137,14 +119,14 @@ useEffect(() => {
 
         {/* Section 1 */}
         <section className="mt-20">
-          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
+          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
             The limits of the traditional BI stack
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
+          <div className="mt-8 space-y-7 text-lg leading-[2] text-ink">
             <p>
-              Traditional BI workflows — data ingestion, ETL pipelines,
-              warehouse modeling, dashboards, reports — are built around a
+              Traditional BI workflows, data ingestion, ETL pipelines,
+              warehouse modeling, dashboards, reports, are built around a
               fundamental assumption: a human will sit on the other side and
               interpret everything.
             </p>
@@ -164,11 +146,11 @@ useEffect(() => {
 
         {/* Section 2 */}
         <section className="mt-20">
-          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
+          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
             What AI-native operational systems look like
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
+          <div className="mt-8 space-y-7 text-lg leading-[2] text-ink">
             <p>
               LLMs and modern AI workflows are beginning to absorb that
               external reasoning layer. Instead of static interfaces, systems
@@ -178,7 +160,7 @@ useEffect(() => {
             </p>
 
             <p>
-              This matters especially in logistics and procurement —
+              This matters especially in logistics and procurement , 
               environments that generate both structured and unstructured
               information at scale:
             </p>
@@ -197,14 +179,14 @@ useEffect(() => {
             ].map((item) => (
               <div
                 key={item}
-                className="px-4 py-2 rounded-full bg-[#eeede8] border border-white/10 text-[#8a8175] text-[14px]"
+                className="px-4 py-2 rounded-full bg-paper-3 border border-rule-2 text-muted text-sm"
               >
                 {item}
               </div>
             ))}
           </div>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
+          <div className="mt-8 space-y-7 text-lg leading-[2] text-ink">
             <p>
               Traditional dashboards struggle to unify these layers
               meaningfully. An intelligence system can.
@@ -212,10 +194,10 @@ useEffect(() => {
           </div>
 
           {/* Callout */}
-          <div className="mt-10 rounded-r-xl border-l-[3px] border-[#efe9df] bg-[#0c0b0a] px-6 py-6 text-[16px] leading-[1.9] text-[#8a8175]">
-            <strong className="text-[#efe9df]">The key insight:</strong> The
+          <div className="mt-10 rounded-r-xl border-l-[3px] border-ink bg-paper px-6 py-6 text-md leading-[1.9] text-muted">
+            <strong className="text-ink">The key insight:</strong> The
             shift isn't about attaching a chatbot to a dashboard. It requires
-            rethinking the architecture itself — adding retrieval, reasoning,
+            rethinking the architecture itself, adding retrieval, reasoning,
             context injection, and workflow orchestration alongside traditional
             visualization.
           </div>
@@ -223,11 +205,11 @@ useEffect(() => {
 
         {/* Section 3 */}
         <section className="mt-20">
-          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
+          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
             A different engineering mindset
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
+          <div className="mt-8 space-y-7 text-lg leading-[2] text-ink">
             <p>
               Building an intelligent operational system means combining
               components that didn't traditionally belong in the same stack:
@@ -246,16 +228,16 @@ useEffect(() => {
             ].map((item) => (
               <div
                 key={item}
-                className="px-4 py-2 rounded-full bg-[#eeede8] border border-white/10 text-[#8a8175] text-[14px]"
+                className="px-4 py-2 rounded-full bg-paper-3 border border-rule-2 text-muted text-sm"
               >
                 {item}
               </div>
             ))}
           </div>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
+          <div className="mt-8 space-y-7 text-lg leading-[2] text-ink">
             <p>
-              The result is not a smarter dashboard — it is an operational
+              The result is not a smarter dashboard, it is an operational
               intelligence layer. One that can hold context, surface relevant
               information unprompted, and participate in decisions rather than
               just display data to support them.
@@ -265,15 +247,15 @@ useEffect(() => {
 
         {/* Section 4 */}
         <section className="mt-20">
-          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
+          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
             Why supply chain is the clearest test case
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
+          <div className="mt-8 space-y-7 text-lg leading-[2] text-ink">
             <p>
               Supply chain operations are fragmented by nature. Operational
               context is distributed across TMS platforms, spreadsheets,
-              carrier portals, emails, and PDFs — often with no single system
+              carrier portals, emails, and PDFs, often with no single system
               of record.
             </p>
 
@@ -284,15 +266,15 @@ useEffect(() => {
           </div>
 
           {/* Callout */}
-          <div className="mt-10 rounded-r-xl border-l-[3px] border-[#efe9df] bg-[#0c0b0a] px-6 py-6 text-[16px] leading-[1.9] text-[#8a8175]">
+          <div className="mt-10 rounded-r-xl border-l-[3px] border-ink bg-paper px-6 py-6 text-md leading-[1.9] text-muted">
             An AI procurement assistant surfaces RFQ risks before they
             escalate. A warehouse copilot identifies gate congestion patterns
             across shifts. A freight intelligence platform recommends carrier
-            substitutions based on live lane performance — without waiting for a
+            substitutions based on live lane performance, without waiting for a
             weekly review.
           </div>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
+          <div className="mt-8 space-y-7 text-lg leading-[2] text-ink">
             <p>
               None of this replaces the operational expert. It augments their
               reasoning with context they would otherwise spend hours assembling
@@ -303,15 +285,15 @@ useEffect(() => {
 
         {/* Final Section */}
         <section className="mt-20">
-          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
+          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
             Where dashboards fit in what comes next
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
+          <div className="mt-8 space-y-7 text-lg leading-[2] text-ink">
             <p>
               Dashboards will not disappear. They remain the right tool for
               monitoring, reporting, and executive visibility. But increasingly,
-              they will become one layer inside a larger intelligent system —
+              they will become one layer inside a larger intelligent system , 
               not the system itself.
             </p>
 
@@ -325,21 +307,18 @@ useEffect(() => {
         </section>
 
         {/* Divider */}
-        <div className="h-px bg-white/10 my-16" />
+        <div className="h-px bg-paper-3 my-16" />
 
         {/* Closing */}
-        <div className="border-l-[3px] border-white/10 pl-6 text-[18px] italic leading-[2] text-[#8a8175]">
-          That transition — from dashboards to intelligence systems — is one
+        <div className="border-l-[3px] border-rule-2 pl-6 text-lg italic leading-[2] text-muted">
+          That transition, from dashboards to intelligence systems, is one
           of the most consequential shifts in enterprise technology right now.
           And from where we sit in logistics and supply chain, we are only at
           the beginning of understanding what it actually enables.
         </div>
       </article>
 
-      {/* Footer */}
-      <footer className="border-t border-white/10 px-6 py-10 text-center text-[13px] text-[#8a8175]">
-        © 2026 Pankaj Kumar · Enterprise AI & Logistics Intelligence
-      </footer>
+      <Footer />
     </main>
   );
 }

@@ -1,26 +1,28 @@
 "use client";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 import { useEffect, useState } from "react";
 
 const TENDER_URL =
   "https://www.bhel.com/sites/default/files/is-1512_america___black_sea_sector-1441000745.pdf";
 
-// Lane counts and volumes are taken from Price Bid A and B (pages 41–46) of the tender.
+// Lane counts and volumes are taken from Price Bid A and B (pages 41 to 46) of the tender.
 const laneSummary = [
-  { bid: "A · Americas", port: "Nhava Sheva", fclLines: 15, boxes: 51, teu: 67, lclLines: 10, lclMt: "347" },
-  { bid: "A · Americas", port: "Chennai", fclLines: 10, boxes: 240, teu: 374, lclLines: 3, lclMt: "40" },
-  { bid: "B · “Black Sea”", port: "Nhava Sheva", fclLines: 7, boxes: 21, teu: 30, lclLines: 4, lclMt: "53" },
-  { bid: "B · “Black Sea”", port: "Chennai", fclLines: 6, boxes: 100, teu: 150, lclLines: 0, lclMt: "—" },
+  { bid: "A, Americas", port: "Nhava Sheva", fclLines: 15, boxes: 51, teu: 67, lclLines: 10, lclMt: "347" },
+  { bid: "A, Americas", port: "Chennai", fclLines: 10, boxes: 240, teu: 374, lclLines: 3, lclMt: "40" },
+  { bid: "B, “Black Sea”", port: "Nhava Sheva", fclLines: 7, boxes: 21, teu: 30, lclLines: 4, lclMt: "53" },
+  { bid: "B, “Black Sea”", port: "Chennai", fclLines: 6, boxes: 100, teu: 150, lclLines: 0, lclMt: ", " },
 ];
 
 // Fixed charges BHEL pays, from clause 9.0 (page 29) and the detention clause (page 12).
 const fixedCharges = [
-  { item: "THC at Nhava Sheva", value: "₹8,450 per 20′ · ₹14,585 per 40′ · ₹950 per LCL freight ton" },
-  { item: "THC at Chennai", value: "₹5,750 per 20′ · ₹9,344 per 40′ · ₹600 per LCL freight ton" },
-  { item: "Haulage, Nhava Sheva → ICD Mandideep", value: "₹42,238 per 20′ · ₹68,206 per 40′" },
-  { item: "Haulage, Nhava Sheva → ICD Sanathnagar", value: "₹27,822 per 20′ · ₹36,576 per 40′" },
+  { item: "THC at Nhava Sheva", value: "₹8,450 per 20′, ₹14,585 per 40′, ₹950 per LCL freight ton" },
+  { item: "THC at Chennai", value: "₹5,750 per 20′, ₹9,344 per 40′, ₹600 per LCL freight ton" },
+  { item: "Haulage, Nhava Sheva ICD Mandideep", value: "₹42,238 per 20′, ₹68,206 per 40′" },
+  { item: "Haulage, Nhava Sheva ICD Sanathnagar", value: "₹27,822 per 20′, ₹36,576 per 40′" },
   { item: "Delivery order", value: "₹4,000 per B/L" },
-  { item: "Hazardous surcharge", value: "USD 150 per TEU · USD 15 per LCL freight ton" },
-  { item: "Container detention", value: "Free for 21 days, then ₹3,475–₹10,250 per container per day by type" },
+  { item: "Hazardous surcharge", value: "USD 150 per TEU, USD 15 per LCL freight ton" },
+  { item: "Container detention", value: "Free for 21 days, then ₹3,475-₹10,250 per container per day by type" },
 ];
 
 export default function ReadingAPsuFreightTender() {
@@ -41,67 +43,48 @@ export default function ReadingAPsuFreightTender() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#0c0b0a] text-[#efe9df]">
+    <main id="main" className="min-h-dvh bg-paper text-ink pt-[var(--nav-h)]">
       {/* Scroll Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-[3px] bg-white/10 z-[200]">
+      <div className="fixed top-0 left-0 w-full h-[3px] bg-paper-3 z-[200]">
         <div
-          className="h-full bg-[#c8a86b] text-[#171310] transition-all duration-150"
+          className="h-full bg-accent text-accent-ink transition duration-150"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
 
-      {/* Clean Navigation Bar */}
-      <nav className="sticky top-0 z-50 bg-[#0c0b0a]/85 backdrop-blur-md border-b border-white/10 px-6 py-5">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <a href="/" className="flex items-center gap-3 shrink-0">
-            <div className="w-2.5 h-2.5 rounded-full bg-[#c8a86b] text-[#171310] shadow-[0_0_8px_rgba(120, 113, 108,0.3)]" />
-            <span className="text-[17px] font-bold tracking-tight font-serif text-[#f2ede3]">
-              NordNeuron
-            </span>
-          </a>
-          <a
-            href="/insights"
-            className="text-sm font-medium text-[#a89f8f] hover:text-[#f2ede3] transition-colors duration-300 flex items-center gap-1.5"
-          >
-            <span>←</span> Back to Insights
-          </a>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Article */}
       <article className="max-w-3xl mx-auto px-6 py-20">
         {/* Tag */}
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/[0.06] text-[#f2ede3] border border-white/10 text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
-          Freight Tenders
-        </div>
 
         {/* Title */}
-        <h1 className="text-[36px] md:text-[46px] leading-[1.1] tracking-[-0.03em] font-serif text-[#efe9df]">
+        <h1 className="text-3xl md:text-[46px] leading-[1.1] font-serif text-ink">
           Inside a 49-page PSU freight tender: what a forwarder actually has to quote
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 text-[19px] leading-[1.7] text-[#8a8175] italic">
+        <p className="mt-6 text-lg leading-[1.7] text-muted italic">
           The lanes fit on six pages. The other forty-three decide whether the rates you put
           against them make money.
         </p>
 
         {/* Meta */}
-        <div className="mt-8 pb-10 border-b border-white/10 text-[13px] text-[#8a8175] flex items-center gap-3 flex-wrap">
+        <div className="mt-8 pb-10 border-b border-rule-2 text-sm text-muted flex items-center gap-3 flex-wrap">
           <span>Pankaj Kumar</span>
-          <span>•</span>
+          <span>,</span>
           <span>November 2026</span>
-          <span>•</span>
+          <span>,</span>
           <span>8 min read</span>
         </div>
 
         {/* Intro */}
-        <section className="mt-14 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
+        <section className="mt-14 space-y-7 text-lg leading-[2] text-ink">
           <p>
             In August 2015, BHEL&apos;s Regional Operations Division in Mumbai invited bids for a
             one-year ocean freight contract: containerised imports from American and Black Sea
             ports into Nhava Sheva, Chennai and two inland container depots. The tender,{" "}
-            <a href={TENDER_URL} target="_blank" rel="noopener noreferrer" className="text-[#c8a86b] hover:text-[#d8bd86] underline underline-offset-4">
+            <a href={TENDER_URL} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-2 underline underline-offset-4">
               RE/MUM/IMP/AC/IS-1512
             </a>
             , is still on BHEL&apos;s public website. It runs to 49 pages.
@@ -122,11 +105,11 @@ export default function ReadingAPsuFreightTender() {
 
         {/* Section 1 */}
         <section className="mt-20">
-          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
+          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
             The lanes are on pages 41 to 46
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
+          <div className="mt-8 space-y-7 text-lg leading-[2] text-ink">
             <p>
               The first forty pages are scope, instructions, eligibility and general terms. The
               part you actually put numbers into is Section V, the price bid, split into two
@@ -144,44 +127,44 @@ export default function ReadingAPsuFreightTender() {
           </div>
         </section>
 
-        <figure className="mt-12 rounded-2xl border border-white/10 bg-white/[0.02] p-5 md:p-6">
+        <figure className="mt-12 rounded-card border border-rule-2 bg-paper-2 p-5 md:p-6">
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse text-left text-[13px] md:text-[14px] min-w-[600px]">
+            <table className="w-full border-collapse text-left text-sm md:text-sm min-w-[600px]">
               <thead>
-                <tr className="border-b border-white/15">
-                  <th className="py-3 pr-4 font-serif font-medium text-[#f2ede3] tracking-tight">Bid</th>
-                  <th className="py-3 pr-4 font-serif font-medium text-[#f2ede3] tracking-tight">Discharge</th>
-                  <th className="py-3 pr-4 font-serif font-medium text-[#f2ede3] tracking-tight text-right">FCL lines</th>
-                  <th className="py-3 pr-4 font-serif font-medium text-[#f2ede3] tracking-tight text-right">Boxes</th>
-                  <th className="py-3 pr-4 font-serif font-medium text-[#c8a86b] tracking-tight text-right">TEU</th>
-                  <th className="py-3 pr-4 font-serif font-medium text-[#f2ede3] tracking-tight text-right">LCL lines</th>
-                  <th className="py-3 font-serif font-medium text-[#f2ede3] tracking-tight text-right">LCL tonnes</th>
+                <tr className="border-b border-rule-2">
+                  <th className="py-3 pr-4 font-serif font-medium text-ink">Bid</th>
+                  <th className="py-3 pr-4 font-serif font-medium text-ink">Discharge</th>
+                  <th className="py-3 pr-4 font-serif font-medium text-ink text-right">FCL lines</th>
+                  <th className="py-3 pr-4 font-serif font-medium text-ink text-right">Boxes</th>
+                  <th className="py-3 pr-4 font-serif font-medium text-accent text-right">TEU</th>
+                  <th className="py-3 pr-4 font-serif font-medium text-ink text-right">LCL lines</th>
+                  <th className="py-3 font-serif font-medium text-ink text-right">LCL tonnes</th>
                 </tr>
               </thead>
-              <tbody className="text-[#a89f8f]">
+              <tbody className="text-ink-2">
                 {laneSummary.map((r) => (
-                  <tr key={r.bid + r.port} className="border-b border-white/[0.06]">
+                  <tr key={r.bid + r.port} className="border-b border-rule">
                     <td className="py-3 pr-4">{r.bid}</td>
-                    <td className="py-3 pr-4 text-[#e7e0d2]">{r.port}</td>
+                    <td className="py-3 pr-4 text-ink">{r.port}</td>
                     <td className="py-3 pr-4 text-right">{r.fclLines}</td>
                     <td className="py-3 pr-4 text-right">{r.boxes}</td>
-                    <td className="py-3 pr-4 text-right text-[#efe9df] font-semibold">{r.teu}</td>
+                    <td className="py-3 pr-4 text-right text-ink font-semibold">{r.teu}</td>
                     <td className="py-3 pr-4 text-right">{r.lclLines}</td>
                     <td className="py-3 text-right">{r.lclMt}</td>
                   </tr>
                 ))}
                 <tr>
-                  <td className="py-3 pr-4 text-[#efe9df]" colSpan={2}>Total</td>
-                  <td className="py-3 pr-4 text-right text-[#efe9df]">38</td>
-                  <td className="py-3 pr-4 text-right text-[#efe9df]">412</td>
-                  <td className="py-3 pr-4 text-right text-[#c8a86b] font-semibold">621</td>
-                  <td className="py-3 pr-4 text-right text-[#efe9df]">17</td>
-                  <td className="py-3 text-right text-[#efe9df]">440</td>
+                  <td className="py-3 pr-4 text-ink" colSpan={2}>Total</td>
+                  <td className="py-3 pr-4 text-right text-ink">38</td>
+                  <td className="py-3 pr-4 text-right text-ink">412</td>
+                  <td className="py-3 pr-4 text-right text-accent font-semibold">621</td>
+                  <td className="py-3 pr-4 text-right text-ink">17</td>
+                  <td className="py-3 text-right text-ink">440</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <figcaption className="mt-5 text-[13px] leading-[1.7] text-[#8a8175] italic">
+          <figcaption className="mt-5 text-sm leading-[1.7] text-muted italic">
             Counted from Price Bid A and B. The TEU totals match the tender&apos;s own load table
             on page 7. Equipment is 20′ GP, 40′ GP/HC, and 20′ and 40′ open-top (in-gauge
             cargo only).
@@ -189,7 +172,7 @@ export default function ReadingAPsuFreightTender() {
         </figure>
 
         <section className="mt-12">
-          <div className="space-y-7 text-[18px] leading-[2] text-[#efe9df]">
+          <div className="space-y-7 text-lg leading-[2] text-ink">
             <p>
               Two things stand out before you price a single line. First, the volume is lopsided:
               Chennai takes 524 of the 621 TEU, and one line on its own, 40′ boxes from Long
@@ -203,11 +186,11 @@ export default function ReadingAPsuFreightTender() {
 
         {/* Section 2 */}
         <section className="mt-20">
-          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
+          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
             The rate is all-in, and the buyer has already priced the rest
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
+          <div className="mt-8 space-y-7 text-lg leading-[2] text-ink">
             <p>
               The note under each price bid is the most expensive sentence in the document. The
               quoted freight &ldquo;includes all charges and surcharges like BAF, CAF, GRI, ISPS, war
@@ -231,26 +214,26 @@ export default function ReadingAPsuFreightTender() {
           </div>
         </section>
 
-        <figure className="mt-12 rounded-2xl border border-white/10 bg-white/[0.02] p-5 md:p-6">
+        <figure className="mt-12 rounded-card border border-rule-2 bg-paper-2 p-5 md:p-6">
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse text-left text-[13px] md:text-[14px] min-w-[560px]">
+            <table className="w-full border-collapse text-left text-sm md:text-sm min-w-[560px]">
               <thead>
-                <tr className="border-b border-white/15">
-                  <th className="py-3 pr-4 font-serif font-medium text-[#f2ede3] tracking-tight">Charge</th>
-                  <th className="py-3 font-serif font-medium text-[#f2ede3] tracking-tight">What BHEL pays (fixed in the tender)</th>
+                <tr className="border-b border-rule-2">
+                  <th className="py-3 pr-4 font-serif font-medium text-ink">Charge</th>
+                  <th className="py-3 font-serif font-medium text-ink">What BHEL pays (fixed in the tender)</th>
                 </tr>
               </thead>
-              <tbody className="text-[#a89f8f]">
+              <tbody className="text-ink-2">
                 {fixedCharges.map((r) => (
-                  <tr key={r.item} className="border-b border-white/[0.06] last:border-0">
-                    <td className="py-3 pr-4 text-[#e7e0d2] align-top">{r.item}</td>
+                  <tr key={r.item} className="border-b border-rule last:border-0">
+                    <td className="py-3 pr-4 text-ink align-top">{r.item}</td>
                     <td className="py-3">{r.value}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <figcaption className="mt-5 text-[13px] leading-[1.7] text-[#8a8175] italic">
+          <figcaption className="mt-5 text-sm leading-[1.7] text-muted italic">
             From clause 9.0 and the detention clause. A further ₹2,500 per B/L is paid as
             documentation for moving boxes to BHEL&apos;s nominated CFS. Port congestion charges
             are not payable at all.
@@ -258,7 +241,7 @@ export default function ReadingAPsuFreightTender() {
         </figure>
 
         <section className="mt-12">
-          <div className="space-y-7 text-[18px] leading-[2] text-[#efe9df]">
+          <div className="space-y-7 text-lg leading-[2] text-ink">
             <p>
               Three more clauses carry real cost. The contractor must give{" "}
               <strong>21 days free of detention</strong> at the final delivery place, ports and
@@ -279,11 +262,11 @@ export default function ReadingAPsuFreightTender() {
 
         {/* Section 3 */}
         <section className="mt-20">
-          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
+          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
             How the bid is scored: one weighted total, winner takes the whole bid
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
+          <div className="mt-8 space-y-7 text-lg leading-[2] text-ink">
             <p>
               Each price bid is evaluated as a single number: every rate multiplied by its
               projected volume, summed into a &ldquo;total cash flow.&rdquo; After a reverse auction
@@ -292,7 +275,7 @@ export default function ReadingAPsuFreightTender() {
             </p>
             <p>
               That makes the volume column as important as the rate column. A dollar off the
-              54-container Long Beach–Chennai line moves your total 54 times as much as a dollar off
+              54-container Long Beach-Chennai line moves your total 54 times as much as a dollar off
               a one-container line from Santos. Lines with a single box still have to be quoted,
               and quoted sensibly, but the bid is won or lost on the handful of heavy lanes,
               nearly all of them into Chennai.
@@ -310,11 +293,11 @@ export default function ReadingAPsuFreightTender() {
 
         {/* Section 4 */}
         <section className="mt-20">
-          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
+          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
             Read it like a checker, not a reader
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
+          <div className="mt-8 space-y-7 text-lg leading-[2] text-ink">
             <p>
               Long tenders are assembled from earlier tenders, and the seams show. In this one,
               Section I says BHEL imports from &ldquo;various ports of Europe &amp; Middle East
@@ -344,11 +327,11 @@ export default function ReadingAPsuFreightTender() {
 
         {/* Section 5 */}
         <section className="mt-20">
-          <h2 className="text-[28px] leading-[1.2] tracking-[-0.02em] font-serif text-[#efe9df]">
+          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
             What changes when you price the next one
           </h2>
 
-          <div className="mt-8 space-y-7 text-[18px] leading-[2] text-[#efe9df]">
+          <div className="mt-8 space-y-7 text-lg leading-[2] text-ink">
             <p>
               <strong>Build the lane table before anything else.</strong> Pull every priced line
               into one sheet: load port, discharge port, equipment, volume, transit commitment. It
@@ -379,35 +362,32 @@ export default function ReadingAPsuFreightTender() {
         </section>
 
         {/* Divider */}
-        <div className="h-px bg-white/10 my-16" />
+        <div className="h-px bg-paper-3 my-16" />
 
         {/* Closing sign-off */}
-        <div className="border-l-[3px] border-white/10 pl-6 text-[18px] italic leading-[2] text-[#8a8175]">
+        <div className="border-l-[3px] border-rule-2 pl-6 text-lg italic leading-[2] text-muted">
           NordNeuron builds AI and operational intelligence systems with a focus on LLM
-          architecture, freight analytics, and enterprise automation — including the RFQ tools
+          architecture, freight analytics, and enterprise automation, including the RFQ tools
           that turn a document like this one into a priced lane table in minutes rather than days.
         </div>
 
         {/* Pilot call to action */}
-        <div className="mt-12 rounded-2xl border border-[#c8a86b]/30 bg-[#c8a86b]/[0.05] p-6 md:p-8">
-          <p className="text-[17px] leading-[1.8] text-[#efe9df]">
+        <div className="mt-12 rounded-card border border-accent/30 bg-accent-wash p-6 md:p-8">
+          <p className="text-md leading-[1.8] text-ink">
             Have a tender like this on your desk? Send us five real RFQs and your rate sheet, and
             we&apos;ll return clean lane tables with suggested rates from your own history within
             24 hours. Free.
           </p>
           <a
             href="/rfq"
-            className="mt-5 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#c8a86b] text-[#171310] text-[12px] uppercase tracking-widest hover:bg-[#d8bd86] transition-colors duration-300"
+            className="mt-5 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-ink text-xs hover:bg-accent-2 transition-colors duration-300"
           >
-            Try the free pilot →
+            Try the free pilot
           </a>
         </div>
       </article>
 
-      {/* Footer */}
-      <footer className="border-t border-white/10 px-6 py-10 text-center text-[13px] text-[#8a8175]">
-        © 2026 Pankaj Kumar · Enterprise AI & Logistics Intelligence
-      </footer>
+      <Footer />
     </main>
   );
 }

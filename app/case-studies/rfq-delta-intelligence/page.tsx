@@ -1,59 +1,45 @@
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 export default function RFQDeltaCaseStudyPage() {
   return (
-    <main className="min-h-screen bg-[#0c0b0a] text-[#efe9df]">
+    <main id="main" className="min-h-dvh bg-paper text-ink pt-[var(--nav-h)]">
 
-      {/* Header */}
-      <header className="border-b border-white/10 px-8 py-5 flex items-center justify-between">
-
-        <a
-          href="/"
-          className="text-[14px] text-[#8a8175] hover:text-[#f2ede3] transition-colors duration-300"
-        >
-          ← Back to NordNeuron
-        </a>
-
-        <span className="text-[12px] font-medium text-[#f2ede3] bg-white/[0.06] border border-white/10 px-3 py-1 rounded-full uppercase tracking-[0.08em]">
-          Case Study
-        </span>
-      </header>
+      <Navbar />
 
       {/* Article */}
       <article className="max-w-4xl mx-auto px-6 py-20">
 
         {/* Tag */}
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-[#f2ede3] text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
-          RFQ Intelligence
-        </div>
 
         {/* Title */}
-        <h1 className="text-[42px] md:text-[60px] leading-[1.08] tracking-[-0.03em] font-serif text-[#e4dece]">
+        <h1 className="text-3xl md:text-[60px] leading-[1.08] font-serif text-ink">
           Designing operational intelligence
           around the Delta metric
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 text-[20px] leading-[1.8] text-[#8a8175] max-w-3xl">
+        <p className="mt-6 text-lg leading-[1.8] text-muted max-w-3xl">
           How a single analytical abstraction transformed fragmented RFQ pricing
           data into a more meaningful procurement intelligence workflow.
         </p>
 
         {/* Meta */}
-        <div className="mt-8 pb-10 border-b border-white/10 text-[13px] text-[#8a8175] flex items-center gap-3 flex-wrap">
+        <div className="mt-8 pb-10 border-b border-rule-2 text-sm text-muted flex items-center gap-3 flex-wrap">
           <span>Pankaj Kumar</span>
-          <span>•</span>
+          <span>,</span>
           <span>Operational Intelligence</span>
-          <span>•</span>
+          <span>,</span>
           <span>AI Procurement Systems</span>
         </div>
 
         {/* Intro */}
-        <section className="mt-14 space-y-8 text-[18px] leading-[2] text-[#e4dece]">
+        <section className="mt-14 space-y-8 text-lg leading-[2] text-ink">
 
           <p>
             Most procurement dashboards focus on visualization:
             carrier pricing, shipment volumes,
             RFQ participation, or lane-level reporting.
-            The challenge was not the lack of data —
+            The challenge was not the lack of data , 
             it was the lack of operational reasoning across that data.
           </p>
 
@@ -75,16 +61,13 @@ export default function RFQDeltaCaseStudyPage() {
         {/* Core Insight */}
         <section className="mt-24">
 
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/[0.06] text-[#f2ede3] border border-white/10 text-[11px] uppercase tracking-[0.08em] mb-8 font-medium">
-            Core Insight
-          </div>
 
-          <h2 className="text-[36px] md:text-[48px] leading-[1.15] tracking-[-0.03em] font-serif text-[#e4dece]">
+          <h2 className="text-3xl md:text-[48px] leading-[1.15] font-serif text-ink">
             The Delta column became
             the operational intelligence layer
           </h2>
 
-          <div className="mt-10 space-y-8 text-[18px] leading-[2] text-[#e4dece]">
+          <div className="mt-10 space-y-8 text-lg leading-[2] text-ink">
 
             <p>
               The most important engineering decision was not the dashboard,
@@ -100,21 +83,21 @@ export default function RFQDeltaCaseStudyPage() {
           </div>
 
           {/* Table */}
-          <div className="mt-12 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
+          <div className="mt-12 overflow-hidden rounded-card border border-rule-2 bg-paper-2">
 
             <table className="w-full text-left">
 
-              <thead className="bg-white/[0.04] border-b border-white/10">
+              <thead className="bg-paper-2 border-b border-rule-2">
                 <tr>
-                  <th className="px-6 py-4 text-[13px] uppercase tracking-[0.08em] text-[#8a8175]">
+                  <th className="px-6 py-4 text-sm text-muted">
                     Column Type
                   </th>
 
-                  <th className="px-6 py-4 text-[13px] uppercase tracking-[0.08em] text-[#8a8175]">
+                  <th className="px-6 py-4 text-sm text-muted">
                     Example
                   </th>
 
-                  <th className="px-6 py-4 text-[13px] uppercase tracking-[0.08em] text-[#8a8175]">
+                  <th className="px-6 py-4 text-sm text-muted">
                     Purpose
                   </th>
                 </tr>
@@ -122,44 +105,44 @@ export default function RFQDeltaCaseStudyPage() {
 
               <tbody>
 
-                <tr className="border-b border-white/10">
-                  <td className="px-6 py-5 text-[#e4dece]">
+                <tr className="border-b border-rule-2">
+                  <td className="px-6 py-5 text-ink">
                     Standard Column
                   </td>
 
-                  <td className="px-6 py-5 text-[#8a8175]">
+                  <td className="px-6 py-5 text-muted">
                     Carrier Rate
                   </td>
 
-                  <td className="px-6 py-5 text-[#8a8175]">
+                  <td className="px-6 py-5 text-muted">
                     Raw RFQ pricing visibility
                   </td>
                 </tr>
 
-                <tr className="border-b border-white/10">
-                  <td className="px-6 py-5 text-[#e4dece]">
+                <tr className="border-b border-rule-2">
+                  <td className="px-6 py-5 text-ink">
                     Standard Column
                   </td>
 
-                  <td className="px-6 py-5 text-[#8a8175]">
+                  <td className="px-6 py-5 text-muted">
                     Lane Volume
                   </td>
 
-                  <td className="px-6 py-5 text-[#8a8175]">
+                  <td className="px-6 py-5 text-muted">
                     Shipment activity tracking
                   </td>
                 </tr>
 
-                <tr className="bg-white/[0.06]/20">
-                  <td className="px-6 py-5 text-[#f2ede3] font-medium">
+                <tr className="bg-paper-3/20">
+                  <td className="px-6 py-5 text-ink font-medium">
                     Custom Intelligence Layer
                   </td>
 
-                  <td className="px-6 py-5 text-[#f2ede3] font-medium">
+                  <td className="px-6 py-5 text-ink font-medium">
                     Delta Metric
                   </td>
 
-                  <td className="px-6 py-5 text-[#8a8175]">
+                  <td className="px-6 py-5 text-muted">
                     Identified procurement pricing deviations and commercial opportunity zones
                   </td>
                 </tr>
@@ -168,7 +151,7 @@ export default function RFQDeltaCaseStudyPage() {
             </table>
           </div>
 
-          <div className="mt-10 space-y-8 text-[18px] leading-[2] text-[#e4dece]">
+          <div className="mt-10 space-y-8 text-lg leading-[2] text-ink">
 
             <p>
               That distinction mattered because the Delta layer transformed
@@ -180,11 +163,11 @@ export default function RFQDeltaCaseStudyPage() {
         {/* Architecture */}
         <section className="mt-24">
 
-          <h2 className="text-[36px] md:text-[48px] leading-[1.15] tracking-[-0.03em] font-serif text-[#e4dece]">
+          <h2 className="text-3xl md:text-[48px] leading-[1.15] font-serif text-ink">
             AI-native procurement architecture
           </h2>
 
-          <div className="mt-10 space-y-8 text-[18px] leading-[2] text-[#e4dece]">
+          <div className="mt-10 space-y-8 text-lg leading-[2] text-ink">
 
             <p>
               The architecture combined lightweight analytics infrastructure,
@@ -195,7 +178,7 @@ export default function RFQDeltaCaseStudyPage() {
           </div>
 
           {/* Architecture Image */}
-          <div className="mt-12 rounded-3xl overflow-hidden border border-white/10 bg-white/[0.03]">
+          <div className="mt-12 rounded-card overflow-hidden border border-rule-2 bg-paper-2">
             <img
               src="/architecture.png"
               alt="AI Procurement Intelligence Workflow"
@@ -207,7 +190,7 @@ export default function RFQDeltaCaseStudyPage() {
         {/* Text-to-SQL */}
         <section className="mt-24">
 
-          <h2 className="text-[36px] md:text-[48px] leading-[1.15] tracking-[-0.03em] font-serif text-[#e4dece]">
+          <h2 className="text-3xl md:text-[48px] leading-[1.15] font-serif text-ink">
             The text-to-SQL orchestration pipeline
           </h2>
 
@@ -242,19 +225,19 @@ export default function RFQDeltaCaseStudyPage() {
             ].map((item) => (
               <div
                 key={item.step}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 flex gap-6"
+                className="rounded-card border border-rule-2 bg-paper-2 p-6 md:p-8 flex gap-6"
               >
 
-                <div className="text-[#f2ede3] text-[13px] font-medium tracking-[0.12em]">
+                <div className="text-ink text-sm font-medium">
                   {item.step}
                 </div>
 
                 <div>
-                  <h3 className="text-[24px] font-serif text-[#e4dece]">
+                  <h3 className="text-xl font-serif text-ink">
                     {item.title}
                   </h3>
 
-                  <p className="mt-3 text-[16px] leading-[1.9] text-[#8a8175]">
+                  <p className="mt-3 text-md leading-[1.9] text-muted">
                     {item.desc}
                   </p>
                 </div>
@@ -262,7 +245,7 @@ export default function RFQDeltaCaseStudyPage() {
             ))}
           </div>
 
-          <div className="mt-10 space-y-8 text-[18px] leading-[2] text-[#e4dece]">
+          <div className="mt-10 space-y-8 text-lg leading-[2] text-ink">
 
             <p>
               Breaking the workflow into distinct orchestration stages mattered.
@@ -273,13 +256,13 @@ export default function RFQDeltaCaseStudyPage() {
         </section>
 
         {/* Reflection */}
-        <section className="mt-24 border-t border-white/10 pt-16">
+        <section className="mt-24 border-t border-rule-2 pt-16">
 
-          <h2 className="text-[36px] md:text-[48px] leading-[1.15] tracking-[-0.03em] font-serif text-[#e4dece]">
+          <h2 className="text-3xl md:text-[48px] leading-[1.15] font-serif text-ink">
             The real innovation was not the technology
           </h2>
 
-          <div className="mt-10 space-y-8 text-[18px] leading-[2] text-[#e4dece]">
+          <div className="mt-10 space-y-8 text-lg leading-[2] text-ink">
 
             <p>
               The most important realization from the project
@@ -288,8 +271,8 @@ export default function RFQDeltaCaseStudyPage() {
 
             <p>
               The real innovation came from identifying
-              the operational abstraction that mattered —
-              the Delta metric —
+              the operational abstraction that mattered , 
+              the Delta metric , 
               and designing the surrounding architecture
               to reason around it effectively.
             </p>
@@ -303,7 +286,7 @@ export default function RFQDeltaCaseStudyPage() {
           </div>
 
           {/* Closing Quote */}
-          <div className="mt-14 border-l-[3px] border-white/10 pl-6 text-[20px] italic leading-[2] text-[#8a8175]">
+          <div className="mt-14 border-l-[3px] border-rule-2 pl-6 text-lg italic leading-[2] text-muted">
             The hardest part of operational intelligence systems
             is rarely the AI model.
             It is identifying the operational abstraction
@@ -312,6 +295,7 @@ export default function RFQDeltaCaseStudyPage() {
         </section>
 
       </article>
+      <Footer />
     </main>
   );
 }

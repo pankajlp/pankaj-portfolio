@@ -50,3 +50,5 @@ replace_colors*.json
 # claude local config (but track shared project skills)
 .claude/*
 !.claude/skills/
+
+.hallmark/

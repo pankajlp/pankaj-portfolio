@@ -3,7 +3,6 @@ import { Inter, Fraunces } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import LenisProvider from "./components/LenisProvider";
-import Preloader from "./components/Preloader";
 import TransitionCurtain from "./components/TransitionCurtain";
 
 const inter = Inter({
@@ -11,25 +10,25 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-// Editorial serif display face. Exposed as --font-syne so existing
-// `.font-syne` markup picks it up with no churn. Labels reuse Inter
-// via the .font-mono class, so no separate mono face is loaded.
+// Editorial serif display face. Exposed as --font-display so existing
+// `.font-display` markup picks it up with no churn. Labels reuse Inter
+// via the .class, so no separate mono face is loaded.
 const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-syne",
+  variable: "--font-display",
   weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "NordNeuron — AI & Enterprise Intelligence",
+  title: "NordNeuron | AI & Enterprise Intelligence",
   description:
     "NordNeuron builds intelligent analytics, automation, and AI systems for enterprise operations.",
   icons: {
     icon: "/nordneuron-favicon.svg",
   },
   openGraph: {
-    title: "NordNeuron — AI & Enterprise Intelligence",
+    title: "NordNeuron | AI & Enterprise Intelligence",
     description: "NordNeuron builds intelligent analytics, automation, and AI systems for enterprise operations.",
     url: "https://nordneuron.com",
     siteName: "NordNeuron",
@@ -46,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NordNeuron — AI & Enterprise Intelligence",
+    title: "NordNeuron | AI & Enterprise Intelligence",
     description: "NordNeuron builds intelligent analytics, automation, and AI systems for enterprise operations.",
     images: ["https://nordneuron.com/architecture.png"],
   },
@@ -86,7 +85,6 @@ export default function RootLayout({
       </head>
 
       <body className={`${inter.variable} ${fraunces.variable}`}>
-        <Preloader />
         <TransitionCurtain />
         <LenisProvider>
           {children}

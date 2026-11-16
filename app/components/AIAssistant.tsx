@@ -98,16 +98,17 @@ export default function AIAssistant() {
     <>
       {/* Hint Bubble */}
       {!open && showHint && (
-        <div className="fixed bottom-28 right-6 z-[99] w-72 rounded-2xl border border-white/10 bg-[#141210]/95 backdrop-blur-xl px-5 py-4 shadow-[0_10px_40px_rgba(0,0,0,0.5)] animate-in fade-in slide-in-from-bottom-4 duration-500">
+        <div className="fixed bottom-28 right-6 z-[99] w-72 rounded-card border border-rule-2 bg-paper-2 px-5 py-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
 
           <button
             onClick={() => setShowHint(false)}
-            className="absolute top-3 right-3 text-[#8a8175] hover:text-[#f2ede3] text-sm"
+            aria-label="Dismiss"
+            className="absolute top-0 right-0 w-11 h-11 inline-flex items-center justify-center text-muted hover:text-ink active:text-accent text-sm"
           >
-            ✕
+            <span aria-hidden="true">✕</span>
           </button>
 
-          <p className="text-sm leading-relaxed text-[#cfc7b6]">
+          <p className="text-sm leading-relaxed text-ink-2">
             Ask me about AI systems, logistics intelligence,
             Power BI dashboards, automation workflows,
             or enterprise architecture.
@@ -121,35 +122,36 @@ export default function AIAssistant() {
           setOpen(!open);
           setShowHint(false);
         }}
-        className="fixed bottom-6 right-6 z-[100] h-16 px-6 rounded-full bg-[#c8a86b] text-[#171310] shadow-[0_0_28px_rgba(200, 168, 107,0.4)] flex items-center gap-2 justify-center text-lg font-semibold hover:scale-105 transition-all duration-300"
+        className="btn fixed bottom-6 right-6 z-[100]"
       >
-        <span className="text-xl">✦</span>
+        <span aria-hidden="true">✦</span>
 
         <span>Ask AI</span>
       </button>
 
       {/* Chat Window */}
       {open && (
-        <div className="fixed bottom-24 right-6 z-[100] w-[420px] max-w-[calc(100vw-24px)] h-[80vh] max-h-[720px] rounded-[32px] border border-white/10 bg-[#100e0c]/95 backdrop-blur-2xl shadow-[0_15px_50px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col">
+        <div className="fixed bottom-24 right-6 z-[100] w-[420px] max-w-full max-w-[calc(100vw-24px)] h-[80vh] max-h-[720px] rounded-card border border-rule-2 bg-paper overflow-hidden flex flex-col">
 
           {/* Header */}
-          <div className="px-6 py-5 border-b border-white/[0.08] bg-white/[0.02] shrink-0">
+          <div className="px-6 py-5 border-b border-rule bg-paper-2 shrink-0">
 
             <div className="flex items-center justify-between">
 
               <div>
-                <h2 className="text-[#f2ede3] text-xl font-semibold flex items-center gap-2">
-                  <span className="text-[#c8a86b]">✦</span> NordNeuron AI
+                <h2 className="text-ink text-xl font-semibold flex items-center gap-2">
+                  <span className="text-accent">✦</span> NordNeuron AI
                 </h2>
 
-                <p className="text-[#8a8175] text-sm mt-1">
+                <p className="text-muted text-sm mt-1">
                   Enterprise Intelligence Assistant
                 </p>
               </div>
 
               <button
                 onClick={() => setOpen(false)}
-                className="w-9 h-9 rounded-full bg-white/[0.04] border border-white/10 text-[#a89f8f] hover:text-[#f2ede3] hover:bg-white/10 transition-all duration-300"
+                aria-label="Close assistant"
+                className="btn btn-quiet btn-sm w-11 px-0"
               >
                 ✕
               </button>
@@ -169,7 +171,7 @@ export default function AIAssistant() {
                 <button
                   key={prompt}
                   onClick={() => sendMessage(prompt)}
-                  className="text-left px-4 py-2.5 rounded-2xl border border-white/10 bg-white/[0.03] text-[#cfc7b6] text-[13px] hover:border-[#c8a86b]/40 hover:text-[#f2ede3] transition-all duration-300"
+                  className="text-left px-4 py-2.5 rounded-control border border-rule-2 bg-paper-2 text-ink-2 text-sm hover:border-accent/40 hover:text-ink transition duration-300"
                 >
                   {prompt}
                 </button>
@@ -183,10 +185,10 @@ export default function AIAssistant() {
             {messages.map((msg, index) => (
               <div
                 key={index}
-                className={`max-w-[85%] rounded-2xl px-4 py-4 leading-relaxed whitespace-pre-wrap text-[15px] ${
+                className={`max-w-[85%] rounded-control px-4 py-4 leading-relaxed whitespace-pre-wrap text-md ${
                   msg.role === "user"
-                    ? "ml-auto bg-[#c8a86b] text-[#171310] font-medium"
-                    : "bg-white/[0.04] text-[#e4dece] border border-white/10"
+                    ? "ml-auto bg-accent text-accent-ink font-medium"
+                    : "bg-paper-2 text-ink border border-rule-2"
                 }`}
               >
                 {msg.content}
@@ -194,8 +196,8 @@ export default function AIAssistant() {
             ))}
 
             {loading && (
-              <div className="bg-white/[0.04] border border-white/10 text-[#a89f8f] rounded-2xl px-4 py-4 w-fit animate-pulse">
-                NordNeuron AI is thinking...
+              <div className="bg-paper-2 border border-rule-2 text-ink-2 rounded-control px-4 py-4 w-fit animate-pulse">
+                NordNeuron AI is thinking…
               </div>
             )}
 
@@ -203,7 +205,7 @@ export default function AIAssistant() {
           </div>
 
           {/* Input */}
-          <div className="p-5 border-t border-white/[0.08] bg-white/[0.02] shrink-0">
+          <div className="p-5 border-t border-rule bg-paper-2 shrink-0">
 
             <div className="flex gap-3">
 
@@ -215,14 +217,14 @@ export default function AIAssistant() {
                     sendMessage();
                   }
                 }}
-                placeholder="Ask about AI systems..."
-                className="flex-1 rounded-2xl bg-white/[0.04] border border-white/10 px-4 py-4 text-[#f2ede3] outline-none focus:border-[#c8a86b]/50 placeholder:text-[#8a8175]"
+                placeholder="Ask about AI systems…"
+                className="flex-1 rounded-card bg-paper-2 border border-rule-2 px-4 py-4 text-ink placeholder:text-muted"
               />
 
               <button
                 onClick={() => sendMessage()}
                 disabled={loading}
-                className="px-6 rounded-2xl bg-[#c8a86b] text-[#171310] font-medium hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:hover:scale-100"
+                className="btn"
               >
                 Send
               </button>

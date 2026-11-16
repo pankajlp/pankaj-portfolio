@@ -40,9 +40,7 @@ export default function Marquees() {
   }, []);
 
   return (
-    <section className="relative bg-[#100e0c] py-14 overflow-hidden border-t border-b border-white/[0.06]">
-      {/* Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[150px] bg-[#c8a86b]/10 blur-[120px] rounded-full pointer-events-none" />
+    <section className="relative bg-paper py-14 overflow-hidden border-t border-b border-rule">
 
       <div className="relative z-10 space-y-6">
         
@@ -51,10 +49,10 @@ export default function Marquees() {
           <div className="flex items-center gap-12 pr-12">
             {ticker1.map((item) => (
               <div key={item} className="flex items-center gap-4">
-                <span className="font-syne italic font-normal tracking-tight text-2xl sm:text-4xl text-[#f2ede3]">
+                <span className="font-display italic font-normal text-2xl sm:text-4xl text-ink">
                   {item}
                 </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#c8a86b]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
               </div>
             ))}
           </div>
@@ -65,10 +63,10 @@ export default function Marquees() {
           <div className="flex items-center gap-12 pr-12">
             {ticker2.map((item) => (
               <div key={item} className="flex items-center gap-4">
-                <span className="font-syne italic font-normal tracking-tight text-2xl sm:text-4xl text-[#6f675b]">
+                <span className="font-display italic font-normal text-2xl sm:text-4xl text-muted">
                   {item}
                 </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#3a352d]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-paper-3" />
               </div>
             ))}
           </div>

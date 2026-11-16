@@ -23,7 +23,7 @@ export default function TestAIPage() {
   }
 
   return (
-    <main className="min-h-screen bg-black text-white p-10">
+    <main className="min-h-dvh bg-paper text-ink p-10">
       
       <div className="max-w-3xl mx-auto">
         
@@ -35,17 +35,17 @@ export default function TestAIPage() {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Ask something..."
-          className="w-full h-40 rounded-2xl bg-stone-200 border border-stone-200 p-5 outline-none"
+          className="w-full h-40 rounded-card bg-paper-3 border border-rule-2 p-5"
         />
 
         <button
           onClick={sendMessage}
-          className="mt-6 px-8 py-4 rounded-2xl bg-stone-900 text-stone-50 hover:bg-stone-800 hover:text-white font-medium transition-all duration-300"
+          className="mt-6 px-8 py-4 rounded-card bg-paper-3 text-ink hover:bg-paper-3 hover:text-ink font-medium transition duration-300"
         >
           Send
         </button>
 
-        <div className="mt-10 p-6 rounded-2xl border border-stone-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.02)] whitespace-pre-wrap leading-relaxed">
+        <div className="mt-10 p-6 rounded-card border border-rule-2 bg-paper-3 whitespace-pre-wrap leading-relaxed">
           {response}
         </div>
       </div>
