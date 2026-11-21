@@ -1,38 +1,29 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 const domains = [
   {
-    number: "01",
     title: "AI Agents & LLM Systems",
     description:
       "Autonomous agents, RAG pipelines, and LLM orchestration that turn language models into reliable operational tools.",
     tools: ["AI Agents", "RAG", "LangChain", "OpenAI / Claude", "Prompt Engineering"],
   },
   {
-    number: "02",
     title: "Machine Learning",
     description:
-      "Predictive models for demand, pricing, and logistics — built, deployed, and monitored in production.",
+      "Predictive models for demand, pricing, and logistics, built, deployed, and monitored in production.",
     tools: ["Python", "Scikit-learn", "Forecasting", "MLOps"],
   },
   {
-    number: "03",
     title: "Data & Analytics Engineering",
     description:
       "Scalable pipelines, semantic models, and executive-grade analytics that operations teams actually use.",
     tools: ["SQL", "Power BI", "Data Pipelines", "Semantic Models"],
   },
   {
-    number: "04",
     title: "Automation & Integration",
     description:
-      "Workflow automation across approvals, reporting, and operations — connecting systems through APIs.",
+      "Workflow automation across approvals, reporting, and operations, connecting systems through APIs.",
     tools: ["Power Automate", "Power Apps", "REST APIs", "Workflow Design"],
   },
   {
-    number: "05",
     title: "Web Engineering",
     description:
       "Modern, performant web platforms and interfaces for data products and intelligent applications.",
@@ -42,78 +33,23 @@ const domains = [
 
 export default function TechStack() {
   return (
-    <section
-      id="stack"
-      className="relative py-32 px-6 md:px-10 bg-[#0c0b0a] overflow-hidden border-t border-white/[0.06]"
-    >
-      <div className="relative z-10 max-w-7xl mx-auto">
-
-        {/* Section Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16"
-        >
-          <div>
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-px bg-gradient-to-r from-[#c8a86b] to-transparent" />
-              <span className="text-[#c8a86b] font-mono text-[10px] uppercase tracking-[0.3em]">
-                Capabilities
-              </span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-medium font-syne tracking-tight text-[#f2ede3] leading-[1.02]">
-              What We Build<br />
-              <span className="text-[#8a8175]">With</span>
-            </h2>
-          </div>
-          <p className="text-base text-[#a89f8f] leading-relaxed max-w-sm font-light">
-            Five focused domains — from autonomous AI agents to the
-            data infrastructure underneath them.
+    <section id="stack" className="section band scroll-mt-[var(--nav-h)]">
+      <div className="wrap grid grid-cols-1 gap-x-[var(--gap-columns)] gap-y-10 lg:grid-cols-12">
+        <div className="lg:col-span-4">
+          <h2>What we build with</h2>
+          <p className="lead text-ink-2 mt-5">
+            Five focused domains, from autonomous AI agents to the data infrastructure underneath them.
           </p>
-        </motion.div>
-
-        {/* Domain rows */}
-        <div>
-          {domains.map((item, index) => (
-            <motion.div
-              key={item.number}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              viewport={{ once: true }}
-              className="group border-t border-white/[0.08] py-10 grid md:grid-cols-[60px_1fr_1fr] gap-6 md:gap-10 hover:bg-white/[0.02] transition-colors duration-300 md:px-4 md:-mx-4 rounded-lg"
-            >
-              {/* Number */}
-              <div className="text-sm text-[#6f675b] group-hover:text-[#c8a86b] font-mono font-bold tracking-[0.2em] pt-1.5 transition-colors duration-300">
-                {item.number}
-              </div>
-
-              {/* Title + description */}
-              <div>
-                <h3 className="text-2xl md:text-3xl font-medium font-syne tracking-tight text-[#f2ede3] leading-tight">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm md:text-base text-[#a89f8f] leading-relaxed font-light max-w-md">
-                  {item.description}
-                </p>
-              </div>
-
-              {/* Tool chips */}
-              <div className="flex flex-wrap content-start gap-2.5 md:justify-end">
-                {item.tools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="h-fit px-4 py-2 rounded-full border border-white/12 text-[11px] font-mono uppercase tracking-widest text-[#a89f8f] group-hover:border-[#c8a86b]/40 group-hover:text-[#e4dece] transition-colors duration-300"
-                  >
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
         </div>
+        <ol className="rows lg:col-span-8 m-0 p-0 list-none">
+          {domains.map((item) => (
+            <li key={item.title} className="py-7">
+              <h3>{item.title}</h3>
+              <p className="text-ink-2 mt-2 m-0 max-w-[60ch]">{item.description}</p>
+              <p className="meta mt-3 m-0">{item.tools.join(", ")}</p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

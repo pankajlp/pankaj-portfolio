@@ -1,17 +1,8 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getProjects } from "../lib/prismic";
-
-const videoMap: Record<string, string> = {
-  "NordNeuron Logistics AI Suite": "https://assets.mixkit.co/videos/preview/mixkit-blockchain-connection-network-concept-loopable-34283-large.mp4",
-  "Freight Intelligence Platform": "https://assets.mixkit.co/videos/preview/mixkit-abstract-laser-lights-background-31732-large.mp4",
-  "Gate Operations Platform": "https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-screens-and-numbers-31907-large.mp4",
-  "RFQ Intelligence Platform": "https://assets.mixkit.co/videos/preview/mixkit-blockchain-connection-network-concept-loopable-34283-large.mp4",
-};
 
 interface Project {
   title: string;
@@ -23,22 +14,6 @@ interface Project {
 
 export default function FeaturedProjects() {
   const [projectList, setProjectList] = useState<Project[]>([]);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
-
-  const cursorX = useMotionValue(-200);
-  const cursorY = useMotionValue(-200);
-  const springX = useSpring(cursorX, { stiffness: 200, damping: 25 });
-  const springY = useSpring(cursorY, { stiffness: 200, damping: 25 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [cursorX, cursorY]);
 
   useEffect(() => {
     async function loadData() {
@@ -48,135 +23,38 @@ export default function FeaturedProjects() {
     loadData();
   }, []);
 
-  const handleMouseEnter = (title: string, index: number) => {
-    setHoveredIndex(index);
-    const video = videoRefs.current[title];
-    if (video) video.play().catch(() => {});
-  };
-
-  const handleMouseLeave = (title: string) => {
-    setHoveredIndex(null);
-    const video = videoRefs.current[title];
-    if (video) video.pause();
-  };
-
   return (
-    <section
-      id="work"
-      className="relative bg-[#100e0c] overflow-hidden"
-    >
-      {/* Floating video preview that follows cursor */}
-      <motion.div
-        className="fixed pointer-events-none z-[100] w-[340px] h-[220px] rounded-2xl overflow-hidden"
-        style={{
-          left: springX,
-          top: springY,
-          // Offset below-right of the cursor so the preview never covers the pointer
-          x: 28,
-          y: 28,
-          opacity: hoveredIndex !== null ? 1 : 0,
-          scale: hoveredIndex !== null ? 1 : 0.85,
-          transition: "opacity 0.3s ease, scale 0.3s ease",
-        }}
-      >
-        {projectList.map((project) => {
-          const videoUrl = videoMap[project.title];
-          return (
-            <video
-              key={project.title}
-              ref={(el) => { videoRefs.current[project.title] = el; }}
-              src={videoUrl}
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-              style={{
-                display: hoveredIndex !== null && projectList[hoveredIndex]?.title === project.title ? "block" : "none",
-              }}
-            />
-          );
-        })}
-      </motion.div>
-
-      {/* Header */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 pt-28 pb-12 border-b border-white/[0.06]">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
-        >
-          <div>
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-[#c8a86b]/30 bg-[#c8a86b]/10 text-[#c8a86b] font-mono text-[10px] uppercase tracking-widest mb-6">
-              Featured Work
-            </div>
-            <h2 className="text-4xl md:text-6xl font-medium font-syne tracking-tight text-[#f2ede3] leading-[0.95]">
-              Selected<br />
-              <span className="text-[#6f675b]">Projects</span>
-            </h2>
-          </div>
-          <p className="text-[#a89f8f] text-sm md:text-base leading-relaxed max-w-xs font-light">
+    <section id="work" className="section scroll-mt-[var(--nav-h)]">
+      <div className="wrap">
+        <div className="grid grid-cols-1 gap-x-[var(--gap-columns)] gap-y-4 md:grid-cols-12 md:items-end mb-12">
+          <h2 className="md:col-span-6">Selected projects</h2>
+          <p className="lead text-ink-2 md:col-span-5 md:col-start-8">
             Enterprise AI systems, logistics intelligence, and operational platforms.
           </p>
-        </motion.div>
-      </div>
+        </div>
 
-      {/* Project List */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 pb-28">
-        {projectList.map((project, index) => {
-          const isHovered = hoveredIndex === index;
-
-          const RowContent = (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              onMouseEnter={() => handleMouseEnter(project.title, index)}
-              onMouseLeave={() => handleMouseLeave(project.title)}
-              className="group relative border-b border-white/[0.06] py-10 md:py-12 flex items-center justify-between gap-6 cursor-pointer"
-              style={{ opacity: hoveredIndex !== null && !isHovered ? 0.35 : 1, transition: "opacity 0.4s ease" }}
-            >
-              {/* Left: number + title */}
-              <div className="flex items-center gap-6 md:gap-10 min-w-0">
-                <span className="text-[#6f675b] font-mono text-xs tracking-widest shrink-0 w-8">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div className="min-w-0">
-                  <h3 className={`text-2xl md:text-4xl lg:text-4xl font-medium font-syne tracking-tight leading-none transition-colors duration-300 ${isHovered ? "text-[#c8a86b]" : "text-[#cfc7b6]"}`}>
-                    {project.title}
-                  </h3>
-                  <p className="mt-2 text-[#8a8175] text-sm font-light leading-relaxed max-w-xl hidden md:block">
-                    {project.description}
-                  </p>
+        <div className="rows" aria-busy={projectList.length === 0}>
+          {projectList.length === 0 && <p role="status" className="meta py-8 m-0">Loading projects…</p>}
+          {projectList.map((project) => {
+            const row = (
+              <>
+                <div>
+                  <h3 className="text-2xl md:text-3xl">{project.title}</h3>
+                  <p className="meta mt-2 m-0">{project.category}</p>
                 </div>
-              </div>
-
-              {/* Right: category + arrow */}
-              <div className="flex items-center gap-6 shrink-0">
-                <span className="hidden lg:block text-[#8a8175] font-mono text-[10px] uppercase tracking-widest">
-                  {project.category}
-                </span>
-                <div className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 ${isHovered ? "border-[#c8a86b] bg-[#c8a86b] shadow-[0_0_20px_rgba(200, 168, 107,0.4)]" : "border-white/10 bg-transparent"}`}>
-                  <ArrowUpRight
-                    size={16}
-                    strokeWidth={2.5}
-                    className={`transition-colors duration-300 ${isHovered ? "text-[#171310]" : "text-[#8a8175]"}`}
-                  />
+                <div>
+                  <p className="text-ink-2 m-0 max-w-[60ch]">{project.description}</p>
+                  {project.stack?.length > 0 && <p className="meta mt-3 m-0">{project.stack.join(", ")}</p>}
                 </div>
-              </div>
-            </motion.div>
-          );
-
-          return project.link ? (
-            <Link key={project.title} href={project.link} className="block">
-              {RowContent}
-            </Link>
-          ) : (
-            <div key={project.title}>{RowContent}</div>
-          );
-        })}
+              </>
+            );
+            return project.link ? (
+              <Link key={project.title} href={project.link} className="row-link">{row}</Link>
+            ) : (
+              <div key={project.title} className="row-link">{row}</div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

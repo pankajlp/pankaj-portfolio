@@ -13,17 +13,17 @@ export default function CompareCard({
 }: CompareCardProps) {
   return (
     <div
-      className={`px-6 py-5 bg-white ${
-        borderLeft ? "border-l border-black/10" : ""
+      className={`px-6 py-5 bg-paper-3 ${
+        borderLeft ? "border-l border-rule" : ""
       }`}
     >
-      <div className="text-[10px] uppercase tracking-[0.08em] text-[#9a9a92] font-medium mb-2">
+      <div className="text-xs text-muted font-medium mb-2">
         {label}
       </div>
-      <div className="font-serif text-[18px] text-[#1c1917] mb-1.5">
+      <div className="font-serif text-lg text-paper-3 mb-1.5">
         {question}
       </div>
-      <div className="text-[13px] text-[#5a5a54] leading-[1.6]">{desc}</div>
+      <div className="text-sm text-muted leading-[1.6]">{desc}</div>
     </div>
   );
 }

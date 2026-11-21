@@ -1,116 +1,79 @@
+/* Hallmark · shape: Index-First (/), kept elsewhere · genre: modern-minimal · theme: brand · redesign: full · job: hire
+ * paper: oklch(14% 0.004 60) · accent: oklch(74% 0.09 82) · display: Fraunces · body: Inter · hero: Ledge (/), Banner (/rfq), Banner (/contact), Banner (/labs), Banner (/insights) · nav: edge-aligned, the wordmark and five links with one action · footer: a mast, the wordmark over the links · signature: the priced lane table, a messy RFQ line beside the row it becomes
+ * axes: dark/roman-serif/warm · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · dropped the hero canvas animation, the scroll cue, the preloader, the marquee, nn-glow and the project rows' onMouseEnter and onMouseLeave video preview · decoration and stock footage with no content behind them */
+/* Hallmark · dropped onMouseEnter, onMouseLeave, nn-glow · the stock-footage hover preview on the project rows and the logo glow filter are gone */
+/* Hallmark · waive 44c · Banner posture on /rfq and the inner pages, the lane table starts at 573px · the priced lane table is the offer and has to show on the first screen */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V3 · weakest: V, eighteen pages share one system by design; the home page drops the stat strip and the canvas and leads with the work index instead */
 @import "tailwindcss";
+@import "./tokens.css";
+@import "./base.css" layer(base);
 
-/* ── DESIGN TOKENS ──────────────────────────────────
-   Quiet-luxury monochrome: warm charcoal-black grounds,
-   ivory text, a restrained champagne-gold accent used
-   sparingly. Editorial serif display + clean sans body.  */
-:root {
-  --bg: #0c0b0a;           /* warm charcoal-black ground */
-  --bg-lift: #141210;      /* lifted panels / cards */
-  --bg-lift-2: #1b1815;    /* hover / elevated */
-  --line: rgba(239, 233, 223, 0.09);
-  --line-strong: rgba(239, 233, 223, 0.18);
-  --fg: #efe9df;           /* warm ivory text */
-  --fg-dim: #a89f8f;       /* secondary taupe */
-  --fg-mute: #8a8175;      /* muted labels */
-  --accent: #c8a86b;       /* champagne gold */
-  --accent-hi: #d8bd86;    /* lifted gold (hover) */
-  --accent-soft: rgba(200, 168, 107, 0.14);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: auto !important;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  background: var(--bg);
-  color: var(--fg);
-  font-family: var(--font-inter), sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-/* Ambient depth: a whisper-soft warm vignette, no glow. */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-  background:
-    radial-gradient(55% 40% at 50% -6%, rgba(200, 168, 107, 0.06), transparent 70%),
-    radial-gradient(80% 60% at 50% 120%, rgba(0, 0, 0, 0.5), transparent 70%);
-}
-
-::selection {
-  background-color: var(--accent-soft);
-  color: #fbf7ee;
-}
-
-/* ── FONTS ──────────────────────────────────────────
-   --font-syne now maps to Fraunces (editorial serif display).
-   --font-mono maps to Inter — used for small letter-spaced
-   labels. Class names kept so existing markup needs no churn. */
-.font-syne {
-  font-family: var(--font-syne), "Iowan Old Style", Georgia, serif;
-  font-optical-sizing: auto;
-}
-
-.font-mono {
-  font-family: var(--font-inter), "Segoe UI", sans-serif;
-}
-
-/* Back-compat alias still referenced by some markup */
-.font-grotesk {
-  font-family: var(--font-inter), "Segoe UI", sans-serif;
-}
-
-/* Accent helper */
-.text-accent {
-  color: var(--accent);
-}
+html { scroll-behavior: auto !important; }
+/* The phone and tablet scale. Unlayered, so it outranks the unlayered :root in tokens.css. */
+@media (max-width: 60rem) { :root { --gutter: 24px; --section-gap-s: 80px; --section-gap: 96px; --section-gap-l: 120px; } }
+@media (max-width: 40rem) { :root { --gutter: 16px; --section-gap-s: 56px; --section-gap: 72px; --section-gap-l: 96px; --gap-columns: 16px; } }
+/* grid and flex children may shrink below their content, so a wide table scrolls inside its own region */
+.grid > *, .flex > * { min-width: 0; }
+/* An embedded report keeps a visible edge; it turns gold while the keyboard is inside it. */
+iframe { outline: 2px solid var(--color-muted); outline-offset: -2px; }
+iframe:focus, :focus-within > iframe { outline-color: var(--color-focus); }
+body { text-rendering: optimizeLegibility; }
 
 @layer base {
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  button {
-    font: inherit;
-  }
+  a { text-decoration: none; }
+  h1, h2, h3, h4 { color: var(--color-ink); }
+  h4 { margin: 0; font-family: var(--font-body); font-weight: 600; font-size: var(--text-md); line-height: 1.3; }
+  code, pre, kbd { font-family: var(--font-outlier); }
+  input, textarea, select { color: var(--color-ink); background: var(--color-paper-2); border: 1px solid var(--color-muted); border-radius: var(--radius-control); min-height: 48px; padding: var(--space-sm) var(--space-md); }
+  textarea { min-height: 120px; }
+  input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+  input:disabled, textarea:disabled, select:disabled { opacity: 0.55; cursor: not-allowed; }
+  ::placeholder { color: var(--color-muted); }
 }
 
-/* ── WAVY SVG ANIMATIONS ────────────────────────── */
-@keyframes waveShift1 {
-  0%   { d: path("M0,120 C160,80 320,160 480,110 C600,72 720,130 900,85 L900,340 L0,340 Z"); }
-  50%  { d: path("M0,100 C140,140 300,70  480,125 C640,175 760,90  900,115 L900,340 L0,340 Z"); }
-  100% { d: path("M0,120 C160,80 320,160 480,110 C600,72 720,130 900,85 L900,340 L0,340 Z"); }
-}
-@keyframes waveShift2 {
-  0%   { d: path("M0,150 C180,115 360,175 540,135 C680,105 800,150 900,130 L900,340 L0,340 Z"); }
-  50%  { d: path("M0,140 C160,170 340,105 520,148 C680,185 800,120 900,155 L900,340 L0,340 Z"); }
-  100% { d: path("M0,150 C180,115 360,175 540,135 C680,105 800,150 900,130 L900,340 L0,340 Z"); }
-}
-@keyframes waveShift3 {
-  0%   { d: path("M0,175 C200,148 380,195 560,162 C700,138 820,170 900,158 L900,340 L0,340 Z"); }
-  50%  { d: path("M0,165 C180,190 360,148 540,175 C700,198 820,152 900,178 L900,340 L0,340 Z"); }
-  100% { d: path("M0,175 C200,148 380,195 560,162 C700,138 820,170 900,158 L900,340 L0,340 Z"); }
-}
-@keyframes waveShift4 {
-  0%   { d: path("M0,195 C220,175 400,208 580,188 C720,172 840,196 900,188 L900,340 L0,340 Z"); }
-  50%  { d: path("M0,188 C200,205 380,172 560,195 C720,215 840,180 900,200 L900,340 L0,340 Z"); }
-  100% { d: path("M0,195 C220,175 400,208 580,188 C720,172 840,196 900,188 L900,340 L0,340 Z"); }
+@layer components {
+  .wrap { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+  .skip { position: absolute; left: var(--space-md); top: -100px; z-index: var(--z-tooltip); }
+  .skip:focus { top: var(--space-md); }
+  .section { padding-block: var(--section-gap-s); }
+  .section-l { padding-block: var(--section-gap); }
+  .band { background: var(--color-paper-2); color: var(--color-ink); border-block: 1px solid var(--color-rule); }
+  .label { font-size: var(--text-sm); color: var(--color-muted); font-weight: 500; }
+  .meta { font-size: var(--text-sm); color: var(--color-muted); }
+  .prose-measure { max-width: 65ch; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 48px; padding: 0 var(--space-lg); border: 1px solid var(--color-accent); border-radius: var(--radius-control); background: var(--color-accent); color: var(--color-accent-ink); font: 600 var(--text-md)/1 var(--font-body); white-space: nowrap; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+  .btn:hover { background: var(--color-accent-2); border-color: var(--color-accent-2); }
+  .btn:active { transform: translateY(1px); }
+  .btn:disabled, .btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; }
+  .btn[aria-busy="true"] { cursor: progress; }
+  .btn-quiet { background: transparent; color: var(--color-ink); border-color: var(--color-rule-2); }
+  .btn-quiet:hover { background: var(--color-paper-3); border-color: var(--color-muted); }
+  .btn-sm { min-height: 44px; padding: 0 var(--space-md); font-size: var(--text-sm); }
+
+  .link { color: var(--color-accent-2); font-weight: 600; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 0.2em; transition: text-decoration-color var(--dur-micro) var(--ease-out); }
+  .link:hover { text-decoration-color: currentColor; }
+  .link:active { color: var(--color-accent); }
+
+  .nav-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--space-sm); font-size: var(--text-sm); font-weight: 500; color: var(--color-ink-2); white-space: nowrap; transition: color var(--dur-micro) var(--ease-out); }
+  .nav-link:hover { color: var(--color-ink); }
+  .nav-link:active { color: var(--color-accent-2); }
+  .nav-link[aria-current="page"], .nav-link[aria-current="true"] { color: var(--color-ink); box-shadow: inset 0 -2px 0 var(--color-accent); }
+
+  .panel { background: var(--color-paper-2); color: var(--color-ink); border: 1px solid var(--color-rule); border-radius: var(--radius-card); }
+  .rows > * { border-top: 1px solid var(--color-rule); }
+  .rows > *:last-child { border-bottom: 1px solid var(--color-rule); }
+  .row-link { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap-columns); align-items: baseline; padding-block: var(--space-lg); transition: background-color var(--dur-short) var(--ease-out); }
+  .row-link:hover { background: var(--color-paper-2); }
+  .row-link:active { background: var(--color-paper-3); }
+  @media (max-width: 60rem) { .row-link { grid-template-columns: minmax(0, 1fr); gap: var(--space-xs); } }
+
+  table.ledger { width: 100%; border-collapse: collapse; font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
+  table.ledger th { text-align: left; font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); padding: var(--space-sm) var(--space-md); border-bottom: 1px solid var(--color-rule-2); white-space: nowrap; }
+  table.ledger td { padding: var(--space-md); border-bottom: 1px solid var(--color-rule); }
+  table.ledger tr:last-child td { border-bottom: 0; }
+  table.ledger .n { text-align: right; }
 }
 
-.animate-wave-1 { animation: waveShift1 9s ease-in-out infinite; }
-.animate-wave-2 { animation: waveShift2 11s ease-in-out infinite; }
-.animate-wave-3 { animation: waveShift3 13s ease-in-out infinite; }
-.animate-wave-4 { animation: waveShift4 7s  ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .btn, .link, .nav-link, .row-link { transition: none; } }

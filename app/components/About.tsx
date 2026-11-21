@@ -12,7 +12,7 @@ const capabilities = [
     number: "01",
     title: "Business Intelligence",
     description:
-      "Enterprise-grade Power BI systems and operational analytics platforms built for scale — not just reporting.",
+      "Enterprise-grade Power BI systems and operational analytics platforms built for scale, not just reporting.",
   },
   {
     number: "02",
@@ -66,63 +66,54 @@ export default function About() {
     <section
       id="about"
       ref={containerRef}
-      className="relative py-32 px-6 md:px-10 bg-transparent overflow-hidden border-t border-white/[0.06]"
+      className="relative py-32 px-6 md:px-10 bg-transparent overflow-hidden border-t border-rule"
     >
-      {/* Background Glow */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#c8a86b]/10 blur-[180px] rounded-full pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-[1.1fr_1fr] gap-20">
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-20">
         
         {/* LEFT SIDE (Pinned/Sticky) */}
         <div className="lg:sticky lg:top-32 h-fit space-y-6">
-          {/* Label */}
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-gradient-to-r from-[#c8a86b] to-transparent" />
-            <span className="text-[10px] tracking-widest uppercase font-mono text-[#c8a86b]">
-              About NordNeuron
-            </span>
-          </div>
 
           {/* Heading */}
           <div className="block">
             <SplitText
-              text={"Beyond Dashboards —"}
+              text={"Beyond Dashboards , "}
               charClass="about-char"
-              className="text-4xl md:text-5xl font-medium font-syne tracking-tight text-[#f2ede3] leading-[1.05]"
+              className="text-4xl md:text-5xl font-medium font-display text-ink leading-[1.05]"
             />
           </div>
           <div className="block mt-2">
             <SplitText
               text={"Toward Enterprise\nIntelligence."}
               charClass="about-char"
-              className="text-4xl md:text-5xl font-medium font-syne tracking-tight text-[#8a8175] leading-[1.05]"
+              className="text-4xl md:text-5xl font-medium font-display text-muted leading-[1.05]"
             />
           </div>
 
           {/* Paragraph */}
-          <p className="mt-8 text-base md:text-lg text-[#a89f8f] leading-relaxed max-w-2xl font-light">
+          <p className="mt-8 text-base md:text-lg text-ink-2 leading-relaxed max-w-2xl">
             NordNeuron designs intelligent operational systems that
             unify analytics, automation, and decision-making into a
-            single enterprise layer — purpose-built for environments
+            single enterprise layer, purpose-built for environments
             where insight without action is incomplete.
           </p>
 
           {/* Founder Card */}
-          <div className="mt-10 p-6 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl max-w-xl">
+          <div className="mt-10 p-6 rounded-card border border-rule-2 bg-paper-2 max-w-xl">
             <div className="flex flex-col sm:flex-row sm:items-center gap-5">
 
               {/* Avatar */}
-              <div className="w-16 h-16 rounded-full bg-white/[0.04] border border-[#c8a86b]/30 text-[#c8a86b] flex items-center justify-center font-syne font-bold text-lg shadow-[0_0_20px_rgba(200, 168, 107,0.15)]">
+              <div className="w-16 h-16 rounded-full bg-paper-2 border border-accent/30 text-accent flex items-center justify-center font-display font-medium text-lg">
                 PK
               </div>
 
               {/* Info */}
               <div>
-                <h3 className="text-xl text-[#f2ede3] font-medium font-syne tracking-tight">
+                <h3 className="text-xl text-ink font-medium font-display">
                   Pankaj Kumar
                 </h3>
-                <p className="mt-1 text-sm text-[#8a8175] leading-relaxed font-light">
-                  Founder · AI Systems & Enterprise Intelligence
+                <p className="mt-1 text-sm text-muted leading-relaxed">
+                  Founder, AI Systems & Enterprise Intelligence
                 </p>
               </div>
             </div>
@@ -135,7 +126,7 @@ export default function About() {
               {tags.map((tag) => (
                 <div
                   key={tag}
-                  className="px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] text-[10px] font-mono uppercase tracking-widest text-[#a89f8f]"
+                  className="px-4 py-2 rounded-full border border-rule-2 bg-paper-2 text-xs text-ink-2"
                 >
                   {tag}
                 </div>
@@ -149,22 +140,22 @@ export default function About() {
           {capabilities.map((item) => (
             <div
               key={item.number}
-              className="group border-b border-white/[0.08] py-8 last:border-b-0 hover:border-[#c8a86b]/40 transition-colors duration-300 cursor-default"
+              className="group border-b border-rule py-8 last:border-b-0 hover:border-accent/40 transition-colors duration-300 cursor-default"
             >
               <div className="grid grid-cols-[50px_1fr] gap-6">
 
                 {/* Number */}
-                <div className="text-sm text-[#6f675b] group-hover:text-[#c8a86b] font-mono font-bold tracking-[0.2em] pt-1 transition-colors duration-300">
+                <div className="text-sm text-muted group-hover:text-accent font-bold pt-1 transition-colors duration-300">
                   {item.number}
                 </div>
 
                 {/* Content */}
                 <div>
-                  <h3 className="text-xl md:text-2xl font-medium font-syne tracking-tight text-[#f2ede3] transition-colors duration-300">
+                  <h3 className="text-xl md:text-2xl font-medium font-display text-ink transition-colors duration-300">
                     {item.title}
                   </h3>
 
-                  <p className="mt-3 text-sm md:text-base text-[#8a8175] group-hover:text-[#a89f8f] leading-relaxed font-light transition-colors duration-300 max-h-0 group-hover:max-h-40 overflow-hidden" style={{ transition: "max-height 0.4s ease, color 0.3s ease" }}>
+                  <p className="mt-3 text-sm md:text-base text-muted group-hover:text-ink-2 leading-relaxed transition-colors duration-300 max-h-0 group-hover:max-h-40 overflow-hidden" style={{ transition: "max-height 0.4s ease, color 0.3s ease" }}>
                     {item.description}
                   </p>
                 </div>
