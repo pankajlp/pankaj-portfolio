@@ -1,4 +1,4 @@
-/* Light, businesslike system: white paper, navy ink, harbour-teal accent, IBM Plex Sans/Mono. Tokens live in tokens.css. */
+/* Container-yard system: concrete paper, asphalt ink, steel-blue panels, hi-vis yellow buttons, IBM Plex Sans/Mono. Tokens live in tokens.css. */
 @import "tailwindcss";
 @import "./tokens.css";
 @import "./base.css" layer(base);
@@ -38,8 +38,8 @@ body { text-rendering: optimizeLegibility; }
   .meta { font-size: var(--text-sm); color: var(--color-muted); }
   .prose-measure { max-width: 65ch; }
 
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 48px; padding: 0 var(--space-lg); border: 1px solid var(--color-accent); border-radius: var(--radius-control); background: var(--color-accent); color: var(--color-accent-ink); font: 600 var(--text-md)/1 var(--font-body); white-space: nowrap; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
-  .btn:hover { background: var(--color-accent-2); border-color: var(--color-accent-2); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 48px; padding: 0 var(--space-lg); border: 1px solid var(--color-signal-edge); border-radius: var(--radius-control); background: var(--color-signal); color: var(--color-signal-ink); font: 600 var(--text-md)/1 var(--font-body); white-space: nowrap; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+  .btn:hover { background: var(--color-signal-2); border-color: var(--color-signal-edge); }
   .btn:active { transform: translateY(1px); }
   .btn:disabled, .btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; }
   .btn[aria-busy="true"] { cursor: progress; }
@@ -57,6 +57,9 @@ body { text-rendering: optimizeLegibility; }
   .nav-link[aria-current="page"], .nav-link[aria-current="true"] { color: var(--color-ink); box-shadow: inset 0 -2px 0 var(--color-accent); }
 
   .panel { background: var(--color-paper-2); color: var(--color-ink); border: 1px solid var(--color-rule); border-radius: var(--radius-card); }
+  /* Painted steel: re-points the tokens so anything inside reads light-on-blue. */
+  .steel { --color-paper: #2f5672; --color-paper-2: #2a4e68; --color-paper-3: #24445b; --color-ink: #ffffff; --color-ink-2: #d5e0e9; --color-muted: #bccddb; --color-rule: rgb(255 255 255 / 0.14); --color-rule-2: rgb(255 255 255 / 0.26); --color-accent: #ffd24d; --color-accent-2: #ffd24d; --color-focus: #ffd24d; background: var(--color-paper); color: var(--color-ink); border-color: transparent; }
+  .steel .btn { border-color: var(--color-signal); }
   .rows > * { border-top: 1px solid var(--color-rule); }
   .rows > *:last-child { border-bottom: 1px solid var(--color-rule); }
   .row-link { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap-columns); align-items: baseline; padding-block: var(--space-lg); transition: background-color var(--dur-short) var(--ease-out); }

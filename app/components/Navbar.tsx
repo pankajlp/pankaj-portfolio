@@ -155,8 +155,8 @@ function NordNeuronMark() {
       <polygon points="24,5 40,14 40,32 24,41 8,32 8,14" fill="none" stroke="var(--color-muted)" strokeWidth="1.1" />
       {edges.map(([x1, y1, x2, y2], i) => <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="var(--color-muted)" strokeWidth="0.9" />)}
       {nodes.map(([cx, cy]) => <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="2.5" fill="var(--color-paper-2)" stroke="var(--color-ink-2)" strokeWidth="1.1" />)}
-      <circle cx="24" cy="23" r="5.5" fill="var(--color-accent)" />
-      <circle cx="24" cy="23" r="2.6" fill="var(--color-accent-ink)" />
+      <circle cx="24" cy="23" r="5.5" fill="var(--color-signal)" />
+      <circle cx="24" cy="23" r="2.6" fill="var(--color-ink)" />
       <text x="54" y="30" fontFamily="var(--font-display)" fontSize="20" fontWeight="600" fill="var(--color-ink)">
         Nord<tspan dx="6" fontWeight="500" fill="var(--color-ink-2)">Neuron</tspan>
       </text>

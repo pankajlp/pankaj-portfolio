@@ -25,7 +25,7 @@ export default function Hero() {
         </div>
 
         <figure className="m-0 lg:col-span-7">
-          <div className="panel overflow-hidden">
+          <div className="panel steel overflow-hidden">
             <div className="flex items-baseline justify-between gap-4 border-b border-rule px-5 py-3">
               <p className="m-0 text-sm font-semibold text-ink">Inbox to lane table</p>
               <p className="m-0 text-xs text-accent">Illustrative data</p>

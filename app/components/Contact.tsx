@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Contact() {
   return (
-    <section id="contact" className="section-l band scroll-mt-[var(--nav-h)]">
+    <section id="contact" className="section-l steel scroll-mt-[var(--nav-h)]">
       <div className="wrap grid grid-cols-1 gap-x-[var(--gap-columns)] gap-y-10 lg:grid-cols-12 lg:items-end">
         <div className="lg:col-span-7">
           <h2 className="text-[length:var(--text-display)] leading-none max-w-[14ch]">Send us five RFQs.</h2>
