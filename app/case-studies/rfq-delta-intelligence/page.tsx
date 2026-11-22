@@ -12,7 +12,7 @@ export default function RFQDeltaCaseStudyPage() {
         {/* Tag */}
 
         {/* Title */}
-        <h1 className="text-3xl md:text-[60px] leading-[1.08] font-serif text-ink">
+        <h1 className="text-3xl md:text-[60px] leading-[1.08] font-display text-ink">
           Designing operational intelligence
           around the Delta metric
         </h1>
@@ -62,7 +62,7 @@ export default function RFQDeltaCaseStudyPage() {
         <section className="mt-24">
 
 
-          <h2 className="text-3xl md:text-[48px] leading-[1.15] font-serif text-ink">
+          <h2 className="text-3xl md:text-[48px] leading-[1.15] font-display text-ink">
             The Delta column became
             the operational intelligence layer
           </h2>
@@ -163,7 +163,7 @@ export default function RFQDeltaCaseStudyPage() {
         {/* Architecture */}
         <section className="mt-24">
 
-          <h2 className="text-3xl md:text-[48px] leading-[1.15] font-serif text-ink">
+          <h2 className="text-3xl md:text-[48px] leading-[1.15] font-display text-ink">
             AI-native procurement architecture
           </h2>
 
@@ -190,7 +190,7 @@ export default function RFQDeltaCaseStudyPage() {
         {/* Text-to-SQL */}
         <section className="mt-24">
 
-          <h2 className="text-3xl md:text-[48px] leading-[1.15] font-serif text-ink">
+          <h2 className="text-3xl md:text-[48px] leading-[1.15] font-display text-ink">
             The text-to-SQL orchestration pipeline
           </h2>
 
@@ -233,7 +233,7 @@ export default function RFQDeltaCaseStudyPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-serif text-ink">
+                  <h3 className="text-xl font-display text-ink">
                     {item.title}
                   </h3>
 
@@ -258,7 +258,7 @@ export default function RFQDeltaCaseStudyPage() {
         {/* Reflection */}
         <section className="mt-24 border-t border-rule-2 pt-16">
 
-          <h2 className="text-3xl md:text-[48px] leading-[1.15] font-serif text-ink">
+          <h2 className="text-3xl md:text-[48px] leading-[1.15] font-display text-ink">
             The real innovation was not the technology
           </h2>
 

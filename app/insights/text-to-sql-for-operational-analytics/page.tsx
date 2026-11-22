@@ -37,7 +37,7 @@ export default function ArticlePage() {
         {/* Tag */}
 
         {/* Title */}
-        <h1 className="text-3xl md:text-[46px] leading-[1.1] font-serif text-ink">
+        <h1 className="text-3xl md:text-[46px] leading-[1.1] font-display text-ink">
           Text-to-SQL for Operational Analytics, Beyond the Toy Examples
         </h1>
 
@@ -72,7 +72,7 @@ export default function ArticlePage() {
 
         {/* Section 1 */}
         <section className="mt-20">
-          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
+          <h2 className="text-2xl leading-[1.2] font-display text-ink">
             Why schema complexity is the real bottleneck
           </h2>
 
@@ -104,7 +104,7 @@ export default function ArticlePage() {
 
         {/* Section 2 */}
         <section className="mt-20">
-          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
+          <h2 className="text-2xl leading-[1.2] font-display text-ink">
             The self-correction loop
           </h2>
 
@@ -125,7 +125,7 @@ export default function ArticlePage() {
 
         {/* Section 3 */}
         <section className="mt-20">
-          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
+          <h2 className="text-2xl leading-[1.2] font-display text-ink">
             Date and entity normalization
           </h2>
 
@@ -150,7 +150,7 @@ export default function ArticlePage() {
 
         {/* Section 4 */}
         <section className="mt-20">
-          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
+          <h2 className="text-2xl leading-[1.2] font-display text-ink">
             Token budget and context management
           </h2>
 
@@ -171,7 +171,7 @@ export default function ArticlePage() {
 
         {/* Section 5 */}
         <section className="mt-20">
-          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
+          <h2 className="text-2xl leading-[1.2] font-display text-ink">
             What "good enough" looks like
           </h2>
 

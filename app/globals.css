@@ -1,10 +1,4 @@
-/* Hallmark · shape: Index-First (/), kept elsewhere · genre: modern-minimal · theme: brand · redesign: full · job: hire
- * paper: oklch(14% 0.004 60) · accent: oklch(74% 0.09 82) · display: Fraunces · body: Inter · hero: Ledge (/), Banner (/rfq), Banner (/contact), Banner (/labs), Banner (/insights) · nav: edge-aligned, the wordmark and five links with one action · footer: a mast, the wordmark over the links · signature: the priced lane table, a messy RFQ line beside the row it becomes
- * axes: dark/roman-serif/warm · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
-/* Hallmark · dropped the hero canvas animation, the scroll cue, the preloader, the marquee, nn-glow and the project rows' onMouseEnter and onMouseLeave video preview · decoration and stock footage with no content behind them */
-/* Hallmark · dropped onMouseEnter, onMouseLeave, nn-glow · the stock-footage hover preview on the project rows and the logo glow filter are gone */
-/* Hallmark · waive 44c · Banner posture on /rfq and the inner pages, the lane table starts at 573px · the priced lane table is the offer and has to show on the first screen */
-/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V3 · weakest: V, eighteen pages share one system by design; the home page drops the stat strip and the canvas and leads with the work index instead */
+/* Light, businesslike system: white paper, navy ink, harbour-teal accent, IBM Plex Sans/Mono. Tokens live in tokens.css. */
 @import "tailwindcss";
 @import "./tokens.css";
 @import "./base.css" layer(base);
@@ -25,7 +19,7 @@ body { text-rendering: optimizeLegibility; }
   a { text-decoration: none; }
   h1, h2, h3, h4 { color: var(--color-ink); }
   h4 { margin: 0; font-family: var(--font-body); font-weight: 600; font-size: var(--text-md); line-height: 1.3; }
-  code, pre, kbd { font-family: var(--font-outlier); }
+  code, pre, kbd { font-family: var(--font-outlier); font-size: 0.92em; }
   input, textarea, select { color: var(--color-ink); background: var(--color-paper-2); border: 1px solid var(--color-muted); border-radius: var(--radius-control); min-height: 48px; padding: var(--space-sm) var(--space-md); }
   textarea { min-height: 120px; }
   input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }

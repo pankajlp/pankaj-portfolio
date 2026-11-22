@@ -51,7 +51,7 @@ useEffect(() => {
         {/* Tag */}
 
         {/* Title */}
-        <h1 className="text-3xl md:text-[46px] leading-[1.1] font-serif text-ink">
+        <h1 className="text-3xl md:text-[46px] leading-[1.1] font-display text-ink">
           From Dashboards to Intelligence Systems
         </h1>
 
@@ -93,7 +93,7 @@ useEffect(() => {
               Dashboard
             </div>
 
-            <h3 className="text-xl font-serif text-ink mb-3">
+            <h3 className="text-xl font-display text-ink mb-3">
               “What happened?”
             </h3>
 
@@ -107,7 +107,7 @@ useEffect(() => {
               Intelligence system
             </div>
 
-            <h3 className="text-xl font-serif text-ink mb-3">
+            <h3 className="text-xl font-display text-ink mb-3">
               “What should happen next?”
             </h3>
 
@@ -119,7 +119,7 @@ useEffect(() => {
 
         {/* Section 1 */}
         <section className="mt-20">
-          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
+          <h2 className="text-2xl leading-[1.2] font-display text-ink">
             The limits of the traditional BI stack
           </h2>
 
@@ -146,7 +146,7 @@ useEffect(() => {
 
         {/* Section 2 */}
         <section className="mt-20">
-          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
+          <h2 className="text-2xl leading-[1.2] font-display text-ink">
             What AI-native operational systems look like
           </h2>
 
@@ -205,7 +205,7 @@ useEffect(() => {
 
         {/* Section 3 */}
         <section className="mt-20">
-          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
+          <h2 className="text-2xl leading-[1.2] font-display text-ink">
             A different engineering mindset
           </h2>
 
@@ -247,7 +247,7 @@ useEffect(() => {
 
         {/* Section 4 */}
         <section className="mt-20">
-          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
+          <h2 className="text-2xl leading-[1.2] font-display text-ink">
             Why supply chain is the clearest test case
           </h2>
 
@@ -285,7 +285,7 @@ useEffect(() => {
 
         {/* Final Section */}
         <section className="mt-20">
-          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
+          <h2 className="text-2xl leading-[1.2] font-display text-ink">
             Where dashboards fit in what comes next
           </h2>
 

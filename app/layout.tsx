@@ -1,21 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
-const inter = Inter({
+// One engineered family for everything: Plex Sans for headings and text,
+// Plex Mono only where text is raw input (RFQ lines as they arrive).
+const plex = IBM_Plex_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-plex",
+  weight: ["400", "500", "600", "700"],
 });
 
-// Editorial serif display face. Exposed as --font-display so existing
-// `.font-display` markup picks it up with no churn. Labels reuse Inter
-// via the .class, so no separate mono face is loaded.
-const fraunces = Fraunces({
+const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  variable: "--font-plex-mono",
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -55,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`${plex.variable} ${plexMono.variable}`}>
 
       <head>
 
@@ -82,7 +81,7 @@ export default function RootLayout({
 
       </head>
 
-      <body className={`${inter.variable} ${fraunces.variable}`}>
+      <body>
         {children}
       </body>
 

@@ -20,7 +20,7 @@ export default function CompareCard({
       <div className="text-xs text-muted font-medium mb-2">
         {label}
       </div>
-      <div className="font-serif text-lg text-paper-3 mb-1.5">
+      <div className="font-display text-lg text-paper-3 mb-1.5">
         {question}
       </div>
       <div className="text-sm text-muted leading-[1.6]">{desc}</div>
