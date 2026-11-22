@@ -1,35 +1,32 @@
 import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import LenisProvider from "./components/LenisProvider";
-import TransitionCurtain from "./components/TransitionCurtain";
 
-const inter = Inter({
+// One engineered family for everything: Plex Sans for headings and text,
+// Plex Mono only where text is raw input (RFQ lines as they arrive).
+const plex = IBM_Plex_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-plex",
+  weight: ["400", "500", "600", "700"],
 });
 
-// Editorial serif display face. Exposed as --font-display so existing
-// `.font-display` markup picks it up with no churn. Labels reuse Inter
-// via the .class, so no separate mono face is loaded.
-const fraunces = Fraunces({
+const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  variable: "--font-plex-mono",
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
-  title: "NordNeuron | AI & Enterprise Intelligence",
+  title: "NordNeuron | RFQ pricing for freight forwarders",
   description:
-    "NordNeuron builds intelligent analytics, automation, and AI systems for enterprise operations.",
+    "NordNeuron turns RFQs in any format into clean lane tables priced from your own rate history. Built for Indian freight forwarders and NVOCCs.",
   icons: {
     icon: "/nordneuron-favicon.svg",
   },
   openGraph: {
-    title: "NordNeuron | AI & Enterprise Intelligence",
-    description: "NordNeuron builds intelligent analytics, automation, and AI systems for enterprise operations.",
+    title: "NordNeuron | RFQ pricing for freight forwarders",
+    description: "NordNeuron turns RFQs in any format into clean lane tables priced from your own rate history. Built for Indian freight forwarders and NVOCCs.",
     url: "https://nordneuron.com",
     siteName: "NordNeuron",
     images: [
@@ -37,7 +34,7 @@ export const metadata: Metadata = {
         url: "https://nordneuron.com/architecture.png",
         width: 1200,
         height: 630,
-        alt: "NordNeuron Enterprise Intelligence Systems",
+        alt: "NordNeuron: RFQ pricing for freight forwarders",
       },
     ],
     locale: "en_US",
@@ -45,8 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NordNeuron | AI & Enterprise Intelligence",
-    description: "NordNeuron builds intelligent analytics, automation, and AI systems for enterprise operations.",
+    title: "NordNeuron | RFQ pricing for freight forwarders",
+    description: "NordNeuron turns RFQs in any format into clean lane tables priced from your own rate history. Built for Indian freight forwarders and NVOCCs.",
     images: ["https://nordneuron.com/architecture.png"],
   },
 };
@@ -57,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`${plex.variable} ${plexMono.variable}`}>
 
       <head>
 
@@ -84,11 +81,8 @@ export default function RootLayout({
 
       </head>
 
-      <body className={`${inter.variable} ${fraunces.variable}`}>
-        <TransitionCurtain />
-        <LenisProvider>
-          {children}
-        </LenisProvider>
+      <body>
+        {children}
       </body>
 
     </html>

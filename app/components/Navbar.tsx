@@ -13,11 +13,10 @@ type NavItem = {
   section?: string;
 };
 
-// Grouped for clarity: on-page sections first, then standalone pages.
+// The offer leads; Labs lives in the footer so the bar stays about freight.
 const NAV_ITEMS: NavItem[] = [
-  { label: "Capabilities", href: "/#stack", section: "stack" },
+  { label: "RFQ pilot", href: "/rfq" },
   { label: "Work", href: "/#work", section: "work" },
-  { label: "Labs", href: "/labs" },
   { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
 ];
@@ -44,13 +43,15 @@ export default function Navbar() {
   useEffect(() => {
     if (pathname !== "/") return;
 
-    const ids = ["stack", "work"];
+    const ids = ["work"];
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
           .filter((e) => e.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (visible) setActiveSection(visible.target.id);
+        // Clear the highlight once the section has scrolled out of view.
+        else if (entries.every((e) => !e.isIntersecting)) setActiveSection("");
       },
       { rootMargin: "-45% 0px -45% 0px", threshold: [0, 0.25, 0.5, 1] }
     );
@@ -97,7 +98,7 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-2">
-            <TransitionLink href="/contact" className="hidden sm:inline-flex btn btn-sm">Start a project</TransitionLink>
+            <TransitionLink href="/rfq#pilot" className="hidden sm:inline-flex btn btn-sm">Try it free</TransitionLink>
             <button
               type="button"
               onClick={() => setMenuOpen((v) => !v)}
@@ -135,7 +136,7 @@ export default function Navbar() {
                   </TransitionLink>
                 ))}
               </div>
-              <TransitionLink href="/contact" onClick={() => setMenuOpen(false)} className="btn mt-10 self-start">Start a project</TransitionLink>
+              <TransitionLink href="/rfq#pilot" onClick={() => setMenuOpen(false)} className="btn mt-10 self-start">Try it free on 5 RFQs</TransitionLink>
             </nav>
           </motion.div>
         )}
@@ -154,8 +155,8 @@ function NordNeuronMark() {
       <polygon points="24,5 40,14 40,32 24,41 8,32 8,14" fill="none" stroke="var(--color-muted)" strokeWidth="1.1" />
       {edges.map(([x1, y1, x2, y2], i) => <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="var(--color-muted)" strokeWidth="0.9" />)}
       {nodes.map(([cx, cy]) => <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="2.5" fill="var(--color-paper-2)" stroke="var(--color-ink-2)" strokeWidth="1.1" />)}
-      <circle cx="24" cy="23" r="5.5" fill="var(--color-accent)" />
-      <circle cx="24" cy="23" r="2.6" fill="var(--color-accent-ink)" />
+      <circle cx="24" cy="23" r="5.5" fill="var(--color-signal)" />
+      <circle cx="24" cy="23" r="2.6" fill="var(--color-ink)" />
       <text x="54" y="30" fontFamily="var(--font-display)" fontSize="20" fontWeight="600" fill="var(--color-ink)">
         Nord<tspan dx="6" fontWeight="500" fill="var(--color-ink-2)">Neuron</tspan>
       </text>

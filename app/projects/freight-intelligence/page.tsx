@@ -202,13 +202,13 @@ export default function FreightIntelligencePage() {
                   >
                     <stop
                       offset="0%"
-                      stopColor="#efe9df"
-                      stopOpacity={0.35}
+                      stopColor="var(--color-accent)"
+                      stopOpacity={0.18}
                     />
 
                     <stop
                       offset="100%"
-                      stopColor="#efe9df"
+                      stopColor="var(--color-accent)"
                       stopOpacity={0}
                     />
                   </linearGradient>
@@ -216,7 +216,7 @@ export default function FreightIntelligencePage() {
 
                 <XAxis
                   dataKey="month"
-                  stroke="#94a3b8"
+                  stroke="var(--color-muted)"
                   tickLine={false}
                   axisLine={false}
                 />
@@ -230,7 +230,7 @@ export default function FreightIntelligencePage() {
                 <Area
                   type="monotone"
                   dataKey="revenue"
-                  stroke="#efe9df"
+                  stroke="var(--color-accent)"
                   strokeWidth={3}
                   fill="url(#colorRevenue)"
                 />

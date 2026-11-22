@@ -1,15 +1,10 @@
-/* Hallmark · shape: Index-First (/), kept elsewhere · genre: modern-minimal · theme: brand · redesign: full · job: hire
- * paper: oklch(14% 0.004 60) · accent: oklch(74% 0.09 82) · display: Fraunces · body: Inter · hero: Ledge (/), Banner (/rfq), Banner (/contact), Banner (/labs), Banner (/insights) · nav: edge-aligned, the wordmark and five links with one action · footer: a mast, the wordmark over the links · signature: the priced lane table, a messy RFQ line beside the row it becomes
- * axes: dark/roman-serif/warm · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
-/* Hallmark · dropped the hero canvas animation, the scroll cue, the preloader, the marquee, nn-glow and the project rows' onMouseEnter and onMouseLeave video preview · decoration and stock footage with no content behind them */
-/* Hallmark · dropped onMouseEnter, onMouseLeave, nn-glow · the stock-footage hover preview on the project rows and the logo glow filter are gone */
-/* Hallmark · waive 44c · Banner posture on /rfq and the inner pages, the lane table starts at 573px · the priced lane table is the offer and has to show on the first screen */
-/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V3 · weakest: V, eighteen pages share one system by design; the home page drops the stat strip and the canvas and leads with the work index instead */
+/* Container-yard system: concrete paper, asphalt ink, steel-blue panels, hi-vis yellow buttons, IBM Plex Sans/Mono. Tokens live in tokens.css. */
 @import "tailwindcss";
 @import "./tokens.css";
 @import "./base.css" layer(base);
 
-html { scroll-behavior: auto !important; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 /* The phone and tablet scale. Unlayered, so it outranks the unlayered :root in tokens.css. */
 @media (max-width: 60rem) { :root { --gutter: 24px; --section-gap-s: 80px; --section-gap: 96px; --section-gap-l: 120px; } }
 @media (max-width: 40rem) { :root { --gutter: 16px; --section-gap-s: 56px; --section-gap: 72px; --section-gap-l: 96px; --gap-columns: 16px; } }
@@ -24,7 +19,7 @@ body { text-rendering: optimizeLegibility; }
   a { text-decoration: none; }
   h1, h2, h3, h4 { color: var(--color-ink); }
   h4 { margin: 0; font-family: var(--font-body); font-weight: 600; font-size: var(--text-md); line-height: 1.3; }
-  code, pre, kbd { font-family: var(--font-outlier); }
+  code, pre, kbd { font-family: var(--font-outlier); font-size: 0.92em; }
   input, textarea, select { color: var(--color-ink); background: var(--color-paper-2); border: 1px solid var(--color-muted); border-radius: var(--radius-control); min-height: 48px; padding: var(--space-sm) var(--space-md); }
   textarea { min-height: 120px; }
   input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
@@ -43,8 +38,8 @@ body { text-rendering: optimizeLegibility; }
   .meta { font-size: var(--text-sm); color: var(--color-muted); }
   .prose-measure { max-width: 65ch; }
 
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 48px; padding: 0 var(--space-lg); border: 1px solid var(--color-accent); border-radius: var(--radius-control); background: var(--color-accent); color: var(--color-accent-ink); font: 600 var(--text-md)/1 var(--font-body); white-space: nowrap; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
-  .btn:hover { background: var(--color-accent-2); border-color: var(--color-accent-2); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 48px; padding: 0 var(--space-lg); border: 1px solid var(--color-signal-edge); border-radius: var(--radius-control); background: var(--color-signal); color: var(--color-signal-ink); font: 600 var(--text-md)/1 var(--font-body); white-space: nowrap; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+  .btn:hover { background: var(--color-signal-2); border-color: var(--color-signal-edge); }
   .btn:active { transform: translateY(1px); }
   .btn:disabled, .btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; }
   .btn[aria-busy="true"] { cursor: progress; }
@@ -62,6 +57,9 @@ body { text-rendering: optimizeLegibility; }
   .nav-link[aria-current="page"], .nav-link[aria-current="true"] { color: var(--color-ink); box-shadow: inset 0 -2px 0 var(--color-accent); }
 
   .panel { background: var(--color-paper-2); color: var(--color-ink); border: 1px solid var(--color-rule); border-radius: var(--radius-card); }
+  /* Painted steel: re-points the tokens so anything inside reads light-on-blue. */
+  .steel { --color-paper: #2f5672; --color-paper-2: #2a4e68; --color-paper-3: #24445b; --color-ink: #ffffff; --color-ink-2: #d5e0e9; --color-muted: #bccddb; --color-rule: rgb(255 255 255 / 0.14); --color-rule-2: rgb(255 255 255 / 0.26); --color-accent: #ffd24d; --color-accent-2: #ffd24d; --color-focus: #ffd24d; background: var(--color-paper); color: var(--color-ink); border-color: transparent; }
+  .steel .btn { border-color: var(--color-signal); }
   .rows > * { border-top: 1px solid var(--color-rule); }
   .rows > *:last-child { border-bottom: 1px solid var(--color-rule); }
   .row-link { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap-columns); align-items: baseline; padding-block: var(--space-lg); transition: background-color var(--dur-short) var(--ease-out); }
@@ -76,4 +74,8 @@ body { text-rendering: optimizeLegibility; }
   table.ledger .n { text-align: right; }
 }
 
-@media (prefers-reduced-motion: reduce) { .btn, .link, .nav-link, .row-link { transition: none; } }
+/* Hero: each RFQ line resolves into its priced row, one after another, once. */
+@keyframes lane-resolve { from { opacity: 0; transform: translateX(-6px); filter: blur(2px); } to { opacity: 1; transform: none; filter: none; } }
+.lane-resolve { animation: lane-resolve 520ms var(--ease-out) both; animation-delay: calc(500ms + var(--i, 0) * 260ms); }
+
+@media (prefers-reduced-motion: reduce) { .btn, .link, .nav-link, .row-link { transition: none; } .lane-resolve { animation: none; } }

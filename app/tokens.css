@@ -1,17 +1,20 @@
-/* NordNeuron brand tokens: warm charcoal paper, ivory ink, one champagne gold. Shared with the platform console. */
+/* NordNeuron brand tokens, container-yard palette: concrete paper, asphalt ink,
+ * painted steel blue for panels and links, hi-vis yellow only on buttons.
+ * (The platform console still uses the earlier dark/gold set.) */
 @theme static {
-  --color-paper: #0c0b0a; --color-paper-2: #141210; --color-paper-3: #1b1815; --color-paper-4: #231f1b;
-  --color-ink: #efe9df; --color-ink-2: #b3aa9a; --color-muted: #958c7f;
-  --color-rule: rgb(239 233 223 / 0.1); --color-rule-2: rgb(239 233 223 / 0.2);
-  --color-accent: #c8a86b; --color-accent-2: #d8bd86; --color-accent-ink: #17130c; --color-accent-wash: rgb(200 168 107 / 0.12); --color-focus: #d8bd86;
-  --color-success: #7fb08a; --color-warning: #d6a35c; --color-error: #de8474;
-  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
-  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-outlier: ui-monospace, "SF Mono", Menlo, monospace;
+  --color-paper: #f4f5f2; --color-paper-2: #e8eae6; --color-paper-3: #dcdfda; --color-paper-4: #cfd3cd;
+  --color-ink: #17202b; --color-ink-2: #3e4955; --color-muted: #565f6a;
+  --color-rule: rgb(23 32 43 / 0.12); --color-rule-2: rgb(23 32 43 / 0.22);
+  --color-accent: #2f5672; --color-accent-2: #24445b; --color-accent-ink: #ffffff; --color-accent-wash: rgb(47 86 114 / 0.08); --color-focus: #2f5672;
+  --color-signal: #f2b300; --color-signal-2: #dda200; --color-signal-edge: #b98800; --color-signal-ink: #17202b;
+  --color-success: #2b7a4b; --color-warning: #9a5b0f; --color-error: #b3261e;
+  --font-display: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
+  --font-outlier: var(--font-plex-mono), ui-monospace, "SF Mono", Menlo, monospace;
   --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
   --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
   --text-section: clamp(2rem, 2.5vw + 1rem, 3.25rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
-  --tracking-display: -0.015em;
+  --tracking-display: -0.022em;
   --radius-card: 6px; --radius-control: 6px; --radius-pill: 999px; --shadow-card: none;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
@@ -19,7 +22,7 @@
   --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
   --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
   --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
-  --rule-hair: 1px; --display-weight: 500; --nav-h: 72px;
+  --rule-hair: 1px; --display-weight: 600; --nav-h: 72px;
   --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
-  color-scheme: dark;
+  color-scheme: light;
 }

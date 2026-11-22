@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Paperclip, X } from "lucide-react";
 
 // Vercel caps a function request body at 4.5 MB; stay safely under it.
@@ -9,9 +9,9 @@ const ACCEPTED = ".xlsx,.xls,.csv,.pdf,.docx,.doc,.eml,.msg,.txt";
 
 const inputClass = "w-full";
 
-function FieldLabel({ children, optional }: { children: React.ReactNode; optional?: boolean }) {
+function FieldLabel({ children, optional, htmlFor }: { children: React.ReactNode; optional?: boolean; htmlFor: string }) {
   return (
-    <label className="label block mb-2">
+    <label htmlFor={htmlFor} className="label block mb-2">
       {children}
       {optional && <span className="ml-2">(optional)</span>}
     </label>
@@ -27,6 +27,13 @@ export default function RfqPilotForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [dragging, setDragging] = useState(false);
+  const doneRef = useRef<HTMLHeadingElement | null>(null);
+
+  // Move focus to the confirmation so keyboard and screen-reader users hear it.
+  useEffect(() => {
+    if (submitted) doneRef.current?.focus();
+  }, [submitted]);
 
   const totalBytes = files.reduce((sum, f) => sum + f.size, 0);
 
@@ -59,11 +66,11 @@ export default function RfqPilotForm() {
       if (res.ok && result.success) {
         setSubmitted(true);
       } else {
-        setError(result.message || "Failed to send. Please try again.");
+        setError(result.message || "Your request didn't go through. Try again, or email contact@nordneuron.com.");
       }
     } catch (err) {
       console.error(err);
-      setError("Something went wrong. Please check your connection and try again.");
+      setError("Couldn't reach the server. Check your connection and try again.");
     } finally {
       setLoading(false);
     }
@@ -72,7 +79,7 @@ export default function RfqPilotForm() {
   if (submitted) {
     return (
       <div role="status" className="border-l-2 border-accent pl-6 py-2">
-        <h3 className="text-3xl">
+        <h3 ref={doneRef} tabIndex={-1} className="text-3xl outline-none">
           Got it. Thank you.
         </h3>
         <p className="mt-4 text-ink-2">
@@ -88,30 +95,36 @@ export default function RfqPilotForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <FieldLabel>Name</FieldLabel>
-          <input required name="name" placeholder="Rahul Mehta" className={inputClass} />
+          <FieldLabel htmlFor="pilot-name">Name</FieldLabel>
+          <input id="pilot-name" required name="name" autoComplete="name" placeholder="Rahul Mehta" className={inputClass} />
         </div>
         <div>
-          <FieldLabel>Company</FieldLabel>
-          <input required name="company" placeholder="Mehta Freight Pvt Ltd" className={inputClass} />
+          <FieldLabel htmlFor="pilot-company">Company</FieldLabel>
+          <input id="pilot-company" required name="company" autoComplete="organization" placeholder="Mehta Freight Pvt Ltd" className={inputClass} />
         </div>
         <div>
-          <FieldLabel>Work Email</FieldLabel>
-          <input required name="email" type="email" placeholder="rahul@mehtafreight.in" className={inputClass} />
+          <FieldLabel htmlFor="pilot-email">Work email</FieldLabel>
+          <input id="pilot-email" required name="email" type="email" autoComplete="email" inputMode="email" placeholder="rahul@mehtafreight.in" className={inputClass} />
         </div>
         <div>
-          <FieldLabel optional>Phone / WhatsApp</FieldLabel>
-          <input name="phone" type="tel" placeholder="+91 98xxx xxxxx" className={inputClass} />
+          <FieldLabel htmlFor="pilot-phone" optional>Phone or WhatsApp</FieldLabel>
+          <input id="pilot-phone" name="phone" type="tel" autoComplete="tel" inputMode="tel" placeholder="+91 98xxx xxxxx" className={inputClass} />
         </div>
       </div>
 
       <div>
-        <FieldLabel optional>RFQ files + rate sheet</FieldLabel>
-        <label className="flex flex-col items-center justify-center gap-2 rounded-card border border-dashed border-muted bg-paper-2 px-6 py-10 text-center cursor-pointer hover:bg-paper-3 focus-within:outline-2 focus-within:outline-focus focus-within:outline-offset-2 transition-colors duration-300">
+        <FieldLabel htmlFor="pilot-files" optional>RFQ files and rate sheet</FieldLabel>
+        <label
+          onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
+          onDragLeave={() => setDragging(false)}
+          onDrop={(e) => { e.preventDefault(); setDragging(false); addFiles(e.dataTransfer.files); }}
+          className={`flex flex-col items-center justify-center gap-2 rounded-card border border-dashed px-6 py-10 text-center cursor-pointer hover:bg-paper-3 focus-within:outline-2 focus-within:outline-focus focus-within:outline-offset-2 transition-colors duration-200 ${dragging ? "border-accent bg-accent-wash" : "border-muted bg-paper-2"}`}
+        >
           <Paperclip size={20} className="text-accent" aria-hidden="true" />
-          <span className="text-ink text-sm">Click to attach Excel, CSV, PDF or email files</span>
+          <span className="text-ink text-sm">Drop files here, or click to choose: Excel, CSV, PDF, Word or saved emails</span>
           <span className="text-muted text-xs">Up to 4 MB in total. No files to hand? Submit anyway and we&apos;ll follow up.</span>
           <input
+            id="pilot-files"
             type="file"
             name="files"
             multiple
@@ -145,16 +158,18 @@ export default function RfqPilotForm() {
                 </span>
               </li>
             ))}
-            <li className={`text-xs ${totalBytes > MAX_TOTAL_BYTES ? "text-error" : "text-muted"}`}>
+            <li className={`text-xs ${totalBytes > MAX_TOTAL_BYTES ? "text-error" : "text-muted"}`} aria-live="polite">
               {formatSize(totalBytes)} of 4 MB
+              {totalBytes > MAX_TOTAL_BYTES && ". Remove a file, or email the larger ones to contact@nordneuron.com."}
             </li>
           </ul>
         )}
       </div>
 
       <div>
-        <FieldLabel optional>Anything we should know</FieldLabel>
+        <FieldLabel htmlFor="pilot-message" optional>Anything we should know</FieldLabel>
         <textarea
+          id="pilot-message"
           name="message"
           rows={4}
           placeholder="e.g. Mostly Nhava Sheva / Mundra exports, FCL, we quote 20 to 30 RFQs a week"

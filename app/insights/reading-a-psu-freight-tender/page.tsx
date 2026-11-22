@@ -59,7 +59,7 @@ export default function ReadingAPsuFreightTender() {
         {/* Tag */}
 
         {/* Title */}
-        <h1 className="text-3xl md:text-[46px] leading-[1.1] font-serif text-ink">
+        <h1 className="text-3xl md:text-[46px] leading-[1.1] font-display text-ink">
           Inside a 49-page PSU freight tender: what a forwarder actually has to quote
         </h1>
 
@@ -105,7 +105,7 @@ export default function ReadingAPsuFreightTender() {
 
         {/* Section 1 */}
         <section className="mt-20">
-          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
+          <h2 className="text-2xl leading-[1.2] font-display text-ink">
             The lanes are on pages 41 to 46
           </h2>
 
@@ -132,13 +132,13 @@ export default function ReadingAPsuFreightTender() {
             <table className="w-full border-collapse text-left text-sm md:text-sm min-w-[600px]">
               <thead>
                 <tr className="border-b border-rule-2">
-                  <th className="py-3 pr-4 font-serif font-medium text-ink">Bid</th>
-                  <th className="py-3 pr-4 font-serif font-medium text-ink">Discharge</th>
-                  <th className="py-3 pr-4 font-serif font-medium text-ink text-right">FCL lines</th>
-                  <th className="py-3 pr-4 font-serif font-medium text-ink text-right">Boxes</th>
-                  <th className="py-3 pr-4 font-serif font-medium text-accent text-right">TEU</th>
-                  <th className="py-3 pr-4 font-serif font-medium text-ink text-right">LCL lines</th>
-                  <th className="py-3 font-serif font-medium text-ink text-right">LCL tonnes</th>
+                  <th className="py-3 pr-4 font-display font-medium text-ink">Bid</th>
+                  <th className="py-3 pr-4 font-display font-medium text-ink">Discharge</th>
+                  <th className="py-3 pr-4 font-display font-medium text-ink text-right">FCL lines</th>
+                  <th className="py-3 pr-4 font-display font-medium text-ink text-right">Boxes</th>
+                  <th className="py-3 pr-4 font-display font-medium text-accent text-right">TEU</th>
+                  <th className="py-3 pr-4 font-display font-medium text-ink text-right">LCL lines</th>
+                  <th className="py-3 font-display font-medium text-ink text-right">LCL tonnes</th>
                 </tr>
               </thead>
               <tbody className="text-ink-2">
@@ -186,7 +186,7 @@ export default function ReadingAPsuFreightTender() {
 
         {/* Section 2 */}
         <section className="mt-20">
-          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
+          <h2 className="text-2xl leading-[1.2] font-display text-ink">
             The rate is all-in, and the buyer has already priced the rest
           </h2>
 
@@ -219,8 +219,8 @@ export default function ReadingAPsuFreightTender() {
             <table className="w-full border-collapse text-left text-sm md:text-sm min-w-[560px]">
               <thead>
                 <tr className="border-b border-rule-2">
-                  <th className="py-3 pr-4 font-serif font-medium text-ink">Charge</th>
-                  <th className="py-3 font-serif font-medium text-ink">What BHEL pays (fixed in the tender)</th>
+                  <th className="py-3 pr-4 font-display font-medium text-ink">Charge</th>
+                  <th className="py-3 font-display font-medium text-ink">What BHEL pays (fixed in the tender)</th>
                 </tr>
               </thead>
               <tbody className="text-ink-2">
@@ -262,7 +262,7 @@ export default function ReadingAPsuFreightTender() {
 
         {/* Section 3 */}
         <section className="mt-20">
-          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
+          <h2 className="text-2xl leading-[1.2] font-display text-ink">
             How the bid is scored: one weighted total, winner takes the whole bid
           </h2>
 
@@ -293,7 +293,7 @@ export default function ReadingAPsuFreightTender() {
 
         {/* Section 4 */}
         <section className="mt-20">
-          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
+          <h2 className="text-2xl leading-[1.2] font-display text-ink">
             Read it like a checker, not a reader
           </h2>
 
@@ -327,7 +327,7 @@ export default function ReadingAPsuFreightTender() {
 
         {/* Section 5 */}
         <section className="mt-20">
-          <h2 className="text-2xl leading-[1.2] font-serif text-ink">
+          <h2 className="text-2xl leading-[1.2] font-display text-ink">
             What changes when you price the next one
           </h2>
 

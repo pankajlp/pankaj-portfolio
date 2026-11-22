@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import TechStack from "./components/Techstack";
+import PilotSteps from "./components/PilotSteps";
 import FeaturedProjects from "./components/Featuredprojects";
 import LatestInsights from "./components/LatestInsights";
 import Contact from "./components/Contact";
@@ -12,10 +12,10 @@ export default function Home() {
     <>
       <Navbar />
       <main id="main" className="bg-paper text-ink">
+        {/* The offer first, then how it works, then the proof behind it */}
         <Hero />
-        {/* The work leads, then what it is built with */}
+        <PilotSteps />
         <FeaturedProjects />
-        <TechStack />
         <LatestInsights />
         <Contact />
       </main>

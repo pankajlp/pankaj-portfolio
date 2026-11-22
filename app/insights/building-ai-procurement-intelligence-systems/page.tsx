@@ -51,7 +51,7 @@ useEffect(() => {
         {/* Tag */}
 
         {/* Title */}
-        <h1 className="text-3xl md:text-[46px] leading-[1.1] font-serif text-ink">
+        <h1 className="text-3xl md:text-[46px] leading-[1.1] font-display text-ink">
           Building AI procurement intelligence systems
           with local LLMs
         </h1>
@@ -96,7 +96,7 @@ useEffect(() => {
 {/* Why Local LLMs */}
 <section className="mt-16">
 
-  <h2 className="text-2xl md:text-3xl leading-[1.15] font-serif text-ink">
+  <h2 className="text-2xl md:text-3xl leading-[1.15] font-display text-ink">
     Why local LLMs matter
   </h2>
 
@@ -124,7 +124,7 @@ useEffect(() => {
         key={item.title}
         className="rounded-card border border-rule-2 bg-paper-2 p-6 md:p-8"
       >
-        <h3 className="text-xl font-serif text-ink">
+        <h3 className="text-xl font-display text-ink">
           {item.title}
         </h3>
 
@@ -139,7 +139,7 @@ useEffect(() => {
 {/* Architecture */}
 <section className="mt-16">
 
-  <h2 className="text-2xl md:text-3xl leading-[1.15] font-serif text-ink">
+  <h2 className="text-2xl md:text-3xl leading-[1.15] font-display text-ink">
     The architecture stack
   </h2>
 
@@ -201,7 +201,7 @@ useEffect(() => {
 {/* Text-to-SQL */}
 <section className="mt-16">
 
-  <h2 className="text-2xl md:text-3xl leading-[1.15] font-serif text-ink">
+  <h2 className="text-2xl md:text-3xl leading-[1.15] font-display text-ink">
     The real complexity of text-to-SQL systems
   </h2>
 
@@ -248,7 +248,7 @@ useEffect(() => {
         </div>
 
         <div>
-          <h3 className="text-xl font-serif text-ink">
+          <h3 className="text-xl font-display text-ink">
             {item.title}
           </h3>
 
