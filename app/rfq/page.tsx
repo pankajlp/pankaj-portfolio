@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import DemoDataNotice from "../components/DemoDataNotice";
 import RfqPilotForm from "./RfqPilotForm";
+import { sampleLanes as cleanRows } from "../lib/lanes";
 
 export const metadata: Metadata = {
   title: "Free RFQ Pilot for Freight Forwarders | NordNeuron",
@@ -39,23 +40,6 @@ const pains = [
     description:
       "The forwarder who replies first with a sensible number usually wins. Hours of copy-paste are hours your competitor is ahead.",
   },
-];
-
-// Illustrative only: shows the shape of input and output, not real rates.
-const messyRows = [
-  "NSA - JEA 2x20 GP gen cargo, ready 15th",
-  "mundra/HAM 40'HC x 3 monthly",
-  "MAA to PKG 1x20 (pls quote ASAP)",
-  "TKD ICD > FXT 40ft, FOB",
-  "CCU-CGP lcl 6 cbm, 2.1 t",
-];
-
-const cleanRows = [
-  { pol: "Nhava Sheva", pod: "Jebel Ali", equip: "20GP × 2", rate: "$ 410", match: "Exact lane, Aug" },
-  { pol: "Mundra", pod: "Hamburg", equip: "40HC × 3", rate: "$ 1,850", match: "Exact lane, Sep" },
-  { pol: "Chennai", pod: "Port Klang", equip: "20GP × 1", rate: "$ 330", match: "Exact lane, Jul" },
-  { pol: "ICD Tughlakabad", pod: "Felixstowe", equip: "40GP × 1", rate: "$ 2,050", match: "Via Nhava Sheva" },
-  { pol: "Kolkata", pod: "Chittagong", equip: "LCL 6 cbm", rate: "$ 38 / cbm", match: "Nearest: Haldia" },
 ];
 
 const steps = [
@@ -119,9 +103,9 @@ export default function RfqPilotPage() {
               <div className="lg:col-span-5"><DemoDataNotice compact /></div>
             </div>
             <ul className="md:hidden rows m-0 p-0 list-none">
-              {cleanRows.map((r, i) => (
+              {cleanRows.map((r) => (
                 <li key={r.pol + r.pod} className="py-5">
-                  <p className="m-0 text-muted text-sm"><code>{messyRows[i]}</code></p>
+                  <p className="m-0 text-muted text-sm"><code>{r.raw}</code></p>
                   <p className="m-0 mt-2 font-semibold">{r.pol} to {r.pod}, {r.equip}</p>
                   <p className="m-0 mt-1"><span className="font-semibold text-accent-2">{r.rate}</span> <span className="text-ink-2 text-sm">({r.match})</span></p>
                 </li>
@@ -140,9 +124,9 @@ export default function RfqPilotPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {cleanRows.map((r, i) => (
+                  {cleanRows.map((r) => (
                     <tr key={r.pol + r.pod}>
-                      <td className="text-muted"><code>{messyRows[i]}</code></td>
+                      <td className="text-muted"><code>{r.raw}</code></td>
                       <td className="font-semibold">{r.pol}</td>
                       <td className="font-semibold">{r.pod}</td>
                       <td className="text-ink-2">{r.equip}</td>

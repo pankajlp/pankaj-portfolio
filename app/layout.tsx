@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import LenisProvider from "./components/LenisProvider";
-import TransitionCurtain from "./components/TransitionCurtain";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,15 +19,15 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "NordNeuron | AI & Enterprise Intelligence",
+  title: "NordNeuron | RFQ pricing for freight forwarders",
   description:
-    "NordNeuron builds intelligent analytics, automation, and AI systems for enterprise operations.",
+    "NordNeuron turns RFQs in any format into clean lane tables priced from your own rate history. Built for Indian freight forwarders and NVOCCs.",
   icons: {
     icon: "/nordneuron-favicon.svg",
   },
   openGraph: {
-    title: "NordNeuron | AI & Enterprise Intelligence",
-    description: "NordNeuron builds intelligent analytics, automation, and AI systems for enterprise operations.",
+    title: "NordNeuron | RFQ pricing for freight forwarders",
+    description: "NordNeuron turns RFQs in any format into clean lane tables priced from your own rate history. Built for Indian freight forwarders and NVOCCs.",
     url: "https://nordneuron.com",
     siteName: "NordNeuron",
     images: [
@@ -37,7 +35,7 @@ export const metadata: Metadata = {
         url: "https://nordneuron.com/architecture.png",
         width: 1200,
         height: 630,
-        alt: "NordNeuron Enterprise Intelligence Systems",
+        alt: "NordNeuron: RFQ pricing for freight forwarders",
       },
     ],
     locale: "en_US",
@@ -45,8 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NordNeuron | AI & Enterprise Intelligence",
-    description: "NordNeuron builds intelligent analytics, automation, and AI systems for enterprise operations.",
+    title: "NordNeuron | RFQ pricing for freight forwarders",
+    description: "NordNeuron turns RFQs in any format into clean lane tables priced from your own rate history. Built for Indian freight forwarders and NVOCCs.",
     images: ["https://nordneuron.com/architecture.png"],
   },
 };
@@ -85,10 +83,7 @@ export default function RootLayout({
       </head>
 
       <body className={`${inter.variable} ${fraunces.variable}`}>
-        <TransitionCurtain />
-        <LenisProvider>
-          {children}
-        </LenisProvider>
+        {children}
       </body>
 
     </html>

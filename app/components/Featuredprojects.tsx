@@ -1,40 +1,22 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getProjects } from "../lib/prismic";
 
-interface Project {
-  title: string;
-  category: string;
-  description: string;
-  link: string;
-  stack: string[];
-}
-
-export default function FeaturedProjects() {
-  const [projectList, setProjectList] = useState<Project[]>([]);
-
-  useEffect(() => {
-    async function loadData() {
-      const data = await getProjects();
-      setProjectList(data);
-    }
-    loadData();
-  }, []);
+// Rendered on the server so the list is in the first HTML: no "Loading
+// projects" flash, no layout shift, and the work is visible to search engines.
+export default async function FeaturedProjects() {
+  const projectList = await getProjects();
 
   return (
     <section id="work" className="section scroll-mt-[var(--nav-h)]">
       <div className="wrap">
         <div className="grid grid-cols-1 gap-x-[var(--gap-columns)] gap-y-4 md:grid-cols-12 md:items-end mb-12">
-          <h2 className="md:col-span-6">Selected projects</h2>
+          <h2 className="md:col-span-6">Built for freight teams</h2>
           <p className="lead text-ink-2 md:col-span-5 md:col-start-8">
-            Enterprise AI systems, logistics intelligence, and operational platforms.
+            The RFQ pilot grows out of these systems: rate analytics, tender tools and yard operations.
           </p>
         </div>
 
-        <div className="rows" aria-busy={projectList.length === 0}>
-          {projectList.length === 0 && <p role="status" className="meta py-8 m-0">Loading projects…</p>}
+        <div className="rows">
           {projectList.map((project) => {
             const row = (
               <>

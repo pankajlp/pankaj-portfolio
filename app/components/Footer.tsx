@@ -5,7 +5,7 @@ import { Mail } from "lucide-react";
 import TransitionLink from "./TransitionLink";
 
 const LINKS = [
-  { label: "Capabilities", href: "/#stack" },
+  { label: "RFQ pilot", href: "/rfq" },
   { label: "Work", href: "/#work" },
   { label: "Labs", href: "/labs" },
   { label: "Insights", href: "/insights" },

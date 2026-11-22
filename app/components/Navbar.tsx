@@ -13,11 +13,10 @@ type NavItem = {
   section?: string;
 };
 
-// Grouped for clarity: on-page sections first, then standalone pages.
+// The offer leads; Labs lives in the footer so the bar stays about freight.
 const NAV_ITEMS: NavItem[] = [
-  { label: "Capabilities", href: "/#stack", section: "stack" },
+  { label: "RFQ pilot", href: "/rfq" },
   { label: "Work", href: "/#work", section: "work" },
-  { label: "Labs", href: "/labs" },
   { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
 ];
@@ -44,13 +43,15 @@ export default function Navbar() {
   useEffect(() => {
     if (pathname !== "/") return;
 
-    const ids = ["stack", "work"];
+    const ids = ["work"];
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
           .filter((e) => e.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (visible) setActiveSection(visible.target.id);
+        // Clear the highlight once the section has scrolled out of view.
+        else if (entries.every((e) => !e.isIntersecting)) setActiveSection("");
       },
       { rootMargin: "-45% 0px -45% 0px", threshold: [0, 0.25, 0.5, 1] }
     );
@@ -97,7 +98,7 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-2">
-            <TransitionLink href="/contact" className="hidden sm:inline-flex btn btn-sm">Start a project</TransitionLink>
+            <TransitionLink href="/rfq#pilot" className="hidden sm:inline-flex btn btn-sm">Try it free</TransitionLink>
             <button
               type="button"
               onClick={() => setMenuOpen((v) => !v)}
@@ -135,7 +136,7 @@ export default function Navbar() {
                   </TransitionLink>
                 ))}
               </div>
-              <TransitionLink href="/contact" onClick={() => setMenuOpen(false)} className="btn mt-10 self-start">Start a project</TransitionLink>
+              <TransitionLink href="/rfq#pilot" onClick={() => setMenuOpen(false)} className="btn mt-10 self-start">Try it free on 5 RFQs</TransitionLink>
             </nav>
           </motion.div>
         )}

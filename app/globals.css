@@ -9,7 +9,8 @@
 @import "./tokens.css";
 @import "./base.css" layer(base);
 
-html { scroll-behavior: auto !important; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 /* The phone and tablet scale. Unlayered, so it outranks the unlayered :root in tokens.css. */
 @media (max-width: 60rem) { :root { --gutter: 24px; --section-gap-s: 80px; --section-gap: 96px; --section-gap-l: 120px; } }
 @media (max-width: 40rem) { :root { --gutter: 16px; --section-gap-s: 56px; --section-gap: 72px; --section-gap-l: 96px; --gap-columns: 16px; } }
@@ -76,4 +77,8 @@ body { text-rendering: optimizeLegibility; }
   table.ledger .n { text-align: right; }
 }
 
-@media (prefers-reduced-motion: reduce) { .btn, .link, .nav-link, .row-link { transition: none; } }
+/* Hero: each RFQ line resolves into its priced row, one after another, once. */
+@keyframes lane-resolve { from { opacity: 0; transform: translateX(-6px); filter: blur(2px); } to { opacity: 1; transform: none; filter: none; } }
+.lane-resolve { animation: lane-resolve 520ms var(--ease-out) both; animation-delay: calc(500ms + var(--i, 0) * 260ms); }
+
+@media (prefers-reduced-motion: reduce) { .btn, .link, .nav-link, .row-link { transition: none; } .lane-resolve { animation: none; } }
